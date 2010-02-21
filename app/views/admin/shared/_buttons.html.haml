@@ -1,0 +1,6 @@
+%p
+  %button.blue
+    %span= (controller.action_name == 'new') ? 'Create' : 'Update'
+  %a.button{ :href => collection_path }
+    %button.red
+      %span Cancel

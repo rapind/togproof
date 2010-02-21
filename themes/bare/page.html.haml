@@ -1,0 +1,3 @@
+%h1= h(@page.intro.blank? ? @page.title : @page.intro)
+= image_tag(@page.image.url, :alt => h(@page.title)) if @page.image?
+= RedCloth.new(@page.body).to_html

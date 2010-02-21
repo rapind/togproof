@@ -1,0 +1,2 @@
+- form_for(@page, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
+  = render :partial => "form", :locals => { :f => f }

@@ -1,0 +1,20 @@
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
+    %meta{ :name => 'Keywords', :content => "#{@config.company_name}, photography, professional, galleries, portfolio, clients, workflow" }
+    %meta{ :name => 'Description', :content => "#{@config.company_name}" }
+    %title= "#{controller.controller_name.humanize.titleize} - #{@config.company_name}"
+    = stylesheet_link_tag 'cream.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'global/print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'global/ie.css', :media => 'screen, projection'
+    = javascript_include_tag 'jquery.min.js', 'jquery.galleria.js', 'cream.js'
+    = yield :head
+    %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon" }
+  %body
+    #container
+      = render :partial => '/header'
+      = yield
+      = render :partial => '/footer'

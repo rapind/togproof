@@ -1,0 +1,10 @@
+.DS_Store
+log/*.*
+tmp/**/*
+db/schema.rb
+config/database.yml
+config/deploy.rb
+config/initializers/grokphoto.rb
+db/*.sql
+db/*.bz2
+public/attachments

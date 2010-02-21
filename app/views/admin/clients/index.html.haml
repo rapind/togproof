@@ -1,0 +1,32 @@
+-content_for :sidebar do
+  %h2
+    Manage Clients
+  %p
+    Clients are granted access to their own personal area of your site where they can preview their bookings and photos.
+  %p
+    You can create a new client by clicking the big blue button.
+  %p
+    You can manage a client's bookings and photos by clicking the "Bookings" link next to the client.
+  %p
+    You can edit a client by clicking the "Edit" link next to the client you want to change.
+  %p
+    You can delete a client by clicking the "Delete" link next to the client you want to remove.
+
+%p
+  %a.button{ :href => new_resource_path }
+    %button.blue
+      %span New Client &raquo;
+  
+%table{ :width => "100%" }
+  %tr
+    %th
+      Name
+    %th
+      Email
+    %th{ :width => "18%" }
+      Created On
+    %th{ :colspan => "4", :width => "35%" }
+      Actions
+  = render :partial => "row", :collection => @clients
+%strong
+  = will_paginate @clients

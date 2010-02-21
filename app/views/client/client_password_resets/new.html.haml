@@ -1,0 +1,31 @@
+:javascript
+  $(document).ready(function() {
+    $("form").validate();
+  });
+  
+
+-content_for :sidebar do
+  %h2
+    Oops!
+  %p
+    Happens to the best of us. We won't hold it against you.
+  %p
+    Just give us the email address you registered with and we'll pretend it never happened.
+
+%h2
+  Forgot your Password?
+%p
+  You're not the first person!
+  %br
+  Just submit the email address you registered with below 
+  %br
+  and we'll send you instructions to change your password.
+
+- form_tag client_client_password_resets_path do
+  %p
+    %label{ :for => 'Email' }
+      Email Address
+    = text_field_tag 'email', nil, :class => 'text validate[required,customer[email]]'
+  %p
+    %button.blue
+      %span Reset Password &raquo;

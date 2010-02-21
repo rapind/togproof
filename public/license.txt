@@ -1,0 +1,48 @@
+Copyright (c) 2010, Stefan Kovac
+All rights reserved.
+
+By downloading CU3ER v0.9.2 - flash 3D slider, you agree to the following:
+
+Stefan Kovac grants you the non-exclusive, non-transferable license 
+to use CU3ER subject to the restrictions defined below.
+
+    * You may use CU3ER in personal and / or commercial projects.
+
+    * You may implement CU3ER in an unlimited number of websites and 
+      offline presentations, as long as you are acting as the administrator
+      and / or developer for those websites and / or presentations.
+
+    * You may deploy SWFs containing CU3ER as part of hired work for 
+      a third party as long as the SWF is unique to said party and not 
+      replicated / resold / redistributed as part of a template, 
+      application or service to additional parties.
+ 
+    * SWFs containing CU3ER may not be embedded in a template, content 
+      management system, and / or online web service in a manner where the 
+      SWF is replicated and used as a slideshow viewer for photos contributed 
+      by more than one party.
+
+    * CU3ER may not be sub-licensed or resold.
+
+    * You agree not to decompile, reverse engineer, disassemble, or otherwise 
+      determine or attempt to determine source code for the executable code 
+      of CU3ER, and agrees not to permit or authorize anyone else to do so.
+
+    * CU3ER redistribution must reproduce the above copyright notice, this 
+      list of conditions and the disclaimer in the documentation and/or 
+      other materials provided with the distribution.
+
+    * Neither the name of CU3ER nor the name of it contributor (Stefan Kovac) 
+      may be used to endorse or promote products derived from this software 
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY STEFAN KOVAC ''AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL STEFAN KOVAC BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
