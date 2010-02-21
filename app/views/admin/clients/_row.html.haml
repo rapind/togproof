@@ -4,7 +4,7 @@
   %td
     = row.email
   %td
-    = row.created_at.strftime("%B %d, %Y")
+    = row.last_login_at.blank? ? 'Never' : row.last_login_at.strftime("%B %d, %Y")
   %td
     = link_to "Send Invite", invite_admin_client_path(row)
   %td
