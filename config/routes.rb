@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   # root
   map.root :controller => 'home'
   map.config_error '/config_error', :controller => 'home', :action => 'config_error'
+  map.not_found '/not_found', :controller => 'home', :action => 'not_found'
   
   # sitemap
   map.resources :sitemap

@@ -15,6 +15,9 @@ class HomeController < ApplicationController
     render :template => '/home'
   end
   
+  def not_found
+    render :template => '/404', :status => :not_found
+  end
   
   private #------
   

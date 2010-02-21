@@ -6,7 +6,15 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   before_filter :config
   
+  #unless ActionController::Base.consider_all_requests_local
+    rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction, :with => :render_404
+  #end
+  
   private #-------
+    
+    def render_404
+      redirect_to not_found_path
+    end
     
     # retrieve site configuration information
     def config
