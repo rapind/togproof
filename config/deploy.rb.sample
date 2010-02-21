@@ -1,13 +1,11 @@
 set :application, "myapplicationname" # TODO - change this value to your app name
 set :user, "deployacct" # TODO - change this value to your server account
 
-set :scm, "git"
-set :repository,  "git@github.com:rapind/grokphoto.git"
-
 set :deploy_to, "/var/www/#{application}"
 
 # using git
 set :scm, :git
+set :repository,  "git@github.com:rapind/grokphoto.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 

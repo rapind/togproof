@@ -29,6 +29,14 @@
     %p
       = f.label :theme
       = f.select :theme, Photographer.themes
+    %p
+      = f.label :use_watermark, "Automatically watermark your client photos?"
+      = f.check_box :use_watermark
+    %p
+      = f.label :watermark, "Upload your watermark. Must be a transparent PNG or GIF"
+      = f.file_field :watermark, :class => 'text'
+      %br
+      = link_to(image_tag(@photographer.watermark.url(:thumb), :style => "border: 1px solid #aaa;"), @photographer.watermark.url, :rel => 'colorbox') if @photographer.watermark.file?
       
   %div{ :style => "width:50%; float:left;" }
     %p
@@ -41,13 +49,11 @@
       = f.label :twitter_url, 'Twitter URL'
       = f.text_field :twitter_url, :class => 'text validate[optional,length[10,255]]'
     %p
-      = f.label :use_watermark, "Automatically watermark your client photos?"
-      = f.check_box :use_watermark
+      = f.label :google_analytics_key
+      = f.text_field :google_analytics_key, :class => 'text validate[optional,length[10,20]]'
     %p
-      = f.label :watermark, "Upload your watermark. Must be a transparent PNG or GIF"
-      = f.file_field :watermark, :class => 'text'
-      %br
-      = link_to(image_tag(@photographer.watermark.url(:thumb), :style => "border: 1px solid #aaa;"), @photographer.watermark.url, :rel => 'colorbox') if @photographer.watermark.file?
+      = f.label :google_verification_key
+      = f.text_field :google_verification_key, :class => 'text validate[optional,length[10,50]]'
       
   %div{ :style => "width:100%; float:left;" }
     %p

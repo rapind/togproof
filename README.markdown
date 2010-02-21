@@ -23,7 +23,7 @@ Installation
 
 Installation script coming soon! Follow these instructions for now:
 
-    $ git clone git@github.com:rapind/grokphoto.git
+    $ git clone git://github.com/rapind/grokphoto.git
     $ cd grokphoto
     $ cp config/database.yml.sample config.database.yml
     $ cp config/initializers/grokphoto.rb.sample config/initializers/grokphoto.rb
