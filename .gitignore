@@ -4,6 +4,8 @@ tmp/**/*
 db/schema.rb
 config/database.yml
 config/deploy.rb
+config/deploy.jaime
+config/deploy.grokphoto
 config/initializers/grokphoto.rb
 db/*.sql
 db/*.bz2
