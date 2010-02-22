@@ -50,8 +50,8 @@ end
 
 puts "Creating pages"
 pages = []
-pages << Page.create(:position => 1, :title => 'About', :intro => 'Behind the lens.', :body => "h2. About me\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
-pages << Page.create(:position => 2, :title => 'Rates', :intro => 'Session fees and print prices.', :body => "h2. Session Fees\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
+pages << Page.create(:position => 1, :title => 'About', :intro => 'Behind the lens.', :body => "About me\n--------\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
+pages << Page.create(:position => 2, :title => 'Rates', :intro => 'Session fees and print prices.', :body => "Session Fees\n------------\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
 
 puts "Uploading page images"
 base_dir = File.join(RAILS_ROOT, "photoshop/pages/")
