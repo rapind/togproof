@@ -5,17 +5,17 @@ Grokphoto is a professional photographer's client and booking management solutio
 
 There's a live demo available at:
 
-* http://www.grokphoto.org
+* [http://www.grokphoto.org](http://www.grokphoto.org)
 
 You can access the admin area at:
 
-* http://www.grokphoto.org/admin
+* [http://www.grokphoto.org/admin](http://www.grokphoto.org/admin)
 * Email: photographer@grokphoto.org
 * Password: password
 
 You can access the client area at:
 
-* http://www.grokphoto.org/client
+* [http://www.grokphoto.org/client](http://www.grokphoto.org/client)
 * Email: client@grokphoto.org
 * Password: password
 
