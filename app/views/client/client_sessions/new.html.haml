@@ -1,3 +1,10 @@
+- if defined?(DEMO_MODE) and DEMO_MODE
+  %p
+    %strong 
+      We're running in demo mode. For login information use: 
+      %br
+      client@grokphoto.org / password
+      
 - form_for @client_session, :url => client_client_session_path do |f|
   = f.error_messages
   %p

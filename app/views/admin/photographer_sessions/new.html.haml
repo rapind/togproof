@@ -7,6 +7,13 @@
     If you are not a site photographer and have come here by mistake,
     = link_to 'please head back to the public site &raquo;', root_path
 
+- if defined?(DEMO_MODE) and DEMO_MODE
+  %p
+    %strong 
+      We're running in demo mode. For login information use: 
+      %br
+      photographer@grokphoto.org / password
+      
 - form_for @photographer_session, :url => admin_photographer_session_path do |f|
   = f.error_messages
   %p
