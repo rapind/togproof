@@ -20,6 +20,15 @@ You can access the client area at:
 * Password: password
 
 
+<object id="scPlayer" width="995" height="660">
+  <param name="movie" value="http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/bootstrap.swf"></param>
+  <param name="quality" value="high"></param> <param name="bgcolor" value="#FFFFFF"></param>
+  <param name="flashVars" value="thumb=http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/FirstFrame.jpg&containerwidth=995&containerheight=660&content=http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/grokphoto_manage_galleries.swf"></param>
+  <param name="allowFullScreen" value="true"></param> <param name="scale" value="showall"></param> <param name="allowScriptAccess" value="always"></param>
+  <param name="base" value="http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/"></param>
+  <embed src="http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/bootstrap.swf" quality="high" bgcolor="#FFFFFF" width="995" height="660" type="application/x-shockwave-flash" allowScriptAccess="always" flashVars="thumb=http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/FirstFrame.jpg&containerwidth=995&containerheight=660&content=http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/grokphoto_manage_galleries.swf" allowFullScreen="true" base="http://content.screencast.com/users/rapind/folders/Default/media/9b986ee1-3755-4428-a528-402cb147584c/" scale="showall"></embed>
+</object>
+
 The Story
 ---------
 
