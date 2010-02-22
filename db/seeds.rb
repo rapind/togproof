@@ -8,7 +8,7 @@ photographer = Photographer.create(
   :blog_url => 'http://blog.grokphoto.org',
   :facebook_url => 'http://www.facebook.com/pages/Toronto-ON/White-Label-Photography/208733155332',
   :use_watermark => false,
-  :theme => 'minimal'
+  :theme => 'default'
 )
 puts "Uploading watermark..."
 photographer.watermark = File.new(File.join(RAILS_ROOT, "photoshop/watermark.png")) rescue nil
@@ -42,9 +42,9 @@ base_dir = File.join(RAILS_ROOT, "photoshop/galleries")
 for gallery in galleries
   photos_dir = File.join(RAILS_ROOT, "photoshop/galleries/#{gallery.title.downcase.gsub(' ', '-')}/")
   file_names = Dir.glob("#{photos_dir}*.jpg")
-  for file_name in file_names
+  file_names.each_with_index do |file_name, idx|
     puts "uploading #{file_name}"
-    gallery.gallery_photos.create(:image => File.new(file_name)) rescue nil
+    gallery.gallery_photos.create(:position => (idx + 1), :image => File.new(file_name)) rescue nil
   end
 end
 
