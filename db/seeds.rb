@@ -3,10 +3,9 @@ photographer = Photographer.create(
   :email => "photographer@grokphoto.org",
   :password => "password",
   :site_url => 'http://demo.grokphoto.org',
-  :company_name => 'White Label Photography', 
+  :company_name => 'Grokphoto', 
   :company_email => 'info@grokphoto.org',
-  :blog_url => 'http://blog.grokphoto.org',
-  :facebook_url => 'http://www.facebook.com/pages/Toronto-ON/White-Label-Photography/208733155332',
+  :blog_url => 'http://rapin.com',
   :use_watermark => false,
   :theme => 'default'
 )
@@ -24,10 +23,10 @@ bookings << client.bookings.create(:title => 'Family Session', :occurs_on => 2.w
 
 puts "Creating galleries"
 galleries = []
-galleries << Gallery.create(:position => 1, :title => 'Maternity', :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.")
-galleries << Gallery.create(:position => 2, :title => 'Newborn', :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.")
-galleries << Gallery.create(:position => 3, :title => 'Babies and Children', :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.")
-galleries << Gallery.create(:position => 4, :title => 'Family', :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.")
+galleries << Gallery.create(:position => 1, :title => 'Portfolio', :keywords => "portfolio, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails", :description => "Grokphoto is an opensource professional photographer gallery, client manager, booking manager, and photo system. Add as many galleries and pages as you like to your site once it's been setup.")
+galleries << Gallery.create(:position => 2, :title => 'Client Mangement', :keywords => "professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails", :description => "You can create bookings for your clients, upload multiple photos to a booking with one click, and then send out a custom invite message giving your client secure access.")
+galleries << Gallery.create(:position => 3, :title => 'Themes', :keywords => "themes, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails", :description => "You can create your own themes. All you need is a little HTML knowledge, or even better some Ruby on Rails experience to create more advanced themes.")
+galleries << Gallery.create(:position => 4, :title => 'Open Source', :keywords => "opensource, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails", :description => "Grokphoto is completely opensource. This means if you know a little bit about coding (or someone who does), you can have your own version and theme up and running within a few minutes. The engine behind Grokphoto is Ruby on Rails.")
 puts "Uploading gallery images..."
 base_dir = File.join(RAILS_ROOT, "photoshop/galleries/")
 for gallery in galleries
@@ -50,8 +49,8 @@ end
 
 puts "Creating pages"
 pages = []
-pages << Page.create(:position => 1, :title => 'About', :intro => 'Behind the lens.', :body => "About me\n--------\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
-pages << Page.create(:position => 2, :title => 'Rates', :intro => 'Session fees and print prices.', :body => "Session Fees\n------------\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
+pages << Page.create(:position => 1, :title => 'About', :intro => "So what's it all about?", :keywords => "about, story, ruby, rails, photography, professional, custom, page management, wiki, markdown, opensource", :body => "About Grokphoto\n---------------\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
+pages << Page.create(:position => 2, :title => 'Opensource', :intro => 'Grokphoto is completely free!', :keywords => "opensource, ruby, rails, photography, git, haml, ajax, jquery, themes, erb", :body => "What is Opensource?\n-------------------\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
 
 puts "Uploading page images"
 base_dir = File.join(RAILS_ROOT, "photoshop/pages/")
