@@ -7,7 +7,9 @@ photographer = Photographer.create(
   :company_email => 'info@grokphoto.org',
   :blog_url => 'http://rapin.com',
   :use_watermark => false,
-  :theme => 'default'
+  :theme => 'default',
+  :goolge_analytics_key => 'UA-2450369-23',
+  :google_verification_key => 'n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0'
 )
 puts "Uploading watermark..."
 photographer.watermark = File.new(File.join(RAILS_ROOT, "photoshop/watermark.png")) rescue nil
