@@ -12,6 +12,7 @@ class HomeController < ApplicationController
   
   # landing page
   def index
+    @galleries = Gallery.find :all, :order => :position
     render :template => '/home'
   end
   

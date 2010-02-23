@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sitemap
   
   # galleries
-  map.resources :galleries, :has_many => :gallery_photos
+  map.resources :galleries, :member => { :slide => :get }, :has_many => :gallery_photos
   
   # pages
   map.resources :pages
