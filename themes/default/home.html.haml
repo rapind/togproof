@@ -2,11 +2,20 @@
   $(document).ready(function() {
     $('#slides').cycle({
   		timeout: 4500,
-      speed: 2000
+      speed: 2000,
+      before: beforeSlideChange
   	});
   });
+  function beforeSlideChange() {
+    //alert(this.href);
+    $('#slide-description').html(this.href);
+  }
 	
 #content
   #slides
     - for gallery in @galleries
-      = link_to(image_tag(gallery.image.url, :size => '960x540', :alt => h(gallery.title), :title => h(gallery.title)), gallery_path(gallery))
+      %div
+        = link_to(image_tag(gallery.image.url, :size => '960x540', :alt => h(gallery.title), :title => h(gallery.title)), gallery_path(gallery), :id => gallery.id)
+        %div{ :id => "description_#{gallery.id}", :class => 'slide_description' }
+          %h2= h(gallery.title)
+          = h(gallery.description)
