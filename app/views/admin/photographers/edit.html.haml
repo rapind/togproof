@@ -13,7 +13,7 @@
   %div{ :style => "width:50%; float:left;" }
     %p
       = f.label :email
-      = f.text_field :email, :class => 'text validate[required,length[4,100]]'
+      = f.text_field :email, :class => 'text validate[required,custom[email]]'
     %p
       = f.label :site_url
       = f.text_field :site_url, :class => 'text validate[required,length[10,255]]'
