@@ -1,15 +1,10 @@
 :javascript
   $(document).ready(function() {
     $('#slides').cycle({
-  		timeout: 4500,
-      speed: 2000,
-      before: beforeSlideChange
+  		timeout: 5000,
+      speed: 2500
   	});
   });
-  function beforeSlideChange() {
-    //alert(this.href);
-    $('#slide-description').html(this.href);
-  }
 	
 #content
   #slides
@@ -19,3 +14,5 @@
         %div{ :id => "description_#{gallery.id}", :class => 'slide_description' }
           %h2= h(gallery.title)
           = h(gallery.description)
+
+%p.clearfix
