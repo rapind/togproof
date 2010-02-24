@@ -4,7 +4,6 @@ class Page < ActiveRecord::Base
   validates_presence_of :title, :body
   validates_uniqueness_of :title
   validates_length_of :title, :within => 2..100
-  validates_format_of :title, :with => /\A[\w\.\-\+]+\z/
   validates_length_of :body, :minimum => 10
   validates_length_of :keywords, :within => 3..200, :allow_blank => true
   

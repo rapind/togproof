@@ -4,7 +4,6 @@ class Booking < ActiveRecord::Base
   has_many :photo_comments, :through => :photos, :order => 'photo_comments.created_at'
   validates_presence_of :title
   validates_length_of :title, :within => 2..128
-  validates_format_of :title, :with => /\A[\w\.\-\+]+\z/
   
   named_scope :active, :conditions => ['expires_on IS NULL OR expires_on > ?', Date.today]
   named_scope :expired, :conditions => ['expires_on <= ?', Date.today]

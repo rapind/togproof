@@ -6,7 +6,6 @@ class Photographer < ActiveRecord::Base
   validates_presence_of :email, :company_name, :site_url
   validates_length_of :site_url, :within => 10..255
   validates_length_of :company_name, :within => 3..64
-  validates_format_of :company_name, :with => /\A[\w\.\-\+]+\z/
   validates_length_of :company_email, :within => 5..100, :allow_blank => true
   validates_length_of :company_phone, :within => 7..20, :allow_blank => true
   validates_length_of :blog_url, :within => 10..255, :allow_blank => true
