@@ -17,10 +17,6 @@
     = f.label :remember_me, 'Remember me when I come back'
     = f.check_box :remember_me
   %p
-    - if request.env['HTTP_USER_AGENT'].include?('MSIE 6')
-      = f.submit 'Login'
-    - else
-      %button.blue
-        %span Login &raquo;
+    = build_button('Login &raquo;', 'blue', f)
     &nbsp;
     = link_to 'Did you forget your password?', new_client_client_password_reset_path, :rel => 'colorbox'
