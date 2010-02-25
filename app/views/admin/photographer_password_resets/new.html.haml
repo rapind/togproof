@@ -9,5 +9,4 @@
       Email Address
     = text_field_tag 'email', nil, :class => 'text validate[required,custom[email]]'
   %p
-    %button.blue
-      %span Reset Password &raquo;
+    = build_button('Reset Password &raquo;', 'blue', nil)
