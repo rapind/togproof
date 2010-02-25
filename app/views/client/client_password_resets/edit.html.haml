@@ -10,5 +10,4 @@
     = f.label :password
     = f.password_field :password, :class => 'text validate[required,length[5,20]]'
   %p
-    %button.blue
-      %span Set Password &raquo;
+    = build_button('Set Password &raquo;', 'blue', f)

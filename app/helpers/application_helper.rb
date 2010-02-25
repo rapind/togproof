@@ -23,7 +23,11 @@ module ApplicationHelper
   
   def build_button(name, class_name, form)
     if request.env['HTTP_USER_AGENT'].include?('MSIE 6')
-      return form.submit(name)
+      if form
+        return form.submit(name)
+      else
+        return submit_tag(name)
+      end
     else
       return "<button class='#{class_name}'><span>#{name}</span></button>"
     end
