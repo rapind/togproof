@@ -23,4 +23,4 @@
     = link_to(image_tag(@photo.image.url(:thumb)), @photo.image.url, :rel => 'colorbox') if @photo.image.file?
 
 %div{ :style => "width:100%; float:left;" }  
-  = render :partial => "admin/shared/buttons"
+  = render :partial => "admin/shared/buttons", :locals => { :f => f }

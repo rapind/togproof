@@ -21,7 +21,7 @@
     = f.text_field :email, :class => 'text validate[required,custom[email]]'
   - if @client.id.blank?
     = f.hidden_field :password, :value => Authlogic::Random.friendly_token
-  = render :partial => "admin/shared/buttons"
+  = render :partial => "admin/shared/buttons", :locals => { :f => f }
   
 %div{ :style => "width:50%; float:left;" }
   %h4

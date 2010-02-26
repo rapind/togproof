@@ -41,5 +41,5 @@
     = f.label :body
     = f.text_area :body, :class => 'long validate[required]'
 
-  = render :partial => "admin/shared/buttons"
+  = render :partial => "admin/shared/buttons", :locals => { :f => f }
 

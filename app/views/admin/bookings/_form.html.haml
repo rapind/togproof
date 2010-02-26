@@ -33,4 +33,4 @@
   = f.label :description
   = f.text_area :description, :style => 'width: 97%'
   
-= render :partial => "admin/shared/buttons"
+= render :partial => "admin/shared/buttons", :locals => { :f => f }

@@ -19,5 +19,5 @@
   = f.label :body
   = f.text_area :body, :class => 'brief validate[required,length[5,200]]'
 
-= render :partial => "admin/shared/buttons"
+= render :partial => "admin/shared/buttons", :locals => { :f => f }
 
