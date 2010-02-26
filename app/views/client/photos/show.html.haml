@@ -38,5 +38,4 @@
   - form_for(PhotoComment.new, :url => client_photo_photo_comments_path(@photo)) do |f|
     = f.text_area :body, :class => 'text validate[required,length[3,600]]'
     %p
-      %button.blue
-        %span Leave a comment &raquo;
+      = build_button('Leave a comment &raquo;', 'blue', f)
