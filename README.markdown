@@ -3,6 +3,8 @@ Grokphoto
 
 Grokphoto is a professional photographer's client and booking management solution, as well as a gallery / portfolio where they can showcase for their work.
 
+### [Watch the Video](http://grokphoto.org/introduction.html) ###
+
 There's a live demo available at:
 
 * [http://www.grokphoto.org](http://www.grokphoto.org)
@@ -19,16 +21,6 @@ You can access the client area at:
 * Email: client@grokphoto.org
 * Password: password
 
-The Story
----------
-
-[Watch the Video](http://www.screencast.com/t/MWM1NGE3)
-
-I needed to build a professional photography site for a friend along with a way for her to easily manage clients, bookings, and photos.
-
-While there are plenty of open source galleries out there, most are written in PHP whereas my personal preference is Ruby on Rails. Also, I was unable to find any that supported the more advanced features we needed for managing client photos and workflow.
-
-And so grokphoto was born.
 
 Software Requirements
 ---------------------
