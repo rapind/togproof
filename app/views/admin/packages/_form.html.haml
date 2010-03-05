@@ -11,15 +11,27 @@
     = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
+  = link_to 'Products', admin_products_path
+  &nbsp; | &nbsp;
   = "#{link_to('Packages', admin_packages_path)} &raquo; #{controller.action_name.titleize}"
   
 = f.error_messages
-%p
-  = f.label :title
-  = f.text_field :title, :class => 'text validate[required,length[2,100]]'
-%p
-  = f.label :price
-  = f.text_field :price, :class => 'text numeric validate[required,length[1,10]]'
+%div{ :style => 'float:left; width:50%' }
+  %p
+    = f.label :title
+    = f.text_field :title, :class => 'text validate[required,length[2,128]]'
+  %p
+    = f.label :price
+    $
+    = f.text_field :price, :class => 'text numeric validate[required,length[1,10]]'
+%div{ :style => 'float:left; width:50%' }
+  %p
+    = f.label :active, 'Active?'
+    = f.check_box :active
+    
+%div{ :style => 'float:left; width:100%' }
+  %fieldset
+    %legend Includes these products
 
-= render :partial => "admin/shared/buttons", :locals => { :f => f }
+  = render :partial => "admin/shared/buttons", :locals => { :f => f }
 

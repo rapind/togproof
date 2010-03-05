@@ -4,14 +4,19 @@
   %p
     Packages are used to bundle your products.
   %p
-    You can change the order that packages appear in by clicking and dragging their title bars.
+    You can change the order that packages appear in by clicking and dragging the arrow in the left column.
   %p
-    You can create a new package by clicking the blue "New Package" button.
+    You can create a new package by clicking the "New Package" button.
   %p
     You can edit a package by clicking it's "Edit" link.
   %p
     You can delete a package by clicking the "Delete" link.
 
+#breadcrumb
+  = link_to 'Products', admin_products_path
+  &nbsp; | &nbsp;
+  Packages
+  
 %p
   %a.button{ :href => new_resource_path }
     %button.blue
@@ -19,6 +24,17 @@
 
 %p{ :class => 'clear' }
 
-%ul{ :id => 'position_container', :class => 'image_list' }
+%table.sortable{ :width => "100%" }
+  %tr{ :class => 'nodrag nodrop' }
+    %th{ :width => '14px' }
+      &nbsp;
+    %th
+      Title
+    %th
+      Price
+    %th
+      Active?
+    %th{ :colspan => "2", :width => "12%" }
+      Actions
   = render :partial => "row", :collection => @packages
 

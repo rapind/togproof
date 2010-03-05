@@ -1,7 +1,14 @@
-%li{ :id => "row_#{row.id}" }
-  .draggable
-    = truncate(row.title, :length => 22)
-    = link_to image_tag('cancel.png'), resource_path(row), :class => "delete"
-  = "#{link_to(image_tag(row.image.url(:thumb), :size => '150x100'), edit_resource_path(row))}<br />"
-  .actions
+%tr{ :class => cycle("odd_row", "even_row"), :id => row.id }
+  %td.dragHandle
+    &nbsp;
+  %td
+    = h(row.title)
+  %td
+    = number_to_currency(row.price)
+  %td
+    = row.active ? 'Yes' : 'No'
+  %td
     = link_to 'Edit', edit_resource_path(row)
+  %td
+    = link_to 'Delete', resource_path(row), :class => "delete"
+

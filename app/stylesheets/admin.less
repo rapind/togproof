@@ -4,6 +4,11 @@
 @import "plugins/_clearfix.css";
 @import "plugins/_tabs.css";
 
+@shading: #dedbd6;
+@main: #665b4d;
+
+body { margin-top: 20px; }
+
 #container {
   margin: 20px auto 10px auto;
   width: 960px;
@@ -14,6 +19,31 @@
   width: 960px;
   border-bottom: solid 1px #dddddd;
 	text-align: left;
+}
+#header .tabs {
+  float: right;
+  margin: -5px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
+  border-bottom: 1px solid #dddddd;
+	li { margin-left: 1px; }
+	a {
+	  padding: 5px 15px;
+	  background: #dddddd;
+	  color: #666;
+	  text-decoration: none;
+	}
+	a:hover {
+	  padding: 5px 15px;
+	  color: #dddddd;
+	  text-decoration: none;
+	  background: #2b5985;
+	}
+	a.active {
+	  padding: 5px 15px;
+	  color: #dddddd;
+	  text-decoration: none;
+	  background: #2b5985;
+	}
 }
 #logo {
   float: left;
@@ -34,6 +64,11 @@
   width: 230px;
   margin-right: 20px;
 	text-align: left;
+}
+.box {
+  padding: 8px 1.5em 1.5em 1.5em;
+  margin-bottom: 1.5em;
+  background: #e5ecf9;
 }
 #content {
   float: left;
@@ -73,6 +108,19 @@ a:hover {
 a:hover.button {
 	text-decoration: none;
 }
+div.errorExplanation {
+	border: 1px solid #aa0000;
+	background: #ffdddd;
+	padding: 10px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	h2 {
+		font-size: 1.1em;
+	}
+	p {
+		margin-bottom: 5px;
+	}
+}
 label { display: block; }
 label.error {
   text-align: right;
@@ -80,6 +128,9 @@ label.error {
   padding: 2px 5px;
   margin: -55px 0px 51px -2px;
   border: none;
+}
+input.numeric {
+	width: 60px;
 }
 input.long {
 	width: 97%;
@@ -94,52 +145,21 @@ form img {
 	border: solid 1px #aaa;
 }
 th {
-  border-bottom: solid 2px #dcdcdc;
-  text-align: left;
+	border-bottom: 2px solid @main;
 }
-body { margin-top: 20px; }
-#header .tabs {
-  float: right;
-  margin: -5px 0px 0px 0px;
-  padding: 10px 0px 0px 0px;
-  border-bottom: 1px solid #dddddd;
-	li { margin-left: 1px; }
-	a {
-	  padding: 5px 15px;
-	  background: #dddddd;
-	  color: #666;
-	  text-decoration: none;
-	}
-	a:hover {
-	  padding: 5px 15px;
-	  color: #dddddd;
-	  text-decoration: none;
-	  background: #2b5985;
-	}
-	a.active {
-	  padding: 5px 15px;
-	  color: #dddddd;
-	  text-decoration: none;
-	  background: #2b5985;
-	}
+tr.even_row {
+	background-color: @shading;
 }
-.box {
-  padding: 8px 1.5em 1.5em 1.5em;
-  margin-bottom: 1.5em;
-  background: #e5ecf9;
+tr.row_drag {
+	background-color: @main;
 }
-div.errorExplanation {
-	border: 1px solid #aa0000;
-	background: #ffdddd;
-	padding: 10px;
-	margin-right: 20px;
-	margin-bottom: 15px;
-	h2 {
-		font-size: 1.1em;
-	}
-	p {
-		margin-bottom: 5px;
-	}
+td.dragHandle {
+}
+td.showDragHandle {
+	background-image: url(/images/updown2.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: move;
 }
 ul.image_list {
 	position: relative;

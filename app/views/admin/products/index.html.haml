@@ -6,12 +6,17 @@
   %p
     You can change the order that products appear in by clicking and dragging their title bars.
   %p
-    You can create a new product by clicking the blue "New Product" button.
+    You can create a new product by clicking the "New Product" button.
   %p
     You can edit a product by clicking it's "Edit" link.
   %p
     You can delete a product by clicking the red X button.
 
+#breadcrumb
+  Products
+  &nbsp; | &nbsp;
+  = link_to 'Packages', admin_packages_path
+  
 %p
   %a.button{ :href => new_resource_path }
     %button.blue
