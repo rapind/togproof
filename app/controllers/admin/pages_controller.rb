@@ -5,15 +5,18 @@ class Admin::PagesController < Admin::HomeController
   
   # redirect to collection path on create instead of show
   def create
+    @page = current_photographer.pages.new(params[:page])
     create!{ collection_path }
   end
   
   # redirect to collection path on update instead of show
   def update
+    @page = current_photographer.pages.find(params[:id])
     update!{ collection_path }
   end
   
   def destroy
+    @page = current_photographer.pages.find(params[:id])
     destroy! do |success, failure|
       success.js { 
         flash[:notice] = ''
@@ -26,7 +29,7 @@ class Admin::PagesController < Admin::HomeController
   # update an individual page's position
   def update_position
     begin
-      page = Page.find(params[:id]) # grab the object
+      page = current_photographer.pages.find(params[:id]) # grab the object
       page.insert_at(params[:position].to_i) # update the object's order
       render :json => {:title => 'Success', :message => 'The order was updated successfuly.'}
     rescue
@@ -37,7 +40,7 @@ class Admin::PagesController < Admin::HomeController
   private #-------
     # Defining the collection explicitly for ordering
     def collection
-      @pages ||= end_of_association_chain.find :all, :order => 'position'
+      @pages ||= current_photographer.pages.find :all
     end
     
 end

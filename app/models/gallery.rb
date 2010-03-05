@@ -1,5 +1,7 @@
 class Gallery < ActiveRecord::Base
-  acts_as_list
+  belongs_to :photographer
+  acts_as_list :scope => :photographer_id
+  
   has_many :gallery_photos, :dependent => :destroy, :order => 'position'
   
   validates_presence_of :title, :description

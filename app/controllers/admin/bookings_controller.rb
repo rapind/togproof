@@ -3,6 +3,7 @@ class Admin::BookingsController < Admin::HomeController
   belongs_to :client, :optional => true
   actions :all, :except => :show
   respond_to :html
+  before_filter :require_ownership
   
   def new
     new! {
@@ -29,5 +30,22 @@ class Admin::BookingsController < Admin::HomeController
       }
       failure.js { render :json => {:title => 'Error', :message => 'Ran into an error removing the booking. Please try again later.'} }
     end
-  end  
+  end
+  
+  private #----
+  
+    # make sure the photographer owns the bookings / photos they are trying to access
+    def require_ownership
+      @client = Client.find(params[:client_id])
+      if current_photographer.id == @client.photographer.id
+        return true
+      else
+        # doesn't own the parent booking
+        flash[:warning] = 'You can only manage bookings and photos associated with your account.'
+        redirect_to admin_bookings_path # back to the bookings they DO own
+        return false
+      end
+    end
+    
+  
 end

@@ -3,17 +3,21 @@ class Admin::QuotesController < Admin::HomeController
   actions :all, :except => :show
   respond_to :html
   
-  # redirect to collection path on create instead of show
+  # check ownership and redirect to collection path on create instead of show
   def create
+    @quote = current_photographer.quotes.new(params[:quote])
     create!{ collection_path }
   end
   
-  # redirect to collection path on update instead of show
+  # check ownership and redirect to collection path on update instead of show
   def update
+    @quote = current_photographer.quotes.find(params[:id])
     update!{ collection_path }
   end
   
+  # check ownership
   def destroy
+    @quote = current_photographer.quotes.find(params[:id])
     destroy! do |success, failure|
       success.js { 
         flash[:notice] = ''
@@ -23,10 +27,10 @@ class Admin::QuotesController < Admin::HomeController
     end
   end
   
-  # update an individual quote's position
+  # check ownership and update an individual quote's position
   def update_position
     begin
-      quote = Quote.find(params[:id]) # grab the object
+      quote = current_photographer.quotes.find(params[:id])
       quote.insert_at(params[:position].to_i) # update the object's order
       render :json => {:title => 'Success', :message => 'The order was updated successfuly.'}
     rescue
@@ -37,7 +41,7 @@ class Admin::QuotesController < Admin::HomeController
   private #-------
     # Defining the collection explicitly for ordering
     def collection
-      @quotes ||= end_of_association_chain.find :all, :order => 'position'
+      @quotes ||= current_photographer.quotes.find :all
     end
     
 end

@@ -1,4 +1,4 @@
-= Grokphoto Default Theme
+= GrokPhoto Default Theme
 
 == File Structure
 

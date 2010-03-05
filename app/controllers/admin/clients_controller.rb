@@ -5,15 +5,18 @@ class Admin::ClientsController < Admin::HomeController
   
   # redirect to collection path on create instead of show
   def create
+    @client = current_photographer.clients.new(params[:client])
     create!{ collection_path }
   end
   
   # redirect to collection path on update instead of show
   def update
+    @client = current_photographer.clients.find(params[:id])
     update!{ collection_path }
   end
   
   def destroy
+    @client = current_photographer.clients.find(params[:id])
     destroy! do |success, failure|
       success.js { 
         flash[:notice] = ''
@@ -24,12 +27,12 @@ class Admin::ClientsController < Admin::HomeController
   end
   
   def invite
-    @client = Client.find(params[:id])
+    @client = current_photographer.clients.find(params[:id])
   end
   
   # send the client's welcome email
   def send_invite
-    client = Client.find(params[:id])
+    client = current_photographer.clients.find(params[:id])
     custom_message = params[:custom_message]
     client.deliver_invite!(config, custom_message)
     flash[:notice] = "Client invitation sent."
@@ -39,7 +42,7 @@ class Admin::ClientsController < Admin::HomeController
   private #-------
     # Defining the collection explicitly for paging
     def collection
-      @clients ||= end_of_association_chain.paginate :include => :bookings, :page => params[:page], :per_page => 15, :order => 'name'
+      @clients ||= current_photographer.clients.paginate :include => :bookings, :page => params[:page], :per_page => 15
     end
     
 end

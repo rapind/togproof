@@ -3,8 +3,8 @@ class SitemapController < HomeController
   caches_page :index
   
   def index
-    @pages = Page.find :all, :order => 'position'
-    @galleries = Gallery.find :all, :order => 'position'
+    @pages = @config.pages.find :all
+    @galleries = @config.galleries.find :all
     render :template => '/sitemap'
   end
   

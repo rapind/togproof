@@ -23,6 +23,9 @@ class CreatePhotographers < ActiveRecord::Migration
       t.string    :blog_url,            :limit => 255
       t.string    :facebook_url,        :limit => 255
       t.string    :twitter_url,         :limit => 255
+      t.string    :google_analytics_key, :limit => 20
+      t.string    :google_verification_key, :limit => 50
+      
       
       t.string :theme, :limit => 40, :null => false, :default => 'default'      
       t.boolean :use_watermark, :null => false, :default => false

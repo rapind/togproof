@@ -3,20 +3,15 @@ class Admin::PhotosController < Admin::HomeController
   belongs_to :booking
   actions :all
   respond_to :html
+  before_filter :reset_token_for_uploadify, :only => :index
+  before_filter :require_ownership, :except => [:flash_upload]
   
   # we need to turn off the admin and auth check for now, because the flash plugin isn't passing this information along,
   #  and because the alternatives are waaaay too complicated right now. TODO - look into this again down the road.
   # see: http://thewebfellas.com/blog/2008/12/22/flash-uploaders-rails-cookie-based-sessions-and-csrf-rack-middleware-to-the-rescue
   skip_before_filter :require_photographer, :verify_authenticity_token, :only => :flash_upload
-  # instead we're going to generate our own random token, save it to the parent object, then pass it in the flash uploader's params.
+  # instead we're going to generate our own random token, save it to the photographer, then pass it in the flash uploader's params.
   # Finally we'll verify it before accepting a flash upload
-  
-  def index
-    index! do
-      @booking.uploadify_token = Authlogic::Random.friendly_token
-      @booking.save!
-    end
-  end
   
   # redirect to collection path on create instead of show
   def create
@@ -39,36 +34,50 @@ class Admin::PhotosController < Admin::HomeController
   end
   
   def flash_upload
-    #logger.info request.env.inspect
-    booking = Booking.find(params[:booking_id])
-    #logger.info "Got booking: #{booking.inspect}"
-    # validate the uploadify_token param
-    unless params[:uploadify_token] and booking.uploadify_token == params[:uploadify_token]
-      logger.error "Invalid uploadify token: #{params[:uploadify_token]}"
-      render :json => {:title => 'Error', :message => 'Ran into a problem uploading your photo.'}, :layout => nil
-      return # bail
-    end
-    #logger.info "Has photos: #{booking.photos.inspect}"
-    #logger.info "Create a new photo from params:"
-    #logger.info params[:photo].inspect
-    photo = booking.photos.new(params[:photo])
-    #logger.info "Assign a content type"
-    # need to assign the correct content type becuase this is missing from a flash upload
-    photo.image_content_type = MIME::Types.type_for(photo.image_file_name).to_s
-    #logger.info "About to save the photo"
-    if photo.save
-      #logger.info "*** Photo saved"
-      render :json => {:title => 'Success', :message => 'Photo was successfuly created.', :id => photo.id}
+    # validate the perishable_token param
+    if params[:perishable_token]
+      # find the photographer by perishable_token
+      @photographer = Photographer.find_using_perishable_token(params[:perishable_token])
+      
+      booking = Booking.find(params[:booking_id])
+      photo = booking.photos.new(params[:photo])
+      # need to assign the correct content type becuase this is missing from a flash upload
+      photo.image_content_type = MIME::Types.type_for(photo.image_file_name).to_s
+      if photo.save
+        render :json => {:title => 'Success', :message => 'Photo was successfuly created.', :id => photo.id}
+      else
+        logger.debug "#{photo.errors.inspect}"
+        render :json => {:title => 'Error', :message => 'Ran into a problem uploading your photo.'}
+      end
     else
-      logger.debug "#{photo.errors.inspect}"
-      render :json => {:title => 'Error', :message => 'Ran into a problem uploading your photo.'}
+      logger.error "Invalid token: #{params[:perishable_token]}"
+      render :json => {:title => 'Error', :message => 'Ran into a security problem uploading your photo.'}, :layout => nil
     end
   end
   
   def ajax_row
-    @booking = Booking.find_by_id(params[:booking_id])
     @photo = @booking.photos.find(params[:id])
     render :layout => nil
   end
+  
+  private #--------
+  
+    # reset the photographer's perishable token for uploadify authentication
+    def reset_token_for_uploadify
+      @config.reset_perishable_token!
+    end
     
+    # make sure the photographer owns the bookings / photos they are trying to access
+    def require_ownership
+      @booking = Booking.find(params[:booking_id])
+      if current_photographer.id == @booking.client.photographer.id
+        return true
+      else
+        # doesn't own the parent booking
+        flash[:warning] = 'You can only manage bookings and photos associated with your account.'
+        redirect_to admin_bookings_path # back to the bookings they DO own
+        return false
+      end
+    end
+  
 end

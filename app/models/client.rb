@@ -2,7 +2,7 @@ class Client < ActiveRecord::Base
   acts_as_authentic do |c|
     c.require_password_confirmation = false
   end
-  
+  belongs_to :photographer
   has_many :bookings, :dependent => :destroy, :order => 'expires_on ASC, created_at DESC'
   has_many :photo_comments, :dependent => :destroy, :order => 'created_at'
   

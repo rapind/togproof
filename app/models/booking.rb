@@ -1,4 +1,5 @@
 class Booking < ActiveRecord::Base
+  belongs_to :photographer
   belongs_to :client
   has_many :photos, :order => 'title', :dependent => :destroy
   has_many :photo_comments, :through => :photos, :order => 'photo_comments.created_at'

@@ -1,5 +1,6 @@
 class Page < ActiveRecord::Base
-  acts_as_list
+  belongs_to :photographer
+  acts_as_list :scope => :photographer_id
   
   validates_presence_of :title, :body
   validates_uniqueness_of :title

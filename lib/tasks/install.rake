@@ -10,10 +10,10 @@ namespace :grokphoto do
     app_name = $stdin.gets.chomp.gsub(" ", "-")
     
     puts "Enter your database user (default is root):"
-    db_user = $stdin.gets.chomp.gsub(" ", "-") ||= 'root'
+    db_user = $stdin.gets.chomp.gsub(" ", "-")
     
     puts "Enter your database password (default is ''):"
-    db_password = $stdin.gets.chomp.gsub(" ", "-") ||= ''
+    db_password = $stdin.gets.chomp.gsub(" ", "-")
     
     overwrite = true
     if File.exists?(File.join(Rails.root, 'config', 'database.yml'))

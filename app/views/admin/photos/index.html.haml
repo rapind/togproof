@@ -14,8 +14,7 @@
   		'buttonText'     : 'Add Photos',
   		'onComplete'     : load_photo,
   		'scriptData'     : {
-        'uploadify_token' : '#{@booking.uploadify_token}',
-  		  'authenticity_token'  : '#{u(u(form_authenticity_token)) if protect_against_forgery?}'
+        'perishable_token' : '#{@config.perishable_token}'
       }
   	});
   });

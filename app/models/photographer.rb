@@ -3,6 +3,11 @@ class Photographer < ActiveRecord::Base
     c.require_password_confirmation = false
   end
   
+  has_many :clients, :dependent => :destroy, :order => 'name'
+  has_many :galleries, :dependent => :destroy, :order => 'position'
+  has_many :pages, :dependent => :destroy, :order => 'position'
+  has_many :quotes, :dependent => :destroy, :order => 'position'
+  
   validates_presence_of :email, :company_name, :site_url
   validates_length_of :site_url, :within => 10..255
   validates_length_of :company_name, :within => 3..64
