@@ -29,6 +29,8 @@
               %li
                 = link_to "Clients", admin_clients_path, :class => "#{'active' if controller.controller_name == 'clients' or controller.controller_name == 'bookings' or controller.controller_name == 'photos' or controller.controller_name == 'photo_comments'}"
               %li
+                = link_to "Products", admin_products_path, :class => "#{'active' if controller.controller_name == 'products' or controller.controller_name == 'packages' or controller.controller_name == 'product_sizes'}"
+              %li
                 = link_to "Galleries", admin_galleries_path, :class => "#{'active' if controller.controller_name == 'galleries' or controller.controller_name == 'gallery_photos'}"
               %li
                 = link_to "Pages", admin_pages_path, :class => "#{'active' if controller.controller_name == 'pages'}"

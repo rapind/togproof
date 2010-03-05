@@ -1,0 +1,24 @@
+-content_for :sidebar do
+  %h2
+    Manage Products
+  %p
+    Products are used to sell your prints etc.
+  %p
+    You can change the order that products appear in by clicking and dragging their title bars.
+  %p
+    You can create a new product by clicking the blue "New Product" button.
+  %p
+    You can edit a product by clicking it's "Edit" link.
+  %p
+    You can delete a product by clicking the red X button.
+
+%p
+  %a.button{ :href => new_resource_path }
+    %button.blue
+      %span New Product &raquo;
+
+%p{ :class => 'clear' }
+
+%ul{ :id => 'position_container', :class => 'image_list' }
+  = render :partial => "row", :collection => @products
+

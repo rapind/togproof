@@ -1,0 +1,25 @@
+-content_for :sidebar do
+  %h2
+    Package Data
+  %p
+    Your packages are where you can bundle your products.
+  %p
+    Please enter a descriptive title for the package. This title will be shown to your potential clients and used for SEO purposes.
+  %p
+    Please enter a price for your package.
+  %p
+    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+
+#breadcrumb
+  = "#{link_to('Packages', admin_packages_path)} &raquo; #{controller.action_name.titleize}"
+  
+= f.error_messages
+%p
+  = f.label :title
+  = f.text_field :title, :class => 'text validate[required,length[2,100]]'
+%p
+  = f.label :price
+  = f.text_field :price, :class => 'text numeric validate[required,length[1,10]]'
+
+= render :partial => "admin/shared/buttons", :locals => { :f => f }
+

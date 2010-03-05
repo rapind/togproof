@@ -48,6 +48,10 @@ ActionController::Routing::Routes.draw do |map|
     end
     admin.resources :pages, :member => { :update_position => :put }
     admin.resources :quotes, :member => { :update_position => :put }
+    admin.resources :packages, :member => { :update_position => :put }
+    admin.resources :products, :member => { :update_position => :put } do |product|
+      product.resources :product_sizes, :member => { :update_position => :put }
+    end
   end
   
 end

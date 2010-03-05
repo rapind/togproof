@@ -1,0 +1,24 @@
+-content_for :sidebar do
+  %h2
+    Manage Packages
+  %p
+    Packages are used to bundle your products.
+  %p
+    You can change the order that packages appear in by clicking and dragging their title bars.
+  %p
+    You can create a new package by clicking the blue "New Package" button.
+  %p
+    You can edit a package by clicking it's "Edit" link.
+  %p
+    You can delete a package by clicking the "Delete" link.
+
+%p
+  %a.button{ :href => new_resource_path }
+    %button.blue
+      %span New Package &raquo;
+
+%p{ :class => 'clear' }
+
+%ul{ :id => 'position_container', :class => 'image_list' }
+  = render :partial => "row", :collection => @packages
+
