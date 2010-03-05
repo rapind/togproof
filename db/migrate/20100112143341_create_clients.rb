@@ -1,6 +1,7 @@
 class CreateClients < ActiveRecord::Migration
   def self.up
     create_table :clients do |t|
+      t.references :photographer, :null => false
       t.string    :name,                :limit => 64
       t.string    :email,               :null => false, :limit => 100
       t.string    :crypted_password,    :null => false
