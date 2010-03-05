@@ -32,6 +32,12 @@
 %div{ :style => 'float:left; width:100%' }
   %fieldset
     %legend Includes these products
-
+    %ul
+      - f.fields_for :package_product_sizes do |product_size_fields|
+        %li
+          = product_size_fields.check_box :active
+          = product_size_fields.hidden_field :product_size_id
+          = product_size_fields.object.product_size.composite_title
+            
   = render :partial => "admin/shared/buttons", :locals => { :f => f }
 

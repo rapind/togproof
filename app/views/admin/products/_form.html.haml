@@ -29,6 +29,9 @@
     = f.file_field :image, :class => 'text'
 %div{ :style => "width:50%; float:left;" }
   %p
+    = f.label :active, 'Active?'
+    = f.check_box :active
+  %p
     = link_to(image_tag(@product.image.url(:thumb)), @product.image.url, :rel => 'colorbox') if @product.image.file?
 %div{ :style => "width:100%; float:left;" }
   %p

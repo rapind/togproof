@@ -8,4 +8,8 @@ class ProductSize < ActiveRecord::Base
   validates_length_of :title, :within => 3..128
   validates_numericality_of :price
   validates_inclusion_of :price, :in => 0..100000 # sanity check
+  
+  def composite_title
+    "#{self.product.title} - #{self.title}"
+  end
 end
