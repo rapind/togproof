@@ -65,3 +65,32 @@ end
 
 puts "Creating quotes"
 photographer.quotes.create(:position => 1, :author => 'Dave Rapin - Toronto', :body => "If I had some testimonials, this is where they'd go!")
+
+puts "Creating packages"
+packages = []
+packages << photographer.packages.create(:position => 1, :title => 'Collection 1', :price => 100.00)
+packages << photographer.packages.create(:position => 2, :title => 'Collection 2', :price => 150.00)
+packages << photographer.packages.create(:position => 3, :title => 'Collection 3', :price => 250.00)
+
+puts "Creating products"
+products = []
+products << photographer.products.create(:position => 1, :title => "Print")
+products << photographer.products.create(:position => 2, :title => "Album")
+products << photographer.products.create(:position => 3, :title => "Card")
+
+puts "Uploading product images"
+base_dir = File.join(RAILS_ROOT, "photoshop/products/")
+for product in products
+  file_name = "#{product.title.downcase.gsub(' ', '-')}.jpg"
+  file_path = "#{base_dir}#{file_name}"
+  product.image = File.new(file_path) rescue nil
+  product.save
+end
+
+puts "Creating product sizes"
+product_sizes = []
+product_sizes << products[0].product_sizes.create(:position => 1, :title => "3x5", :price => 3.99)
+product_sizes << products[0].product_sizes.create(:position => 2, :title => "5x8", :price => 5.99)
+product_sizes << products[0].product_sizes.create(:position => 3, :title => "8x11", :price => 9.99)
+product_sizes << products[0].product_sizes.create(:position => 4, :title => "Digital - Low Res", :price => 10.99)
+product_sizes << products[0].product_sizes.create(:position => 5, :title => "Digital - High Res", :price => 25.99)

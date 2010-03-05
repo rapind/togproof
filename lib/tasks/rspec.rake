@@ -71,13 +71,13 @@ namespace :spec do
     end
   end
 
-  desc "Print Specdoc for all specs (excluding plugin specs)"
+  desc "Product Specdoc for all specs (excluding plugin specs)"
   Spec::Rake::SpecTask.new(:doc) do |t|
     t.spec_opts = ["--format", "specdoc", "--dry-run"]
     t.spec_files = FileList['spec/**/*_spec.rb']
   end
 
-  desc "Print Specdoc for all plugin examples"
+  desc "Product Specdoc for all plugin examples"
   Spec::Rake::SpecTask.new(:plugin_doc) do |t|
     t.spec_opts = ["--format", "specdoc", "--dry-run"]
     t.spec_files = FileList['vendor/plugins/**/spec/**/*_spec.rb'].exclude('vendor/plugins/rspec/*')
