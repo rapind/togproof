@@ -42,7 +42,7 @@ Installation script coming soon! Follow these instructions for now:
 Then edit these three files with your own settings. Everything you need to change is marked with a "TODO":
 
     $ sudo gem install less  
-    $ sudo rake:gems:install
+    $ sudo rake gems:install
     $ rake db:create
     $ rake db:migrate
     $ rake db:seed
