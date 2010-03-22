@@ -52,10 +52,5 @@ class Admin::ProductSizesController < Admin::HomeController
         return false
       end
     end
-  
-    # reset the photographer's perishable token for uploadify authentication
-    def reset_token_for_uploadify
-      @config.reset_perishable_token!
-    end
     
 end

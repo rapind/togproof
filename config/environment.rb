@@ -17,7 +17,6 @@ Rails::Initializer.run do |config|
   config.gem 'exifr', :version => "= 0.10.9"
   config.gem 'less', :version => "= 1.2.21"
   config.gem 'friendly_id', :version => "= 2.3.0"
-  config.gem 'openrain-action_mailer_tls', :lib => 'smtp_tls'
 
   config.time_zone = 'UTC'
   

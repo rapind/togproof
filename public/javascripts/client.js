@@ -21,4 +21,8 @@ $(document).ready(function() {
 	$("a[rel='colorbox']").colorbox();
 	$("a[rel='colorbox-frame']").colorbox({iframe:true, innerWidth:660, innerHeight:600});
 	
+	// disable right click save as dialog for images
+	// just makes it a little harder to copy low res images
+	$("img").noContext();
+	
 });
