@@ -3,7 +3,7 @@ class GalleriesController < HomeController
   actions :index, :show
   respond_to :html, :xml
   
-  caches_page :index, :show
+  caches_page :show
   caches_action :index
   
   # set the initial the background image
