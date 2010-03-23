@@ -26,3 +26,5 @@ config.action_mailer.raise_delivery_errors = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.cache_store = :file_store, File.join(Rails.root, 'tmp', 'cache')
