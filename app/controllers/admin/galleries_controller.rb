@@ -2,6 +2,7 @@ class Admin::GalleriesController < Admin::HomeController
   inherit_resources
   actions :all, :except => :show
   respond_to :html
+  after_filter :clear_cache, :only => [:create, :update, :destroy, :update_position]
   
   # check ownership and redirect to collection path on create instead of show
   def create
@@ -42,6 +43,10 @@ class Admin::GalleriesController < Admin::HomeController
     # Defining the collection explicitly for ordering
     def collection
       @galleries ||= current_photographer.galleries.find :all
+    end
+    
+    def clear_cache
+      expire_action :controller => '/galleries', :action => :index
     end
     
 end
