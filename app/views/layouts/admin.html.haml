@@ -9,11 +9,8 @@
     = stylesheet_link_tag 'global/print.css', :media => 'print'
     /[if lt IE 8]
       = stylesheet_link_tag 'global/ie.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'global/buttons.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'global/gritter.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'global/colorbox.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'global/validationEngine.jquery.css', :media => 'screen, projection'
-    = javascript_include_tag 'jquery.min.js', 'jquery-ui.min.js', 'jquery.gritter.js', 'jquery.colorbox-min.js', 'jquery.tablednd_0_5.js', 'jquery.validationEngine.js', 'jquery.validationEngine-en.js', 'swfobject.js', 'jquery.uploadify.v2.1.0.min.js', 'positioning.js', 'admin.js'
+    = stylesheet_link_tag 'global/buttons.css', 'global/gritter.css', 'global/colorbox.css', 'global/validationEngine.jquery.css', :media => 'screen, projection', :cache => "cache/admin_all"
+    = javascript_include_tag 'jquery.min.js', 'jquery-ui.min.js', 'jquery.gritter.js', 'jquery.colorbox-min.js', 'jquery.tablednd_0_5.js', 'jquery.validationEngine.js', 'jquery.validationEngine-en.js', 'swfobject.js', 'jquery.uploadify.v2.1.0.min.js', 'positioning.js', 'admin.js', :cache => "cache/admin_all"
     = display_flash
     = javascript_tag "const AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
     = javascript_tag "const BASE_PATH = '#{collection_path}/';" if defined?(collection_path) rescue nil
