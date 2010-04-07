@@ -1,107 +1,213 @@
 require 'test_helper'
 
-class MoreTest < Test::Unit::TestCase
-  def setup
-    Less::More.class_eval do
-      ["@compression", "@header"].each {|v|
-        remove_instance_variable(v) if instance_variable_defined?(v)
-      }
+class MoreTest < ActiveSupport::TestCase
+  setup do
+    [:compression, :header, :destination_path, :source_path].each do |variable|
+      Less::More.send("#{variable}=", nil)
     end
   end
-  
 
-  def test_getting_config_from_current_environment_or_defaults_to_production
-    Less::More::DEFAULTS["development"]["foo"] = 5
-    Less::More::DEFAULTS["production"]["foo"] = 10
-    
-    Rails.expects(:env).returns("development")
-    assert_equal 5, Less::More.get_cvar("foo")
-    
-    Rails.expects(:env).returns("production")
-    assert_equal 10, Less::More.get_cvar("foo")
-    
-    Rails.expects(:env).returns("staging")
-    assert_equal 10, Less::More.get_cvar("foo")
+  context :header do
+    should "be true by default" do
+      assert_equal Less::More.header, true
+    end
+
+    should "be overwriteable" do
+      Less::More.header = false
+      assert_equal false, Less::More.header
+    end
   end
-  
-  def test_user_settings_wins_over_defaults
-    Less::More::DEFAULTS["development"][:compression] = true
-    assert_equal true, Less::More.compression?
-    
-    Less::More::DEFAULTS["development"][:compression] = false
-    assert_equal false, Less::More.compression?
-    
-    Less::More.compression = true
-    assert_equal true, Less::More.compression?
+
+  context :source_path do
+    should "be app/stylesheets by default" do
+      assert_equal 'app/stylesheets', Less::More.source_path
+    end
+
+    should "be overwritteable" do
+      Less::More.source_path = 'xxx'
+      assert_equal 'xxx', Less::More.source_path
+    end
   end
-  
-  def test_page_cache_is_read_from_environment_configs
-    Less::More.expects(:heroku?).returns(false).times(2)
-    
-    Less::More.expects(:page_cache_enabled_in_environment_configuration?).returns(true)
-    assert_equal true, Less::More.page_cache?
-    
-    Less::More.expects(:page_cache_enabled_in_environment_configuration?).returns(false)
-    assert_equal false, Less::More.page_cache?
+
+  context :destination_path do
+    should "be public/stylesheets by default" do
+      assert_equal 'stylesheets', Less::More.destination_path
+    end
+
+    should "be overwritteable" do
+      Less::More.destination_path = 'xxx'
+      assert_equal 'xxx', Less::More.destination_path
+    end
   end
-  
-  def test_page_cache_off_on_heroku
-    Less::More.page_cache = true
-    Less::More::DEFAULTS["development"][:page_cache] = true
-    
-    # The party pooper
-    Less::More.expects(:heroku?).returns(true)
-    
-    assert_equal false, Less::More.page_cache?
+
+  context :compression do
+    should "be off by default" do
+      assert_equal nil, Less::More.compression
+    end
+
+    should "be overwritteable" do
+      Less::More.compression = true
+      assert_equal true, Less::More.compression
+    end
   end
-  
-  def test_compression
-    Less::More.compression = true
-    assert_equal Less::More.compression?, true
-    
-    Less::More.compression = false
-    assert_equal Less::More.compression?, false
+
+  context :generate do
+    setup do
+      setup_for_generate_test
+    end
+
+    teardown do
+      teardown_for_generate_test
+    end
+
+    should 'generate css from .less files' do
+      write_less 'test.less', "a{color:red}"
+      Less::More.generate_all
+      assert_include 'a { color: red; }', read_css('test.css')
+    end
+
+    should 'generate css from .lss files' do
+      write_less 'test.lss', "a{color:red}"
+      Less::More.generate_all
+      assert_include 'a { color: red; }', read_css('test.css')
+    end
+
+    should 'generate for files in subfolders' do
+      write_less 'xxx/test.less', "a{color:red}"
+      Less::More.generate_all
+      assert_include 'a { color: red; }', read_css('xxx/test.css')
+    end
+
+    should "include imported partials" do
+      write_less 'test.less', "@import '_partial';\nb{color:blue}"
+      write_less '_partial.less', 'a{color:red}'
+      Less::More.generate_all
+      assert_include 'a { color: red; }', read_css('test.css')
+    end
+
+    should "not generate css from partials" do
+      write_less '_partial.less', 'a{color:red}'
+      Less::More.generate_all
+      assert_equal '', `ls #{css_path}`.strip
+    end
+
+    should "not parse css" do
+      write_less 'test.css', 'a{color:red}'
+      Less::More.generate_all
+      assert_equal 'a{color:red}', read_css('test.css')
+    end
+
+    should "add disclaimer-header when active" do
+      write_less 'test.less', 'a{color:red}'
+      Less::More.header = true
+      Less::More.generate_all
+      assert_match /^\/\*/, read_css('test.css')
+    end
+
+    should "not include header when not set" do
+      write_less 'test.less', 'a{color:red}'
+      Less::More.header = false
+      Less::More.generate_all
+      assert_not_include '/*', read_css('test.css')
+    end
+
+    should "fail with current file when encountering an error" do
+      write_less 'test.less', 'import xxxx;;;;;'
+      content = begin
+        Less::More.generate_all
+        '!no exception!'
+      rescue Exception => e
+        e.message
+      end
+      assert_include '/test.less', content
+    end
+
+    context 'mtime' do
+      should "generate for outdated less files" do
+        write_less 'test.less', "a{color:red}"
+        Less::More.generate_all
+
+        write_css 'test.css', 'im updated!'
+        sleep 1 # or mtime will be still the same ...
+        write_less 'test.less', "a{color:blue}"
+        Less::More.generate_all
+
+        assert_equal 'a { color: blue; }', read_css('test.css').strip
+      end
+
+      should "not generate for up-to-date less files" do
+        write_less 'test.less', "a{color:red}"
+        Less::More.generate_all
+
+        write_css 'test.css', 'im updated!'
+        Less::More.generate_all
+
+        assert_equal 'im updated!', read_css('test.css')
+      end
+
+      should "not generate for files with up-to-date partials" do
+        write_less 'test.less', "@import 'xxx/_test.less';"
+        write_less 'xxx/_test.less', "a{color:red}"
+        Less::More.generate_all
+
+        write_css 'test.css', 'im updated!'
+        Less::More.generate_all
+
+        assert_equal 'im updated!', read_css('test.css')
+      end
+
+      should "generate for files with outdated partials" do
+        write_less 'test.less', "@import 'xxx/_test.less';"
+        write_less 'xxx/_test.less', "a{color:red}"
+        Less::More.generate_all
+
+        write_css 'test.css', 'im updated!'
+        sleep 1 # or mtime will be still the same ...
+        write_less 'xxx/_test.less', "a{color:blue}"
+        Less::More.generate_all
+
+        assert_equal 'a { color: blue; }', read_css('test.css').strip
+      end
+
+      should "generate for files with outdated partials that are not named .less" do
+        write_less 'test.less', "@import 'xxx/_test';"
+        write_less 'xxx/_test.less', "a{color:red}"
+        Less::More.generate_all
+
+        write_css 'test.css', 'im updated!'
+        sleep 1 # or mtime will be still the same ...
+        write_less 'xxx/_test.less', "a{color:blue}"
+        Less::More.generate_all
+
+        assert_equal 'a { color: blue; }', read_css('test.css').strip
+      end
+    end
   end
-  
-  def test_source_path
-    Less::More.source_path = "/path/to/flaf"
-    assert_equal Pathname.new("/path/to/flaf"), Less::More.source_path
-  end
-  
-  def test_exists
-    Less::More.source_path = File.join(File.dirname(__FILE__), 'less_files')
-    
-    assert Less::More.exists?(["test"])
-    assert Less::More.exists?(["short"])
-    assert Less::More.exists?(["sub", "test2"])
-    
-    # Partials does not exist
-    assert !Less::More.exists?(["_global"])
-    assert !Less::More.exists?(["shared", "_form"])
-  end
-  
-  def test_generate
-    Less::More.source_path = File.join(File.dirname(__FILE__), 'less_files')
-    Less::More.compression = true
-    
-    assert Less::More.generate(["test"]).include?(".allforms { font-size: 110%; }body { color: #222222; }form {  font-size: 110%;  color: #ffffff;}")
-  end
-  
-  def test_header
-    Less::More.expects(:header?).returns(false)
-    Less::More.source_path = File.join(File.dirname(__FILE__), 'less_files')
-    assert !Less::More.generate(["test"]).starts_with?("/*")
-    
-    Less::More.expects(:header?).returns(true)
-    Less::More.source_path = File.join(File.dirname(__FILE__), 'less_files')
-    assert Less::More.generate(["test"]).starts_with?("/*")
-  end
-  
-  def test_pathname_from_array
-    Less::More.source_path = File.join(File.dirname(__FILE__), 'less_files')
-    
-    assert Less::More.pathname_from_array(["test"]).exist?
-    assert Less::More.pathname_from_array(["short"]).exist?
-    assert Less::More.pathname_from_array(["sub", "test2"]).exist?
+
+  context :remove_all_generated do
+    setup do
+      setup_for_generate_test
+    end
+
+    teardown do
+      teardown_for_generate_test
+    end
+
+    should "remove all generated css" do
+      write_less 'xxx.less', 'a{color:red}'
+      write_less 'yyy.css', 'a{color:red}'
+      write_less 'xxx/yyy.css', 'a{color:red}'
+      Less::More.generate_all
+      Less::More.remove_all_generated
+      # should be '' ideally, but an empty folder is no thread :)
+      assert_equal 'xxx', `ls #{css_path}`.strip
+    end
+
+    should "not remove other files" do
+      write_css 'xxx.css', 'a{color:red}'
+      Less::More.generate_all
+      Less::More.remove_all_generated
+      assert_equal 'xxx.css', `ls #{css_path}`.strip
+    end
   end
 end
