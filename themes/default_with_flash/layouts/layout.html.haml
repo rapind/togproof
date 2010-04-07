@@ -18,7 +18,6 @@
       = stylesheet_link_tag 'global/ie.css', :media => 'screen, projection'
     = stylesheet_link_tag 'global/gritter.css', 'global/colorbox.css', :media => 'screen, projection'
     = javascript_include_tag 'jquery.min.js', 'jquery.gritter.js', 'jquery.colorbox-min.js', 'jquery.galleria.js', 'swfobject.js', 'default.js'
-    = javascript_tag %[const AUTH_TOKEN = #{form_authenticity_token.inspect};] if protect_against_forgery?
     = yield :head
     %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon" }
   %body

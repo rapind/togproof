@@ -27,3 +27,6 @@ ActionMailer::Base.smtp_settings = {
   :user_name => "username@gmail.com",
   :password => "yourpassword"
 }
+
+# memcache store - TODO uncomment this if you're using a memcache
+# ActionController::Base.cache_store = :mem_cache_store, "localhost", { :namespace => 'grokphoto' }
