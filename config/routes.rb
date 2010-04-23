@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home'
   map.config_error '/config_error', :controller => 'home', :action => 'config_error'
   map.not_found '/not_found', :controller => 'home', :action => 'not_found'
+  map.timestamp '/timestamp', :controller => 'home', :action => 'timestamp'
   
   # sitemap
   map.resources :sitemap

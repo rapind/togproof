@@ -20,6 +20,13 @@ class HomeController < ApplicationController
     render :template => '/404', :status => :not_found
   end
   
+  # if you're not getting a lot of traffic you can setup a cron to hit
+  #  /timestamp every minute which will keep passeger spooled up without the
+  #  need to increase timeouts.
+  def timestamp
+    render :text => Time.now
+  end
+  
   private #------
   
     # prepend the chosen (or default) theme

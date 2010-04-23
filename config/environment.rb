@@ -19,6 +19,7 @@ Rails::Initializer.run do |config|
   config.gem 'friendly_id', :version => "= 2.3.0"
   config.gem 'memcache-client', :version => "= 1.8.2", :lib => "memcache"
   
+  # TODO - change this to your time zone
   config.time_zone = 'Eastern Time (US & Canada)'
   
 end
