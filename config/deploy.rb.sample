@@ -15,7 +15,7 @@ role :web, domain
 role :db, domain, :primary => true
 
 #after tasks
-after "deploy:symlink", "custom_symlinks:link_shared"
+after "deploy:symlink", "custom_symlinks:link_shared", "cache:clear"
 
 #############################################################
 #	mod_rails / Passenger
@@ -46,6 +46,16 @@ namespace :custom_symlinks do
     run "ln -nsf #{shared_path}/database.yml #{current_path}/config/database.yml"
     run "rm -rf #{current_path}/config/initializers/grokphoto.rb"
     run "ln -nsf #{shared_path}/grokphoto.rb #{current_path}/config/initializers/grokphoto.rb"
+  end
+end
+
+#############################################################
+#	Cache
+#############################################################
+namespace :cache do
+  desc "Clear the cache"
+  task :clear do
+    run("cd #{deploy_to}/current && /opt/ruby/bin/rake cache:clear RAILS_ENV=production")
   end
 end
 

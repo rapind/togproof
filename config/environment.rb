@@ -17,7 +17,8 @@ Rails::Initializer.run do |config|
   config.gem 'exifr', :version => "= 0.10.9"
   config.gem 'less', :version => "= 1.2.21"
   config.gem 'friendly_id', :version => "= 2.3.0"
-
-  config.time_zone = 'UTC'
+  config.gem 'memcache-client', :version => "= 1.8.2", :lib => "memcache"
+  
+  config.time_zone = 'Eastern Time (US & Canada)'
   
 end

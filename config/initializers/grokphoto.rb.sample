@@ -18,7 +18,6 @@ ActionMailer::Base.default_url_options[:host] = "localhost"
 
 # gmail smtp
 # TODO - change the username and password to your gmail account settings
-require "smtp_tls"
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
   :port => 587,
@@ -28,5 +27,5 @@ ActionMailer::Base.smtp_settings = {
   :password => "yourpassword"
 }
 
-# memcache store - TODO uncomment this if you're using a memcache
+# memcache store - TODO uncomment this if you're using a memcache and change your namespace if you like
 # ActionController::Base.cache_store = :mem_cache_store, "localhost", { :namespace => 'grokphoto' }
