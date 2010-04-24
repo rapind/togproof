@@ -40,6 +40,9 @@
       
   %div{ :style => "width:50%; float:left;" }
     %p
+      = f.label :home_page_title
+      = f.text_field :home_page_title, :class => 'text validate[required,length[5,200]]'
+    %p
       = f.label :blog_url, 'Blog URL'
       = f.text_field :blog_url, :class => 'text validate[optional,length[10,255]]'
     %p

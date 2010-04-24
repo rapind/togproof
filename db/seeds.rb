@@ -9,7 +9,8 @@ photographer = Photographer.create(
   :use_watermark => false,
   :theme => 'default',
   :google_analytics_key => 'UA-2450369-23',
-  :google_verification_key => 'n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0'
+  :google_verification_key => 'n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0',
+  :home_page_title => 'Open-source Photography'
 )
 puts "Uploading watermark..."
 photographer.watermark = File.new(File.join(RAILS_ROOT, "photoshop/watermark.png")) rescue nil

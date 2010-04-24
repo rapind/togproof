@@ -10,8 +10,9 @@ class Photographer < ActiveRecord::Base
   has_many :packages, :dependent => :destroy, :order => 'position'
   has_many :products, :dependent => :destroy, :order => 'position'
   
-  validates_presence_of :email, :company_name, :site_url
+  validates_presence_of :email, :company_name, :site_url, :home_page_title
   validates_length_of :site_url, :within => 10..255
+  validates_length_of :home_page_title, :within => 5..200
   validates_length_of :company_name, :within => 3..64
   validates_length_of :company_email, :within => 5..100, :allow_blank => true
   validates_length_of :company_phone, :within => 7..20, :allow_blank => true
