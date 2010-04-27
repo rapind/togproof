@@ -1,20 +1,14 @@
 -content_for :sidebar do
-  %h2
-    Gallery Data
-  %p
-    You galleries are where you showcase your work. The main image for a gallery will show up in the slides on the front page of your site.
-  %p
-    Please upload an image for your gallery by clicking the "Choose File" or "Upload" button to the right. This image should be sized 960 pixels wide and 540 pixels high (16:9 aspect ratio).
-  %p
-    Please enter a descriptive title for the gallery. This title will be shown to your potential clients and used for SEO purposes.
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %h2 Gallery
+  %p Your galleries are where you showcase your work. The main image for a gallery will show up in the slides on the front page of your site.
+  %p Please upload an image for your gallery by clicking the "Choose File" or "Upload" button to the right. This image should be sized 960 pixels wide and 540 pixels high (16:9 aspect ratio).
+  %p Please enter a descriptive title for the gallery. This title will be shown to your potential clients and used for SEO purposes.
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
   = "#{link_to('Galleries', admin_galleries_path)} &raquo; #{controller.action_name.titleize}"
   
 = f.error_messages
-
 %div{ :style => "width:50%; float:left;" }
   %p
     = f.label :title
@@ -35,5 +29,5 @@
     = f.label :description
     = f.text_area :description, :class => 'brief validate[required,length[5,1000]]'
 
-  = render :partial => "admin/shared/buttons", :locals => { :f => f }
+  = render :partial => "admin/shared/buttons"
 

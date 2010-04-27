@@ -1,13 +1,9 @@
 - form_for(@photographer, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
   -content_for :sidebar do
-    %h2
-      Settings
-    %p
-      Manage your site-wide settings here.
-    %p
-      The information you enter here is available in some areas of the site and also within system generated email notifications to your clients. 
-    %p
-      Click the "Update Settings" button when you're done.
+    %h2 Settings
+    %p Manage your site-wide settings here.
+    %p The information you enter here is available in some areas of the site and also within system generated email notifications to your clients. 
+    %p Click the "Update Settings" button when you're done.
 
   = f.error_messages
   %div{ :style => "width:50%; float:left;" }
@@ -59,5 +55,4 @@
       = f.text_field :google_verification_key, :class => 'text validate[optional,length[10,50]]'
       
   %div{ :style => "width:100%; float:left;" }
-    %p
-      = build_button('Update Settings &raquo;', 'blue', f)
+    %p.buttons= build_submit_button('Update Settings &raquo;')

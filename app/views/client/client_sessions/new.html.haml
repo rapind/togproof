@@ -16,7 +16,6 @@
   %p
     = f.label :remember_me, 'Remember me when I come back'
     = f.check_box :remember_me
-  %p
-    = build_button('Login &raquo;', 'blue', f)
-    &nbsp;
-    = link_to 'Did you forget your password?', new_client_client_password_reset_path, :rel => 'colorbox'
+  %p.buttons
+    = build_submit_button('Login &raquo;')
+    = link_to 'Did you forget your password?', new_client_client_password_reset_path

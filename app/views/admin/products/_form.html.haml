@@ -1,17 +1,12 @@
 -content_for :sidebar do
-  %h2
-    Product Data
-  %p
-    Your products are where you sell your work.
-  %p
-    You can upload an image for your product by clicking the "Choose File" or "Upload" button to the right.
-  %p
-    Please enter a descriptive title for the product. This title will be shown to your potential clients and used for SEO purposes.
+  %h2 Product
+  %p Your products are where you sell your work.
+  %p You can upload an image for your product by clicking the "Choose File" or "Upload" button to the right.
+  %p Please enter a descriptive title for the product. This title will be shown to your potential clients and used for SEO purposes.
   %p
     Please enter the description for your product. The description may contain 
     = link_to 'markdown formatting.', 'http://www.darkcoding.net/software/markdown-quick-reference/', :target => '_blank'
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
   = "#{link_to('Products', admin_products_path)} &raquo; #{controller.action_name.titleize}"
@@ -19,7 +14,6 @@
   = link_to 'Packages', admin_packages_path
   
 = f.error_messages
-
 %div{ :style => "width:50%; float:left;" }
   %p
     = f.label :title
@@ -38,5 +32,5 @@
     = f.label :description
     = f.text_area :description, :class => 'brief validate[optional,length[5,2000]]'
 
-  = render :partial => "admin/shared/buttons", :locals => { :f => f }
+  = render :partial => "admin/shared/buttons"
 

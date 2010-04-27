@@ -1,14 +1,9 @@
 -content_for :sidebar do
-  %h2
-    Package Data
-  %p
-    Your packages are where you can bundle your products.
-  %p
-    Please enter a descriptive title for the package. This title will be shown to your potential clients and used for SEO purposes.
-  %p
-    Please enter a price for your package.
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %h2 Package
+  %p Your packages are where you can bundle your products.
+  %p Please enter a descriptive title for the package. This title will be shown to your potential clients and used for SEO purposes.
+  %p Please enter a price for your package.
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
   = link_to 'Products', admin_products_path
@@ -39,5 +34,5 @@
           = product_size_fields.hidden_field :product_size_id
           = product_size_fields.object.product_size.composite_title
             
-  = render :partial => "admin/shared/buttons", :locals => { :f => f }
+  = render :partial => "admin/shared/buttons"
 

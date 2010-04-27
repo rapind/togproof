@@ -1,6 +1,6 @@
 %li
   %div
-    = truncate(row.title, :length => 22)
+    = truncate(h(row.title), :length => 22)
     - if row.expired?
       .expired
         EXPIRED
@@ -9,5 +9,5 @@
   - else
     = "#{link_to(image_tag('thumb/missing.png', :size => '150x100'), client_booking_photos_path(row))}<br />"
   .actions
-    = link_to 'Photos', client_booking_photos_path(row)
+    = link_to('Photos', client_booking_photos_path(row))
     = "| #{link_to('Comments', client_booking_photo_comments_path(row))}" unless row.photo_comments.blank?

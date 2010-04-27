@@ -1,14 +1,9 @@
 -content_for :sidebar do
-  %h2
-    Product size Data
-  %p
-    Your product sizes are where you define and price your products.
-  %p
-    Please enter a descriptive title for the product size. This title will be shown to your potential clients and used for SEO purposes.
-  %p
-    Please enter a price for your product size.
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %h2 Product size
+  %p Your product sizes are where you define and price your products.
+  %p Please enter a descriptive title for the product size. This title will be shown to your potential clients and used for SEO purposes.
+  %p Please enter a price for your product size.
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
   = link_to 'Products', admin_products_path
@@ -23,5 +18,5 @@
   = f.label :price, "A la carte price"
   $
   = f.text_field :price, :class => 'text numeric validate[required,length[1,10]]'
-= render :partial => "admin/shared/buttons", :locals => { :f => f }
+= render :partial => "admin/shared/buttons"
 

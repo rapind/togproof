@@ -34,18 +34,12 @@
   }
 
 -content_for :sidebar do
-  %h2
-    = "#{@gallery.title} Photos"
-  %p
-    You can change the order of photos in this gallery by clicking and dragging the photo's title bar.
-  %p
-    You can add new photos to the gallery by clicking the "Add Photos" button.
-  %p
-    The system will resize and crop your uploads to be 660 pixels wide by 440 pixels high (3:2 aspect ratio). Try to only upload images of this size or at least make sure they have a 3:2 aspect ratio.
-  %p
-    You can edit photos by clicking the "Edit" link next to the photo you want to change.
-  %p
-    You can delete photos by clicking the "Delete" link next to the photo you want to remove.
+  %h2= "#{@gallery.title} Photos"
+  %p You can change the order of photos in this gallery by clicking and dragging the photo's title bar.
+  %p You can add new photos to the gallery by clicking the "Add Photos" button.
+  %p The system will resize and crop your uploads to be 660 pixels wide by 440 pixels high (3:2 aspect ratio). Try to only upload images of this size or at least make sure they have a 3:2 aspect ratio.
+  %p You can edit photos by clicking the "Edit" link next to the photo you want to change.
+  %p You can delete photos by clicking the "Delete" link next to the photo you want to remove.
 
 #breadcrumb
   = "#{link_to('Galleries', admin_galleries_path)} &raquo; #{@gallery.title} Photos"

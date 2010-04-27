@@ -1,21 +1,12 @@
 -content_for :sidebar do
-  %h2
-    Manage Pages
-  %p
-    Pages are used to describe your work. Examples are: About Me, Rates, Availability, FAQ, Contact, etc.
-  %p
-    You can change the order that pages appear in by clicking and dragging their title bars.
-  %p
-    You can create a new page by clicking the "New Page" button.
-  %p
-    You can edit a page by clicking it's "Edit" link.
-  %p
-    You can delete a page by clicking the red X button.
+  %h2 Manage Pages
+  %p Pages are used to describe your work. Examples are: About Me, Rates, Availability, FAQ, Contact, etc.
+  %p You can change the order that pages appear in by clicking and dragging their title bars.
+  %p You can create a new page by clicking the "New Page" button.
+  %p You can edit a page by clicking it's "Edit" link.
+  %p You can delete a page by clicking the red X button.
 
-%p
-  %a.button{ :href => new_resource_path }
-    %button.blue
-      %span New Page &raquo;
+= build_link_button("New Page &raquo;", new_resource_path)
 
 %p{ :class => 'clear' }
 

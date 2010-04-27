@@ -34,33 +34,22 @@
   }
   
 -content_for :sidebar do
-  %h2
-    = "#{@booking.title}"
+  %h2= "#{@booking.title}"
   - if @booking.expired?
-    %p.expired
-      Note: This booking has expired
-  %p
-    You can add new photos to the booking by clicking the "Add Photos" button.
-  %p
-    The system will resize your uploads without changing the aspect ratio so that the width is 640 pixels and / or the height is at 480 pixels.
-  %p
-    You can edit photos by clicking the "Edit" link next to the photo you want to change.
-  %p
-    You can delete photos by clicking the "Delete" link next to the photo you want to remove.
-  %p
-    All client photos are automatically annotated with your company name when you upload them.
+    %p.expired Note: This booking has expired
+  %p You can add new photos to the booking by clicking the "Add Photos" button.
+  %p The system will resize your uploads without changing the aspect ratio so that the width is 640 pixels and / or the height is at 480 pixels.
+  %p You can edit photos by clicking the "Edit" link next to the photo you want to change.
+  %p You can delete photos by clicking the "Delete" link next to the photo you want to remove.
+  %p All client photos are automatically annotated with your company name when you upload them.
 
 #breadcrumb
   = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; #{@booking.title} Photos"
 
 %div
-  %div{ :style => 'float:left;' }
-    #fileQueue
+  #fileQueue
     %input{ :type => "file", :name => "uploadify", :id => "uploadify" }
-  %div{ :style => 'float:right;' }
-    %a.button{ :href => admin_client_bookings_path(@booking.client) }
-      %button.red
-        %span &laquo; Back
+    %br
 
 %p{ :class => 'clearfix' }
 

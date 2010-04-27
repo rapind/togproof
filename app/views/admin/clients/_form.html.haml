@@ -1,12 +1,8 @@
 -content_for :sidebar do
-  %h2
-    Client Data
-  %p
-    Please fill out the client's name, email address, and password on the right. The other fields are all optional and are meant only to help you store and keep track of the client's contact information.
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
-  %p
-    Whenever you add a new client to the site, the system will automatically email them with their account and login information.
+  %h2 Client
+  %p Please fill out the client's name, email address, and password on the right. The other fields are all optional and are meant only to help you store and keep track of the client's contact information.
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %p Whenever you add a new client to the site, the system will automatically email them with their account and login information.
 
 #breadcrumb
   = "#{link_to('Clients', admin_clients_path)} &raquo; #{controller.action_name.titleize}"
@@ -21,7 +17,7 @@
     = f.text_field :email, :class => 'text validate[required,custom[email]]'
   - if @client.id.blank?
     = f.hidden_field :password, :value => Authlogic::Random.friendly_token
-  = render :partial => "admin/shared/buttons", :locals => { :f => f }
+  = render :partial => "admin/shared/buttons"
   
 %div{ :style => "width:50%; float:left;" }
   %h4

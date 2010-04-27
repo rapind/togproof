@@ -1,12 +1,8 @@
 -content_for :sidebar do
-  %h2
-    Quote Data
-  %p
-    Your quotes are where you can post testimonials from past clients.
-  %p
-    Please enter the author (maybe add their location) and the body of the quote.
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %h2 Quote
+  %p Your quotes are where you can post testimonials from past clients.
+  %p Please enter the author (maybe add their location) and the body of the quote.
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
   = "#{link_to('Quotes', admin_quotes_path)} &raquo; #{controller.action_name.titleize}"
@@ -19,5 +15,5 @@
   = f.label :body
   = f.text_area :body, :class => 'brief validate[required,length[5,200]]'
 
-= render :partial => "admin/shared/buttons", :locals => { :f => f }
+= render :partial => "admin/shared/buttons"
 

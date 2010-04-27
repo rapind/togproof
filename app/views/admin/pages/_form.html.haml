@@ -1,23 +1,17 @@
 -content_for :sidebar do
-  %h2
-    Page Data
-  %p
-    Your pages are where you describe your work.
-  %p
-    You can upload an image for your page by clicking the "Choose File" or "Upload" button to the right. The system doesn't resize page images, so please upload an appropriate size for your theme.
-  %p
-    Please enter a descriptive title for the page. This title will be shown to your potential clients and used for SEO purposes.
+  %h2 Page
+  %p Your pages are where you describe your work.
+  %p You can upload an image for your page by clicking the "Choose File" or "Upload" button to the right. The system doesn't resize page images, so please upload an appropriate size for your theme.
+  %p Please enter a descriptive title for the page. This title will be shown to your potential clients and used for SEO purposes.
   %p
     Please enter the body for your page. The body may contain 
     = link_to 'markdown formatting.', 'http://www.darkcoding.net/software/markdown-quick-reference/', :target => '_blank'
-  %p
-    = "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
   = "#{link_to('Pages', admin_pages_path)} &raquo; #{controller.action_name.titleize}"
   
 = f.error_messages
-
 %div{ :style => "width:50%; float:left;" }
   %p
     = f.label :title
@@ -41,5 +35,5 @@
     = f.label :body
     = f.text_area :body, :class => 'long validate[required]'
 
-  = render :partial => "admin/shared/buttons", :locals => { :f => f }
+  = render :partial => "admin/shared/buttons"
 
