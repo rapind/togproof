@@ -45,14 +45,9 @@
   = "#{link_to('Galleries', admin_galleries_path)} &raquo; #{@gallery.title} Photos"
 
 %div
-  %div{ :style => 'float:left;' }
-    #fileQueue
-    %input{ :type => "file", :name => "uploadify", :id => "uploadify" }
-  %div{ :style => 'float:right;' }
-    %p
-      %a.button{ :href => admin_galleries_path }
-        %button.red
-          %span &laquo; Back
+  #fileQueue
+  %input{ :type => "file", :name => "uploadify", :id => "uploadify" }
+  %br
 
 %p{ :class => 'clearfix' }
 
