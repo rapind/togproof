@@ -77,15 +77,15 @@
   %li{ :class => 'last', :style => 'padding-left: 0' } Select a Gallery: 
   - @galleries.each_with_index do |gallery, i|
     %li{ :class => "#{'last' if (i + 1) == @galleries.size}" }
-      = link_to h(gallery.title), gallery_path(gallery), :class => "#{'active' if @gallery.id == gallery.id}"
+      = link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title), :class => "#{'active' if @gallery.id == gallery.id}")
 
 #content
   #main
     .gallery_container
     %p.gallery_nav
-      %a{ :href => '#', :onclick => "$.galleria.prev(); resetSlideshow(); return false;" } &laquo; prev
+      %a{ :href => '#', :onclick => "$.galleria.prev(); resetSlideshow(); return false;", :title => 'Previous Page' } &laquo; prev
       |
-      %a{ :href => '#', :onclick => "$.galleria.next(); resetSlideshow(); return false;" } next &raquo;
+      %a{ :href => '#', :onclick => "$.galleria.next(); resetSlideshow(); return false;", :title => 'Next Page' } next &raquo;
       
   #sidebar
     %h2
@@ -95,5 +95,5 @@
     %ul.gallery_thumbs
       - @gallery.gallery_photos.each_with_index do |photo, i|
         %li{ :class => "#{'active' if i == 0}" }
-          = image_tag photo.image.url, :alt => h(photo.title)
+          = image_tag(photo.image.url, :alt => h(photo.title))
     %p.clearfix

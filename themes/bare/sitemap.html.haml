@@ -6,4 +6,4 @@
     %h3 Galleries
     %ul
       - for gallery in @galleries
-        %li= link_to h(gallery.title), gallery_path(gallery), :title => h(gallery.title)
+        %li= link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title))

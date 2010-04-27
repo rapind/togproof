@@ -1,5 +1,5 @@
 #intro
-  %h1= h(@page.intro.blank? ? @page.title : @page.intro)
+  %h1= h(@page.intro.blank? ? h(@page.title) : h(@page.intro))
 #content
   #main
     = image_tag(@page.image.url, :alt => h(@page.title)) if @page.image?
