@@ -1,0 +1,1434 @@
+# Logfile created on Wed Jun 02 16:02:13 +0200 2010  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhotographer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Load (3.6ms)[0m   [0mSELECT `photographers`.id FROM `photographers` WHERE (LOWER(`photographers`.`email`) = BINARY 'photographer@grokphoto.org') LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.4ms)[0m   [0;1mSELECT `photographers`.id FROM `photographers` WHERE (`photographers`.`persistence_token` = BINARY '665bad9fe29c0310ab54ac9f3c6c3fe7fa76676feb819e4155151d7877542ae0ead1a6cff752d721c4a99e39140182436a26669aa981137406157a5ab90d891f') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT `photographers`.id FROM `photographers` WHERE (`photographers`.`single_access_token` = BINARY 'BNFI62NDCmeOi0xRRJnW') LIMIT 1[0m
+  [4;36;1mPhotographer Create (0.7ms)[0m   [0;1mINSERT INTO `photographers` (`google_analytics_key`, `watermark_content_type`, `watermark_updated_at`, `single_access_token`, `google_verification_key`, `created_at`, `home_page_title`, `crypted_password`, `company_name`, `facebook_url`, `theme`, `watermark_file_size`, `perishable_token`, `site_url`, `company_phone`, `use_watermark`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `company_email`, `persistence_token`, `login_count`, `blog_url`, `twitter_url`, `last_login_ip`, `watermark_file_name`, `last_login_at`, `email`) VALUES('UA-2450369-23', NULL, NULL, 'BNFI62NDCmeOi0xRRJnW', 'n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0', '2010-06-02 14:06:50', 'Open-source Photography', '42fcfdd7696586a65915ec9cb228de71cdd61e326c89146120a7f434de016d7f8c1053995c35f213b5034ebfc1592960bf95492beb56c75d72953f912b2ebbf3', 'GrokPhoto', NULL, 'default', NULL, 'JVHiQon3yhVcTXINKIof', 'http://demo.grokphoto.org', NULL, 0, '2010-06-02 14:06:50', 0, NULL, 'xqihhxeQmAtB5U8rIVZm', NULL, 'info@grokphoto.org', '665bad9fe29c0310ab54ac9f3c6c3fe7fa76676feb819e4155151d7877542ae0ead1a6cff752d721c4a99e39140182436a26669aa981137406157a5ab90d891f', 0, 'http://rapin.com', NULL, NULL, NULL, NULL, 'photographer@grokphoto.org')[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (12.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.6ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:06:51', `perishable_token` = 'qiN4qPGUqrniRfpJaTsB', `watermark_file_size` = 8569, `watermark_updated_at` = '2010-06-02 14:06:50', `watermark_content_type` = 'image/png', `watermark_file_name` = 'watermark.png' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/watermark/thumb.png
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/watermark/original.png
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mClient Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mClient Load (0.6ms)[0m   [0mSELECT `clients`.id FROM `clients` WHERE (LOWER(`clients`.`email`) = BINARY 'client@grokphoto.org') LIMIT 1[0m
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT `clients`.id FROM `clients` WHERE (`clients`.`persistence_token` = BINARY 'ab93be60519fe415307a0e70ad71c1d7c8342b8a145a35ca343960a8bf0a4ce5186a103057d0e0376d70294e815ac9bfed178bd13514452970e50bb85edebfa6') LIMIT 1[0m
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT `clients`.id FROM `clients` WHERE (`clients`.`single_access_token` = BINARY 'IzuqS7_6BB-N-4pukhuo') LIMIT 1[0m
+  [4;36;1mClient Create (0.5ms)[0m   [0;1mINSERT INTO `clients` (`name`, `city`, `single_access_token`, `last_request_at`, `street_1`, `created_at`, `crypted_password`, `street_2`, `country`, `perishable_token`, `postal_code`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `phone`, `photographer_id`, `last_login_ip`, `last_login_at`, `province`, `email`) VALUES('Demo Client', NULL, 'IzuqS7_6BB-N-4pukhuo', NULL, NULL, '2010-06-02 14:06:52', '5fa6682831e85e2b44a3047cdf96e5703eb31132a60d2b3d5129a065a6034eddd17f0e4f27f0ccbbac55d123ddedbcea813586194caddc898a6eb12d11878e4a', NULL, NULL, 'NOSt_xj4aAa0BENkiRU-', NULL, '2010-06-02 14:06:52', 0, NULL, 'dquo2UQgu_fstDwXipcQ', NULL, 'ab93be60519fe415307a0e70ad71c1d7c8342b8a145a35ca343960a8bf0a4ce5186a103057d0e0376d70294e815ac9bfed178bd13514452970e50bb85edebfa6', 0, NULL, 1, NULL, NULL, NULL, 'client@grokphoto.org')[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBooking Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mBooking Create (2.4ms)[0m   [0;1mINSERT INTO `bookings` (`price`, `created_at`, `title`, `expires_on`, `updated_at`, `occurs_on`, `client_id`, `ready`, `description`) VALUES(NULL, '2010-06-02 14:06:52', 'Newborn Session', '2010-05-26 14:06:52', '2010-06-02 14:06:52', '2010-05-12 14:06:52', 1, NULL, NULL)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBooking Create (0.4ms)[0m   [0mINSERT INTO `bookings` (`price`, `created_at`, `title`, `expires_on`, `updated_at`, `occurs_on`, `client_id`, `ready`, `description`) VALUES(NULL, '2010-06-02 14:06:52', 'Family Session', '2010-06-30 14:06:52', '2010-06-02 14:06:52', '2010-06-16 14:06:52', 1, NULL, NULL)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Family') LIMIT 1[0m
+  [4;36;1mSlug Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `slugs`[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGallery Create (0.4ms)[0m   [0;1mINSERT INTO `galleries` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(1, NULL, '2010-06-02 14:06:52', 'Family', NULL, '2010-06-02 14:06:52', NULL, 1, 'GrokPhoto is an open-source professional photographer gallery, client manager, booking manager, and photo system. Add as many galleries and pages as you like to your site once it\'s been setup.', NULL, NULL, 'portfolio, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails')[0m
+  [4;35;1mSlug Load (0.4ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'family' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Gallery' AND `slugs`.`name` = 'family' AND `slugs`.`scope` IS NULL) [0m
+  [4;35;1mSlug Create (0.3ms)[0m   [0mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('family', NULL, 1, '2010-06-02 14:06:52', 'Gallery', 1)[0m
+[paperclip] Saving attachments.
+  [4;36;1mGallery Update (0.5ms)[0m   [0;1mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:52', `created_at` = '2010-06-02 14:06:52', `title` = 'Family', `keywords` = 'portfolio, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails', `cached_slug` = 'family', `photographer_id` = 1, `description` = 'GrokPhoto is an open-source professional photographer gallery, client manager, booking manager, and photo system. Add as many galleries and pages as you like to your site once it\'s been setup.' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Newborn') LIMIT 1[0m
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGallery Create (0.3ms)[0m   [0mINSERT INTO `galleries` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(2, NULL, '2010-06-02 14:06:52', 'Newborn', NULL, '2010-06-02 14:06:52', NULL, 1, 'You can create bookings for your clients, upload multiple photos to a booking with one click, and then send out a custom invite message giving your client secure access.', NULL, NULL, 'professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails')[0m
+  [4;36;1mSlug Load (0.3ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.6ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'newborn' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Gallery' AND `slugs`.`name` = 'newborn' AND `slugs`.`scope` IS NULL) [0m
+  [4;36;1mSlug Create (0.3ms)[0m   [0;1mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('newborn', NULL, 1, '2010-06-02 14:06:52', 'Gallery', 2)[0m
+[paperclip] Saving attachments.
+  [4;35;1mGallery Update (0.4ms)[0m   [0mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:52', `created_at` = '2010-06-02 14:06:52', `title` = 'Newborn', `keywords` = 'professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails', `cached_slug` = 'newborn', `position` = 2, `photographer_id` = 1, `description` = 'You can create bookings for your clients, upload multiple photos to a booking with one click, and then send out a custom invite message giving your client secure access.' WHERE `id` = 2[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Babies and Children') LIMIT 1[0m
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGallery Create (0.4ms)[0m   [0;1mINSERT INTO `galleries` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(3, NULL, '2010-06-02 14:06:52', 'Babies and Children', NULL, '2010-06-02 14:06:52', NULL, 1, 'You can create your own themes. All you need is a little HTML knowledge, or even better some Ruby on Rails experience to create more advanced themes.', NULL, NULL, 'themes, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails')[0m
+  [4;35;1mSlug Load (0.3ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'babies-and-children' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Gallery' AND `slugs`.`name` = 'babies-and-children' AND `slugs`.`scope` IS NULL) [0m
+  [4;35;1mSlug Create (0.3ms)[0m   [0mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('babies-and-children', NULL, 1, '2010-06-02 14:06:52', 'Gallery', 3)[0m
+[paperclip] Saving attachments.
+  [4;36;1mGallery Update (0.4ms)[0m   [0;1mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:52', `created_at` = '2010-06-02 14:06:52', `title` = 'Babies and Children', `keywords` = 'themes, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails', `cached_slug` = 'babies-and-children', `position` = 3, `photographer_id` = 1, `description` = 'You can create your own themes. All you need is a little HTML knowledge, or even better some Ruby on Rails experience to create more advanced themes.' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Maternity') LIMIT 1[0m
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGallery Create (0.3ms)[0m   [0mINSERT INTO `galleries` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(4, NULL, '2010-06-02 14:06:52', 'Maternity', NULL, '2010-06-02 14:06:52', NULL, 1, 'GrokPhoto is completely open-source. This means if you know a little bit about coding (or someone who does), you can have your own version and theme up and running within a few minutes. The engine behind GrokPhoto is Ruby on Rails.', NULL, NULL, 'opensource, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails')[0m
+  [4;36;1mSlug Load (0.4ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.6ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'maternity' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Gallery' AND `slugs`.`name` = 'maternity' AND `slugs`.`scope` IS NULL) [0m
+  [4;36;1mSlug Create (0.3ms)[0m   [0;1mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('maternity', NULL, 1, '2010-06-02 14:06:52', 'Gallery', 4)[0m
+[paperclip] Saving attachments.
+  [4;35;1mGallery Update (0.4ms)[0m   [0mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:52', `created_at` = '2010-06-02 14:06:52', `title` = 'Maternity', `keywords` = 'opensource, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails', `cached_slug` = 'maternity', `position` = 4, `photographer_id` = 1, `description` = 'GrokPhoto is completely open-source. This means if you know a little bit about coding (or someone who does), you can have your own version and theme up and running within a few minutes. The engine behind GrokPhoto is Ruby on Rails.' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGallery Load (0.7ms)[0m   [0;1mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Family' AND `galleries`.id <> 1) LIMIT 1[0m
+  [4;35;1mGallery Update (0.5ms)[0m   [0mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:52', `image_file_size` = 263671, `image_file_name` = 'family.jpg', `image_updated_at` = '2010-06-02 14:06:52', `image_content_type` = 'image/jpeg' WHERE `id` = 1[0m
+  [4;36;1mSlug Load (0.6ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/thumb/family.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/original/family.jpg
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Newborn' AND `galleries`.id <> 2) LIMIT 1[0m
+  [4;36;1mGallery Update (0.4ms)[0m   [0;1mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:53', `image_file_size` = 56408, `image_file_name` = 'newborn.jpg', `image_updated_at` = '2010-06-02 14:06:52', `image_content_type` = 'image/jpeg' WHERE `id` = 2[0m
+  [4;35;1mSlug Load (0.5ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/thumb/newborn.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/original/newborn.jpg
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGallery Load (0.8ms)[0m   [0;1mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Babies and Children' AND `galleries`.id <> 3) LIMIT 1[0m
+  [4;35;1mGallery Update (0.4ms)[0m   [0mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:53', `image_file_size` = 118155, `image_file_name` = 'babies-and-children.jpg', `image_updated_at` = '2010-06-02 14:06:53', `image_content_type` = 'image/jpeg' WHERE `id` = 3[0m
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/thumb/babies-and-children.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/original/babies-and-children.jpg
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Maternity' AND `galleries`.id <> 4) LIMIT 1[0m
+  [4;36;1mGallery Update (0.5ms)[0m   [0;1mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:06:54', `image_file_size` = 287583, `image_file_name` = 'maternity.jpg', `image_updated_at` = '2010-06-02 14:06:53', `image_content_type` = 'image/jpeg' WHERE `id` = 4[0m
+  [4;35;1mSlug Load (0.5ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/thumb/maternity.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/original/maternity.jpg
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGalleryPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(1, 'family-12.jpg', '2010-06-02 14:06:54', 'Family 12', 117280, NULL, 1, '2010-06-02 14:06:54', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:54', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/1/thumb/family-12.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/1/original/family-12.jpg
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.7ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(2, 'family-11.jpg', '2010-06-02 14:06:55', 'Family 11', 134598, NULL, 1, '2010-06-02 14:06:55', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:54', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/2/thumb/family-11.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/2/original/family-11.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(3, 'family-02.jpg', '2010-06-02 14:06:55', 'Family 02', 100635, NULL, 1, '2010-06-02 14:06:55', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:55', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/3/thumb/family-02.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/3/original/family-02.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(4, 'family-06.jpg', '2010-06-02 14:06:55', 'Family 06', 140540, NULL, 1, '2010-06-02 14:06:55', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:55', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/4/thumb/family-06.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/4/original/family-06.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(5, 'family-05.jpg', '2010-06-02 14:06:56', 'Family 05', 92170, NULL, 1, '2010-06-02 14:06:56', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:56', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/5/thumb/family-05.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/5/original/family-05.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(6, 'family-10.jpg', '2010-06-02 14:06:56', 'Family 10', 88656, NULL, 1, '2010-06-02 14:06:56', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:56', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/6/thumb/family-10.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/6/original/family-10.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(7, 'family-01.jpg', '2010-06-02 14:06:57', 'Family 01', 66382, NULL, 1, '2010-06-02 14:06:57', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:56', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/7/thumb/family-01.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/7/original/family-01.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.9ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(8, 'family-09.jpg', '2010-06-02 14:06:57', 'Family 09', 79023, NULL, 1, '2010-06-02 14:06:57', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:57', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/8/thumb/family-09.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/8/original/family-09.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(9, 'family-04.jpg', '2010-06-02 14:06:57', 'Family 04', 172300, NULL, 1, '2010-06-02 14:06:57', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:57', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/9/thumb/family-04.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/9/original/family-04.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.9ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(10, 'family-03.jpg', '2010-06-02 14:06:58', 'Family 03', 67025, NULL, 1, '2010-06-02 14:06:58', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:57', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/10/thumb/family-03.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/10/original/family-03.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(11, 'family-07.jpg', '2010-06-02 14:06:58', 'Family 07', 120244, NULL, 1, '2010-06-02 14:06:58', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:58', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/11/thumb/family-07.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/11/original/family-07.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.9ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.3ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(12, 'family-08.jpg', '2010-06-02 14:06:58', 'Family 08', 94724, NULL, 1, '2010-06-02 14:06:58', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:58', 1, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/12/thumb/family-08.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/1/gallery_photos/12/original/family-08.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 1) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.8ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(1, 'newborn-10.jpg', '2010-06-02 14:06:59', 'Newborn 10', 62210, NULL, 1, '2010-06-02 14:06:59', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:58', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/13/thumb/newborn-10.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/13/original/newborn-10.jpg
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(2, 'newborn-08.jpg', '2010-06-02 14:06:59', 'Newborn 08', 70086, NULL, 1, '2010-06-02 14:06:59', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:59', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/14/thumb/newborn-08.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/14/original/newborn-08.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.3ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(3, 'newborn-07.jpg', '2010-06-02 14:06:59', 'Newborn 07', 46959, NULL, 1, '2010-06-02 14:06:59', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:59', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/15/thumb/newborn-07.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/15/original/newborn-07.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(4, 'newborn-13.jpg', '2010-06-02 14:07:00', 'Newborn 13', 36631, NULL, 1, '2010-06-02 14:07:00', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:06:59', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/16/thumb/newborn-13.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/16/original/newborn-13.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.6ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.3ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(5, 'newborn-12.jpg', '2010-06-02 14:07:00', 'Newborn 12', 34257, NULL, 1, '2010-06-02 14:07:00', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:00', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/17/thumb/newborn-12.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/17/original/newborn-12.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(6, 'newborn-09.jpg', '2010-06-02 14:07:00', 'Newborn 09', 31391, NULL, 1, '2010-06-02 14:07:00', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:00', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/18/thumb/newborn-09.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/18/original/newborn-09.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(7, 'newborn-05.jpg', '2010-06-02 14:07:00', 'Newborn 05', 31521, NULL, 1, '2010-06-02 14:07:00', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:00', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/19/thumb/newborn-05.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/19/original/newborn-05.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(8, 'newborn-06.jpg', '2010-06-02 14:07:01', 'Newborn 06', 45680, NULL, 1, '2010-06-02 14:07:01', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:01', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/20/thumb/newborn-06.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/20/original/newborn-06.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(9, 'newborn-03.jpg', '2010-06-02 14:07:01', 'Newborn 03', 45403, NULL, 1, '2010-06-02 14:07:01', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:01', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/21/thumb/newborn-03.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/21/original/newborn-03.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(10, 'newborn-01.jpg', '2010-06-02 14:07:01', 'Newborn 01', 54898, NULL, 1, '2010-06-02 14:07:01', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:01', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/22/thumb/newborn-01.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/22/original/newborn-01.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(11, 'newborn-04.jpg', '2010-06-02 14:07:02', 'Newborn 04', 30917, NULL, 1, '2010-06-02 14:07:02', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:02', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/23/thumb/newborn-04.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/23/original/newborn-04.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(12, 'newborn-15.jpg', '2010-06-02 14:07:02', 'Newborn 15', 77695, NULL, 1, '2010-06-02 14:07:02', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:02', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/24/thumb/newborn-15.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/24/original/newborn-15.jpg
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(13, 'newborn-11.jpg', '2010-06-02 14:07:03', 'Newborn 11', 38584, NULL, 1, '2010-06-02 14:07:03', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:02', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/25/thumb/newborn-11.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/25/original/newborn-11.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(14, 'newborn-14.jpg', '2010-06-02 14:07:03', 'Newborn 14', 17736, NULL, 1, '2010-06-02 14:07:03', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:03', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/26/thumb/newborn-14.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/26/original/newborn-14.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.3ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(15, 'newborn-02.jpg', '2010-06-02 14:07:03', 'Newborn 02', 94631, NULL, 1, '2010-06-02 14:07:03', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:03', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/27/thumb/newborn-02.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/27/original/newborn-02.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(16, 'newborn-16.jpg', '2010-06-02 14:07:03', 'Newborn 16', 47881, NULL, 1, '2010-06-02 14:07:03', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:03', 2, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/28/thumb/newborn-16.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/2/gallery_photos/28/original/newborn-16.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.9ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(1, 'babies-and-children-07.jpg', '2010-06-02 14:07:04', 'Babies And Children 07', 54474, NULL, 1, '2010-06-02 14:07:04', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:04', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/29/thumb/babies-and-children-07.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/29/original/babies-and-children-07.jpg
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.8ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(2, 'babies-and-children-12.jpg', '2010-06-02 14:07:04', 'Babies And Children 12', 63263, NULL, 1, '2010-06-02 14:07:04', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:04', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/30/thumb/babies-and-children-12.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/30/original/babies-and-children-12.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.8ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(3, 'babies-and-children-09.jpg', '2010-06-02 14:07:05', 'Babies And Children 09', 67552, NULL, 1, '2010-06-02 14:07:05', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:04', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/31/thumb/babies-and-children-09.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/31/original/babies-and-children-09.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(4, 'babies-and-children-02.jpg', '2010-06-02 14:07:05', 'Babies And Children 02', 57521, NULL, 1, '2010-06-02 14:07:05', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:05', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/32/thumb/babies-and-children-02.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/32/original/babies-and-children-02.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(5, 'babies-and-children-05.jpg', '2010-06-02 14:07:05', 'Babies And Children 05', 92712, NULL, 1, '2010-06-02 14:07:05', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:05', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/33/thumb/babies-and-children-05.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/33/original/babies-and-children-05.jpg
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(6, 'babies-and-children-03.jpg', '2010-06-02 14:07:06', 'Babies And Children 03', 61993, NULL, 1, '2010-06-02 14:07:06', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:05', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/34/thumb/babies-and-children-03.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/34/original/babies-and-children-03.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(7, 'babies-and-children-10.jpg', '2010-06-02 14:07:06', 'Babies And Children 10', 65106, NULL, 1, '2010-06-02 14:07:06', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:06', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/35/thumb/babies-and-children-10.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/35/original/babies-and-children-10.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(8, 'babies-and-children-04.jpg', '2010-06-02 14:07:06', 'Babies And Children 04', 111550, NULL, 1, '2010-06-02 14:07:06', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:06', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/36/thumb/babies-and-children-04.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/36/original/babies-and-children-04.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(9, 'babies-and-children-06.jpg', '2010-06-02 14:07:07', 'Babies And Children 06', 76938, NULL, 1, '2010-06-02 14:07:07', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:06', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/37/thumb/babies-and-children-06.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/37/original/babies-and-children-06.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(10, 'babies-and-children-08.jpg', '2010-06-02 14:07:07', 'Babies And Children 08', 53572, NULL, 1, '2010-06-02 14:07:07', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:07', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/38/thumb/babies-and-children-08.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/38/original/babies-and-children-08.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.5ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(11, 'babies-and-children-11.jpg', '2010-06-02 14:07:07', 'Babies And Children 11', 96187, NULL, 1, '2010-06-02 14:07:07', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:07', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/39/thumb/babies-and-children-11.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/39/original/babies-and-children-11.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(12, 'babies-and-children-01.jpg', '2010-06-02 14:07:08', 'Babies And Children 01', 81469, NULL, 1, '2010-06-02 14:07:08', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:07', 3, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/40/thumb/babies-and-children-01.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/3/gallery_photos/40/original/babies-and-children-01.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 3) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 3 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(1, 'maternity-03.jpg', '2010-06-02 14:07:08', 'Maternity 03', 172786, NULL, 1, '2010-06-02 14:07:08', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:08', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/41/thumb/maternity-03.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/41/original/maternity-03.jpg
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.7ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.8ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(2, 'maternity-01.jpg', '2010-06-02 14:07:09', 'Maternity 01', 178853, NULL, 1, '2010-06-02 14:07:09', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:08', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/42/thumb/maternity-01.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/42/original/maternity-01.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(3, 'maternity-09.jpg', '2010-06-02 14:07:09', 'Maternity 09', 63589, NULL, 1, '2010-06-02 14:07:09', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:09', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/43/thumb/maternity-09.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/43/original/maternity-09.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(4, 'maternity-04.jpg', '2010-06-02 14:07:09', 'Maternity 04', 37929, NULL, 1, '2010-06-02 14:07:09', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:09', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/44/thumb/maternity-04.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/44/original/maternity-04.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(5, 'maternity-05.jpg', '2010-06-02 14:07:10', 'Maternity 05', 50316, NULL, 1, '2010-06-02 14:07:10', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:09', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/45/thumb/maternity-05.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/45/original/maternity-05.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(6, 'maternity-12.jpg', '2010-06-02 14:07:10', 'Maternity 12', 19069, NULL, 1, '2010-06-02 14:07:10', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:10', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/46/thumb/maternity-12.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/46/original/maternity-12.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(7, 'maternity-10.jpg', '2010-06-02 14:07:10', 'Maternity 10', 93071, NULL, 1, '2010-06-02 14:07:10', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:10', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/47/thumb/maternity-10.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/47/original/maternity-10.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(8, 'maternity-07.jpg', '2010-06-02 14:07:11', 'Maternity 07', 38723, NULL, 1, '2010-06-02 14:07:11', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:10', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/48/thumb/maternity-07.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/48/original/maternity-07.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.9ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.3ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(9, 'maternity-08.jpg', '2010-06-02 14:07:11', 'Maternity 08', 47703, NULL, 1, '2010-06-02 14:07:11', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:11', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/49/thumb/maternity-08.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/49/original/maternity-08.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(10, 'maternity-11.jpg', '2010-06-02 14:07:11', 'Maternity 11', 16188, NULL, 1, '2010-06-02 14:07:11', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:11', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/50/thumb/maternity-11.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/50/original/maternity-11.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.8ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(11, 'maternity-02.jpg', '2010-06-02 14:07:12', 'Maternity 02', 136000, NULL, 1, '2010-06-02 14:07:12', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:11', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/51/thumb/maternity-02.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/51/original/maternity-02.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(12, 'maternity-06.jpg', '2010-06-02 14:07:12', 'Maternity 06', 20539, NULL, 1, '2010-06-02 14:07:12', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:07:12', 4, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/52/thumb/maternity-06.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/4/gallery_photos/52/original/maternity-06.jpg
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 4) [0m
+  [4;36;1mSlug Load (0.1ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 4 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'About') LIMIT 1[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mPage Create (0.5ms)[0m   [0;1mINSERT INTO `pages` (`position`, `intro`, `image_file_name`, `created_at`, `title`, `body`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(1, 'So what\'s it all about?', NULL, '2010-06-02 14:07:12', 'About', 'The Story\n---------\n\nI needed to build a professional photography site for a friend along with a way for her to easily manage clients, bookings, and photos.\n\nWhile there are plenty of open source galleries out there, most are written in PHP whereas my personal preference is Ruby on Rails. Also, I was unable to find any that supported the more advanced features we needed for managing client photos and workflow.\n\nAnd so grokphoto was born.\n\nYou can access the admin area at:\n\n* [http://www.grokphoto.org/admin](http://www.grokphoto.org/admin)\n* Email: photographer@grokphoto.org\n* Password: password\n\nYou can access the client area at:\n\n* [http://www.grokphoto.org/client](http://www.grokphoto.org/client)\n* Email: client@grokphoto.org\n* Password: password', NULL, '2010-06-02 14:07:12', NULL, 1, NULL, NULL, 'about, story, ruby, rails, photography, professional, custom, page management, wiki, markdown, opensource')[0m
+  [4;35;1mSlug Load (0.4ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;35;1mSlug Load (0.7ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'about' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Page' AND `slugs`.`name` = 'about' AND `slugs`.`scope` IS NULL) [0m
+  [4;35;1mSlug Create (0.4ms)[0m   [0mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('about', NULL, 1, '2010-06-02 14:07:12', 'Page', 1)[0m
+[paperclip] Saving attachments.
+  [4;36;1mPage Update (0.7ms)[0m   [0;1mUPDATE `pages` SET `updated_at` = '2010-06-02 14:07:12', `created_at` = '2010-06-02 14:07:12', `intro` = 'So what\'s it all about?', `title` = 'About', `keywords` = 'about, story, ruby, rails, photography, professional, custom, page management, wiki, markdown, opensource', `cached_slug` = 'about', `photographer_id` = 1, `body` = 'The Story\n---------\n\nI needed to build a professional photography site for a friend along with a way for her to easily manage clients, bookings, and photos.\n\nWhile there are plenty of open source galleries out there, most are written in PHP whereas my personal preference is Ruby on Rails. Also, I was unable to find any that supported the more advanced features we needed for managing client photos and workflow.\n\nAnd so grokphoto was born.\n\nYou can access the admin area at:\n\n* [http://www.grokphoto.org/admin](http://www.grokphoto.org/admin)\n* Email: photographer@grokphoto.org\n* Password: password\n\nYou can access the client area at:\n\n* [http://www.grokphoto.org/client](http://www.grokphoto.org/client)\n* Email: client@grokphoto.org\n* Password: password' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'Opensource') LIMIT 1[0m
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM `pages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPage Create (0.5ms)[0m   [0mINSERT INTO `pages` (`position`, `intro`, `image_file_name`, `created_at`, `title`, `body`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(2, 'GrokPhoto is free!', NULL, '2010-06-02 14:07:12', 'Opensource', 'Get the Source\n-----------\n\n[http://github.com/rapind/grokphoto](http://github.com/rapind/grokphoto)\n\nFrom Wikipedia\n------------\n\nOpen-source software (OSS) is computer software for which the source code and certain other rights normally reserved for copyright holders are provided under a software license that meets the Open Source Definition or that is in the public domain. This permits users to use, change, and improve the software, and to redistribute it in modified or unmodified forms. It is very often developed in a public, collaborative manner. Open-source software is the most prominent example of open-source development and often compared to user-generated content. The term open-source software originated as part of a marketing campaign for free software. A report by Standish Group states that adoption of open-source software models has resulted in savings of about $60 billion per year to consumers.\n\n[http://en.wikipedia.org/wiki/Open_source_software](http://en.wikipedia.org/wiki/Open_source_software)', NULL, '2010-06-02 14:07:12', NULL, 1, NULL, NULL, 'opensource, ruby, rails, photography, git, haml, ajax, jquery, themes, erb')[0m
+  [4;36;1mSlug Load (0.4ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`id` = 2) [0m
+  [4;36;1mSlug Load (0.6ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'opensource' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Page' AND `slugs`.`name` = 'opensource' AND `slugs`.`scope` IS NULL) [0m
+  [4;36;1mSlug Create (0.3ms)[0m   [0;1mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('opensource', NULL, 1, '2010-06-02 14:07:12', 'Page', 2)[0m
+[paperclip] Saving attachments.
+  [4;35;1mPage Update (0.5ms)[0m   [0mUPDATE `pages` SET `updated_at` = '2010-06-02 14:07:12', `created_at` = '2010-06-02 14:07:12', `intro` = 'GrokPhoto is free!', `title` = 'Opensource', `keywords` = 'opensource, ruby, rails, photography, git, haml, ajax, jquery, themes, erb', `cached_slug` = 'opensource', `position` = 2, `photographer_id` = 1, `body` = 'Get the Source\n-----------\n\n[http://github.com/rapind/grokphoto](http://github.com/rapind/grokphoto)\n\nFrom Wikipedia\n------------\n\nOpen-source software (OSS) is computer software for which the source code and certain other rights normally reserved for copyright holders are provided under a software license that meets the Open Source Definition or that is in the public domain. This permits users to use, change, and improve the software, and to redistribute it in modified or unmodified forms. It is very often developed in a public, collaborative manner. Open-source software is the most prominent example of open-source development and often compared to user-generated content. The term open-source software originated as part of a marketing campaign for free software. A report by Standish Group states that adoption of open-source software models has resulted in savings of about $60 billion per year to consumers.\n\n[http://en.wikipedia.org/wiki/Open_source_software](http://en.wikipedia.org/wiki/Open_source_software)' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'About' AND `pages`.id <> 1) LIMIT 1[0m
+  [4;35;1mPage Update (0.5ms)[0m   [0mUPDATE `pages` SET `updated_at` = '2010-06-02 14:07:12', `image_file_size` = 5640, `image_file_name` = 'about.jpg', `image_updated_at` = '2010-06-02 14:07:12', `image_content_type` = 'image/jpeg' WHERE `id` = 1[0m
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/pages/1/thumb/about.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/pages/1/original/about.jpg
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'Opensource' AND `pages`.id <> 2) LIMIT 1[0m
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mQuote Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT `quotes`.id FROM `quotes` WHERE (`quotes`.`body` = BINARY 'If I had some testimonials, this is where they\'d go!') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM `quotes` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mQuote Create (0.3ms)[0m   [0;1mINSERT INTO `quotes` (`position`, `created_at`, `author`, `body`, `updated_at`, `photographer_id`) VALUES(1, '2010-06-02 14:07:12', 'Dave Rapin - Toronto', 'If I had some testimonials, this is where they\'d go!', '2010-06-02 14:07:12', 1)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPackage Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `packages`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPackage Load (0.9ms)[0m   [0;1mSELECT * FROM `packages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPackage Create (0.4ms)[0m   [0mINSERT INTO `packages` (`position`, `price`, `created_at`, `title`, `updated_at`, `photographer_id`, `active`) VALUES(1, 100.0, '2010-06-02 14:07:12', 'Collection 1', '2010-06-02 14:07:12', 1, 1)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPackage Load (0.8ms)[0m   [0;1mSELECT * FROM `packages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPackage Create (0.3ms)[0m   [0mINSERT INTO `packages` (`position`, `price`, `created_at`, `title`, `updated_at`, `photographer_id`, `active`) VALUES(2, 150.0, '2010-06-02 14:07:12', 'Collection 2', '2010-06-02 14:07:12', 1, 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPackage Load (0.5ms)[0m   [0;1mSELECT * FROM `packages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPackage Create (0.4ms)[0m   [0mINSERT INTO `packages` (`position`, `price`, `created_at`, `title`, `updated_at`, `photographer_id`, `active`) VALUES(3, 250.0, '2010-06-02 14:07:12', 'Collection 3', '2010-06-02 14:07:12', 1, 1)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProduct Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM `products` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mProduct Create (0.3ms)[0m   [0;1mINSERT INTO `products` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `image_updated_at`, `active`) VALUES(1, NULL, '2010-06-02 14:07:12', 'Print', NULL, '2010-06-02 14:07:12', NULL, 1, NULL, NULL, 1)[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mProduct Create (0.4ms)[0m   [0;1mINSERT INTO `products` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `image_updated_at`, `active`) VALUES(2, NULL, '2010-06-02 14:07:12', 'Album', NULL, '2010-06-02 14:07:12', NULL, 1, NULL, NULL, 1)[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM `products` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mProduct Create (0.4ms)[0m   [0;1mINSERT INTO `products` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `image_updated_at`, `active`) VALUES(3, NULL, '2010-06-02 14:07:12', 'Card', NULL, '2010-06-02 14:07:12', NULL, 1, NULL, NULL, 1)[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProductSize Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `product_sizes`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mProductSize Load (0.6ms)[0m   [0;1mSELECT * FROM `product_sizes` WHERE (product_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mProductSize Create (0.4ms)[0m   [0mINSERT INTO `product_sizes` (`position`, `price`, `created_at`, `product_id`, `title`, `updated_at`) VALUES(1, 3.99, '2010-06-02 14:07:13', 1, '3x5', '2010-06-02 14:07:13')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProductSize Load (0.8ms)[0m   [0;1mSELECT * FROM `product_sizes` WHERE (product_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mProductSize Create (0.5ms)[0m   [0mINSERT INTO `product_sizes` (`position`, `price`, `created_at`, `product_id`, `title`, `updated_at`) VALUES(2, 5.99, '2010-06-02 14:07:13', 1, '5x8', '2010-06-02 14:07:13')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProductSize Load (0.6ms)[0m   [0;1mSELECT * FROM `product_sizes` WHERE (product_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mProductSize Create (0.5ms)[0m   [0mINSERT INTO `product_sizes` (`position`, `price`, `created_at`, `product_id`, `title`, `updated_at`) VALUES(3, 9.99, '2010-06-02 14:07:13', 1, '8x11', '2010-06-02 14:07:13')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProductSize Load (0.6ms)[0m   [0;1mSELECT * FROM `product_sizes` WHERE (product_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mProductSize Create (0.3ms)[0m   [0mINSERT INTO `product_sizes` (`position`, `price`, `created_at`, `product_id`, `title`, `updated_at`) VALUES(4, 10.99, '2010-06-02 14:07:13', 1, 'Digital - Low Res', '2010-06-02 14:07:13')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProductSize Load (0.5ms)[0m   [0;1mSELECT * FROM `product_sizes` WHERE (product_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mProductSize Create (0.3ms)[0m   [0mINSERT INTO `product_sizes` (`position`, `price`, `created_at`, `product_id`, `title`, `updated_at`) VALUES(5, 25.99, '2010-06-02 14:07:13', 1, 'Digital - High Res', '2010-06-02 14:07:13')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-02 16:07:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Load (0.7ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+  [4;36;1mGallery Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mPage Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+Rendered _header (17.2ms)
+Rendered _footer (3.8ms)
+Completed in 378ms (View: 257, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:08:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+  [4;36;1mGallery Load (0.7ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mGallery Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+Redirected to http://localhost:3000/galleries/family
+Completed in 100ms (DB: 6) | 302 Found [http://localhost/galleries]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-02 16:08:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"family", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.6ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'family') LIMIT 1[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;36;1mGalleryPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 1) ORDER BY position[0m
+  [4;35;1mGalleryPhoto Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;36;1mPage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+Rendered _header (17.3ms)
+Rendered _footer (2.8ms)
+Completed in 409ms (View: 307, DB: 11) | 200 OK [http://localhost/galleries/family]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-02 16:08:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"newborn", "controller"=>"galleries"}
+  [4;36;1mPhotographer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.2ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'newborn') LIMIT 1[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;35;1mGalleryPhoto Load (1.2ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 2) ORDER BY position[0m
+  [4;36;1mGalleryPhoto Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mPage Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+Rendered _header (15.8ms)
+Rendered _footer (152.8ms)
+Completed in 391ms (View: 286, DB: 11) | 200 OK [http://localhost/galleries/newborn]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:08:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;35;1mPhotographer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.4ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photographer_session/new
+Filter chain halted as [:require_photographer] rendered_or_redirected.
+Completed in 56ms (DB: 3) | 302 Found [http://localhost/admin]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PhotographerSessionsController#new (for 127.0.0.1 at 2010-06-02 16:08:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/photographer_sessions"}
+  [4;36;1mPhotographer Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/photographer_sessions/new
+Completed in 224ms (View: 161, DB: 3) | 200 OK [http://localhost/admin/photographer_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PhotographerSessionsController#create (for 127.0.0.1 at 2010-06-02 16:10:25) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"7bWp80IK7EwLn0X7wKBv7UF3LVoB2W0Wb9iJ1w5mFwc=", "photographer_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"photographer@grokphoto.org"}, "controller"=>"admin/photographer_sessions"}
+  [4;35;1mPhotographer Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (LOWER(`photographers`.email) = 'photographer@grokphoto.org') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.6ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:10:26', `perishable_token` = 'b5MRvMLE0HPwIBj6r6qV', `current_login_at` = '2010-06-02 14:10:26', `login_count` = 1, `current_login_ip` = '127.0.0.1' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed in 633ms (DB: 9) | 302 Found [http://localhost/admin/photographer_session]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:10:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+Rendered admin/galleries/_row (17.8ms)
+Rendered admin/galleries/_row (3.4ms)
+Rendered admin/galleries/_row (3.4ms)
+Rendered admin/galleries/_row (3.7ms)
+Completed in 140ms (View: 62, DB: 6) | 200 OK [http://localhost/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#new (for 127.0.0.1 at 2010-06-02 16:10:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/new
+Rendered admin/shared/_buttons (7.2ms)
+Rendered admin/galleries/_form (221.8ms)
+Completed in 330ms (View: 251, DB: 5) | 200 OK [http://localhost/admin/galleries/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#create (for 127.0.0.1 at 2010-06-02 16:14:02) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"7bWp80IK7EwLn0X7wKBv7UF3LVoB2W0Wb9iJ1w5mFwc=", "gallery"=>{"title"=>"Jewels", "description"=>"Fine Art Jewels & Still Life", "image"=>#<File:/tmp/RackMultipart20100602-7320-1u6doiv-0>, "keywords"=>"Furla watch"}, "controller"=>"admin/galleries"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mGallery Load (0.8ms)[0m   [0;1mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'Jewels') LIMIT 1[0m
+  [4;35;1mSlug Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `slugs`[0m
+  [4;36;1mGallery Load (1.0ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGallery Create (0.6ms)[0m   [0mINSERT INTO `galleries` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(5, '3229761180_a118d0c3d4_o.jpg', '2010-06-02 14:14:10', 'Jewels', 117467, '2010-06-02 14:14:10', 'image/jpeg', 1, 'Fine Art Jewels & Still Life', NULL, '2010-06-02 14:14:03', 'Furla watch')[0m
+  [4;36;1mSlug Load (0.6ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;35;1mGallery Load (0.7ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;36;1mSlug Load (0.9ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.`scope` IS NULL AND `slugs`.`name` = 'jewels') AND (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`scope` IS NULL AND `slugs`.`name` = 'jewels' AND `slugs`.`sluggable_type` = 'Gallery') [0m
+  [4;36;1mSlug Create (0.5ms)[0m   [0;1mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('jewels', NULL, 1, '2010-06-02 14:14:10', 'Gallery', 5)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/original/3229761180_a118d0c3d4_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/thumb/3229761180_a118d0c3d4_o.jpg
+  [4;35;1mGallery Update (0.6ms)[0m   [0mUPDATE `galleries` SET `updated_at` = '2010-06-02 14:14:10', `image_file_size` = 117467, `created_at` = '2010-06-02 14:14:10', `title` = 'Jewels', `keywords` = 'Furla watch', `cached_slug` = 'jewels', `image_file_name` = '3229761180_a118d0c3d4_o.jpg', `position` = 5, `photographer_id` = 1, `image_updated_at` = '2010-06-02 14:14:03', `description` = 'Fine Art Jewels & Still Life', `image_content_type` = 'image/jpeg' WHERE `id` = 5[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/galleries
+Completed in 8353ms (DB: 0) | 302 Found [http://localhost/admin/galleries]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:14:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Load (0.9ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+  [4;36;1mGallery Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+Rendered admin/galleries/_row (11.8ms)
+Rendered admin/galleries/_row (3.3ms)
+Rendered admin/galleries/_row (3.3ms)
+Rendered admin/galleries/_row (3.3ms)
+Rendered admin/galleries/_row (3.4ms)
+Completed in 113ms (View: 37, DB: 6) | 200 OK [http://localhost/admin/galleries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 127.0.0.1 at 2010-06-02 16:14:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhotographer Update (0.6ms)[0m   [0;1mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:14:30', `perishable_token` = 'pgtPe5bJNGY58H72WoU6' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (5.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mGallery Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.7ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+Completed in 1101ms (View: 854, DB: 14) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:14:46) [POST]
+  Parameters: {"Filename"=>"3163074353_3049c233ea_o.jpg", "perishable_token"=>"pgtPe5bJNGY58H72WoU6", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-zxo4f9-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (5.4ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'pgtPe5bJNGY58H72WoU6' and updated_at > '2010-06-02 14:04:46') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.4ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(1, '3163074353_3049c233ea_o.jpg', '2010-06-02 14:14:52', '3163074353 3049c233ea O', 234534, NULL, 1, '2010-06-02 14:14:52', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:14:46', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/53/original/3163074353_3049c233ea_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/53/thumb/3163074353_3049c233ea_o.jpg
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+Completed in 6861ms (View: 2, DB: 18) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:14:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"53", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.9ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 53 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 104ms (View: 2, DB: 9) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/53]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:15:02) [POST]
+  Parameters: {"Filename"=>"3163882786_e922f26205_o.jpg", "perishable_token"=>"pgtPe5bJNGY58H72WoU6", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-vx1dri-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'pgtPe5bJNGY58H72WoU6' and updated_at > '2010-06-02 14:05:02') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.4ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(2, '3163882786_e922f26205_o.jpg', '2010-06-02 14:15:06', '3163882786 E922f26205 O', 246421, NULL, 1, '2010-06-02 14:15:06', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:15:03', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/54/original/3163882786_e922f26205_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/54/thumb/3163882786_e922f26205_o.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.2ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+Completed in 3862ms (View: 2, DB: 11) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:15:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"54", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 54 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 93ms (View: 2, DB: 9) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/54]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 127.0.0.1 at 2010-06-02 16:15:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.6ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:15:13', `perishable_token` = '8dNN_tUdnDPgQ2Z1uejM' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (668.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (1.0ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+  [4;35;1mGalleryPhoto Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered admin/gallery_photos/_row (69.2ms)
+Rendered admin/gallery_photos/_row (4.4ms)
+Completed in 1000ms (View: 96, DB: 679) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:15:32) [POST]
+  Parameters: {"Filename"=>"3163895114_693c20db62_o.jpg", "perishable_token"=>"8dNN_tUdnDPgQ2Z1uejM", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-ks8ui4-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = '8dNN_tUdnDPgQ2Z1uejM' and updated_at > '2010-06-02 14:05:32') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.1ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.4ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(3, '3163895114_693c20db62_o.jpg', '2010-06-02 14:15:35', '3163895114 693c20db62 O', 134876, NULL, 1, '2010-06-02 14:15:35', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:15:32', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/55/original/3163895114_693c20db62_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/55/thumb/3163895114_693c20db62_o.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.1ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Completed in 3182ms (View: 2, DB: 11) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:15:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"55", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.6ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 55 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 100ms (View: 1, DB: 9) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/55]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:15:57) [POST]
+  Parameters: {"Filename"=>"3184055451_280a280082_o.jpg", "perishable_token"=>"8dNN_tUdnDPgQ2Z1uejM", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-y1iakt-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = '8dNN_tUdnDPgQ2Z1uejM' and updated_at > '2010-06-02 14:05:58') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.4ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(4, '3184055451_280a280082_o.jpg', '2010-06-02 14:15:59', '3184055451 280a280082 O', 78759, NULL, 1, '2010-06-02 14:15:59', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:15:58', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/56/original/3184055451_280a280082_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/56/thumb/3184055451_280a280082_o.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.1ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCOMMIT[0m
+Completed in 1211ms (View: 2, DB: 12) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:15:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"56", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.6ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 56 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 97ms (View: 2, DB: 8) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/56]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 127.0.0.1 at 2010-06-02 16:16:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.6ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:16:01', `perishable_token` = 'zjZCMlKaR4btUzNPDwKh' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+  [4;35;1mGalleryPhoto Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered admin/gallery_photos/_row (15.5ms)
+Rendered admin/gallery_photos/_row (5.1ms)
+Rendered admin/gallery_photos/_row (4.7ms)
+Rendered admin/gallery_photos/_row (4.0ms)
+Completed in 286ms (View: 45, DB: 15) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:16:23) [POST]
+  Parameters: {"Filename"=>"3206397273_ef12ab7880_o.jpg", "perishable_token"=>"zjZCMlKaR4btUzNPDwKh", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-12bs0et-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'zjZCMlKaR4btUzNPDwKh' and updated_at > '2010-06-02 14:06:23') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.5ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(5, '3206397273_ef12ab7880_o.jpg', '2010-06-02 14:16:27', '3206397273 Ef12ab7880 O', 341493, NULL, 1, '2010-06-02 14:16:27', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:16:24', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/57/original/3206397273_ef12ab7880_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/57/thumb/3206397273_ef12ab7880_o.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.1ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+Completed in 4662ms (View: 2, DB: 12) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:16:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"57", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.9ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 57 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 90ms (View: 2, DB: 9) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/57]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:16:43) [POST]
+  Parameters: {"Filename"=>"4372869029_35da4576d4_o.jpg", "perishable_token"=>"zjZCMlKaR4btUzNPDwKh", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-40pi0-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'zjZCMlKaR4btUzNPDwKh' and updated_at > '2010-06-02 14:06:43') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.4ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(6, '4372869029_35da4576d4_o.jpg', '2010-06-02 14:16:45', '4372869029 35da4576d4 O', 98486, NULL, 1, '2010-06-02 14:16:45', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:16:43', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/58/original/4372869029_35da4576d4_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/58/thumb/4372869029_35da4576d4_o.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.2ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCOMMIT[0m
+Completed in 2631ms (View: 2, DB: 11) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:16:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"58", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 58 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 103ms (View: 2, DB: 8) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/58]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 127.0.0.1 at 2010-06-02 16:16:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.5ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:16:46', `perishable_token` = 'DLpI8RvyJla_ky0UNBO5' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (5.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.9ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+  [4;35;1mGalleryPhoto Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered admin/gallery_photos/_row (15.0ms)
+Rendered admin/gallery_photos/_row (4.1ms)
+Rendered admin/gallery_photos/_row (4.2ms)
+Rendered admin/gallery_photos/_row (3.8ms)
+Rendered admin/gallery_photos/_row (3.8ms)
+Rendered admin/gallery_photos/_row (3.9ms)
+Completed in 296ms (View: 51, DB: 15) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 127.0.0.1 at 2010-06-02 16:16:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.6ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-02 14:16:47', `perishable_token` = 'X-UV1ruCJuJIpyJKXdGS' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (18.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.9ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+  [4;35;1mGalleryPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered admin/gallery_photos/_row (19.7ms)
+Rendered admin/gallery_photos/_row (5.7ms)
+Rendered admin/gallery_photos/_row (4.1ms)
+Rendered admin/gallery_photos/_row (3.9ms)
+Rendered admin/gallery_photos/_row (9.2ms)
+Rendered admin/gallery_photos/_row (4.4ms)
+Completed in 395ms (View: 71, DB: 31) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:17:19) [POST]
+  Parameters: {"Filename"=>"4372880855_4a48f27cb0_o.jpg", "perishable_token"=>"X-UV1ruCJuJIpyJKXdGS", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-pt79c0-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'X-UV1ruCJuJIpyJKXdGS' and updated_at > '2010-06-02 14:07:19') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.4ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(7, '4372880855_4a48f27cb0_o.jpg', '2010-06-02 14:17:22', '4372880855 4a48f27cb0 O', 127339, NULL, 1, '2010-06-02 14:17:22', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:17:19', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/59/original/4372880855_4a48f27cb0_o.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/59/thumb/4372880855_4a48f27cb0_o.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.1ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (291.7ms)[0m   [0;1mCOMMIT[0m
+Completed in 3274ms (View: 3, DB: 301) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:17:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"59", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.8ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 59 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 137ms (View: 1, DB: 11) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/59]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 127.0.0.1 at 2010-06-02 16:17:44) [POST]
+  Parameters: {"Filename"=>"mauroleone_275x200.jpg", "perishable_token"=>"X-UV1ruCJuJIpyJKXdGS", "folder"=>"/tmp", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100602-7320-15xks5y-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'X-UV1ruCJuJIpyJKXdGS' and updated_at > '2010-06-02 14:07:44') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'jewels') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.5ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(8, 'mauroleone_275x200.jpg', '2010-06-02 14:17:45', 'Mauroleone 275x200', 77704, NULL, 1, '2010-06-02 14:17:45', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-02 14:17:44', 5, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/60/original/mauroleone_275x200.jpg
+[paperclip] saving /home/lsoave/tests/grokphoto/public/attachments/galleries/5/gallery_photos/60/thumb/mauroleone_275x200.jpg
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 5) [0m
+  [4;35;1mSlug Load (0.1ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 5 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Completed in 403ms (View: 2, DB: 11) | 200 OK [http://localhost/admin/galleries/jewels/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 127.0.0.1 at 2010-06-02 16:17:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"60", "controller"=>"admin/gallery_photos", "gallery_id"=>"jewels"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 60 AND (`gallery_photos`.gallery_id = 5)) ORDER BY position[0m
+Completed in 89ms (View: 2, DB: 9) | 406 Not Acceptable [http://localhost/admin/galleries/jewels/gallery_photos/60]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:17:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;35;1mPhotographer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+  [4;35;1mGallery Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+Rendered admin/galleries/_row (11.9ms)
+Rendered admin/galleries/_row (3.4ms)
+Rendered admin/galleries/_row (3.4ms)
+Rendered admin/galleries/_row (3.3ms)
+Rendered admin/galleries/_row (3.3ms)
+Completed in 110ms (View: 37, DB: 5) | 200 OK [http://localhost/admin/galleries]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-02 16:17:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+  [4;36;1mGallery Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mPage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+Rendered _header (15.7ms)
+Rendered _footer (2.7ms)
+Completed in 205ms (View: 96, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:18:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.3ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+  [4;36;1mGallery Load (1.0ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+Redirected to http://localhost:3000/galleries/family
+Completed in 93ms (DB: 6) | 302 Found [http://localhost/galleries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-02 16:18:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"family", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.7ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'family') LIMIT 1[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;36;1mGalleryPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 1) ORDER BY position[0m
+  [4;35;1mGalleryPhoto Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;36;1mPage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+Rendered _header (17.6ms)
+Rendered _footer (2.9ms)
+Completed in 234ms (View: 135, DB: 12) | 200 OK [http://localhost/galleries/family]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-02 16:18:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"jewels", "controller"=>"galleries"}
+  [4;36;1mPhotographer Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.2ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;35;1mGalleryPhoto Load (1.0ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+  [4;36;1mGalleryPhoto Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mPage Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+Rendered _header (18.2ms)
+Rendered _footer (2.7ms)
+Completed in 239ms (View: 138, DB: 11) | 200 OK [http://localhost/galleries/jewels]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:20:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.2ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+  [4;36;1mGallery Load (0.1ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mGallery Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+Redirected to http://localhost:3000/galleries/family
+Completed in 97ms (DB: 5) | 302 Found [http://localhost/galleries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-02 16:20:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"family", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'family') LIMIT 1[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;36;1mGalleryPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 1) ORDER BY position[0m
+  [4;35;1mGalleryPhoto Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;36;1mPage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+Rendered _header (16.0ms)
+Rendered _footer (2.8ms)
+Completed in 559ms (View: 321, DB: 9) | 200 OK [http://localhost/galleries/family]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#index (for 127.0.0.1 at 2010-06-02 16:20:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"galleries"}
+  [4;36;1mPhotographer Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.3ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mGallery Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+Redirected to http://localhost:3000/galleries/family
+Completed in 117ms (DB: 6) | 302 Found [http://localhost/galleries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-02 16:20:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"family", "controller"=>"galleries"}
+  [4;36;1mPhotographer Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.2ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.2ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'family') LIMIT 1[0m
+  [4;36;1mGallery Load (0.2ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;35;1mGalleryPhoto Load (0.3ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 1) ORDER BY position[0m
+  [4;36;1mGalleryPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mPage Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+Rendered _header (18.7ms)
+Rendered _footer (3.1ms)
+Completed in 432ms (View: 329, DB: 10) | 200 OK [http://localhost/galleries/family]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-02 16:20:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.3ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+  [4;36;1mGallery Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mPage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+Rendered _header (18.4ms)
+Rendered _footer (3.4ms)
+Completed in 386ms (View: 283, DB: 7) | 200 OK [http://localhost/]
