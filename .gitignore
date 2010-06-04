@@ -2,6 +2,7 @@
 log/*.*
 tmp/**/*
 db/schema.rb
+db/lauranovara-db.sql
 config/database.yml
 config/deploy.rb
 config/deploy.jaime
