@@ -13,12 +13,12 @@ ActionController::Base.session = {
 
 # paperclip / imagemagick 
 # TODO - change this to where imagemagick is installed (which convert)
-#Paperclip.options[:command_path] = "/usr/local/bin"
-Paperclip.options[:command_path] = "/usr/bin"
+Paperclip.options[:command_path] = "/usr/local/bin"
+#Paperclip.options[:command_path] = "/usr/bin"
 
 # mailer
 # TODO - change this to your host
-ActionMailer::Base.default_url_options[:host] = "lauranovara.webbyapp.com"
+ActionMailer::Base.default_url_options[:host] = "lauranovara.com"
 
 # gmail smtp
 # TODO - change the username and password to your gmail account settings
@@ -32,4 +32,4 @@ ActionMailer::Base.smtp_settings = {
 }
 
 # memcache store - TODO uncomment this if you're using a memcache and change your namespace if you like
-# ActionController::Base.cache_store = :mem_cache_store, "localhost", { :namespace => 'grokphoto' }
+ActionController::Base.cache_store = :mem_cache_store, "localhost", { :namespace => 'grokphoto_mem_cache' }
