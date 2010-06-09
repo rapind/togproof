@@ -13,8 +13,8 @@
     = stylesheet_link_tag('global/print.css', :media => 'print')
     /[if lt IE 8]
       = stylesheet_link_tag('global/ie.css', :media => 'screen, projection')
-    = stylesheet_link_tag('global/gritter.css', 'global/colorbox.css', :media => 'screen, projection', :cache => 'theme_all_default')
-    = javascript_include_tag('jquery.min.js', 'jquery.cycle.lite.1.0.min.js', 'jquery.gritter.js', 'jquery.colorbox-min.js', 'jquery.galleria.js', 'jquery.rightClick.js', 'default.js', :cache => 'theme_all_default')
+    = stylesheet_link_tag('global/gritter.css', 'global/colorbox.css', :media => 'screen, projection')
+    = javascript_include_tag('jquery.min.js', 'jquery.cycle.lite.1.0.min.js', 'jquery.gritter.js', 'jquery.colorbox-min.js', 'jquery.galleria.js', 'jquery.rightClick.js', 'default.js')
     = yield :head
     %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon" }
     - unless @config.google_analytics_key.blank?
