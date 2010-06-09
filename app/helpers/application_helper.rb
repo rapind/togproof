@@ -21,12 +21,12 @@ module ApplicationHelper
     return html
   end
   
-  def build_submit_button(title)
+  def build_submit_button(title) 
     "<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>"
   end
   
   def build_link_button(title, path)
-    "<p class='buttons'>#{link_to(image_tag('icons/positive.png') + ' ' + title, path, :class => 'button positive')}</p>"
+    "<p class='buttons'><a href='#{path}' title='#{title}' class='button positive'>#{image_tag('icons/positive.png')} #{title}</a></p>"
   end
   
 end
