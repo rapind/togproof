@@ -6,18 +6,32 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
+  config.action_controller.session = { :key => "_lauranovara.com_session", :secret => "some secret phrase some secret phrase some secret phrase" }
+
+  # moved to config/initializers/grokphoto.rb
+  # config.action_controller.page_cache_directory = "#{RAILS_ROOT}/tmp/cache"
+
   # required gems (rake gems:install)
-  config.gem 'rdiscount', :version => "= 1.5.8"
+  config.gem 'rails', :version => "= 2.3.5"
+  config.gem 'thin'
+
+  # to run locally comment the next line
+  config.gem 'pg', :version => "= 0.9.0"
+
+  config.gem 'rdiscount'
   config.gem 'mime-types', :lib => 'mime/types', :version => "= 1.16"
   config.gem 'acts_as_list', :version => "= 0.1.2"
-  config.gem 'inherited_resources', :version => "= 0.9.5" # 1.0 & 1.1 are broken in rails 2.3.x
-  config.gem 'will_paginate', :version => "= 2.3.12"
-  config.gem 'authlogic', :version => "= 2.1.3"
-  config.gem 'haml', :version => "= 2.2.19"
-  config.gem 'exifr', :version => "= 0.10.9"
+
+  # version 1.1.2 doesn' works
+  # config.gem 'inherited_resources', :version => "= 1.1.2"
+  config.gem 'inherited_resources', :version => "= 0.9.5"
+
+  config.gem 'will_paginate'
+  config.gem 'authlogic'
+  config.gem 'haml'
+  config.gem 'exifr'
   config.gem 'less', :version => "= 1.2.21"
-  config.gem 'friendly_id', :version => "= 2.3.0"
-  config.gem 'memcache-client', :version => "= 1.8.2", :lib => "memcache"
+  config.gem 'friendly_id'
   
   # TODO - change this to your time zone
   config.time_zone = 'Eastern Time (US & Canada)'
