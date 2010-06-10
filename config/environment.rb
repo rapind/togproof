@@ -6,6 +6,11 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
+  Use config.action_controller.session = { 
+    :key => "_grokphoto_session", 
+    :secret => "a0as9d8f7g3j2l12k3j4h5yh5j6v55xa5attdtsugg7743r8f494uhpfin4894h97489qrh774f423l4kn" 
+  }
+
   # required gems (rake gems:install)
   config.gem 'rails', :version => "= 2.3.8"
   config.gem 'thin'
