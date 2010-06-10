@@ -1,0 +1,71 @@
+
+lsoave@ubuntu:~/heroku/grokphoto$ rake db:seed
+(in /home/lsoave/heroku/grokphoto)
+Creating photographer
+Uploading watermark...
+Creating clients
+Creating bookings
+Creating galleries
+Uploading gallery images...
+Uploading gallery photo images
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-12.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-11.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-02.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-06.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-05.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-10.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-01.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-09.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-04.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-03.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-07.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/family/family-08.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-10.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-08.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-07.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-13.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-12.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-09.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-05.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-06.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-03.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-01.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-04.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-15.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-11.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-14.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-02.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/newborn/newborn-16.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-07.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-12.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-09.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-02.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-05.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-03.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-10.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-04.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-06.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-08.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-11.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/babies-and-children/babies-and-children-01.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-03.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-01.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-09.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-04.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-05.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-12.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-10.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-07.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-08.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-11.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-02.jpg
+uploading /home/lsoave/heroku/grokphoto/photoshop/galleries/maternity/maternity-06.jpg
+Creating pages
+Uploading page images
+Creating quotes
+Creating packages
+Creating products
+Uploading product images
+Creating product sizes
+lsoave@ubuntu:~/heroku/grokphoto$ 
+
