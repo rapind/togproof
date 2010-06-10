@@ -13,8 +13,8 @@ ActionController::Base.session = {
 
 # paperclip / imagemagick 
 # TODO - change this to where imagemagick is installed (which convert)
-Paperclip.options[:command_path] = "/usr/local/bin"
-#Paperclip.options[:command_path] = "/usr/bin"
+#Paperclip.options[:command_path] = "/usr/local/bin"
+Paperclip.options[:command_path] = "/usr/bin"
 
 # mailer
 # TODO - change this to your host
