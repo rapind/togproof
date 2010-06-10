@@ -1,6 +1,5 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-RAILS_ENV='production'
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -17,7 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'thin'
 
   # to run locally comment the next line
-  config.gem 'pg', :version => "= 0.9.0"
+#  config.gem 'pg', :version => "= 0.9.0"
 
   config.gem 'rdiscount'
   config.gem 'mime-types', :lib => 'mime/types', :version => "= 1.16"
@@ -33,8 +32,6 @@ Rails::Initializer.run do |config|
   config.gem 'exifr'
   config.gem 'less', :version => "= 1.2.21"
   config.gem 'friendly_id'
-  config.gem 'paperclip'
-  config.gem 'memcache-client'
   
   # TODO - change this to your time zone
   config.time_zone = 'Eastern Time (US & Canada)'

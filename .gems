@@ -14,5 +14,3 @@ less --version ">= 1.2.21"
 friendly_id
 memcache-client
 
-paperclip 
-
