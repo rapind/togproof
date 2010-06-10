@@ -34,6 +34,7 @@ Rails::Initializer.run do |config|
   config.gem 'less', :version => "= 1.2.21"
   config.gem 'friendly_id'
   config.gem 'paperclip'
+  config.gem 'memcache-client'
   
   # TODO - change this to your time zone
   config.time_zone = 'Eastern Time (US & Canada)'
