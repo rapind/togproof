@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   config.gem 'exifr'
   config.gem 'less', :version => "= 1.2.21"
   config.gem 'friendly_id'
-  config.gem 'paperclip', :version => "= 2.3.1.1"
+  config.gem 'paperclip'
   
   # TODO - change this to your time zone
   config.time_zone = 'Eastern Time (US & Canada)'
