@@ -1,0 +1,16 @@
+rails -v=2.3.5
+thin
+pg
+
+rdiscount
+mime-types --version ">= 1.16"
+acts_as_list --version ">= 0.1.2"
+inherited_resources --version "= 0.9.5"
+will_paginate
+authlogic
+haml
+exifr
+less --version ">= 1.2.21"
+friendly_id
+memcache-client
+
