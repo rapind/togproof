@@ -1,4 +1,4 @@
-rails -v=2.3.5
+rails -v=2.3.8
 thin
 pg
 
