@@ -1,0 +1,809 @@
+/!\ FAILSAFE /!\  Sat Jun 19 14:20:46 +0200 2010
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `polyglot_original_require'
+    /var/lib/gems/1.8/gems/polyglot-0.3.1/lib/polyglot.rb:64:in `require'
+    /var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /var/lib/gems/1.8/gems/haml-3.0.12/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /var/lib/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /var/lib/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /var/lib/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  2010-06-19 14:50:48 +0200
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/polyglot-0.3.1/lib/polyglot.rb:64:in `require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/polyglot-0.3.1/lib/polyglot.rb:64:in `require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `block in require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `block in require_library_or_gem'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/monitor.rb:201:in `mon_synchronize'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/haml-3.0.12/lib/sass/plugin/rack.rb:41:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:10:in `synchronize'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/!\ FAILSAFE /!\  2010-06-19 15:07:22 +0200
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/polyglot-0.3.1/lib/polyglot.rb:64:in `require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/polyglot-0.3.1/lib/polyglot.rb:64:in `require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `block in require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `block in require_library_or_gem'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/monitor.rb:201:in `mon_synchronize'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/haml-3.0.12/lib/sass/plugin/rack.rb:41:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:10:in `synchronize'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/!\ FAILSAFE /!\  2010-06-19 15:27:54 +0200
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/monitor.rb:201:in `mon_synchronize'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/haml-3.0.12/lib/sass/plugin/rack.rb:41:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:10:in `synchronize'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/local/rvm/gems/ruby-1.9.2-head/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/!\ FAILSAFE /!\  Sat Jun 19 20:46:53 +0200 2010
+  Status: 500 Internal Server Error
+  Unknown database 'lauranovara-db'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /var/lib/gems/1.8/gems/haml-3.0.12/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /var/lib/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /var/lib/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /var/lib/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /var/lib/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (386.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2252.7ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (14138.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotographers (20100112143336)
+  [4;36;1mSQL (7194.3ms)[0m   [0;1mCREATE TABLE `photographers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(100) NOT NULL, `crypted_password` varchar(255) NOT NULL, `password_salt` varchar(255) NOT NULL, `persistence_token` varchar(255) NOT NULL, `single_access_token` varchar(255) NOT NULL, `perishable_token` varchar(255) NOT NULL, `login_count` int(11) DEFAULT 0 NOT NULL, `failed_login_count` int(11) DEFAULT 0 NOT NULL, `current_login_at` datetime, `last_login_at` datetime, `current_login_ip` varchar(11), `last_login_ip` varchar(11), `company_name` varchar(64) NOT NULL, `site_url` varchar(255) NOT NULL, `company_email` varchar(100), `company_phone` varchar(20), `blog_url` varchar(255), `facebook_url` varchar(255), `twitter_url` varchar(255), `google_analytics_key` varchar(20), `google_verification_key` varchar(50), `theme` varchar(40) DEFAULT 'default' NOT NULL, `use_watermark` tinyint(1) DEFAULT 0 NOT NULL, `watermark_file_name` varchar(255), `watermark_content_type` varchar(255), `watermark_file_size` int(11), `watermark_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (55745.6ms)[0m   [0mCREATE UNIQUE INDEX `index_photographers_on_email` ON `photographers` (`email`)[0m
+  [4;36;1mSQL (227.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100112143336')[0m
+Migrating to CreateClients (20100112143341)
+  [4;35;1mSQL (4606.9ms)[0m   [0mCREATE TABLE `clients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photographer_id` int(11) NOT NULL, `name` varchar(64), `email` varchar(100) NOT NULL, `crypted_password` varchar(255) NOT NULL, `password_salt` varchar(255) NOT NULL, `persistence_token` varchar(255) NOT NULL, `single_access_token` varchar(255) NOT NULL, `perishable_token` varchar(255) NOT NULL, `login_count` int(11) DEFAULT 0 NOT NULL, `failed_login_count` int(11) DEFAULT 0 NOT NULL, `last_request_at` datetime, `current_login_at` datetime, `last_login_at` datetime, `current_login_ip` varchar(11), `last_login_ip` varchar(11), `street_1` varchar(128), `street_2` varchar(100), `city` varchar(64), `postal_code` varchar(20), `country` varchar(32), `province` varchar(2), `phone` varchar(20), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (322.9ms)[0m   [0;1mCREATE UNIQUE INDEX `index_clients_on_email` ON `clients` (`email`)[0m
+  [4;35;1mSQL (43.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100112143341')[0m
+Migrating to CreateGalleries (20100112205703)
+  [4;36;1mSQL (1323.6ms)[0m   [0;1mCREATE TABLE `galleries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photographer_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `title` varchar(100) NOT NULL, `keywords` varchar(200), `description` text NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (159.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100112205703')[0m
+Migrating to CreatePages (20100115230942)
+  [4;36;1mSQL (12.7ms)[0m   [0;1mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photographer_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `title` varchar(255) NOT NULL, `intro` varchar(255), `keywords` varchar(200), `body` text NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100115230942')[0m
+Migrating to CreateGalleryPhotos (20100117182247)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE `gallery_photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gallery_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `title` varchar(128) NOT NULL, `featured` tinyint(1) DEFAULT 1 NOT NULL, `featured_position` int(11) DEFAULT 1 NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `width` int(11), `height` int(11), `camera_brand` varchar(255), `camera_model` varchar(255), `exposure_time` varchar(255), `f_number` float, `iso_speed_rating` int(11), `focal_length` float, `shot_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100117182247')[0m
+Migrating to CreateBookings (20100119153613)
+  [4;36;1mSQL (189.7ms)[0m   [0;1mCREATE TABLE `bookings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `client_id` int(11) NOT NULL, `title` varchar(128) NOT NULL, `occurs_on` date, `expires_on` date, `price` int(11), `ready` tinyint(1), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100119153613')[0m
+Migrating to CreatePhotos (20100119154100)
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `booking_id` int(11) NOT NULL, `title` varchar(128) NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `width` int(11), `height` int(11), `camera_brand` varchar(255), `camera_model` varchar(255), `exposure_time` varchar(255), `f_number` float, `iso_speed_rating` int(11), `focal_length` float, `shot_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100119154100')[0m
+Migrating to CreatePhotoComments (20100120231854)
+  [4;36;1mSQL (37.5ms)[0m   [0;1mCREATE TABLE `photo_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photo_id` int(11) NOT NULL, `client_id` int(11), `photographer_id` int(11), `body` varchar(2000) NOT NULL, `created_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100120231854')[0m
+Migrating to CreateSlugs (20100131223834)
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCREATE TABLE `slugs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `sluggable_id` int(11), `sequence` int(11) DEFAULT 1 NOT NULL, `sluggable_type` varchar(40), `scope` varchar(40), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE UNIQUE INDEX `index_slugs_on_name_and_sluggable_type_and_scope_and_sequence` ON `slugs` (`name`, `sluggable_type`, `scope`, `sequence`)[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE INDEX `index_slugs_on_sluggable_id` ON `slugs` (`sluggable_id`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100131223834')[0m
+Migrating to AddSlugCaching (20100215224920)
+  [4;36;1mSQL (685.2ms)[0m   [0;1mALTER TABLE `galleries` ADD `cached_slug` varchar(128)[0m
+  [4;35;1mSQL (30.2ms)[0m   [0mALTER TABLE `pages` ADD `cached_slug` varchar(128)[0m
+  [4;36;1mSQL (192.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100215224920')[0m
+Migrating to CreateQuotes (20100220172209)
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE `quotes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photographer_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `author` varchar(80) NOT NULL, `body` varchar(200) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100220172209')[0m
+Migrating to CreatePackages (20100305023637)
+  [4;35;1mSQL (14.7ms)[0m   [0mCREATE TABLE `packages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photographer_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `title` varchar(128) NOT NULL, `price` decimal(8,2) NOT NULL, `active` tinyint(1) DEFAULT 1 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100305023637')[0m
+Migrating to CreateProducts (20100305023722)
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photographer_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `title` varchar(128) NOT NULL, `description` varchar(2000), `active` tinyint(1) DEFAULT 1 NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100305023722')[0m
+Migrating to CreateProductSizes (20100305023814)
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE TABLE `product_sizes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11) NOT NULL, `position` int(11) DEFAULT 1 NOT NULL, `title` varchar(128) NOT NULL, `price` decimal(8,2) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100305023814')[0m
+Migrating to CreatePackageProductSizes (20100305025241)
+  [4;35;1mSQL (4.4ms)[0m   [0mCREATE TABLE `package_product_sizes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `package_id` int(11) NOT NULL, `product_size_id` int(11) NOT NULL, `active` tinyint(1) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100305025241')[0m
+Migrating to AddHomePageTitleToPhotographers (20100424151009)
+  [4;35;1mSQL (5.7ms)[0m   [0mALTER TABLE `photographers` ADD `home_page_title` varchar(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100424151009')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (480.7ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `bookings`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `bookings`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `clients`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `clients`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `galleries`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `galleries`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `gallery_photos`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `package_product_sizes`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `package_product_sizes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `package_product_sizes`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `packages`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `packages`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `packages`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `pages`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `pages`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `photo_comments`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `photo_comments`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `photo_comments`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `photographers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `photographers`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `photos`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `product_sizes`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `product_sizes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `product_sizes`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `quotes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `quotes`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `slugs`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `slugs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `slugs`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 93.34.212.81 at 2010-06-19 21:08:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (16.8ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (6.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (126.4ms)
+Rendered _footer (16.0ms)
+Completed in 508ms (View: 310, DB: 28) | 200 OK [http://173.203.51.46/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#index (for 93.34.212.81 at 2010-06-19 21:08:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.6ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position LIMIT 1[0m
+Redirected to http://173.203.51.46:3000/galleries/jewels
+Completed in 219ms (DB: 6) | 302 Found [http://173.203.51.46/galleries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 93.34.212.81 at 2010-06-19 21:08:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"jewels", "controller"=>"galleries"}
+  [4;36;1mPhotographer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.3ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;36;1mGalleryPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+  [4;35;1mGalleryPhoto Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered _header (9.2ms)
+Rendered _footer (2.1ms)
+Completed in 274ms (View: 101, DB: 8) | 200 OK [http://173.203.51.46/galleries/jewels]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 93.34.212.81 at 2010-06-19 21:09:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;35;1mPhotographer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.6ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+Redirected to http://173.203.51.46:3000/admin/photographer_session/new
+Filter chain halted as [:require_photographer] rendered_or_redirected.
+Completed in 164ms (DB: 2) | 302 Found [http://173.203.51.46/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PhotographerSessionsController#new (for 93.34.212.81 at 2010-06-19 21:09:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/photographer_sessions"}
+  [4;36;1mPhotographer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/photographer_sessions/new
+Completed in 101ms (View: 53, DB: 2) | 200 OK [http://173.203.51.46/admin/photographer_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PhotographerSessionsController#create (for 93.34.212.81 at 2010-06-19 21:09:28) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"uWFrSE3GkoeLw6BD7SQXs5M8gydmTSRlELIISStFgNs=", "photographer_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"novara.laura@gmail.com"}, "controller"=>"admin/photographer_sessions"}
+  [4;35;1mPhotographer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (18.6ms)[0m   [0mSELECT * FROM `photographers` WHERE (LOWER(`photographers`.email) = 'novara.laura@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (3.7ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-19 19:09:28', `perishable_token` = 'BTMAQu_PWm3KBp1TUvK2', `last_login_at` = '2010-06-04 09:04:57', `current_login_at` = '2010-06-19 19:09:28', `login_count` = 3, `current_login_ip` = '93.34.212.81' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://173.203.51.46:3000/admin
+Completed in 715ms (DB: 26) | 302 Found [http://173.203.51.46/admin/photographer_session]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 93.34.212.81 at 2010-06-19 21:09:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+Rendered admin/galleries/_row (24.3ms)
+Completed in 133ms (View: 61, DB: 5) | 200 OK [http://173.203.51.46/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#new (for 93.34.212.81 at 2010-06-19 21:10:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.4ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/new
+Rendered admin/shared/_buttons (14.3ms)
+Rendered admin/galleries/_form (35.3ms)
+Completed in 269ms (View: 70, DB: 4) | 200 OK [http://173.203.51.46/admin/galleries/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#create (for 93.34.212.81 at 2010-06-19 21:10:38) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"uWFrSE3GkoeLw6BD7SQXs5M8gydmTSRlELIISStFgNs=", "gallery"=>{"title"=>"prova", "description"=>" prova prova prova ", "image"=>#<File:/tmp/RackMultipart20100619-8462-iggkcg-0>, "keywords"=>"prova"}, "controller"=>"admin/galleries"}
+  [4;35;1mPhotographer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mGallery Columns (5.1ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/3216679972_bc554cbb6d_b,8462,0.jpg is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/3216679972_bc554cbb6d_b,8462,0.jpg is not recognized by the 'identify' command.>
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGallery Load (18.3ms)[0m   [0;1mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'prova') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/new
+Rendered admin/shared/_buttons (3.3ms)
+Rendered admin/galleries/_form (21.5ms)
+Completed in 394ms (View: 36, DB: 0) | 200 OK [http://173.203.51.46/admin/galleries]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 93.34.212.81 at 2010-06-19 21:10:40) [GET]
+  Parameters: {"1276974638"=>nil}
+Redirected to http://173.203.51.46:3000/not_found
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#not_found (for 93.34.212.81 at 2010-06-19 21:10:40) [GET]
+  Parameters: {"action"=>"not_found", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /404 (not_found)
+  [4;35;1mQuote Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (61.2ms)
+Rendered _header (5.9ms)
+Rendered _footer (2.5ms)
+Completed in 577ms (View: 275, DB: 5) | 404 Not Found [http://173.203.51.46/not_found]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 93.34.212.81 at 2010-06-19 21:10:41) [GET]
+  Parameters: {"1276974638"=>nil}
+Redirected to http://173.203.51.46:3000/not_found
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#not_found (for 93.34.212.81 at 2010-06-19 21:10:41) [GET]
+  Parameters: {"action"=>"not_found", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.2ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /404 (not_found)
+  [4;35;1mQuote Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (239.7ms)
+Rendered _header (5.7ms)
+Rendered _footer (1.9ms)
+Completed in 359ms (View: 296, DB: 4) | 404 Not Found [http://173.203.51.46/not_found]
+  [4;36;1mSQL (23.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#new (for 93.34.212.81 at 2010-06-19 21:33:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/galleries"}
+  [4;35;1mPhotographer Columns (35.9ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (7.1ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (1.2ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mGallery Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/new
+Rendered admin/shared/_buttons (27.3ms)
+Rendered admin/galleries/_form (37.9ms)
+Completed in 405ms (View: 88, DB: 69) | 200 OK [http://173.203.51.46/admin/galleries/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#create (for 93.34.212.81 at 2010-06-19 21:33:48) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"uWFrSE3GkoeLw6BD7SQXs5M8gydmTSRlELIISStFgNs=", "gallery"=>{"title"=>"prova", "description"=>" prova prova prova ", "image"=>#<File:/tmp/RackMultipart20100619-8462-ysxspl-0>, "keywords"=>"prova"}, "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.6ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mSQL (22.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT `galleries`.id FROM `galleries` WHERE (`galleries`.`title` = BINARY 'prova') LIMIT 1[0m
+  [4;36;1mSlug Columns (18.9ms)[0m   [0;1mSHOW FIELDS FROM `slugs`[0m
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGallery Create (1.5ms)[0m   [0;1mINSERT INTO `galleries` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `description`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(2, '3216679972_bc554cbb6d_b.jpg', '2010-06-19 19:33:49', 'prova', 242726, '2010-06-19 19:33:49', 'image/jpeg', 1, ' prova prova prova ', NULL, '2010-06-19 19:33:48', 'prova')[0m
+  [4;35;1mSlug Load (14.1ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 6) [0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.`name` = 'prova' AND `slugs`.`scope` IS NULL) AND (`slugs`.sluggable_id = 6 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`name` = 'prova' AND `slugs`.`scope` IS NULL AND `slugs`.`sluggable_type` = 'Gallery') [0m
+  [4;35;1mSlug Create (0.4ms)[0m   [0mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('prova', NULL, 1, '2010-06-19 19:33:50', 'Gallery', 6)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /rails/lauranovara/public/attachments/galleries/6/original/3216679972_bc554cbb6d_b.jpg
+[paperclip] saving /rails/lauranovara/public/attachments/galleries/6/thumb/3216679972_bc554cbb6d_b.jpg
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 6 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mGallery Update (0.4ms)[0m   [0mUPDATE `galleries` SET `updated_at` = '2010-06-19 19:33:50', `image_file_size` = 242726, `created_at` = '2010-06-19 19:33:49', `title` = 'prova', `keywords` = 'prova', `cached_slug` = 'prova', `image_file_name` = '3216679972_bc554cbb6d_b.jpg', `position` = 2, `photographer_id` = 1, `image_updated_at` = '2010-06-19 19:33:48', `description` = ' prova prova prova ', `image_content_type` = 'image/jpeg' WHERE `id` = 6[0m
+  [4;36;1mSQL (18.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://173.203.51.46:3000/admin/galleries
+Completed in 1717ms (DB: 0) | 302 Found [http://173.203.51.46/admin/galleries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 93.34.212.81 at 2010-06-19 21:33:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.6ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+Rendered admin/galleries/_row (18.8ms)
+Rendered admin/galleries/_row (3.1ms)
+Completed in 102ms (View: 32, DB: 4) | 200 OK [http://173.203.51.46/admin/galleries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 93.34.212.81 at 2010-06-19 21:34:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;36;1mPhotographer Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.6ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhotographer Update (0.5ms)[0m   [0;1mUPDATE `photographers` SET `updated_at` = '2010-06-19 19:34:03', `perishable_token` = 'Jmk-Q4JdJvk-kXZUTurB' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mGallery Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'prova') LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.4ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;35;1mGalleryPhoto Load (0.5ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 6) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+Completed in 473ms (View: 54, DB: 7) | 200 OK [http://173.203.51.46/admin/galleries/prova/gallery_photos]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhotographer Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT `photographers`.id FROM `photographers` WHERE (LOWER(`photographers`.`email`) = BINARY 'photographer@grokphoto.org') LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.4ms)[0m   [0;1mSELECT `photographers`.id FROM `photographers` WHERE (`photographers`.`persistence_token` = BINARY 'fb0dc6b8b9813eb851683ec8f36bc4905bfbeccf7c050f8dc24360b417168cce9912415ec389ee25503618a285c4ed43105787cff79755a7299e0288017970e7') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.2ms)[0m   [0mSELECT `photographers`.id FROM `photographers` WHERE (`photographers`.`single_access_token` = BINARY 'ds9wRRm08_Z7EzNE96Le') LIMIT 1[0m
+  [4;36;1mPhotographer Create (0.5ms)[0m   [0;1mINSERT INTO `photographers` (`google_analytics_key`, `watermark_content_type`, `watermark_updated_at`, `single_access_token`, `google_verification_key`, `created_at`, `home_page_title`, `crypted_password`, `company_name`, `facebook_url`, `theme`, `watermark_file_size`, `perishable_token`, `site_url`, `company_phone`, `use_watermark`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `company_email`, `persistence_token`, `login_count`, `blog_url`, `twitter_url`, `last_login_ip`, `watermark_file_name`, `last_login_at`, `email`) VALUES('UA-2450369-23', NULL, NULL, 'ds9wRRm08_Z7EzNE96Le', 'n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0', '2010-06-19 19:38:03', 'Open-source Photography', 'c7ad9107befd591ae1b3145f1b3ab443a50496dbda9a0e475cf45c8c10b50fa8f27eb882e4e78ff622c745d39da3e348e82d9b02b296c35b5292a245262734f4', 'GrokPhoto', NULL, 'default', NULL, '2YPmLmnzFvw6WNW4b1jl', 'http://demo.grokphoto.org', NULL, 0, '2010-06-19 19:38:03', 0, NULL, '8P8wvfhhXRWflYQ21nli', NULL, 'info@grokphoto.org', 'fb0dc6b8b9813eb851683ec8f36bc4905bfbeccf7c050f8dc24360b417168cce9912415ec389ee25503618a285c4ed43105787cff79755a7299e0288017970e7', 0, 'http://rapin.com', NULL, NULL, NULL, NULL, 'photographer@grokphoto.org')[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.6ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-19 19:38:04', `perishable_token` = 'rNYQBkhxQQc46sLxXntF', `watermark_file_size` = 8569, `watermark_updated_at` = '2010-06-19 19:38:03', `watermark_content_type` = 'image/png', `watermark_file_name` = 'watermark.png' WHERE `id` = 2[0m
+[paperclip] Saving attachments.
+[paperclip] saving /rails/lauranovara/public/attachments/watermark/thumb.png
+[paperclip] saving /rails/lauranovara/public/attachments/watermark/original.png
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mClient Columns (11.5ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT `clients`.id FROM `clients` WHERE (LOWER(`clients`.`email`) = BINARY 'client@grokphoto.org') LIMIT 1[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT `clients`.id FROM `clients` WHERE (`clients`.`persistence_token` = BINARY '2ddfd9c2c1029cc87cda18d8f761ddb649e916c2019dc4eb19fc8e77f32e2131fee5ab7721b3502d96fdbb3278dd5abc8ea1181720beb023472f12da893fc310') LIMIT 1[0m
+  [4;35;1mClient Load (0.2ms)[0m   [0mSELECT `clients`.id FROM `clients` WHERE (`clients`.`single_access_token` = BINARY 'cevEKRrps8WXvidOaCH1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 93.34.212.81 at 2010-06-19 21:39:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;35;1mPhotographer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.3ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-19 19:39:25', `perishable_token` = 'vv3Zx-mmgATD7Vpx1NfP' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'prova') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 6) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+Completed in 491ms (View: 228, DB: 7) | 200 OK [http://173.203.51.46/admin/galleries/prova/gallery_photos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 93.34.212.81 at 2010-06-19 21:40:00) [POST]
+  Parameters: {"Filename"=>"3016455288_546e7e05b9_b.jpg", "folder"=>"/tmp", "perishable_token"=>"vv3Zx-mmgATD7Vpx1NfP", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100619-10083-1wqfz5f-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;36;1mPhotographer Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (17.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (perishable_token = 'vv3Zx-mmgATD7Vpx1NfP' and updated_at > '2010-06-19 19:30:00') LIMIT 1[0m
+  [4;35;1mGallery Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'prova') ORDER BY position LIMIT 1[0m
+  [4;35;1mGalleryPhoto Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGalleryPhoto Load (0.7ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (gallery_id = 6) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mGalleryPhoto Create (0.4ms)[0m   [0;1mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(1, '3016455288_546e7e05b9_b.jpg', '2010-06-19 19:40:01', '3016455288 546e7e05b9 B', 161544, NULL, 1, '2010-06-19 19:40:01', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-19 19:40:00', 6, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /rails/lauranovara/public/attachments/galleries/6/gallery_photos/61/original/3016455288_546e7e05b9_b.jpg
+[paperclip] saving /rails/lauranovara/public/attachments/galleries/6/gallery_photos/61/thumb/3016455288_546e7e05b9_b.jpg
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 6) [0m
+  [4;36;1mSlug Load (0.4ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 6 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mSlug Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `slugs`[0m
+  [4;36;1mSQL (33.4ms)[0m   [0;1mCOMMIT[0m
+Completed in 1512ms (View: 2, DB: 58) | 200 OK [http://173.203.51.46/admin/galleries/prova/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#show (for 93.34.212.81 at 2010-06-19 21:40:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"61", "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;36;1mPhotographer Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.3ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'prova') LIMIT 1[0m
+  [4;35;1mPhotographer Load (4.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mGalleryPhoto Load (0.3ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.`id` = 61 AND (`gallery_photos`.gallery_id = 6)) ORDER BY position[0m
+Completed in 76ms (View: 1, DB: 10) | 406 Not Acceptable [http://173.203.51.46/admin/galleries/prova/gallery_photos/61]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 93.34.212.81 at 2010-06-19 21:40:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;35;1mPhotographer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.6ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhotographer Update (0.4ms)[0m   [0mUPDATE `photographers` SET `updated_at` = '2010-06-19 19:40:03', `perishable_token` = 'jT2uIBB5xJNsyZ_f2m-t' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mSQL (19.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGallery Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'prova') LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.3ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;36;1mGalleryPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 6) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+  [4;35;1mGalleryPhoto Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered admin/gallery_photos/_row (49.6ms)
+Completed in 336ms (View: 70, DB: 26) | 200 OK [http://173.203.51.46/admin/galleries/prova/gallery_photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#flash_upload (for 93.34.212.81 at 2010-06-19 21:40:27) [POST]
+  Parameters: {"Filename"=>"3215828287_36f3b2f28b_o.jpg", "folder"=>"/tmp", "perishable_token"=>"jT2uIBB5xJNsyZ_f2m-t", "action"=>"flash_upload", "Upload"=>"Submit Query", "fileext"=>"*.jpg;", "gallery_photo"=>{"image"=>#<File:/tmp/RackMultipart20100619-10083-130uclt-0>}, "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;35;1mPhotographer Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.4ms)[0m   [0mSELECT * FROM `photographers` WHERE (perishable_token = 'jT2uIBB5xJNsyZ_f2m-t' and updated_at > '2010-06-19 19:30:27') LIMIT 1[0m
+  [4;36;1mGallery Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.3ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) AND (`galleries`.`cached_slug` = 'prova') ORDER BY position LIMIT 1[0m
+  [4;36;1mGalleryPhoto Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mGalleryPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (gallery_id = 6) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mGalleryPhoto Create (0.3ms)[0m   [0mINSERT INTO `gallery_photos` (`position`, `image_file_name`, `created_at`, `title`, `image_file_size`, `f_number`, `featured`, `updated_at`, `image_content_type`, `camera_brand`, `camera_model`, `iso_speed_rating`, `focal_length`, `featured_position`, `shot_at`, `height`, `exposure_time`, `image_updated_at`, `gallery_id`, `width`) VALUES(2, '3215828287_36f3b2f28b_o.jpg', '2010-06-19 19:40:28', '3215828287 36f3b2f28b O', 77748, NULL, 1, '2010-06-19 19:40:28', 'image/jpeg', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2010-06-19 19:40:27', 6, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /rails/lauranovara/public/attachments/galleries/6/gallery_photos/62/original/3215828287_36f3b2f28b_o.jpg
+[paperclip] saving /rails/lauranovara/public/attachments/galleries/6/gallery_photos/62/thumb/3215828287_36f3b2f28b_o.jpg
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`id` = 6) [0m
+  [4;35;1mSlug Load (0.3ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 6 AND `slugs`.sluggable_type = 'Gallery') ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Completed in 741ms (View: 2, DB: 7) | 200 OK [http://173.203.51.46/admin/galleries/prova/gallery_photos/flash_upload]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleryPhotosController#index (for 93.34.212.81 at 2010-06-19 21:40:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/gallery_photos", "gallery_id"=>"prova"}
+  [4;36;1mPhotographer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhotographer Update (0.4ms)[0m   [0;1mUPDATE `photographers` SET `updated_at` = '2010-06-19 19:40:31', `perishable_token` = 'dEuiDEjpZ82EV9ZDfOyZ' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mGallery Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.4ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'prova') LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = 1) [0m
+  [4;35;1mGalleryPhoto Load (0.5ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 6) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/gallery_photos/index
+  [4;36;1mGalleryPhoto Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered admin/gallery_photos/_row (13.8ms)
+Rendered admin/gallery_photos/_row (3.6ms)
+Completed in 283ms (View: 31, DB: 8) | 200 OK [http://173.203.51.46/admin/galleries/prova/gallery_photos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 93.34.212.81 at 2010-06-19 21:40:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.5ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+Rendered admin/galleries/_row (10.3ms)
+Rendered admin/galleries/_row (3.0ms)
+Completed in 205ms (View: 141, DB: 4) | 200 OK [http://173.203.51.46/admin/galleries]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 93.34.212.81 at 2010-06-19 21:40:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.5ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (2.2ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (16.2ms)
+Rendered admin/pages/_row (5.8ms)
+Completed in 118ms (View: 45, DB: 6) | 200 OK [http://173.203.51.46/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 93.34.212.81 at 2010-06-19 21:41:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.6ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.3ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.4ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (9.1ms)
+Rendered _footer (2.8ms)
+Completed in 261ms (View: 154, DB: 6) | 200 OK [http://173.203.51.46/]

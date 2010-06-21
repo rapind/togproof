@@ -16,7 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'thin'
 
   # to run locally comment the next line
-  config.gem 'pg', :version => "= 0.9.0"
+#  config.gem 'pg', :version => "= 0.9.0"
 
   config.gem 'rdiscount'
   config.gem 'mime-types', :lib => 'mime/types', :version => "= 1.16"
