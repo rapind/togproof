@@ -1555,3 +1555,879 @@ Rendered _header (12.3ms)
 Rendered _footer (2.2ms)
 Rendered _google_analytics (3.0ms)
 Completed in 423ms (View: 319, DB: 12) | 200 OK [http://localhost/galleries/jewels]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 20:40:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.5ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (12.2ms)
+Rendered _footer (2.6ms)
+Rendered _google_analytics (162.3ms)
+Completed in 537ms (View: 410, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#index (for 127.0.0.1 at 2010-06-28 20:41:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.9ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.7ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.7ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+  [4;36;1mGallery Load (0.7ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position LIMIT 1[0m
+Redirected to http://localhost:3000/galleries/jewels
+Completed in 280ms (DB: 10) | 302 Found [http://localhost/galleries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-28 20:41:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"jewels", "controller"=>"galleries"}
+  [4;36;1mPhotographer Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.9ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.6ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'jewels') LIMIT 1[0m
+  [4;35;1mGallery Load (0.8ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;36;1mGalleryPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 5) ORDER BY position[0m
+  [4;35;1mGalleryPhoto Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered _header (11.9ms)
+Rendered _footer (2.2ms)
+Rendered _google_analytics (2.9ms)
+Completed in 251ms (View: 137, DB: 12) | 200 OK [http://localhost/galleries/jewels]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GalleriesController#show (for 127.0.0.1 at 2010-06-28 20:41:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"piglet-stories", "controller"=>"galleries"}
+  [4;35;1mPhotographer Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.`cached_slug` = 'piglet-stories') LIMIT 1[0m
+  [4;36;1mGallery Load (0.6ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /gallery
+  [4;35;1mGalleryPhoto Load (1.1ms)[0m   [0mSELECT * FROM `gallery_photos` WHERE (`gallery_photos`.gallery_id = 6) ORDER BY position[0m
+  [4;36;1mGalleryPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+Rendered _header (12.1ms)
+Rendered _footer (2.1ms)
+Rendered _google_analytics (2.9ms)
+Completed in 257ms (View: 143, DB: 13) | 200 OK [http://localhost/galleries/piglet-stories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 127.0.0.1 at 2010-06-28 20:41:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.6ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+Rendered admin/galleries/_row (13.8ms)
+Rendered admin/galleries/_row (4.4ms)
+Completed in 316ms (View: 91, DB: 6) | 200 OK [http://localhost/admin]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 20:41:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (20.3ms)
+Completed in 493ms (View: 406, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#edit (for 127.0.0.1 at 2010-06-28 20:41:44) [GET]
+  Parameters: {"action"=>"edit", "id"=>"about", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/pages/edit
+Rendered admin/shared/_buttons (22.5ms)
+Rendered admin/pages/_form (76.8ms)
+Completed in 202ms (View: 110, DB: 7) | 200 OK [http://localhost/admin/pages/about/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#index (for 127.0.0.1 at 2010-06-28 20:41:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/quotes"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/index
+Completed in 108ms (View: 25, DB: 5) | 200 OK [http://localhost/admin/quotes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#new (for 127.0.0.1 at 2010-06-28 20:41:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/new
+Rendered admin/shared/_buttons (3.9ms)
+Rendered admin/quotes/_form (18.5ms)
+Completed in 311ms (View: 51, DB: 6) | 200 OK [http://localhost/admin/quotes/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 20:44:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.6ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (12.1ms)
+Rendered _footer (2.2ms)
+Rendered _google_analytics (3.0ms)
+Completed in 377ms (View: 98, DB: 9) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#new (for 127.0.0.1 at 2010-06-28 20:58:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/quotes"}
+  [4;36;1mPhotographer Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mQuote Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/new
+Rendered admin/shared/_buttons (4.1ms)
+Rendered admin/quotes/_form (12.5ms)
+Completed in 114ms (View: 27, DB: 6) | 200 OK [http://localhost/admin/quotes/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#create (for 127.0.0.1 at 2010-06-28 21:17:49) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "controller"=>"admin/quotes", "quote"=>{"body"=>"... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868", "author"=>"by Nicole "}}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.9ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT `quotes`.id FROM `quotes` WHERE (`quotes`.`body` = BINARY '... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868') LIMIT 1[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mQuote Create (0.4ms)[0m   [0;1mINSERT INTO `quotes` (`position`, `created_at`, `author`, `body`, `updated_at`, `photographer_id`) VALUES(1, '2010-06-28 19:17:50', 'by Nicole ', '... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868', '2010-06-28 19:17:50', 1)[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/quotes
+Completed in 147ms (DB: 0) | 302 Found [http://localhost/admin/quotes]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#index (for 127.0.0.1 at 2010-06-28 21:17:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` WHERE (`quotes`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/index
+  [4;35;1mQuote Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered admin/quotes/_row (616.5ms)
+Completed in 720ms (View: 639, DB: 6) | 200 OK [http://localhost/admin/quotes]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 21:18:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.7ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.6ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (11.7ms)
+Rendered _footer (2.1ms)
+Rendered _google_analytics (2.9ms)
+Completed in 215ms (View: 93, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:18:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;35;1mQuote Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (295.5ms)
+Rendered _header (8.2ms)
+Rendered _footer (2.7ms)
+Rendered _google_analytics (3.5ms)
+Completed in 475ms (View: 389, DB: 8) | 200 OK [http://localhost/pages/about]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#edit (for 127.0.0.1 at 2010-06-28 21:19:52) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/quotes/edit
+Rendered admin/shared/_buttons (4.7ms)
+Rendered admin/quotes/_form (15.8ms)
+Completed in 135ms (View: 46, DB: 6) | 200 OK [http://localhost/admin/quotes/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#update (for 127.0.0.1 at 2010-06-28 21:24:26) [PUT]
+  Parameters: {"action"=>"update", "_method"=>"put", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "id"=>"2", "controller"=>"admin/quotes", "quote"=>{"body"=>"DP Assignment ... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868", "author"=>"by Nicole ( Digital Photography School )"}}
+  [4;35;1mPhotographer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.`id` = 2 AND (`quotes`.photographer_id = 1)) ORDER BY position[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuote Load (0.7ms)[0m   [0mSELECT `quotes`.id FROM `quotes` WHERE (`quotes`.`body` = BINARY 'DP Assignment ... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868' AND `quotes`.id <> 2) LIMIT 1[0m
+  [4;36;1mQuote Update (0.7ms)[0m   [0;1mUPDATE `quotes` SET `updated_at` = '2010-06-28 19:24:26', `author` = 'by Nicole ( Digital Photography School )', `body` = 'DP Assignment ... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868' WHERE `id` = 2[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/quotes
+Completed in 272ms (DB: 0) | 302 Found [http://localhost/admin/quotes/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#index (for 127.0.0.1 at 2010-06-28 21:24:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` WHERE (`quotes`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/index
+  [4;35;1mQuote Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered admin/quotes/_row (8.5ms)
+Completed in 99ms (View: 20, DB: 6) | 200 OK [http://localhost/admin/quotes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 21:24:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.7ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (12.0ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.2ms)
+Completed in 215ms (View: 98, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:24:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;35;1mPhotographer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;35;1mQuote Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (283.4ms)
+Rendered _header (7.2ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.3ms)
+Completed in 469ms (View: 374, DB: 9) | 200 OK [http://localhost/pages/about]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:24:56) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;35;1mQuote Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (134.0ms)
+Rendered _header (7.2ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.0ms)
+Completed in 483ms (View: 225, DB: 8) | 200 OK [http://localhost/pages/about]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#edit (for 127.0.0.1 at 2010-06-28 21:25:04) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/quotes/edit
+Rendered admin/shared/_buttons (3.6ms)
+Rendered admin/quotes/_form (12.5ms)
+Completed in 112ms (View: 26, DB: 6) | 200 OK [http://localhost/admin/quotes/2/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#update (for 127.0.0.1 at 2010-06-28 21:25:12) [PUT]
+  Parameters: {"action"=>"update", "_method"=>"put", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "id"=>"2", "controller"=>"admin/quotes", "quote"=>{"body"=>"DP Assignment ... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868", "author"=>"by Nicole  Digital Photography School "}}
+  [4;35;1mPhotographer Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.`id` = 2 AND (`quotes`.photographer_id = 1)) ORDER BY position[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT `quotes`.id FROM `quotes` WHERE (`quotes`.`body` = BINARY 'DP Assignment ... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868' AND `quotes`.id <> 2) LIMIT 1[0m
+  [4;36;1mQuote Update (0.4ms)[0m   [0;1mUPDATE `quotes` SET `updated_at` = '2010-06-28 19:25:12', `author` = 'by Nicole Digital Photography School ' WHERE `id` = 2[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/quotes
+Completed in 106ms (DB: 0) | 302 Found [http://localhost/admin/quotes/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#index (for 127.0.0.1 at 2010-06-28 21:25:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` WHERE (`quotes`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/index
+  [4;35;1mQuote Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered admin/quotes/_row (7.5ms)
+Completed in 96ms (View: 18, DB: 6) | 200 OK [http://localhost/admin/quotes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 21:25:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mPhotographer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mGallery Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `galleries`[0m
+  [4;35;1mGallery Load (0.7ms)[0m   [0mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (12.2ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.3ms)
+Completed in 218ms (View: 99, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:25:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;35;1mPhotographer Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY position[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;35;1mQuote Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (264.2ms)
+Rendered _header (7.0ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.6ms)
+Completed in 449ms (View: 356, DB: 9) | 200 OK [http://localhost/pages/about]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#edit (for 127.0.0.1 at 2010-06-28 21:26:08) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"admin/quotes"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mQuote Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/quotes/edit
+Rendered admin/shared/_buttons (3.3ms)
+Rendered admin/quotes/_form (10.8ms)
+Completed in 100ms (View: 23, DB: 6) | 200 OK [http://localhost/admin/quotes/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:26:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;35;1mPhotographer Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mPage Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (11.2ms)
+Completed in 112ms (View: 27, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#edit (for 127.0.0.1 at 2010-06-28 21:26:25) [GET]
+  Parameters: {"action"=>"edit", "id"=>"about", "controller"=>"admin/pages"}
+  [4;35;1mPhotographer Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mPage Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/pages/edit
+Rendered admin/shared/_buttons (3.4ms)
+Rendered admin/pages/_form (18.9ms)
+Completed in 117ms (View: 33, DB: 6) | 200 OK [http://localhost/admin/pages/about/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#update (for 127.0.0.1 at 2010-06-28 21:28:04) [PUT]
+  Parameters: {"action"=>"update", "_method"=>"put", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "id"=>"about", "page"=>{"intro"=>"Hi and welcome to my photo gallery ...", "body"=>"I'm an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. \r\n\r\n", "title"=>"About", "image"=>#<File:/tmp/RackMultipart20100628-3592-1hecj7e-0>, "keywords"=>"about photography, photo, gallery, still life"}, "controller"=>"admin/pages"}
+  [4;35;1mPhotographer Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mPage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) AND (`pages`.`cached_slug` = 'about') ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'About' AND `pages`.id <> 1) LIMIT 1[0m
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mSlug Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `slugs`[0m
+  [4;36;1mPage Update (0.7ms)[0m   [0;1mUPDATE `pages` SET `updated_at` = '2010-06-28 19:28:08', `image_file_size` = 977545, `image_file_name` = '4591931573_f835d95025_o.jpg', `image_updated_at` = '2010-06-28 19:28:04', `image_content_type` = 'image/jpeg', `body` = 'I\'m an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. \r\n\r\n' WHERE `id` = 1[0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/heroku/lauranovara/public/attachments/pages/1/thumb/4591931573_f835d95025_o.jpg
+[paperclip] saving /home/lsoave/heroku/lauranovara/public/attachments/pages/1/original/4591931573_f835d95025_o.jpg
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/pages
+Completed in 4341ms (DB: 0) | 302 Found [http://localhost/admin/pages/about]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:28:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (9.5ms)
+Completed in 108ms (View: 22, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 21:28:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.6ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (12.7ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.0ms)
+Completed in 410ms (View: 102, DB: 9) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:28:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.9ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;36;1mQuote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (129.0ms)
+Rendered _header (176.8ms)
+Rendered _footer (2.3ms)
+Rendered _google_analytics (3.2ms)
+Completed in 482ms (View: 388, DB: 8) | 200 OK [http://localhost/pages/about]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#edit (for 127.0.0.1 at 2010-06-28 21:28:52) [GET]
+  Parameters: {"action"=>"edit", "id"=>"about", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/pages/edit
+Rendered admin/shared/_buttons (3.7ms)
+Rendered admin/pages/_form (22.0ms)
+Completed in 298ms (View: 36, DB: 7) | 200 OK [http://localhost/admin/pages/about/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#edit (for 127.0.0.1 at 2010-06-28 21:29:11) [GET]
+  Parameters: {"action"=>"edit", "id"=>"about", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/pages/edit
+Rendered admin/shared/_buttons (3.7ms)
+Rendered admin/pages/_form (21.3ms)
+Completed in 127ms (View: 36, DB: 7) | 200 OK [http://localhost/admin/pages/about/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:29:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (9.7ms)
+Completed in 109ms (View: 22, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#edit (for 127.0.0.1 at 2010-06-28 21:29:52) [GET]
+  Parameters: {"action"=>"edit", "id"=>"about", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/pages/edit
+Rendered admin/shared/_buttons (3.7ms)
+Rendered admin/pages/_form (21.5ms)
+Completed in 120ms (View: 35, DB: 6) | 200 OK [http://localhost/admin/pages/about/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#destroy (for 127.0.0.1 at 2010-06-28 21:29:58) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "id"=>"about", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) AND (`pages`.`cached_slug` = 'about') ORDER BY position LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPage Update (0.4ms)[0m   [0;1mUPDATE `pages` SET position = (position - 1) WHERE (photographer_id = 1 AND position > 1) [0m
+  [4;35;1mSlug Load (0.7ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mPage Update (0.5ms)[0m   [0;1mUPDATE `pages` SET `updated_at` = '2010-06-28 19:29:58', `position` = NULL WHERE `id` = 1[0m
+  [4;35;1mSlug Load (0.5ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] Deleting attachments.
+[paperclip] deleting /home/lsoave/heroku/lauranovara/public/attachments/pages/1/original/4591931573_f835d95025_o.jpg
+[paperclip] deleting /home/lsoave/heroku/lauranovara/public/attachments/pages/1/thumb/4591931573_f835d95025_o.jpg
+  [4;36;1mSlug Destroy (0.4ms)[0m   [0;1mDELETE FROM `slugs` WHERE `id` = 10[0m
+  [4;35;1mSlug Destroy (0.2ms)[0m   [0mDELETE FROM `slugs` WHERE `id` = 10[0m
+  [4;36;1mPage Destroy (0.2ms)[0m   [0;1mDELETE FROM `pages` WHERE `id` = 1[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mCOMMIT[0m
+Completed in 570ms (View: 2, DB: 13) | 200 OK [http://localhost/admin/pages/about]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#new (for 127.0.0.1 at 2010-06-28 21:30:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/pages"}
+  [4;35;1mPhotographer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photographers`[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;36;1mPage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+Rendering template within layouts/admin
+Rendering admin/pages/new
+Rendered admin/shared/_buttons (3.4ms)
+Rendered admin/pages/_form (21.5ms)
+Completed in 578ms (View: 500, DB: 6) | 200 OK [http://localhost/admin/pages/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#create (for 127.0.0.1 at 2010-06-28 21:30:41) [POST]
+  Parameters: {"action"=>"create", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "page"=>{"intro"=>"Hi and welcome to my photo gallery ...", "body"=>"I'm an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. ", "title"=>"About", "keywords"=>"about photography, photo, gallery, still life"}, "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'About') LIMIT 1[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (photographer_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO `pages` (`position`, `intro`, `image_file_name`, `created_at`, `title`, `body`, `image_file_size`, `updated_at`, `image_content_type`, `photographer_id`, `cached_slug`, `image_updated_at`, `keywords`) VALUES(1, 'Hi and welcome to my photo gallery ...', NULL, '2010-06-28 19:30:42', 'About', 'I\'m an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. ', NULL, '2010-06-28 19:30:42', NULL, 1, NULL, NULL, 'about photography, photo, gallery, still life')[0m
+  [4;35;1mSlug Load (0.3ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = NULL AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 2) [0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.`scope` IS NULL AND `slugs`.`name` = 'about') AND (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `slugs` WHERE (`slugs`.`sluggable_type` = 'Page' AND `slugs`.`scope` IS NULL AND `slugs`.`name` = 'about') [0m
+  [4;35;1mSlug Create (0.3ms)[0m   [0mINSERT INTO `slugs` (`name`, `scope`, `sequence`, `created_at`, `sluggable_type`, `sluggable_id`) VALUES('about', NULL, 1, '2010-06-28 19:30:42', 'Page', 2)[0m
+[paperclip] Saving attachments.
+  [4;36;1mSlug Load (0.5ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mPage Update (0.4ms)[0m   [0mUPDATE `pages` SET `updated_at` = '2010-06-28 19:30:42', `created_at` = '2010-06-28 19:30:42', `intro` = 'Hi and welcome to my photo gallery ...', `title` = 'About', `keywords` = 'about photography, photo, gallery, still life', `cached_slug` = 'about', `photographer_id` = 1, `body` = 'I\'m an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. ' WHERE `id` = 2[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/pages
+Completed in 276ms (DB: 0) | 302 Found [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:30:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (9.0ms)
+Completed in 105ms (View: 21, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 21:30:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (1.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.7ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (12.4ms)
+Rendered _footer (2.2ms)
+Rendered _google_analytics (3.2ms)
+Completed in 416ms (View: 100, DB: 10) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:30:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;36;1mQuote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (126.1ms)
+Rendered _header (6.9ms)
+Rendered _footer (2.0ms)
+Rendered _google_analytics (2.9ms)
+Completed in 301ms (View: 210, DB: 8) | 200 OK [http://localhost/pages/about]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::GalleriesController#index (for 127.0.0.1 at 2010-06-28 21:37:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/galleries"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mGallery Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/galleries/index
+Rendered admin/galleries/_row (9.1ms)
+Rendered admin/galleries/_row (3.5ms)
+Completed in 112ms (View: 29, DB: 6) | 200 OK [http://localhost/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:37:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (9.5ms)
+Completed in 111ms (View: 22, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#index (for 127.0.0.1 at 2010-06-28 21:37:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/quotes"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM `quotes` WHERE (`quotes`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/quotes/index
+  [4;36;1mQuote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+Rendered admin/quotes/_row (8.0ms)
+Completed in 103ms (View: 19, DB: 6) | 200 OK [http://localhost/admin/quotes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::QuotesController#edit (for 127.0.0.1 at 2010-06-28 21:37:46) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"admin/quotes"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.7ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mQuote Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM `quotes` WHERE (`quotes`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/quotes/edit
+Rendered admin/shared/_buttons (3.7ms)
+Rendered admin/quotes/_form (12.0ms)
+Completed in 112ms (View: 25, DB: 6) | 200 OK [http://localhost/admin/quotes/2/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:39:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (10.1ms)
+Completed in 288ms (View: 23, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#edit (for 127.0.0.1 at 2010-06-28 21:39:51) [GET]
+  Parameters: {"action"=>"edit", "id"=>"about", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/pages/edit
+Rendered admin/shared/_buttons (3.6ms)
+Rendered admin/pages/_form (21.0ms)
+Completed in 310ms (View: 35, DB: 6) | 200 OK [http://localhost/admin/pages/about/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#update (for 127.0.0.1 at 2010-06-28 21:40:22) [PUT]
+  Parameters: {"action"=>"update", "_method"=>"put", "authenticity_token"=>"FmRIKt9SRCIeGSuSxbPEbMocyabkEQVEhgVbr2tjZtY=", "id"=>"about", "page"=>{"intro"=>"Hi and welcome to my photo gallery ...", "body"=>"I'm an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. ", "title"=>"About", "image"=>#<File:/tmp/RackMultipart20100628-3592-77x69a-0>, "keywords"=>"about photography, photo, gallery, still life"}, "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) AND (`pages`.`cached_slug` = 'about') ORDER BY position LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT `pages`.id FROM `pages` WHERE (`pages`.`title` = BINARY 'About' AND `pages`.id <> 2) LIMIT 1[0m
+  [4;35;1mSlug Load (0.6ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mPage Update (0.5ms)[0m   [0;1mUPDATE `pages` SET `updated_at` = '2010-06-28 19:40:22', `image_file_size` = 25190, `image_file_name` = '4591931573_e1c72178be.jpg', `image_updated_at` = '2010-06-28 19:40:22', `image_content_type` = 'image/jpeg' WHERE `id` = 2[0m
+  [4;35;1mSlug Load (0.7ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Page') ORDER BY id DESC[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/lsoave/heroku/lauranovara/public/attachments/pages/2/thumb/4591931573_e1c72178be.jpg
+[paperclip] saving /home/lsoave/heroku/lauranovara/public/attachments/pages/2/original/4591931573_e1c72178be.jpg
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/pages
+Completed in 561ms (DB: 0) | 302 Found [http://localhost/admin/pages/about]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::PagesController#index (for 127.0.0.1 at 2010-06-28 21:40:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/pages"}
+  [4;36;1mPhotographer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPhotographer Load (0.8ms)[0m   [0;1mSELECT * FROM `photographers` WHERE (`photographers`.`id` = '1') LIMIT 1[0m
+  [4;35;1mPage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/admin
+Rendering admin/pages/index
+Rendered admin/pages/_row (8.9ms)
+Completed in 107ms (View: 21, DB: 6) | 200 OK [http://localhost/admin/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-28 21:40:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.7ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mGallery Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mGallery Load (0.5ms)[0m   [0;1mSELECT * FROM `galleries` WHERE (`galleries`.photographer_id = 1) ORDER BY position[0m
+Rendering template within layouts/layout
+Rendering /home
+Rendered _header (11.3ms)
+Rendered _footer (2.1ms)
+Rendered _google_analytics (2.9ms)
+Completed in 207ms (View: 92, DB: 9) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-28 21:40:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"about", "controller"=>"pages"}
+  [4;36;1mPhotographer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photographers`[0m
+  [4;35;1mPhotographer Load (0.8ms)[0m   [0mSELECT * FROM `photographers` LIMIT 1[0m
+  [4;36;1mPage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM `pages` ORDER BY position[0m
+  [4;36;1mQuote Load (0.6ms)[0m   [0;1mSELECT * FROM `quotes` ORDER BY position[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`cached_slug` = 'about') LIMIT 1[0m
+Rendering template within layouts/layout
+Rendering /page
+  [4;36;1mQuote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+Rendered _sidebar (317.9ms)
+Rendered _header (7.6ms)
+Rendered _footer (2.5ms)
+Rendered _google_analytics (3.1ms)
+Completed in 504ms (View: 410, DB: 9) | 200 OK [http://localhost/pages/about]
