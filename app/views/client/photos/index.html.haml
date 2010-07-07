@@ -1,11 +1,11 @@
 -content_for :sidebar do
-  %h2= "#{@booking.title}"
+  %h2= h(@booking.title)
   %p Here are all of the edited photos from your booking.
   %p You can click on any photo to view a larger version and scroll through the photos in a slideshow.
   %p You can leave comments for a specific photo by clicking the "Comments" link for the photo.
 
 #breadcrumb
-  = "#{link_to(current_client.name + ' Bookings', client_bookings_path)} &raquo; #{@booking.title} Photos"
+  = "#{link_to(current_client.name + ' Bookings', client_bookings_path)} &raquo; #{h(@booking.title)} Photos"
 
 %ul{ :class => 'image_list' }
   = render :partial => "row", :collection => @photos
