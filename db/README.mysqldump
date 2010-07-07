@@ -1,0 +1,3 @@
+
+mysqldump --user=root --password=rootmysql lauranovara-db > lauranovara-db.sql
+
