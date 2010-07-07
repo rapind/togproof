@@ -1,4 +1,14 @@
+.DS_Store
+log/*.*
+tmp/**/*
+db/schema.rb
+db/lauranovara-db*
+db/lauranovara-db.sql
 config/database.yml
-log/*
-tmp/*
-db/*.sqlite3
+config/deploy.rb
+config/deploy.jaime
+config/deploy.grokphoto
+config/initializers/grokphoto.rb
+db/*.sql
+db/*.bz2
+public/attachments
