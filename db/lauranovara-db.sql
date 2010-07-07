@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: lauranovara-db
 -- ------------------------------------------------------
--- Server version	5.1.41-3ubuntu12.1
+-- Server version	5.1.41-3ubuntu12.3
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -117,7 +117,7 @@ CREATE TABLE `galleries` (
   `updated_at` datetime DEFAULT NULL,
   `cached_slug` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `galleries` (
 
 LOCK TABLES `galleries` WRITE;
 /*!40000 ALTER TABLE `galleries` DISABLE KEYS */;
-INSERT INTO `galleries` VALUES (5,1,1,'Jewels','Furla watch','Fine Art Jewels & Still Life','3229761180_a118d0c3d4_o.jpg','image/jpeg',117467,'2010-06-02 14:14:03','2010-06-02 14:14:10','2010-06-02 14:14:10','jewels');
+INSERT INTO `galleries` VALUES (5,1,1,'Jewels','Furla watch','Fine Art Jewels & Still Life','3229761180_a118d0c3d4_o.jpg','image/jpeg',117467,'2010-06-02 14:14:03','2010-06-02 14:14:10','2010-06-02 14:14:10','jewels'),(6,1,2,'Piglet stories','piglet','Trips & meets: NYC and something else.\r\n','3216679972_bc554cbb6d_b.jpg','image/jpeg',242726,'2010-06-19 19:33:48','2010-06-19 19:33:49','2010-06-20 17:09:06','piglet-stories');
 /*!40000 ALTER TABLE `galleries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +160,7 @@ CREATE TABLE `gallery_photos` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,7 +169,7 @@ CREATE TABLE `gallery_photos` (
 
 LOCK TABLES `gallery_photos` WRITE;
 /*!40000 ALTER TABLE `gallery_photos` DISABLE KEYS */;
-INSERT INTO `gallery_photos` VALUES (53,5,1,'3163074353 3049c233ea O',1,1,'3163074353_3049c233ea_o.jpg','image/jpeg',234534,'2010-06-02 14:14:46',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:14:52','2010-06-02 14:14:52'),(54,5,2,'3163882786 E922f26205 O',1,1,'3163882786_e922f26205_o.jpg','image/jpeg',246421,'2010-06-02 14:15:03',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:15:06','2010-06-02 14:15:06'),(55,5,3,'3163895114 693c20db62 O',1,1,'3163895114_693c20db62_o.jpg','image/jpeg',134876,'2010-06-02 14:15:32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:15:35','2010-06-02 14:15:35'),(56,5,4,'3184055451 280a280082 O',1,1,'3184055451_280a280082_o.jpg','image/jpeg',78759,'2010-06-02 14:15:58',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:15:59','2010-06-02 14:15:59'),(57,5,5,'3206397273 Ef12ab7880 O',1,1,'3206397273_ef12ab7880_o.jpg','image/jpeg',341493,'2010-06-02 14:16:24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:16:27','2010-06-02 14:16:27'),(58,5,6,'4372869029 35da4576d4 O',1,1,'4372869029_35da4576d4_o.jpg','image/jpeg',98486,'2010-06-02 14:16:43',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:16:45','2010-06-02 14:16:45'),(59,5,7,'4372880855 4a48f27cb0 O',1,1,'4372880855_4a48f27cb0_o.jpg','image/jpeg',127339,'2010-06-02 14:17:19',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:17:22','2010-06-02 14:17:22'),(60,5,8,'Mauroleone 275x200',1,1,'mauroleone_275x200.jpg','image/jpeg',77704,'2010-06-02 14:17:44',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:17:45','2010-06-02 14:17:45');
+INSERT INTO `gallery_photos` VALUES (53,5,1,'3163074353 3049c233ea O',1,1,'3163074353_3049c233ea_o.jpg','image/jpeg',234534,'2010-06-02 14:14:46',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:14:52','2010-06-02 14:14:52'),(54,5,2,'3163882786 E922f26205 O',1,1,'3163882786_e922f26205_o.jpg','image/jpeg',246421,'2010-06-02 14:15:03',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:15:06','2010-06-02 14:15:06'),(55,5,3,'3163895114 693c20db62 O',1,1,'3163895114_693c20db62_o.jpg','image/jpeg',134876,'2010-06-02 14:15:32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:15:35','2010-06-02 14:15:35'),(56,5,4,'3184055451 280a280082 O',1,1,'3184055451_280a280082_o.jpg','image/jpeg',78759,'2010-06-02 14:15:58',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:15:59','2010-06-02 14:15:59'),(57,5,5,'3206397273 Ef12ab7880 O',1,1,'3206397273_ef12ab7880_o.jpg','image/jpeg',341493,'2010-06-02 14:16:24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:16:27','2010-06-02 14:16:27'),(58,5,6,'4372869029 35da4576d4 O',1,1,'4372869029_35da4576d4_o.jpg','image/jpeg',98486,'2010-06-02 14:16:43',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:16:45','2010-06-02 14:16:45'),(59,5,7,'4372880855 4a48f27cb0 O',1,1,'4372880855_4a48f27cb0_o.jpg','image/jpeg',127339,'2010-06-02 14:17:19',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:17:22','2010-06-02 14:17:22'),(60,5,8,'Mauroleone 275x200',1,1,'mauroleone_275x200.jpg','image/jpeg',77704,'2010-06-02 14:17:44',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-02 14:17:45','2010-06-02 14:17:45'),(61,6,1,'3016455288 546e7e05b9 B',1,1,'3016455288_546e7e05b9_b.jpg','image/jpeg',161544,'2010-06-19 19:40:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-19 19:40:01','2010-06-19 19:40:01'),(62,6,2,'3215828287 36f3b2f28b O',1,1,'3215828287_36f3b2f28b_o.jpg','image/jpeg',77748,'2010-06-19 19:40:27',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-19 19:40:28','2010-06-19 19:40:28'),(64,6,3,'3016459780 15acedb369 O',1,1,'3016459780_15acedb369_o.jpg','image/jpeg',80649,'2010-06-20 16:28:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 16:28:23','2010-06-20 16:28:23'),(65,6,4,'3215828025 47776fb389 B',1,1,'3215828025_47776fb389_b.jpg','image/jpeg',149281,'2010-06-20 16:32:16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 16:32:17','2010-06-20 16:32:17'),(66,6,5,'3016459904 E32fe6485d O',1,1,'3016459904_e32fe6485d_o.jpg','image/jpeg',41662,'2010-06-20 16:34:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 16:34:23','2010-06-20 16:34:23'),(68,6,6,'3016460432 6289dbd7f3 O',1,1,'3016460432_6289dbd7f3_o.jpg','image/jpeg',61174,'2010-06-20 16:38:35',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 16:38:36','2010-06-20 16:38:36'),(69,6,7,'3015619029 F772256798 O',1,1,'3015619029_f772256798_o.jpg','image/jpeg',41923,'2010-06-20 17:11:08',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:11:10','2010-06-20 17:11:10'),(70,6,8,'3015622245 F683fb6be4 O',1,1,'3015622245_f683fb6be4_o.jpg','image/jpeg',98265,'2010-06-20 17:11:15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:11:16','2010-06-20 17:11:16'),(71,6,9,'3015623581 96fa2e2ff7 O',1,1,'3015623581_96fa2e2ff7_o.jpg','image/jpeg',54106,'2010-06-20 17:11:23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:11:24','2010-06-20 17:11:24'),(72,6,10,'3016457404 8c8b3c9561 O',1,1,'3016457404_8c8b3c9561_o.jpg','image/jpeg',71131,'2010-06-20 17:11:34',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:11:35','2010-06-20 17:11:35'),(73,6,11,'3016457692 D2960823ce O',1,1,'3016457692_d2960823ce_o.jpg','image/jpeg',57721,'2010-06-20 17:11:46',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:11:47','2010-06-20 17:11:47'),(74,6,12,'3016458444 F2c85c7f3a O',1,1,'3016458444_f2c85c7f3a_o.jpg','image/jpeg',59229,'2010-06-20 17:11:55',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:11:56','2010-06-20 17:11:56'),(75,6,13,'3016460950 C4e617923b O',1,1,'3016460950_c4e617923b_o.jpg','image/jpeg',56718,'2010-06-20 17:30:37',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-06-20 17:30:38','2010-06-20 17:30:38');
 /*!40000 ALTER TABLE `gallery_photos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -260,7 +260,7 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (1,1,1,'About','So what\'s it all about?','about, story, ruby, rails, photography, professional, custom, page management, wiki, markdown, opensource','The Story\n---------\n\nI needed to build a professional photography site for a friend along with a way for her to easily manage clients, bookings, and photos.\n\nWhile there are plenty of open source galleries out there, most are written in PHP whereas my personal preference is Ruby on Rails. Also, I was unable to find any that supported the more advanced features we needed for managing client photos and workflow.\n\nAnd so grokphoto was born.\n\nYou can access the admin area at:\n\n* [http://www.grokphoto.org/admin](http://www.grokphoto.org/admin)\n* Email: photographer@grokphoto.org\n* Password: password\n\nYou can access the client area at:\n\n* [http://www.grokphoto.org/client](http://www.grokphoto.org/client)\n* Email: client@grokphoto.org\n* Password: password','about.jpg','image/jpeg',5640,'2010-06-02 14:07:12','2010-06-02 14:07:12','2010-06-02 14:07:12','about'),(2,1,2,'Opensource','GrokPhoto is free!','opensource, ruby, rails, photography, git, haml, ajax, jquery, themes, erb','Get the Source\n-----------\n\n[http://github.com/rapind/grokphoto](http://github.com/rapind/grokphoto)\n\nFrom Wikipedia\n------------\n\nOpen-source software (OSS) is computer software for which the source code and certain other rights normally reserved for copyright holders are provided under a software license that meets the Open Source Definition or that is in the public domain. This permits users to use, change, and improve the software, and to redistribute it in modified or unmodified forms. It is very often developed in a public, collaborative manner. Open-source software is the most prominent example of open-source development and often compared to user-generated content. The term open-source software originated as part of a marketing campaign for free software. A report by Standish Group states that adoption of open-source software models has resulted in savings of about $60 billion per year to consumers.\n\n[http://en.wikipedia.org/wiki/Open_source_software](http://en.wikipedia.org/wiki/Open_source_software)',NULL,NULL,NULL,NULL,'2010-06-02 14:07:12','2010-06-02 14:07:12','opensource');
+INSERT INTO `pages` VALUES (2,1,1,'About','Hi and welcome to my photo gallery ...','about photography, photo, gallery, still life','I\'m an aspirant writer, photographer, blogger, chronic procrastinator in pursuit of happyness. ','4591931573_e1c72178be.jpg','image/jpeg',25190,'2010-06-28 19:40:22','2010-06-28 19:30:42','2010-06-28 19:40:22','about');
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,7 +332,7 @@ CREATE TABLE `photographers` (
   `home_page_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_photographers_on_email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,7 +341,7 @@ CREATE TABLE `photographers` (
 
 LOCK TABLES `photographers` WRITE;
 /*!40000 ALTER TABLE `photographers` DISABLE KEYS */;
-INSERT INTO `photographers` VALUES (1,'novara.laura@gmail.com','943bee3db7d0c0ae2e994409d42a48f0add9f9304a086e9a214cd2128e9a512194528777b7c16294081edbaf2321609547ad22f7c277cee3d98c0ed16441564a','xosmUL6Y8kbUqk8-nlwP','d0a83f7c3eced3fef1d173d2c7103c0e1ea2563ea111a3f33afd38820038e52b2ce887dfc5e68b7e0ab24cbd8a19f4681f2fd3ef91a9f15ae892fbf111cc27db','BNFI62NDCmeOi0xRRJnW','hRtg34jJoOMy9rNV8855',2,0,'2010-06-04 09:04:57','2010-06-02 14:10:26','127.0.0.1','127.0.0.1','Laura Novara Photography','http://novaralaura.com','novara.laura@gmail.com','','http://lauranovara.tumblr.com/','','http://twitter.com/elleenne','UA-2450369-23','n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0','default',0,'watermark.png','image/png',8569,'2010-06-02 14:06:50','2010-06-02 14:06:50','2010-06-04 09:23:34','Laura Novara Photography');
+INSERT INTO `photographers` VALUES (1,'novara.laura@gmail.com','943bee3db7d0c0ae2e994409d42a48f0add9f9304a086e9a214cd2128e9a512194528777b7c16294081edbaf2321609547ad22f7c277cee3d98c0ed16441564a','xosmUL6Y8kbUqk8-nlwP','d0a83f7c3eced3fef1d173d2c7103c0e1ea2563ea111a3f33afd38820038e52b2ce887dfc5e68b7e0ab24cbd8a19f4681f2fd3ef91a9f15ae892fbf111cc27db','BNFI62NDCmeOi0xRRJnW','PRX3MFg_tmPzmeTx8iIl',6,0,'2010-06-27 21:16:13','2010-06-27 07:53:20','127.0.0.1','127.0.0.1','Laura Novara Photography','http://novaralaura.com','','','http://lauranovara.tumblr.com/','','http://twitter.com/elleenne','','','default_paty',0,'watermark.png','image/png',8569,'2010-06-02 14:06:50','2010-06-02 14:06:50','2010-06-28 17:45:58','Laura Novara Photography'),(2,'photographer@grokphoto.org','c7ad9107befd591ae1b3145f1b3ab443a50496dbda9a0e475cf45c8c10b50fa8f27eb882e4e78ff622c745d39da3e348e82d9b02b296c35b5292a245262734f4','8P8wvfhhXRWflYQ21nli','fb0dc6b8b9813eb851683ec8f36bc4905bfbeccf7c050f8dc24360b417168cce9912415ec389ee25503618a285c4ed43105787cff79755a7299e0288017970e7','ds9wRRm08_Z7EzNE96Le','rNYQBkhxQQc46sLxXntF',0,0,NULL,NULL,NULL,NULL,'GrokPhoto','http://demo.grokphoto.org','info@grokphoto.org',NULL,'http://rapin.com',NULL,NULL,'UA-2450369-23','n4L_tj44fmy3dxPuLamOqAkrjRP7GW-ehMzRcN6mjM0','default',0,'watermark.png','image/png',8569,'2010-06-19 19:38:03','2010-06-19 19:38:03','2010-06-19 19:38:04','Open-source Photography');
 /*!40000 ALTER TABLE `photographers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -463,7 +463,7 @@ CREATE TABLE `quotes` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -472,7 +472,7 @@ CREATE TABLE `quotes` (
 
 LOCK TABLES `quotes` WRITE;
 /*!40000 ALTER TABLE `quotes` DISABLE KEYS */;
-INSERT INTO `quotes` VALUES (1,1,1,'Dave Rapin - Toronto','If I had some testimonials, this is where they\'d go!','2010-06-02 14:07:12','2010-06-02 14:07:12');
+INSERT INTO `quotes` VALUES (2,1,1,'by Nicole  Digital Photography School ','DP Assignment ... The bright, light colours not only fit in with the idea of being high tech, they also convey a feeling of lightness and happiness ... \r\n\r\nRead more: http://tinyurl.com/2fej868','2010-06-28 19:17:50','2010-06-28 19:25:12');
 /*!40000 ALTER TABLE `quotes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -517,7 +517,7 @@ CREATE TABLE `slugs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_slugs_on_name_and_sluggable_type_and_scope_and_sequence` (`name`,`sluggable_type`,`scope`,`sequence`),
   KEY `index_slugs_on_sluggable_id` (`sluggable_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -526,7 +526,7 @@ CREATE TABLE `slugs` (
 
 LOCK TABLES `slugs` WRITE;
 /*!40000 ALTER TABLE `slugs` DISABLE KEYS */;
-INSERT INTO `slugs` VALUES (5,'about',1,1,'Page',NULL,'2010-06-02 14:07:12'),(6,'opensource',2,1,'Page',NULL,'2010-06-02 14:07:12'),(7,'jewels',5,1,'Gallery',NULL,'2010-06-02 14:14:10');
+INSERT INTO `slugs` VALUES (7,'jewels',5,1,'Gallery',NULL,'2010-06-02 14:14:10'),(8,'prova',6,1,'Gallery',NULL,'2010-06-19 19:33:50'),(9,'piglet-stories',6,1,'Gallery',NULL,'2010-06-20 17:09:06'),(11,'about',2,1,'Page',NULL,'2010-06-28 19:30:42');
 /*!40000 ALTER TABLE `slugs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -539,4 +539,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-06-04 11:25:04
+-- Dump completed on 2010-06-28 22:20:57
