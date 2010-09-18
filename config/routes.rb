@@ -1,58 +1,111 @@
-ActionController::Routing::Routes.draw do |map|
-  # root
-  map.root :controller => 'home'
-  map.config_error '/config_error', :controller => 'home', :action => 'config_error'
-  map.not_found '/not_found', :controller => 'home', :action => 'not_found'
-  map.timestamp '/timestamp', :controller => 'home', :action => 'timestamp'
+Lauranovara::Application.routes.draw do
+
+  match '/' => 'home#index'
+  match '/config_error' => 'home#config_error', :as => :config_error
+  match '/not_found' => 'home#not_found', :as => :not_found
+  match '/timestamp' => 'home#timestamp', :as => :timestamp
+  resources :sitemap
+  resources :galleries do
   
-  # sitemap
-  map.resources :sitemap
-  
-  # galleries
-  map.resources :galleries, :member => { :slide => :get }, :has_many => :gallery_photos
-  
-  # pages
-  map.resources :pages
-  
-  # client area
-  map.client_error '/client/error', :controller => 'client/home'
-  map.client '/client', :controller => 'client/bookings'
-  map.namespace :client do |client|
-    # client login / logout / password reset
-    client.resource :client_session
-    client.login '/login', :controller => "client_sessions", :action => "new"
-    client.logout '/logout', :controller => "client_sessions", :action => "destroy"
-    client.resources :client_password_resets
-    client.resources :bookings, :has_many => [:photos, :photo_comments]
-    client.resources :photos, :has_many => :photo_comments
+    member do
+  get :slide
   end
   
-  # administration area
-  map.admin '/admin', :controller => 'admin/galleries'
-  map.namespace :admin do |admin|
-    # session / login / logout
-    admin.resource :photographer_session
-    admin.login '/login', :controller => "photographer_sessions", :action => "new"
-    admin.logout '/logout', :controller => "photographer_sessions", :action => "destroy"
-    admin.resource :photographer
-    admin.resources :photographer_password_resets
-    admin.resources :clients, :member => { :invite => :get, :send_invite => :post } do |client|
-      client.resources :bookings, :member => { :update_position => :put }
+  end
+
+  resources :pages
+  match '/client/error' => 'client/home#index', :as => :client_error
+  match '/client' => 'client/bookings#index', :as => :client
+  namespace :client do
+      resource :client_session
+      match '/login' => 'client_sessions#new', :as => :login
+      match '/logout' => 'client_sessions#destroy', :as => :logout
+      resources :client_password_resets
+      resources :bookings
+      resources :photos
+  end
+
+  match '/admin' => 'admin/galleries#index', :as => :admin
+  namespace :admin do
+      resource :photographer_session
+      match '/login' => 'photographer_sessions#new', :as => :login
+      match '/logout' => 'photographer_sessions#destroy', :as => :logout
+      resource :photographer
+      resources :photographer_password_resets
+      resources :clients do
+    
+    
+          resources :bookings do
+      
+            member do
+      put :update_position
+      end
+      
+      end
     end
-    admin.resources :bookings do |booking|
-      booking.resources :photos, :member => { :ajax_row => :get }, :collection => { :flash_upload => :post }
-      booking.resources :photo_comments
+      resources :bookings do
+    
+    
+          resources :photos do
+            collection do
+      post :flash_upload
+      end
+            member do
+      get :ajax_row
+      end
+      
+      end
+
+      resources :photo_comments
     end
-    admin.resources :photo, :has_many => :photo_comments
-    admin.resources :galleries, :member => { :update_position => :put } do |gallery|
-      gallery.resources :gallery_photos, :member => { :update_position => :put }, :collection => { :flash_upload => :post }
+      resources :photo
+      resources :galleries do
+    
+    
+          resources :gallery_photos do
+            collection do
+      post :flash_upload
+      end
+            member do
+      put :update_position
+      end
+      
+      end
     end
-    admin.resources :pages, :member => { :update_position => :put }
-    admin.resources :quotes, :member => { :update_position => :put }
-    admin.resources :packages, :member => { :update_position => :put }
-    admin.resources :products, :member => { :update_position => :put } do |product|
-      product.resources :product_sizes, :member => { :update_position => :put }
+      resources :pages do
+    
+        member do
+    put :update_position
+    end
+    
+    end
+      resources :quotes do
+    
+        member do
+    put :update_position
+    end
+    
+    end
+      resources :packages do
+    
+        member do
+    put :update_position
+    end
+    
+    end
+      resources :products do
+    
+    
+          resources :product_sizes do
+      
+            member do
+      put :update_position
+      end
+      
+      end
     end
   end
-  
+
 end
+
+
