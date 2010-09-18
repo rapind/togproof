@@ -1,0 +1,86 @@
+
+lsoave@ubuntu:~/rails/altrove/lauranovara$     rake rails:upgrade:check
+(in /home/lsoave/rails/altrove/lauranovara)
+DEPRECATION WARNING: Rake tasks in vendor/plugins/more/tasks and vendor/plugins/paperclip/tasks are deprecated. Use lib/tasks instead. (called from /home/lsoave/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.8/lib/tasks/rails.rb:10)
+New file needed: config/application.rb
+You need to add a config/application.rb.
+More information: http://omgbloglol.com/post/353978923/the-path-to-rails-3-approaching-the-upgrade
+
+The culprits: 
+	- config/application.rb
+
+Deprecated constant(s)
+Constants like RAILS_ENV, RAILS_ROOT, and RAILS_DEFAULT_LOGGER are now deprecated.
+More information: http://litanyagainstfear.com/blog/2010/02/03/the-rails-module/
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/app/models/photographer.rb
+	- /home/lsoave/rails/altrove/lauranovara/lib/tasks/rspec.rake
+	- /home/lsoave/rails/altrove/lauranovara/lib/tasks/cucumber.rake
+
+Soon-to-be-deprecated ActiveRecord calls
+Methods such as find(:all), find(:first), finds with conditions, and the :joins option will soon be deprecated.
+More information: http://m.onkey.org/2010/1/22/active-record-query-interface
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/app/controllers/application_controller.rb
+	- /home/lsoave/rails/altrove/lauranovara/app/controllers/client/bookings_controller.rb
+
+named_scope is now just scope
+The named_scope method has been renamed to just scope.
+More information: http://github.com/rails/rails/commit/d60bb0a9e4be2ac0a9de9a69041a4ddc2e0cc914
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/app/models/booking.rb
+
+Old gem bundling (config.gems)
+The old way of bundling is gone now.  You need a Gemfile for bundler.
+More information: http://omgbloglol.com/post/353978923/the-path-to-rails-3-approaching-the-upgrade
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/config/environment.rb
+
+Deprecated ActionMailer API
+You're using the old ActionMailer API to send e-mails in a controller, model, or observer.
+More information: http://lindsaar.net/2010/1/26/new-actionmailer-api-in-rails-3
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/app/models/client.rb
+	- /home/lsoave/rails/altrove/lauranovara/app/models/photographer.rb
+	- app/controllers/admin/photographer_password_resets_controller.rb
+	- app/controllers/admin/clients_controller.rb
+	- app/controllers/client/client_password_resets_controller.rb
+
+Old ActionMailer class API
+You're using the old API in a mailer class.
+More information: http://lindsaar.net/2010/1/26/new-actionmailer-api-in-rails-3
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/app/models/notifier.rb
+	- /home/lsoave/rails/altrove/lauranovara/app/models/notifier.rb
+	- /home/lsoave/rails/altrove/lauranovara/app/models/notifier.rb
+
+Deprecated session secret setting
+Previously, session secret was set directly on ActionController::Base; it's now config.secret_token.
+More information: http://lindsaar.net/2010/4/7/rails_3_session_secret_and_session_store
+
+The culprits: 
+	- /home/lsoave/rails/altrove/lauranovara/config/initializers/grokphoto.rb.sample
+
+Old Rails generator API
+A plugin in the app is using the old generator API (a new one may be available at http://github.com/trydionel/rails3-generators).
+More information: http://blog.plataformatec.com.br/2010/01/discovering-rails-3-generators/
+
+The culprits: 
+	- vendor/plugins/paperclip/generators/
+	- vendor/plugins/paperclip/generators/paperclip/
+
+Old router API
+The router API has totally changed.
+More information: http://yehudakatz.com/2009/12/26/the-rails-3-router-rack-it-up/
+
+The culprits: 
+	- config/routes.rb
+
+lsoave@ubuntu:~/rails/altrove/lauranovara$ 
+

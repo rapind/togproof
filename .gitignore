@@ -4,6 +4,7 @@ tmp/**/*
 db/*.sql
 db/*.bz2
 db/schema.rb
+db/README.mysqldump
 public/attachments/**/*
 config/database.yml
 config/deploy.rb
