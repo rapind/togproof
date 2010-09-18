@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cu3er>
+  <settings>
+    <transitions duration="1.5"/>
+    <auto_play>
+      <defaults symbol="circular" time="7"/>
+      <tweenIn tint="0xFFFFFF" y="50" alpha="0.5" height="30" width="30" x="910"/>
+      <tweenOver alpha="1"/>
+    </auto_play>
+    <prev_button>
+      <defaults round_corners="5,5,5,5"/>
+      <tweenOver tint="0xFFFFFF" scaleX="1.1" scaleY="1.1"/>
+      <tweenOut tint="0x000000"/>
+    </prev_button>
+    <prev_symbol>
+      <tweenOver tint="0x000000" time="0.15"/>
+    </prev_symbol>
+    <next_button>
+      <defaults round_corners="5,5,5,5"/>
+      <tweenOver tint="0xFFFFFF" scaleX="1.1" scaleY="1.1"/>
+      <tweenOut tint="0x000000"/>
+    </next_button>
+    <next_symbol>
+      <tweenOver tint="0x000000" time="0.15"/>
+    </next_symbol>
+    <description>
+      <defaults heading_text_color="0xFF9000" paragraph_text_size="18" paragraph_text_color="0xFFFFFF" round_corners="10, 10, 10, 10" heading_text_size="28"/>
+      <tweenIn y="360" alpha="0.5" height="170" width="660" x="150"/>
+      <tweenOver alpha="0.8"/>
+    </description>
+  </settings>
+  <slides>
+    <slide>
+      <url>/attachments/galleries/5/original/3229761180_a118d0c3d4_o.jpg?1275488043</url>
+      <link target="_self">/galleries/jewels</link>
+      <description>
+        <link target="_self">/galleries/jewels</link>
+        <heading>Jewels</heading>
+        <paragraph>Fine Art Jewels &amp; Still Life</paragraph>
+      </description>
+    </slide>
+    <slide>
+      <url>/attachments/galleries/6/original/3216679972_bc554cbb6d_b.jpg?1276976028</url>
+      <link target="_self">/galleries/piglet-stories</link>
+      <description>
+        <link target="_self">/galleries/piglet-stories</link>
+        <heading>Piglet stories</heading>
+        <paragraph>Trips &amp; meets: NYC and something else.
+</paragraph>
+      </description>
+    </slide>
+    <slide>
+      <url>/attachments/galleries/7/original/4450168347_a307758f60_b.jpg?1283613870</url>
+      <link target="_self">/galleries/danbo-addicted</link>
+      <description>
+        <link target="_self">/galleries/danbo-addicted</link>
+        <heading>Danbo Addicted</heading>
+        <paragraph>Lost in Translation</paragraph>
+      </description>
+    </slide>
+    <slide>
+      <url>/attachments/galleries/8/original/4555130629_58ca571375_b.jpg?1283969078</url>
+      <link target="_self">/galleries/people</link>
+      <description>
+        <link target="_self">/galleries/people</link>
+        <heading>People</heading>
+        <paragraph>people</paragraph>
+      </description>
+    </slide>
+  </slides>
+</cu3er>
