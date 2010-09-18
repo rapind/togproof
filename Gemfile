@@ -19,3 +19,5 @@ gem 'less'
 gem 'friendly_id'
 
 gem 'memcache-client'
+
+gem 'paperclip'
