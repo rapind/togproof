@@ -3,15 +3,19 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
+gem 'mysql'
+gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'thin'
 gem 'rdiscount'
-gem 'mime-types'#, '= 1.16', :require => 'mime/types'
-gem 'acts_as_list'#, '= 0.1.2'
-gem 'inherited_resources'#, '= 0.9.5'
+gem 'mime-types'
+gem 'acts_as_list'
+gem 'inherited_resources'
 gem 'will_paginate'
 gem 'authlogic'
 gem 'haml'
 gem 'exifr'
-gem 'less'#, '= 1.2.21'
+gem 'less'
 gem 'friendly_id'
+
+gem 'memcache-client'

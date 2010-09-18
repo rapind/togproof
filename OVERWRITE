@@ -1,0 +1,128 @@
+
+config/initializers/new_rails_defaults.rb^C
+lsoave@ubuntu:~/rails/altrove/tests/lauranovara$ rails new .
+       exist  
+      create  README
+    conflict  Rakefile
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/Rakefile? (enter "h" for help) [Ynaqdh] n
+        skip  Rakefile
+      create  config.ru
+    conflict  .gitignore
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/.gitignore? (enter "h" for help) [Ynaqdh] n
+        skip  .gitignore
+    conflict  Gemfile
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/Gemfile? (enter "h" for help) [Ynaqdh] n
+        skip  Gemfile
+       exist  app
+    conflict  app/controllers/application_controller.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/app/controllers/application_controller.rb? (enter "h" for help) [Ynaqdh] 
+       force  app/controllers/application_controller.rb
+    conflict  app/helpers/application_helper.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/app/helpers/application_helper.rb? (enter "h" for help) [Ynaqdh] 
+       force  app/helpers/application_helper.rb
+      create  app/views/layouts/application.html.erb
+      create  app/mailers
+       exist  app/models
+       exist  config
+    conflict  config/routes.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/routes.rb? (enter "h" for help) [Ynaqdh] n
+        skip  config/routes.rb
+      create  config/application.rb
+    conflict  config/environment.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/environment.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/environment.rb
+       exist  config/environments
+    conflict  config/environments/production.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/environments/production.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/environments/production.rb
+    conflict  config/environments/test.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/environments/test.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/environments/test.rb
+    conflict  config/environments/development.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/environments/development.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/environments/development.rb
+       exist  config/initializers
+    conflict  config/initializers/inflections.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/initializers/inflections.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/initializers/inflections.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/secret_token.rb
+    conflict  config/initializers/backtrace_silencers.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/initializers/backtrace_silencers.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/initializers/backtrace_silencers.rb
+   identical  config/initializers/mime_types.rb
+       exist  config/locales
+    conflict  config/locales/en.yml
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/locales/en.yml? (enter "h" for help) [Ynaqdh] 
+       force  config/locales/en.yml
+    conflict  config/boot.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/boot.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/boot.rb
+    conflict  config/database.yml
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/config/database.yml? (enter "h" for help) [Ynaqdh] n
+        skip  config/database.yml
+       exist  db
+    conflict  db/seeds.rb
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/db/seeds.rb? (enter "h" for help) [Ynaqdh] n
+        skip  db/seeds.rb
+       exist  doc
+      create  doc/README_FOR_APP
+       exist  lib
+       exist  lib/tasks
+      create  lib/tasks/.gitkeep
+       exist  log
+      create  log/server.log
+    conflict  log/production.log
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/log/production.log? (enter "h" for help) [Ynaqdh] n
+        skip  log/production.log
+    conflict  log/development.log
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/log/development.log? (enter "h" for help) [Ynaqdh] n
+        skip  log/development.log
+      create  log/test.log
+       exist  public
+    conflict  public/robots.txt
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/public/robots.txt? (enter "h" for help) [Ynaqdh] 
+       force  public/robots.txt
+    conflict  public/500.html
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/public/500.html? (enter "h" for help) [Ynaqdh] 
+       force  public/500.html
+    conflict  public/favicon.ico
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/public/favicon.ico? (enter "h" for help) [Ynaqdh] 
+       force  public/favicon.ico
+      create  public/404.html
+    conflict  public/index.html
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/public/index.html? (enter "h" for help) [Ynaqdh] n
+        skip  public/index.html
+    conflict  public/422.html
+Overwrite /home/lsoave/rails/altrove/tests/lauranovara/public/422.html? (enter "h" for help) [Ynaqdh] 
+       force  public/422.html
+       exist  public/images
+      create  public/images/rails.png
+       exist  public/stylesheets
+      create  public/stylesheets/.gitkeep
+       exist  public/javascripts
+      create  public/javascripts/prototype.js
+      create  public/javascripts/rails.js
+      create  public/javascripts/effects.js
+      create  public/javascripts/dragdrop.js
+      create  public/javascripts/application.js
+      create  public/javascripts/controls.js
+       exist  script
+      create  script/rails
+       exist  test
+      create  test/performance/browsing_test.rb
+      create  test/test_helper.rb
+       exist  test/unit
+      create  test/functional
+      create  test/integration
+       exist  test/fixtures
+       exist  tmp
+       exist  tmp/sessions
+       exist  tmp/sockets
+       exist  tmp/cache
+       exist  tmp/pids
+       exist  vendor/plugins
+      create  vendor/plugins/.gitkeep
+lsoave@ubuntu:~/rails/altrove/tests/lauranovara$ rm public/javascripts/controls.js public/javascripts/application.js public/javascripts/dragdrop.js public/javascripts/effects.js public/javascripts/rails.js public/javascripts/prototype.js public/images/rails.png
+lsoave@ubuntu:~/rails/altrove/tests/lauranovara$
+
