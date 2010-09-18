@@ -42,5 +42,5 @@ class HomeController < ApplicationController
       @pages = Page.find :all, :order => 'position'
       @quotes = Quote.find :all, :order => 'position'
     end
-    
+
 end
