@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   layout 'layout' #kind of a cheat so we don't need to use a layouts directory in the themes folders
-  skip_before_filter :config, :only => :config_error
+  skip_before_filter :grokonfig, :only => :config_error
   before_filter :prepend_theme, :except => :config_error # applies a theme
   before_filter :load_pages
   
@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   # landing page
   def index
     @page_title = @config.home_page_title ||= 'Photographer'
-    @galleries = @config.galleries.find :all
+    @galleries = @config.galleries.all
     render :template => '/home'
   end
   
@@ -33,9 +33,9 @@ class HomeController < ApplicationController
     # prepend the chosen (or default) theme
     def prepend_theme
       #session[:preview] = params[:preview] if params[:preview]
-      #self.prepend_view_path(config.theme_path(session[:preview]))
+      #self.prepend_view_path(grokonfig.theme_path(session[:preview]))
       #flash[:notice] = "You're in preview mode" if session[:preview]
-      self.prepend_view_path(config.theme_path)
+      self.prepend_view_path(grokonfig.theme_path)
     end
     
     def load_pages
