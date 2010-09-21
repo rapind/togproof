@@ -21,3 +21,10 @@ gem 'friendly_id'
 gem 'memcache-client'
 
 gem 'paperclip'
+
+group :development, :test do
+  gem "mocha"
+  gem "rspec-rails", ">= 2.0.0.beta.22" 
+  gem "factory_girl_rails"
+end
+
