@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
   helper_method :current_client_session, :current_client, :current_photographer_session, :current_photographer
-  filter_parameter_logging :password
+  # Setting filter_parameter_logging in ActionController is deprecated and has no longer effect
+  # set 'config.filter_parameters' in config/application.rb instead
+  #
+  # filter_parameter_logging :password
+  #
   before_filter :grokonfig
   
   #unless ActionController::Base.consider_all_requests_local

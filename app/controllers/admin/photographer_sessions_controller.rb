@@ -9,7 +9,7 @@ class Admin::PhotographerSessionsController < Admin::HomeController
   def create
     @photographer_session = PhotographerSession.new(params[:photographer_session])
     if @photographer_session.save
-      flash[:notice] = "Photographer Login successful!"
+      flash[:notice] = "Photographer Login successful!".html_safe
       redirect_back_or_default
     else
       render :action => :new

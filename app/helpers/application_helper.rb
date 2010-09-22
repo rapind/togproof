@@ -27,7 +27,7 @@ module ApplicationHelper
   end
   
   def build_link_button(title, path)
-    "<p class='buttons'><a href='#{path}' title='#{title}' class='button positive'>#{image_tag('icons/positive.png')} #{title}</a></p>"
+    "<p class='buttons'><a href='#{path}' title='#{title}' class='button positive'>#{image_tag('icons/positive.png')} #{title}</a></p>".html_safe
   end
   
 end
