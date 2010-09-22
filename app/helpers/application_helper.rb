@@ -22,7 +22,8 @@ module ApplicationHelper
   end
   
   def build_submit_button(title) 
-    "<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>"
+    #"<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>"
+    "<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>".html_safe
   end
   
   def build_link_button(title, path)
