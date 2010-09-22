@@ -12,7 +12,7 @@
       %br
       photographer@grokphoto.org / password
       
-- form_for @photographer_session, :url => admin_photographer_session_path do |f|
+= form_for :photographer_session, @photographer_session, :url => admin_photographer_session_path do |f|
   = f.error_messages
   %p
     = f.label :email

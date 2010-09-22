@@ -1,4 +1,4 @@
-- form_for(@photographer, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
+= form_for(:photographer, @photographer, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
   -content_for :sidebar do
     %h2 Settings
     %p Manage your site-wide settings here.
