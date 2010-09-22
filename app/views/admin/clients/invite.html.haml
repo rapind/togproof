@@ -7,7 +7,7 @@
 #breadcrumb
   = "#{link_to('Clients', admin_clients_path)} &raquo; Invite #{@client.name}"
 
-- form_tag send_invite_admin_client_path, :method => :post do
+= form_tag send_invite_admin_client_path, :method => :post do
   %p
     %label{ :for => 'custom_message' } Add a custom message to the invitation
     = text_area_tag 'custom_message', nil, :class => 'text', :style => 'width: 97%'
