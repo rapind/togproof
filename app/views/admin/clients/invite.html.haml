@@ -14,4 +14,6 @@
   
   %p.buttons
     = build_submit_button('Send Invitation &raquo;')
-    = link_to("#{image_tag('icons/negative.png')} Cancel", collection_path, :class => 'button negative', :id => 'cancel')
+    / old Rails 2.3.9 html escaping:
+    /= link_to("#{image_tag('icons/negative.png')} Cancel", collection_path, :class => 'button negative', :id => 'cancel')
+    = link_to("#{image_tag('icons/negative.png')} Cancel".html_safe, collection_path, :class => 'button negative', :id => 'cancel')
