@@ -21,7 +21,7 @@ class Client::ClientSessionsController < Client::HomeController
     current_client_session.destroy
     session[:return_to] = request.referer
     #flash[:notice] = "Logout successful."
-    redirect_to root_path
+    redirect_to '/'
   end
   
 end

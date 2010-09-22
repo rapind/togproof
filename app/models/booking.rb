@@ -6,8 +6,8 @@ class Booking < ActiveRecord::Base
   validates_presence_of :title
   validates_length_of :title, :within => 2..128
   
-  named_scope :active, :conditions => ['expires_on IS NULL OR expires_on > ?', Date.today]
-  named_scope :expired, :conditions => ['expires_on <= ?', Date.today]
+  scope :active, :conditions => ['expires_on IS NULL OR expires_on > ?', Date.today]
+  scope :expired, :conditions => ['expires_on <= ?', Date.today]
   
   def expired?
     if self.expires_on and self.expires_on < Date.today

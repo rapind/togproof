@@ -1,0 +1,17 @@
+login: &login
+  adapter: mysql
+  username: root
+  password: rootmysql
+  database: lauranovara-db 
+  
+development:
+  <<: *login
+
+test: &TEST
+  <<: *login
+
+production:
+  <<: *login
+
+cucumber:
+  <<: *TEST

@@ -1,0 +1,32 @@
+
+lsoave@ubuntu:~/rails/altrove/tests/lauranovara$     rake rails:upgrade:backup
+(in /home/lsoave/rails/altrove/tests/lauranovara)
+DEPRECATION WARNING: Rake tasks in vendor/plugins/more/tasks and vendor/plugins/paperclip/tasks are deprecated. Use lib/tasks instead. (called from /home/lsoave/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.9/lib/tasks/rails.rb:10)
+
+* backing up .gitignore to .gitignore.rails2
+* backing up app/controllers/application_controller.rb to app/controllers/application_controller.rb.rails2
+* backing up app/helpers/application_helper.rb to app/helpers/application_helper.rb.rails2
+* backing up config/routes.rb to config/routes.rb.rails2
+* backing up config/environment.rb to config/environment.rb.rails2
+* backing up config/environments/development.rb to config/environments/development.rb.rails2
+* backing up config/environments/production.rb to config/environments/production.rb.rails2
+* backing up config/database.yml to config/database.yml.rails2
+
+This is a list of the files analyzed and backed up (if they existed);
+you will probably not want the generator to replace them since
+you probably modified them (but now they're safe if you accidentally do!).
+
+- .gitignore
+- app/controllers/application_controller.rb
+- app/helpers/application_helper.rb
+- config/routes.rb
+- config/environment.rb
+- config/environments/development.rb
+- config/environments/production.rb
+- config/environments/staging.rb
+- config/database.yml
+- config.ru
+- doc/README_FOR_APP
+- test/test_helper.rb
+
+lsoave@ubuntu:~/rails/altrove/tests/lauranovara$

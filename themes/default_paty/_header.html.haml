@@ -1,6 +1,6 @@
 #header
   %h1
-    = link_to(h(@config.company_name), root_path, :title => h(@config.company_name))
+    = link_to(h(@config.company_name), '/', :title => h(@config.company_name))
   %ul.nav
     %li
       = link_to('Galleries', galleries_path, :title => 'Photo Galleries', :class => "#{'active' if controller.controller_name == 'galleries'}")

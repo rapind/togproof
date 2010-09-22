@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_client_session, :current_client, :current_photographer_session, :current_photographer
   filter_parameter_logging :password
-  before_filter :config
+  before_filter :grokonfig
   
   #unless ActionController::Base.consider_all_requests_local
     rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction, :with => :render_404
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     end
     
     # retrieve site configuration information
-    def config
+    def grokonfig
       return @config if defined?(@config)
       begin
         @config = Photographer.find(:first) #configuration is stored in the photographer model for now (simple)
