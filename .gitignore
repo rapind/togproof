@@ -3,6 +3,7 @@ log/*.*
 tmp/**/*
 db/*.sql
 db/*.bz2
+db/*.sqlite3
 db/schema.rb
 db/README.mysqldump
 public/attachments/**/*

@@ -26,7 +26,7 @@
     Type your comment into the provided comments box and click the "Leave a comment" button at the bottom of this page to add your comment to the photo.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; #{link_to @booking.title + ' Photos', collection_path} &raquo; #{@photo.title}"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; #{link_to @booking.title + ' Photos', collection_path} &raquo; #{@photo.title}".html_safe
 
 = image_tag(@photo.image.url)
 

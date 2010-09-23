@@ -5,7 +5,7 @@
   %p Just click the "Send Invitation" button when you're ready to send it.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; Invite #{@client.name}"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; Invite #{@client.name}".html_safe
 
 = form_tag send_invite_admin_client_path, :method => :post do
   %p

@@ -8,6 +8,6 @@
 %h3 Client Testimonials
 - for quote in @quotes
   %p
-    %i= "\"#{h(quote.body)}\""
+    %i= "\"#{(quote.body)}\""
     %br
-    %b= h(quote.author)
+    %b= (quote.author)
