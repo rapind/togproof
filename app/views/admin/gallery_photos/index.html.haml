@@ -42,7 +42,7 @@
   %p You can delete photos by clicking the "Delete" link next to the photo you want to remove.
 
 #breadcrumb
-  = "#{link_to('Galleries', admin_galleries_path)} &raquo; #{@gallery.title} Photos"
+  = "#{link_to('Galleries', admin_galleries_path)} &raquo; #{@gallery.title} Photos".html_safe
 
 %div
   #fileQueue
