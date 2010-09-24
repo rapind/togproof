@@ -18,7 +18,7 @@ module ApplicationHelper
       end
       html = "#{html}});\n</script>"
     end
-    return html
+    return html.html_safe
   end
   
   def build_submit_button(title) 
