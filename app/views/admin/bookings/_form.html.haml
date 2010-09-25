@@ -11,7 +11,7 @@
   %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@client.name + ' Bookings', admin_client_bookings_path(@client))} &raquo; #{controller.action_name.titleize}"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@client.name + ' Bookings', admin_client_bookings_path(@client))} &raquo; #{controller.action_name.titleize}".html_safe
   
 = f.error_messages
 %p

@@ -32,33 +32,46 @@ Lauranovara::Application.routes.draw do
       match '/logout' => 'photographer_sessions#destroy', :as => :logout
       resource :photographer
       resources :photographer_password_resets
+
+      # origin Rails2
+      # admin.resources :clients, :member => { :invite => :get, :send_invite => :post } do |client|
+      #   client.resources :bookings, :member => { :update_position => :put }
+      # end
+
       resources :clients do
-    
-    
-          resources :bookings do
-      
+        member do
+          get :invite
+          post :send_invite
+        end
+        resources :bookings do
             member do
-      put :update_position
-      end
-      
-      end
-    end
-      resources :bookings do
-    
-    
-          resources :photos do
-            collection do
-      post :flash_upload
-      end
-            member do
-      get :ajax_row
-      end
-      
+              put :update_position
+            end
+          end
       end
 
-      resources :photo_comments
-    end
+      # error conversion with 
+      #resources :clients do
+      #    resources :bookings do
+      #      member do
+      #        put :update_position
+      #      end
+      #    end
+      #end
+
+      resources :bookings do
+        resources :photos do
+          collection do
+            post :flash_upload
+          end
+          member do
+            get :ajax_row
+          end
+        end
+        resources :photo_comments
+      end
       resources :photo
+
       resources :galleries do
     
     
