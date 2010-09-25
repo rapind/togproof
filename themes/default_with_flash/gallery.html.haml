@@ -76,8 +76,8 @@
 -content_for :subnav do
   %li{ :class => 'last', :style => 'padding-left: 0' } Select a Gallery: 
   - @galleries.each_with_index do |gallery, i|
-    %li{ :class => "#{'last' if (i + 1) == @galleries.size}" }
-      = link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title), :class => "#{'active' if @gallery.id == gallery.id}")
+    %li{ :class => "#{'last' if (i + 1) == @galleries.size}".html_safe }
+      = link_to((gallery.title), gallery_path(gallery), :title => (gallery.title), :class => "#{'active' if @gallery.id == gallery.id}")
 
 #content
   #main
