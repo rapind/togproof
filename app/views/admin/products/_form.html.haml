@@ -9,7 +9,7 @@
   %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
-  = "#{link_to('Products', admin_products_path)} &raquo; #{controller.action_name.titleize}"
+  = "#{link_to('Products', admin_products_path)} &raquo; #{controller.action_name.titleize}".html_safe
   &nbsp; | &nbsp;
   = link_to 'Packages', admin_packages_path
   

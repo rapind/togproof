@@ -32,7 +32,7 @@
       = f.label :watermark, "Upload your watermark. Must be a transparent PNG or GIF"
       = f.file_field :watermark, :class => 'text'
       %br
-      = link_to(image_tag(@photographer.watermark.url(:thumb), :style => "border: 1px solid #aaa;"), @photographer.watermark.url, :rel => 'colorbox') if @photographer.watermark.file?
+      = link_to(image_tag(@photographer.watermark.url(:thumb), :style => "border: 1px solid #aaa;"), @photographer.watermark.url, :rel => 'colorbox').html_safe if @photographer.watermark.file?
       
   %div{ :style => "width:50%; float:left;" }
     %p
