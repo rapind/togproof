@@ -20,7 +20,7 @@ gem 'less'
 gem 'friendly_id'
 gem 'memcache-client'
 gem 'paperclip'
-#gem 'dynamic_form', :git => 'http://github.com/rails/dynamic_form.git'#, :require => 'dynamic_form'
+gem 'dynamic_form'
 
 gem 'more'
 
