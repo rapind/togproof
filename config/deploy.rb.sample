@@ -55,7 +55,7 @@ end
 namespace :cache do
   desc "Clear the cache"
   task :clear do
-    run("cd #{deploy_to}/current && /opt/ruby/bin/rake cache:clear RAILS_ENV=production")
+    run("cd #{deploy_to}/current && /opt/ruby/bin/rake cache:clear Rails.env=production")
   end
 end
 

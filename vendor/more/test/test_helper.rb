@@ -14,7 +14,7 @@ module Rails
   end
 end
 
-RAILS_ENV = 'development'
+Rails.env = 'development'
 
 # load plugin
 $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
