@@ -3,6 +3,6 @@
 #content
   #main
     = image_tag(@page.image.url, :alt => h(@page.title)) if @page.image?
-    = @page.body.markdown
+    = @page.body.markdown.html_safe
   #sidebar
     = render :partial => '/sidebar'
