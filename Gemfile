@@ -22,6 +22,8 @@ gem 'memcache-client'
 gem 'paperclip'
 #gem 'dynamic_form', :git => 'http://github.com/rails/dynamic_form.git'#, :require => 'dynamic_form'
 
+gem 'more'
+
 group :development, :test do
   gem "mocha"
   gem "rspec-rails", ">= 2.0.0.beta.22" 
