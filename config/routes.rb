@@ -86,39 +86,31 @@ Lauranovara::Application.routes.draw do
       end
 
       resources :pages do
-    
         member do
-    put :update_position
-    end
-    
-    end
+          put :update_position
+        end
+      end
+
       resources :quotes do
-    
         member do
-    put :update_position
-    end
-    
-    end
+          put :update_position
+        end
+      end
+
       resources :packages do
-    
         member do
-    put :update_position
-    end
-    
-    end
+          put :update_position
+        end
+      end
+
       resources :products do
-    
-    
-          resources :product_sizes do
-      
-            member do
-      put :update_position
+        resources :product_sizes do
+          member do
+            put :update_position
+          end
+        end
       end
-      
-      end
-    end
+
   end
-
 end
-
 
