@@ -19,9 +19,10 @@ gem 'exifr'
 gem 'less'
 gem 'friendly_id'
 gem 'memcache-client'
+
+# old plugins
 gem 'paperclip'
 gem 'dynamic_form'
-
 gem 'more'
 
 group :development, :test do
