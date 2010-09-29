@@ -1,0 +1,219 @@
+(in /home/lsoave/rails/altrove/orig/lauranovara.ok)
+                                       root        /                                                                         {:controller=>"home", :action=>"index"}
+                               config_error        /config_error                                                             {:controller=>"home", :action=>"config_error"}
+                                  not_found        /not_found                                                                {:controller=>"home", :action=>"not_found"}
+                                  timestamp        /timestamp                                                                {:controller=>"home", :action=>"timestamp"}
+                              sitemap_index GET    /sitemap(.:format)                                                        {:controller=>"sitemap", :action=>"index"}
+                                            POST   /sitemap(.:format)                                                        {:controller=>"sitemap", :action=>"create"}
+                                new_sitemap GET    /sitemap/new(.:format)                                                    {:controller=>"sitemap", :action=>"new"}
+                               edit_sitemap GET    /sitemap/:id/edit(.:format)                                               {:controller=>"sitemap", :action=>"edit"}
+                                    sitemap GET    /sitemap/:id(.:format)                                                    {:controller=>"sitemap", :action=>"show"}
+                                            PUT    /sitemap/:id(.:format)                                                    {:controller=>"sitemap", :action=>"update"}
+                                            DELETE /sitemap/:id(.:format)                                                    {:controller=>"sitemap", :action=>"destroy"}
+                     gallery_gallery_photos GET    /galleries/:gallery_id/gallery_photos(.:format)                           {:controller=>"gallery_photos", :action=>"index"}
+                                            POST   /galleries/:gallery_id/gallery_photos(.:format)                           {:controller=>"gallery_photos", :action=>"create"}
+                  new_gallery_gallery_photo GET    /galleries/:gallery_id/gallery_photos/new(.:format)                       {:controller=>"gallery_photos", :action=>"new"}
+                 edit_gallery_gallery_photo GET    /galleries/:gallery_id/gallery_photos/:id/edit(.:format)                  {:controller=>"gallery_photos", :action=>"edit"}
+                      gallery_gallery_photo GET    /galleries/:gallery_id/gallery_photos/:id(.:format)                       {:controller=>"gallery_photos", :action=>"show"}
+                                            PUT    /galleries/:gallery_id/gallery_photos/:id(.:format)                       {:controller=>"gallery_photos", :action=>"update"}
+                                            DELETE /galleries/:gallery_id/gallery_photos/:id(.:format)                       {:controller=>"gallery_photos", :action=>"destroy"}
+                                  galleries GET    /galleries(.:format)                                                      {:controller=>"galleries", :action=>"index"}
+                                            POST   /galleries(.:format)                                                      {:controller=>"galleries", :action=>"create"}
+                                new_gallery GET    /galleries/new(.:format)                                                  {:controller=>"galleries", :action=>"new"}
+                               edit_gallery GET    /galleries/:id/edit(.:format)                                             {:controller=>"galleries", :action=>"edit"}
+                              slide_gallery GET    /galleries/:id/slide(.:format)                                            {:controller=>"galleries", :action=>"slide"}
+                                    gallery GET    /galleries/:id(.:format)                                                  {:controller=>"galleries", :action=>"show"}
+                                            PUT    /galleries/:id(.:format)                                                  {:controller=>"galleries", :action=>"update"}
+                                            DELETE /galleries/:id(.:format)                                                  {:controller=>"galleries", :action=>"destroy"}
+                                      pages GET    /pages(.:format)                                                          {:controller=>"pages", :action=>"index"}
+                                            POST   /pages(.:format)                                                          {:controller=>"pages", :action=>"create"}
+                                   new_page GET    /pages/new(.:format)                                                      {:controller=>"pages", :action=>"new"}
+                                  edit_page GET    /pages/:id/edit(.:format)                                                 {:controller=>"pages", :action=>"edit"}
+                                       page GET    /pages/:id(.:format)                                                      {:controller=>"pages", :action=>"show"}
+                                            PUT    /pages/:id(.:format)                                                      {:controller=>"pages", :action=>"update"}
+                                            DELETE /pages/:id(.:format)                                                      {:controller=>"pages", :action=>"destroy"}
+                               client_error        /client/error                                                             {:controller=>"client/home", :action=>"index"}
+                                     client        /client                                                                   {:controller=>"client/bookings", :action=>"index"}
+                  new_client_client_session GET    /client/client_session/new(.:format)                                      {:controller=>"client/client_sessions", :action=>"new"}
+                 edit_client_client_session GET    /client/client_session/edit(.:format)                                     {:controller=>"client/client_sessions", :action=>"edit"}
+                      client_client_session GET    /client/client_session(.:format)                                          {:controller=>"client/client_sessions", :action=>"show"}
+                                            PUT    /client/client_session(.:format)                                          {:controller=>"client/client_sessions", :action=>"update"}
+                                            DELETE /client/client_session(.:format)                                          {:controller=>"client/client_sessions", :action=>"destroy"}
+                                            POST   /client/client_session(.:format)                                          {:controller=>"client/client_sessions", :action=>"create"}
+                               client_login        /client/login                                                             {:controller=>"client/client_sessions", :action=>"new"}
+                              client_logout        /client/logout                                                            {:controller=>"client/client_sessions", :action=>"destroy"}
+              client_client_password_resets GET    /client/client_password_resets(.:format)                                  {:controller=>"client/client_password_resets", :action=>"index"}
+                                            POST   /client/client_password_resets(.:format)                                  {:controller=>"client/client_password_resets", :action=>"create"}
+           new_client_client_password_reset GET    /client/client_password_resets/new(.:format)                              {:controller=>"client/client_password_resets", :action=>"new"}
+          edit_client_client_password_reset GET    /client/client_password_resets/:id/edit(.:format)                         {:controller=>"client/client_password_resets", :action=>"edit"}
+               client_client_password_reset GET    /client/client_password_resets/:id(.:format)                              {:controller=>"client/client_password_resets", :action=>"show"}
+                                            PUT    /client/client_password_resets/:id(.:format)                              {:controller=>"client/client_password_resets", :action=>"update"}
+                                            DELETE /client/client_password_resets/:id(.:format)                              {:controller=>"client/client_password_resets", :action=>"destroy"}
+                      client_booking_photos GET    /client/bookings/:booking_id/photos(.:format)                             {:controller=>"client/photos", :action=>"index"}
+                                            POST   /client/bookings/:booking_id/photos(.:format)                             {:controller=>"client/photos", :action=>"create"}
+                   new_client_booking_photo GET    /client/bookings/:booking_id/photos/new(.:format)                         {:controller=>"client/photos", :action=>"new"}
+                  edit_client_booking_photo GET    /client/bookings/:booking_id/photos/:id/edit(.:format)                    {:controller=>"client/photos", :action=>"edit"}
+                       client_booking_photo GET    /client/bookings/:booking_id/photos/:id(.:format)                         {:controller=>"client/photos", :action=>"show"}
+                                            PUT    /client/bookings/:booking_id/photos/:id(.:format)                         {:controller=>"client/photos", :action=>"update"}
+                                            DELETE /client/bookings/:booking_id/photos/:id(.:format)                         {:controller=>"client/photos", :action=>"destroy"}
+              client_booking_photo_comments GET    /client/bookings/:booking_id/photo_comments(.:format)                     {:controller=>"client/photo_comments", :action=>"index"}
+                                            POST   /client/bookings/:booking_id/photo_comments(.:format)                     {:controller=>"client/photo_comments", :action=>"create"}
+           new_client_booking_photo_comment GET    /client/bookings/:booking_id/photo_comments/new(.:format)                 {:controller=>"client/photo_comments", :action=>"new"}
+          edit_client_booking_photo_comment GET    /client/bookings/:booking_id/photo_comments/:id/edit(.:format)            {:controller=>"client/photo_comments", :action=>"edit"}
+               client_booking_photo_comment GET    /client/bookings/:booking_id/photo_comments/:id(.:format)                 {:controller=>"client/photo_comments", :action=>"show"}
+                                            PUT    /client/bookings/:booking_id/photo_comments/:id(.:format)                 {:controller=>"client/photo_comments", :action=>"update"}
+                                            DELETE /client/bookings/:booking_id/photo_comments/:id(.:format)                 {:controller=>"client/photo_comments", :action=>"destroy"}
+                            client_bookings GET    /client/bookings(.:format)                                                {:controller=>"client/bookings", :action=>"index"}
+                                            POST   /client/bookings(.:format)                                                {:controller=>"client/bookings", :action=>"create"}
+                         new_client_booking GET    /client/bookings/new(.:format)                                            {:controller=>"client/bookings", :action=>"new"}
+                        edit_client_booking GET    /client/bookings/:id/edit(.:format)                                       {:controller=>"client/bookings", :action=>"edit"}
+                             client_booking GET    /client/bookings/:id(.:format)                                            {:controller=>"client/bookings", :action=>"show"}
+                                            PUT    /client/bookings/:id(.:format)                                            {:controller=>"client/bookings", :action=>"update"}
+                                            DELETE /client/bookings/:id(.:format)                                            {:controller=>"client/bookings", :action=>"destroy"}
+                client_photo_photo_comments GET    /client/photos/:photo_id/photo_comments(.:format)                         {:controller=>"client/photo_comments", :action=>"index"}
+                                            POST   /client/photos/:photo_id/photo_comments(.:format)                         {:controller=>"client/photo_comments", :action=>"create"}
+             new_client_photo_photo_comment GET    /client/photos/:photo_id/photo_comments/new(.:format)                     {:controller=>"client/photo_comments", :action=>"new"}
+            edit_client_photo_photo_comment GET    /client/photos/:photo_id/photo_comments/:id/edit(.:format)                {:controller=>"client/photo_comments", :action=>"edit"}
+                 client_photo_photo_comment GET    /client/photos/:photo_id/photo_comments/:id(.:format)                     {:controller=>"client/photo_comments", :action=>"show"}
+                                            PUT    /client/photos/:photo_id/photo_comments/:id(.:format)                     {:controller=>"client/photo_comments", :action=>"update"}
+                                            DELETE /client/photos/:photo_id/photo_comments/:id(.:format)                     {:controller=>"client/photo_comments", :action=>"destroy"}
+                              client_photos GET    /client/photos(.:format)                                                  {:controller=>"client/photos", :action=>"index"}
+                                            POST   /client/photos(.:format)                                                  {:controller=>"client/photos", :action=>"create"}
+                           new_client_photo GET    /client/photos/new(.:format)                                              {:controller=>"client/photos", :action=>"new"}
+                          edit_client_photo GET    /client/photos/:id/edit(.:format)                                         {:controller=>"client/photos", :action=>"edit"}
+                               client_photo GET    /client/photos/:id(.:format)                                              {:controller=>"client/photos", :action=>"show"}
+                                            PUT    /client/photos/:id(.:format)                                              {:controller=>"client/photos", :action=>"update"}
+                                            DELETE /client/photos/:id(.:format)                                              {:controller=>"client/photos", :action=>"destroy"}
+                                      admin        /admin                                                                    {:controller=>"admin/galleries", :action=>"index"}
+             new_admin_photographer_session GET    /admin/photographer_session/new(.:format)                                 {:controller=>"admin/photographer_sessions", :action=>"new"}
+            edit_admin_photographer_session GET    /admin/photographer_session/edit(.:format)                                {:controller=>"admin/photographer_sessions", :action=>"edit"}
+                 admin_photographer_session GET    /admin/photographer_session(.:format)                                     {:controller=>"admin/photographer_sessions", :action=>"show"}
+                                            PUT    /admin/photographer_session(.:format)                                     {:controller=>"admin/photographer_sessions", :action=>"update"}
+                                            DELETE /admin/photographer_session(.:format)                                     {:controller=>"admin/photographer_sessions", :action=>"destroy"}
+                                            POST   /admin/photographer_session(.:format)                                     {:controller=>"admin/photographer_sessions", :action=>"create"}
+                                admin_login        /admin/login                                                              {:controller=>"admin/photographer_sessions", :action=>"new"}
+                               admin_logout        /admin/logout                                                             {:controller=>"admin/photographer_sessions", :action=>"destroy"}
+                     new_admin_photographer GET    /admin/photographer/new(.:format)                                         {:controller=>"admin/photographers", :action=>"new"}
+                    edit_admin_photographer GET    /admin/photographer/edit(.:format)                                        {:controller=>"admin/photographers", :action=>"edit"}
+                         admin_photographer GET    /admin/photographer(.:format)                                             {:controller=>"admin/photographers", :action=>"show"}
+                                            PUT    /admin/photographer(.:format)                                             {:controller=>"admin/photographers", :action=>"update"}
+                                            DELETE /admin/photographer(.:format)                                             {:controller=>"admin/photographers", :action=>"destroy"}
+                                            POST   /admin/photographer(.:format)                                             {:controller=>"admin/photographers", :action=>"create"}
+         admin_photographer_password_resets GET    /admin/photographer_password_resets(.:format)                             {:controller=>"admin/photographer_password_resets", :action=>"index"}
+                                            POST   /admin/photographer_password_resets(.:format)                             {:controller=>"admin/photographer_password_resets", :action=>"create"}
+      new_admin_photographer_password_reset GET    /admin/photographer_password_resets/new(.:format)                         {:controller=>"admin/photographer_password_resets", :action=>"new"}
+     edit_admin_photographer_password_reset GET    /admin/photographer_password_resets/:id/edit(.:format)                    {:controller=>"admin/photographer_password_resets", :action=>"edit"}
+          admin_photographer_password_reset GET    /admin/photographer_password_resets/:id(.:format)                         {:controller=>"admin/photographer_password_resets", :action=>"show"}
+                                            PUT    /admin/photographer_password_resets/:id(.:format)                         {:controller=>"admin/photographer_password_resets", :action=>"update"}
+                                            DELETE /admin/photographer_password_resets/:id(.:format)                         {:controller=>"admin/photographer_password_resets", :action=>"destroy"}
+                      admin_client_bookings GET    /admin/clients/:client_id/bookings(.:format)                              {:controller=>"admin/bookings", :action=>"index"}
+                                            POST   /admin/clients/:client_id/bookings(.:format)                              {:controller=>"admin/bookings", :action=>"create"}
+                   new_admin_client_booking GET    /admin/clients/:client_id/bookings/new(.:format)                          {:controller=>"admin/bookings", :action=>"new"}
+       update_position_admin_client_booking PUT    /admin/clients/:client_id/bookings/:id/update_position(.:format)          {:controller=>"admin/bookings", :action=>"update_position"}
+                  edit_admin_client_booking GET    /admin/clients/:client_id/bookings/:id/edit(.:format)                     {:controller=>"admin/bookings", :action=>"edit"}
+                       admin_client_booking GET    /admin/clients/:client_id/bookings/:id(.:format)                          {:controller=>"admin/bookings", :action=>"show"}
+                                            PUT    /admin/clients/:client_id/bookings/:id(.:format)                          {:controller=>"admin/bookings", :action=>"update"}
+                                            DELETE /admin/clients/:client_id/bookings/:id(.:format)                          {:controller=>"admin/bookings", :action=>"destroy"}
+                              admin_clients GET    /admin/clients(.:format)                                                  {:controller=>"admin/clients", :action=>"index"}
+                                            POST   /admin/clients(.:format)                                                  {:controller=>"admin/clients", :action=>"create"}
+                           new_admin_client GET    /admin/clients/new(.:format)                                              {:controller=>"admin/clients", :action=>"new"}
+                   send_invite_admin_client POST   /admin/clients/:id/send_invite(.:format)                                  {:controller=>"admin/clients", :action=>"send_invite"}
+                          edit_admin_client GET    /admin/clients/:id/edit(.:format)                                         {:controller=>"admin/clients", :action=>"edit"}
+                        invite_admin_client GET    /admin/clients/:id/invite(.:format)                                       {:controller=>"admin/clients", :action=>"invite"}
+                               admin_client GET    /admin/clients/:id(.:format)                                              {:controller=>"admin/clients", :action=>"show"}
+                                            PUT    /admin/clients/:id(.:format)                                              {:controller=>"admin/clients", :action=>"update"}
+                                            DELETE /admin/clients/:id(.:format)                                              {:controller=>"admin/clients", :action=>"destroy"}
+          flash_upload_admin_booking_photos POST   /admin/bookings/:booking_id/photos/flash_upload(.:format)                 {:controller=>"admin/photos", :action=>"flash_upload"}
+                       admin_booking_photos GET    /admin/bookings/:booking_id/photos(.:format)                              {:controller=>"admin/photos", :action=>"index"}
+                                            POST   /admin/bookings/:booking_id/photos(.:format)                              {:controller=>"admin/photos", :action=>"create"}
+                    new_admin_booking_photo GET    /admin/bookings/:booking_id/photos/new(.:format)                          {:controller=>"admin/photos", :action=>"new"}
+                   edit_admin_booking_photo GET    /admin/bookings/:booking_id/photos/:id/edit(.:format)                     {:controller=>"admin/photos", :action=>"edit"}
+               ajax_row_admin_booking_photo GET    /admin/bookings/:booking_id/photos/:id/ajax_row(.:format)                 {:controller=>"admin/photos", :action=>"ajax_row"}
+                        admin_booking_photo GET    /admin/bookings/:booking_id/photos/:id(.:format)                          {:controller=>"admin/photos", :action=>"show"}
+                                            PUT    /admin/bookings/:booking_id/photos/:id(.:format)                          {:controller=>"admin/photos", :action=>"update"}
+                                            DELETE /admin/bookings/:booking_id/photos/:id(.:format)                          {:controller=>"admin/photos", :action=>"destroy"}
+               admin_booking_photo_comments GET    /admin/bookings/:booking_id/photo_comments(.:format)                      {:controller=>"admin/photo_comments", :action=>"index"}
+                                            POST   /admin/bookings/:booking_id/photo_comments(.:format)                      {:controller=>"admin/photo_comments", :action=>"create"}
+            new_admin_booking_photo_comment GET    /admin/bookings/:booking_id/photo_comments/new(.:format)                  {:controller=>"admin/photo_comments", :action=>"new"}
+           edit_admin_booking_photo_comment GET    /admin/bookings/:booking_id/photo_comments/:id/edit(.:format)             {:controller=>"admin/photo_comments", :action=>"edit"}
+                admin_booking_photo_comment GET    /admin/bookings/:booking_id/photo_comments/:id(.:format)                  {:controller=>"admin/photo_comments", :action=>"show"}
+                                            PUT    /admin/bookings/:booking_id/photo_comments/:id(.:format)                  {:controller=>"admin/photo_comments", :action=>"update"}
+                                            DELETE /admin/bookings/:booking_id/photo_comments/:id(.:format)                  {:controller=>"admin/photo_comments", :action=>"destroy"}
+                             admin_bookings GET    /admin/bookings(.:format)                                                 {:controller=>"admin/bookings", :action=>"index"}
+                                            POST   /admin/bookings(.:format)                                                 {:controller=>"admin/bookings", :action=>"create"}
+                          new_admin_booking GET    /admin/bookings/new(.:format)                                             {:controller=>"admin/bookings", :action=>"new"}
+                         edit_admin_booking GET    /admin/bookings/:id/edit(.:format)                                        {:controller=>"admin/bookings", :action=>"edit"}
+                              admin_booking GET    /admin/bookings/:id(.:format)                                             {:controller=>"admin/bookings", :action=>"show"}
+                                            PUT    /admin/bookings/:id(.:format)                                             {:controller=>"admin/bookings", :action=>"update"}
+                                            DELETE /admin/bookings/:id(.:format)                                             {:controller=>"admin/bookings", :action=>"destroy"}
+                 admin_photo_photo_comments GET    /admin/photo/:photo_id/photo_comments(.:format)                           {:controller=>"admin/photo_comments", :action=>"index"}
+                                            POST   /admin/photo/:photo_id/photo_comments(.:format)                           {:controller=>"admin/photo_comments", :action=>"create"}
+              new_admin_photo_photo_comment GET    /admin/photo/:photo_id/photo_comments/new(.:format)                       {:controller=>"admin/photo_comments", :action=>"new"}
+             edit_admin_photo_photo_comment GET    /admin/photo/:photo_id/photo_comments/:id/edit(.:format)                  {:controller=>"admin/photo_comments", :action=>"edit"}
+                  admin_photo_photo_comment GET    /admin/photo/:photo_id/photo_comments/:id(.:format)                       {:controller=>"admin/photo_comments", :action=>"show"}
+                                            PUT    /admin/photo/:photo_id/photo_comments/:id(.:format)                       {:controller=>"admin/photo_comments", :action=>"update"}
+                                            DELETE /admin/photo/:photo_id/photo_comments/:id(.:format)                       {:controller=>"admin/photo_comments", :action=>"destroy"}
+                          admin_photo_index GET    /admin/photo(.:format)                                                    {:controller=>"admin/photo", :action=>"index"}
+                                            POST   /admin/photo(.:format)                                                    {:controller=>"admin/photo", :action=>"create"}
+                            new_admin_photo GET    /admin/photo/new(.:format)                                                {:controller=>"admin/photo", :action=>"new"}
+                           edit_admin_photo GET    /admin/photo/:id/edit(.:format)                                           {:controller=>"admin/photo", :action=>"edit"}
+                                admin_photo GET    /admin/photo/:id(.:format)                                                {:controller=>"admin/photo", :action=>"show"}
+                                            PUT    /admin/photo/:id(.:format)                                                {:controller=>"admin/photo", :action=>"update"}
+                                            DELETE /admin/photo/:id(.:format)                                                {:controller=>"admin/photo", :action=>"destroy"}
+  flash_upload_admin_gallery_gallery_photos POST   /admin/galleries/:gallery_id/gallery_photos/flash_upload(.:format)        {:controller=>"admin/gallery_photos", :action=>"flash_upload"}
+               admin_gallery_gallery_photos GET    /admin/galleries/:gallery_id/gallery_photos(.:format)                     {:controller=>"admin/gallery_photos", :action=>"index"}
+                                            POST   /admin/galleries/:gallery_id/gallery_photos(.:format)                     {:controller=>"admin/gallery_photos", :action=>"create"}
+            new_admin_gallery_gallery_photo GET    /admin/galleries/:gallery_id/gallery_photos/new(.:format)                 {:controller=>"admin/gallery_photos", :action=>"new"}
+update_position_admin_gallery_gallery_photo PUT    /admin/galleries/:gallery_id/gallery_photos/:id/update_position(.:format) {:controller=>"admin/gallery_photos", :action=>"update_position"}
+           edit_admin_gallery_gallery_photo GET    /admin/galleries/:gallery_id/gallery_photos/:id/edit(.:format)            {:controller=>"admin/gallery_photos", :action=>"edit"}
+                admin_gallery_gallery_photo GET    /admin/galleries/:gallery_id/gallery_photos/:id(.:format)                 {:controller=>"admin/gallery_photos", :action=>"show"}
+                                            PUT    /admin/galleries/:gallery_id/gallery_photos/:id(.:format)                 {:controller=>"admin/gallery_photos", :action=>"update"}
+                                            DELETE /admin/galleries/:gallery_id/gallery_photos/:id(.:format)                 {:controller=>"admin/gallery_photos", :action=>"destroy"}
+                            admin_galleries GET    /admin/galleries(.:format)                                                {:controller=>"admin/galleries", :action=>"index"}
+                                            POST   /admin/galleries(.:format)                                                {:controller=>"admin/galleries", :action=>"create"}
+                          new_admin_gallery GET    /admin/galleries/new(.:format)                                            {:controller=>"admin/galleries", :action=>"new"}
+              update_position_admin_gallery PUT    /admin/galleries/:id/update_position(.:format)                            {:controller=>"admin/galleries", :action=>"update_position"}
+                         edit_admin_gallery GET    /admin/galleries/:id/edit(.:format)                                       {:controller=>"admin/galleries", :action=>"edit"}
+                              admin_gallery GET    /admin/galleries/:id(.:format)                                            {:controller=>"admin/galleries", :action=>"show"}
+                                            PUT    /admin/galleries/:id(.:format)                                            {:controller=>"admin/galleries", :action=>"update"}
+                                            DELETE /admin/galleries/:id(.:format)                                            {:controller=>"admin/galleries", :action=>"destroy"}
+                                admin_pages GET    /admin/pages(.:format)                                                    {:controller=>"admin/pages", :action=>"index"}
+                                            POST   /admin/pages(.:format)                                                    {:controller=>"admin/pages", :action=>"create"}
+                             new_admin_page GET    /admin/pages/new(.:format)                                                {:controller=>"admin/pages", :action=>"new"}
+                 update_position_admin_page PUT    /admin/pages/:id/update_position(.:format)                                {:controller=>"admin/pages", :action=>"update_position"}
+                            edit_admin_page GET    /admin/pages/:id/edit(.:format)                                           {:controller=>"admin/pages", :action=>"edit"}
+                                 admin_page GET    /admin/pages/:id(.:format)                                                {:controller=>"admin/pages", :action=>"show"}
+                                            PUT    /admin/pages/:id(.:format)                                                {:controller=>"admin/pages", :action=>"update"}
+                                            DELETE /admin/pages/:id(.:format)                                                {:controller=>"admin/pages", :action=>"destroy"}
+                               admin_quotes GET    /admin/quotes(.:format)                                                   {:controller=>"admin/quotes", :action=>"index"}
+                                            POST   /admin/quotes(.:format)                                                   {:controller=>"admin/quotes", :action=>"create"}
+                            new_admin_quote GET    /admin/quotes/new(.:format)                                               {:controller=>"admin/quotes", :action=>"new"}
+                update_position_admin_quote PUT    /admin/quotes/:id/update_position(.:format)                               {:controller=>"admin/quotes", :action=>"update_position"}
+                           edit_admin_quote GET    /admin/quotes/:id/edit(.:format)                                          {:controller=>"admin/quotes", :action=>"edit"}
+                                admin_quote GET    /admin/quotes/:id(.:format)                                               {:controller=>"admin/quotes", :action=>"show"}
+                                            PUT    /admin/quotes/:id(.:format)                                               {:controller=>"admin/quotes", :action=>"update"}
+                                            DELETE /admin/quotes/:id(.:format)                                               {:controller=>"admin/quotes", :action=>"destroy"}
+                             admin_packages GET    /admin/packages(.:format)                                                 {:controller=>"admin/packages", :action=>"index"}
+                                            POST   /admin/packages(.:format)                                                 {:controller=>"admin/packages", :action=>"create"}
+                          new_admin_package GET    /admin/packages/new(.:format)                                             {:controller=>"admin/packages", :action=>"new"}
+              update_position_admin_package PUT    /admin/packages/:id/update_position(.:format)                             {:controller=>"admin/packages", :action=>"update_position"}
+                         edit_admin_package GET    /admin/packages/:id/edit(.:format)                                        {:controller=>"admin/packages", :action=>"edit"}
+                              admin_package GET    /admin/packages/:id(.:format)                                             {:controller=>"admin/packages", :action=>"show"}
+                                            PUT    /admin/packages/:id(.:format)                                             {:controller=>"admin/packages", :action=>"update"}
+                                            DELETE /admin/packages/:id(.:format)                                             {:controller=>"admin/packages", :action=>"destroy"}
+                admin_product_product_sizes GET    /admin/products/:product_id/product_sizes(.:format)                       {:controller=>"admin/product_sizes", :action=>"index"}
+                                            POST   /admin/products/:product_id/product_sizes(.:format)                       {:controller=>"admin/product_sizes", :action=>"create"}
+             new_admin_product_product_size GET    /admin/products/:product_id/product_sizes/new(.:format)                   {:controller=>"admin/product_sizes", :action=>"new"}
+ update_position_admin_product_product_size PUT    /admin/products/:product_id/product_sizes/:id/update_position(.:format)   {:controller=>"admin/product_sizes", :action=>"update_position"}
+            edit_admin_product_product_size GET    /admin/products/:product_id/product_sizes/:id/edit(.:format)              {:controller=>"admin/product_sizes", :action=>"edit"}
+                 admin_product_product_size GET    /admin/products/:product_id/product_sizes/:id(.:format)                   {:controller=>"admin/product_sizes", :action=>"show"}
+                                            PUT    /admin/products/:product_id/product_sizes/:id(.:format)                   {:controller=>"admin/product_sizes", :action=>"update"}
+                                            DELETE /admin/products/:product_id/product_sizes/:id(.:format)                   {:controller=>"admin/product_sizes", :action=>"destroy"}
+                             admin_products GET    /admin/products(.:format)                                                 {:controller=>"admin/products", :action=>"index"}
+                                            POST   /admin/products(.:format)                                                 {:controller=>"admin/products", :action=>"create"}
+                          new_admin_product GET    /admin/products/new(.:format)                                             {:controller=>"admin/products", :action=>"new"}
+              update_position_admin_product PUT    /admin/products/:id/update_position(.:format)                             {:controller=>"admin/products", :action=>"update_position"}
+                         edit_admin_product GET    /admin/products/:id/edit(.:format)                                        {:controller=>"admin/products", :action=>"edit"}
+                              admin_product GET    /admin/products/:id(.:format)                                             {:controller=>"admin/products", :action=>"show"}
+                                            PUT    /admin/products/:id(.:format)                                             {:controller=>"admin/products", :action=>"update"}
+                                            DELETE /admin/products/:id(.:format)                                             {:controller=>"admin/products", :action=>"destroy"}
