@@ -1,7 +1,8 @@
 // DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. 
 // Please use form_for(@resource, :as => :name) instead.
+//= form_for(@photographer, :as => :name, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
 //= form_for(:photographer, @photographer, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
-= form_for(@photographer, :as => :name, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
+= form_for @photographer, :url => admin_photographer_path do |f|
   -content_for :sidebar do
     %h2 Settings
     %p Manage your site-wide settings here.

@@ -39,6 +39,7 @@ Lauranovara::Application.routes.draw do
       resource :photographer_session
       match '/login' => 'photographer_sessions#new', :as => :login
       match '/logout' => 'photographer_sessions#destroy', :as => :logout
+
       resource :photographer
       resources :photographer_password_resets
       # old Rails2
