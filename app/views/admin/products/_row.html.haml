@@ -2,7 +2,7 @@
   .draggable
     = truncate(row.title, :length => 22)
     = link_to image_tag('cancel.png'), resource_path(row), :class => "delete"
-  = "#{link_to(image_tag(row.image.url(:thumb), :size => '150x100'), edit_resource_path(row))}<br />"
+  = "#{link_to(image_tag(row.image.url(:thumb), :size => '150x100'), edit_resource_path(row))}<br />".html_safe
   .actions
     = link_to 'Edit', edit_resource_path(row)
     |

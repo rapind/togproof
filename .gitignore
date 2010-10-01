@@ -1,12 +1,14 @@
 .DS_Store
 log/*.*
 tmp/**/*
+db/*.sql
+db/*.bz2
+db/*.sqlite3
 db/schema.rb
+db/README.mysqldump
+public/attachments/**/*
 config/database.yml
 config/deploy.rb
 config/deploy.jaime
 config/deploy.grokphoto
 config/initializers/grokphoto.rb
-db/*.sql
-db/*.bz2
-public/attachments

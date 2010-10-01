@@ -1,4 +1,8 @@
-- form_for(@photographer, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
+// DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. 
+// Please use form_for(@resource, :as => :name) instead.
+//= form_for(@photographer, :as => :name, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
+//= form_for(:photographer, @photographer, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
+= form_for @photographer, :url => admin_photographer_path do |f|
   -content_for :sidebar do
     %h2 Settings
     %p Manage your site-wide settings here.
@@ -32,7 +36,7 @@
       = f.label :watermark, "Upload your watermark. Must be a transparent PNG or GIF"
       = f.file_field :watermark, :class => 'text'
       %br
-      = link_to(image_tag(@photographer.watermark.url(:thumb), :style => "border: 1px solid #aaa;"), @photographer.watermark.url, :rel => 'colorbox') if @photographer.watermark.file?
+      = link_to(image_tag(@photographer.watermark.url(:thumb), :style => "border: 1px solid #aaa;"), @photographer.watermark.url, :rel => 'colorbox').html_safe if @photographer.watermark.file?
       
   %div{ :style => "width:50%; float:left;" }
     %p

@@ -4,7 +4,7 @@
   %p You can expand the view and reply to comments for a photo by clicking on it's image.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; All #{@booking.title} Comments"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; All #{@booking.title} Comments".html_safe
 
 .paging{ :style => 'margin-right: 70px;' }
   = will_paginate(@comments)

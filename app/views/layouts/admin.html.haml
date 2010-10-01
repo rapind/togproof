@@ -46,4 +46,7 @@
           = yield
       #footer
         .faux-hr
-        = "Copyright &copy; 2010, #{@config.company_name}, &nbsp; All Rights Reserved"
+        / old Rails 2.3.9 string escaping:
+        /= "Copyright &copy; 2010, #{@config.company_name}, &nbsp; All Rights Reserved"
+        = "Copyright &copy; 2010, #{(@config.company_name)}, All Rights Reserved".html_safe
+

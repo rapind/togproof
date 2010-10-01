@@ -5,7 +5,7 @@
   %p Whenever you add a new client to the site, the system will automatically email them with their account and login information.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{controller.action_name.titleize}"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; #{controller.action_name.titleize}".html_safe
   
 = f.error_messages
 %div{ :style => "width:50%; float:left;" }

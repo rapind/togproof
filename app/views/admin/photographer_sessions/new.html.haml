@@ -3,7 +3,7 @@
   %p This area is password protected.
   %p
     If you are not a site photographer and have come here by mistake,
-    = link_to 'please head back to the public site &raquo;', root_path
+    = link_to 'please head back to the public site &raquo;', '/'
 
 - if defined?(DEMO_MODE) and DEMO_MODE
   %p
@@ -12,7 +12,7 @@
       %br
       photographer@grokphoto.org / password
       
-- form_for @photographer_session, :url => admin_photographer_session_path do |f|
+= form_for :photographer_session, @photographer_session, :url => admin_photographer_session_path do |f|
   = f.error_messages
   %p
     = f.label :email

@@ -5,13 +5,15 @@
   %p Just click the "Send Invitation" button when you're ready to send it.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; Invite #{@client.name}"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; Invite #{@client.name}".html_safe
 
-- form_tag send_invite_admin_client_path, :method => :post do
+= form_tag send_invite_admin_client_path, :method => :post do
   %p
     %label{ :for => 'custom_message' } Add a custom message to the invitation
     = text_area_tag 'custom_message', nil, :class => 'text', :style => 'width: 97%'
   
   %p.buttons
     = build_submit_button('Send Invitation &raquo;')
-    = link_to("#{image_tag('icons/negative.png')} Cancel", collection_path, :class => 'button negative', :id => 'cancel')
+    / old Rails 2.3.9 html escaping:
+    /= link_to("#{image_tag('icons/negative.png')} Cancel", collection_path, :class => 'button negative', :id => 'cancel')
+    = link_to("#{image_tag('icons/negative.png')} Cancel".html_safe, collection_path, :class => 'button negative', :id => 'cancel')

@@ -18,15 +18,16 @@ module ApplicationHelper
       end
       html = "#{html}});\n</script>"
     end
-    return html
+    return html.html_safe
   end
   
   def build_submit_button(title) 
-    "<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>"
+    #"<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>"
+    "<button type='submit' class='button positive'> #{image_tag('icons/positive.png')} #{title} </button>".html_safe
   end
   
   def build_link_button(title, path)
-    "<p class='buttons'><a href='#{path}' title='#{title}' class='button positive'>#{image_tag('icons/positive.png')} #{title}</a></p>"
+    "<p class='buttons'><a href='#{path}' title='#{title}' class='button positive'>#{image_tag('icons/positive.png')} #{title}</a></p>".html_safe
   end
   
 end

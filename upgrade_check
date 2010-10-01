@@ -1,0 +1,46 @@
+(in /home/lsoave/rails/altrove/tests/lauranovara)
+[31m[1mDeprecated constant(s)[0m
+[37mConstants like RAILS_ENV, RAILS_ROOT, and RAILS_DEFAULT_LOGGER are now deprecated.
+[1mMore information:[0m [36mhttp://litanyagainstfear.com/blog/2010/02/03/the-rails-module/
+
+[37mThe culprits: 
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/models/photographer.rb
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/lib/tasks/rspec.rake
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/lib/tasks/cucumber.rake
+[0m
+[31m[1mSoon-to-be-deprecated ActiveRecord calls[0m
+[37mMethods such as find(:all), find(:first), finds with conditions, and the :joins option will soon be deprecated.
+[1mMore information:[0m [36mhttp://m.onkey.org/2010/1/22/active-record-query-interface
+
+[37mThe culprits: 
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/controllers/application_controller.rb.rails2
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/controllers/application_controller.rb
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/controllers/client/bookings_controller.rb
+[0m
+[31m[1mDeprecated ActionMailer API[0m
+[37mYou're using the old ActionMailer API to send e-mails in a controller, model, or observer.
+[1mMore information:[0m [36mhttp://lindsaar.net/2010/1/26/new-actionmailer-api-in-rails-3
+
+[37mThe culprits: 
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/models/client.rb
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/models/photographer.rb
+[33m	- app/controllers/admin/photographer_password_resets_controller.rb
+[33m	- app/controllers/admin/clients_controller.rb
+[33m	- app/controllers/client/client_password_resets_controller.rb
+[0m
+[31m[1mOld ActionMailer class API[0m
+[37mYou're using the old API in a mailer class.
+[1mMore information:[0m [36mhttp://lindsaar.net/2010/1/26/new-actionmailer-api-in-rails-3
+
+[37mThe culprits: 
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/models/notifier.rb
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/models/notifier.rb
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/app/models/notifier.rb
+[0m
+[31m[1mDeprecated session secret setting[0m
+[37mPreviously, session secret was set directly on ActionController::Base; it's now config.secret_token.
+[1mMore information:[0m [36mhttp://lindsaar.net/2010/4/7/rails_3_session_secret_and_session_store
+
+[37mThe culprits: 
+[33m	- /home/lsoave/rails/altrove/tests/lauranovara/config/initializers/grokphoto.rb.sample
+[0m

@@ -26,7 +26,7 @@
               %li= link_to "Logout", client_logout_path
             - else
               %li= link_to "Login", client_login_path, :class => 'active'
-            %li= link_to "Back to Portfolio &raquo;", root_path
+            %li= link_to "Back to Portfolio &raquo;", '/'
       #main
         #sidebar
           .box
@@ -41,4 +41,7 @@
           = yield
       #footer
         .faux-hr
-        = "Copyright &copy; 2010, #{@config.company_name}, &nbsp; All Rights Reserved"
+        / old Rails 2.3.9 string escaping:
+        /= "Copyright &copy; 2010, #{@config.company_name}, &nbsp; All Rights Reserved"
+        = "Copyright &copy; 2010, #{(@config.company_name)}, All Rights Reserved".html_safe
+

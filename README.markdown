@@ -1,5 +1,8 @@
+
 Grokphoto
 =========
+
+* This master branch is for Rails 3.0.0 only, [ported by Luca G. Soave](http://github.com/lgs)
 
 Grokphoto is a professional photographer's client and booking management solution, as well as a gallery / portfolio where they can showcase for their work.
 
@@ -35,9 +38,9 @@ Installation script coming soon! Follow these instructions for now:
 
     $ git clone git://github.com/rapind/grokphoto.git
     $ cd grokphoto
-    $ cp config/database.yml.sample config/database.yml
+    $ cp config/database.yml.sample config.database.yml
     $ cp config/initializers/grokphoto.rb.sample config/initializers/grokphoto.rb
-    $ cp config/deploy.rb.sample config/deploy.rb
+    $ cp config/deploy.rb.sample deploy.rb
 
 Then edit these three files with your own settings. Everything you need to change is marked with a "TODO":
 
@@ -104,6 +107,8 @@ Right now, the auto-watermarking is disabled as I try to debug an ImageMagick li
 Credits
 -------
 
+* Porting to Rails 3.0.0 by [Luca G. Soave](http://github.com/lgs)
+
 * [http://github.com/thoughtbot/paperclip](http://github.com/thoughtbot/paperclip)
 * [http://github.com/josevalim/inherited_resources](http://github.com/josevalim/inherited_resources)
 * [http://github.com/binarylogic/authlogic](http://github.com/binarylogic/authlogic)
@@ -119,3 +124,4 @@ License
 -------
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.5/ca/88x31.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Grokphoto</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://github.com/rapind/grokphoto" property="cc:attributionName" rel="cc:attributionURL">http://github.com/rapind/grokphoto</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a>.<br />Based on a work at <a xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://github.com/rapind/grokphoto" rel="dc:source">github.com</a>.
+

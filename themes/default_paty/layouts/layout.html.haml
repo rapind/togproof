@@ -1,0 +1,39 @@
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
+    - unless @config.google_verification_key.blank?
+      %meta{ :name => "google-site-verification", :content => "#{@config.google_verification_key}" }
+    %link{:rel => 'shortcut icon', :href => '/favicon.ico'}
+    %meta{ :name => 'keywords', :content => defined?(@page_keywords) ? @page_keywords : "#{@config.company_name.downcase}, photography, professional, newborn, maternity, kids, babies, family, portraits, galleries, portfolio, toronto, ontario, canada" }
+    %meta{ :name => 'description', :content => defined?(@page_description) ? @page_description : "#{h(@config.company_name)}. Professional photographer in Toronto, ON, Canada. Specializing in newborn, maternity, kids, babies, and family portrait photography." }
+    %title= @page_title ? "#{@page_title} - #{@config.company_name}" : "#{controller.controller_name.humanize.titleize} - #{@config.company_name}"
+    = stylesheet_link_tag('default.css', :media => 'screen, projection')
+    = stylesheet_link_tag('global/print.css', :media => 'print')
+    /[if lt IE 8]
+      = stylesheet_link_tag('global/ie.css', :media => 'screen, projection')
+    = stylesheet_link_tag('global/gritter.css', 'global/colorbox.css', :media => 'screen, projection')
+    = javascript_include_tag('jquery.min.js', 'jquery.cycle.lite.1.0.min.js', 'jquery.gritter.js', 'jquery.colorbox-min.js', 'jquery.galleria.js', 'jquery.rightClick.js', 'default.js')
+    = yield :head
+    %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon" }
+    - unless @config.google_analytics_key.blank?
+      %script{ :type => 'text/javascript'}
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '#{@config.google_analytics_key}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+  %body
+    #container
+      = render :partial => '/header'
+      - if @content_for_subnav
+        #subnav
+          %ul= yield(:subnav)
+      = yield
+      = render :partial => '/footer'
+      = render :partial => '/google_analytics'

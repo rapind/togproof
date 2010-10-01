@@ -5,7 +5,7 @@
       %br
       client@grokphoto.org / password
       
-- form_for @client_session, :url => client_client_session_path do |f|
+= form_for :client_session, @client_session, :url => client_client_session_path do |f|
   = f.error_messages
   %p
     = f.label :email

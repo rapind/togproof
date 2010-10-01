@@ -6,7 +6,7 @@
   %p You can delete a booking by clicking the "Delete" link next to the booking you want to remove.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{@client.name} Bookings"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; #{@client.name} Bookings".html_safe
 
 = build_link_button("New Booking &raquo;", new_resource_path)
 

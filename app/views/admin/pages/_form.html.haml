@@ -9,7 +9,7 @@
   %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
 
 #breadcrumb
-  = "#{link_to('Pages', admin_pages_path)} &raquo; #{controller.action_name.titleize}"
+  = "#{link_to('Pages', admin_pages_path)} &raquo; #{controller.action_name.titleize}".html_safe
   
 = f.error_messages
 %div{ :style => "width:50%; float:left;" }

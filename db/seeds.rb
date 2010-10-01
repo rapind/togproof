@@ -13,7 +13,7 @@ photographer = Photographer.create(
   :home_page_title => 'Open-source Photography'
 )
 puts "Uploading watermark..."
-photographer.watermark = File.new(File.join(RAILS_ROOT, "photoshop/watermark.png")) rescue nil
+photographer.watermark = File.new(File.join(Rails.root, "photoshop/watermark.png")) rescue nil
 photographer.save
 
 puts "Creating clients"
@@ -31,7 +31,7 @@ galleries << photographer.galleries.create(:position => 2, :title => 'Newborn', 
 galleries << photographer.galleries.create(:position => 3, :title => 'Babies and Children', :keywords => "themes, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails", :description => "You can create your own themes. All you need is a little HTML knowledge, or even better some Ruby on Rails experience to create more advanced themes.")
 galleries << photographer.galleries.create(:position => 4, :title => 'Maternity', :keywords => "opensource, professional, photography, gallery, photo, client, workflow, management, booking, ruby, rails", :description => "GrokPhoto is completely open-source. This means if you know a little bit about coding (or someone who does), you can have your own version and theme up and running within a few minutes. The engine behind GrokPhoto is Ruby on Rails.")
 puts "Uploading gallery images..."
-base_dir = File.join(RAILS_ROOT, "photoshop/galleries/")
+base_dir = File.join(Rails.root, "photoshop/galleries/")
 for gallery in galleries
   file_name = "#{gallery.title.downcase.gsub(' ', '-')}.jpg"
   file_path = "#{base_dir}#{file_name}"
@@ -40,9 +40,9 @@ for gallery in galleries
 end
 
 puts "Uploading gallery photo images"
-base_dir = File.join(RAILS_ROOT, "photoshop/galleries")
+base_dir = File.join(Rails.root, "photoshop/galleries")
 for gallery in galleries
-  photos_dir = File.join(RAILS_ROOT, "photoshop/galleries/#{gallery.title.downcase.gsub(' ', '-')}/")
+  photos_dir = File.join(Rails.root, "photoshop/galleries/#{gallery.title.downcase.gsub(' ', '-')}/")
   file_names = Dir.glob("#{photos_dir}*.jpg")
   file_names.each_with_index do |file_name, idx|
     puts "uploading #{file_name}"
@@ -56,7 +56,7 @@ pages << photographer.pages.create(:position => 1, :title => 'About', :intro => 
 pages << photographer.pages.create(:position => 2, :title => 'Opensource', :intro => 'GrokPhoto is free!', :keywords => "opensource, ruby, rails, photography, git, haml, ajax, jquery, themes, erb", :body => "Get the Source\n-----------\n\n[http://github.com/rapind/grokphoto](http://github.com/rapind/grokphoto)\n\nFrom Wikipedia\n------------\n\nOpen-source software (OSS) is computer software for which the source code and certain other rights normally reserved for copyright holders are provided under a software license that meets the Open Source Definition or that is in the public domain. This permits users to use, change, and improve the software, and to redistribute it in modified or unmodified forms. It is very often developed in a public, collaborative manner. Open-source software is the most prominent example of open-source development and often compared to user-generated content. The term open-source software originated as part of a marketing campaign for free software. A report by Standish Group states that adoption of open-source software models has resulted in savings of about $60 billion per year to consumers.\n\n[http://en.wikipedia.org/wiki/Open_source_software](http://en.wikipedia.org/wiki/Open_source_software)")
 
 puts "Uploading page images"
-base_dir = File.join(RAILS_ROOT, "photoshop/pages/")
+base_dir = File.join(Rails.root, "photoshop/pages/")
 for page in pages
   file_name = "#{page.title.downcase.gsub(' ', '-')}.jpg"
   file_path = "#{base_dir}#{file_name}"
@@ -80,7 +80,7 @@ products << photographer.products.create(:position => 2, :title => "Album")
 products << photographer.products.create(:position => 3, :title => "Card")
 
 puts "Uploading product images"
-base_dir = File.join(RAILS_ROOT, "photoshop/products/")
+base_dir = File.join(Rails.root, "photoshop/products/")
 for product in products
   file_name = "#{product.title.downcase.gsub(' ', '-')}.jpg"
   file_path = "#{base_dir}#{file_name}"

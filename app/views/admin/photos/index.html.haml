@@ -44,7 +44,7 @@
   %p All client photos are automatically annotated with your company name when you upload them.
 
 #breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; #{@booking.title} Photos"
+  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; #{@booking.title} Photos".html_safe
 
 %div
   #fileQueue

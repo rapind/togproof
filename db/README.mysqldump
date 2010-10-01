@@ -1,0 +1,9 @@
+== DB Dump:
+
+  mysqldump --user=root --password=xxxxxxx lauranovara-db > lauranovara-db.sql
+
+== DB restore:
+
+  mysql -u root lauranovara-db < lauranovara-db.sql.1 -p
+
+
