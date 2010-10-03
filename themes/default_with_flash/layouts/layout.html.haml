@@ -31,7 +31,8 @@
   %body
     #container
       = render :partial => '/header'
-      - if @content_for_subnav
+      //- if @content_for_subnav
+      - if content_for(:subnav)
         #subnav
           %ul= yield(:subnav)
       = yield
