@@ -1,10 +1,7 @@
-
 Grokphoto
 =========
 
-* This master branch is for Rails 3.0.0 only, [ported by Luca G. Soave](http://github.com/lgs)
-
-Grokphoto is a professional photographer's client and booking management solution, as well as a gallery / portfolio where they can showcase for their work.
+This master branch is for Rails 3.0.0 only, [ported by Luca G. Soave](http://github.com/lgs). Grokphoto, is a professional photographer's client and booking management solution, as well as a gallery / portfolio where they can showcase for their work.
 
 ### [Watch the Video](http://grokphoto.org/introduction.html) ###
 
@@ -107,7 +104,7 @@ Right now, the auto-watermarking is disabled as I try to debug an ImageMagick li
 Credits
 -------
 
-* Porting to Rails 3.0.0 by [Luca G. Soave](http://github.com/lgs)
+* Port to Rails 3 by [Luca G. Soave](http://github.com/lgs)
 
 * [http://github.com/thoughtbot/paperclip](http://github.com/thoughtbot/paperclip)
 * [http://github.com/josevalim/inherited_resources](http://github.com/josevalim/inherited_resources)
