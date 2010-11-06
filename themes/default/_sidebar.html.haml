@@ -1,6 +1,6 @@
 %h3 Contact Info
 %p 
-  = enkode_mail( @config.company_email, @config.company_email, "Email Me", "#{@config.company_name} - Request" )
+  = enkode_mail( @config.company_email, @config.company_email, "Email Me", "#{@config.company_name} - Request" ).html_safe
   = "<br /><br />#{@config.company_phone}<br />".html_safe unless @config.company_phone.blank?
   = "<br />#{link_to 'Blog', @config.blog_url}".html_safe unless @config.blog_url.blank?
   = "| #{link_to('Facebook', @config.facebook_url, :title => 'My Facebook Page')}".html_safe unless @config.facebook_url.blank?
