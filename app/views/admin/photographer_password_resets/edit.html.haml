@@ -1,7 +1,8 @@
 %h2 Choose a Password
 %p Enter a new password and click the "Set Password" button.
   
-= form_for :photographer, @photographer, :url => admin_photographer_password_reset_path, :method => :put do |f|
+/= form_for :photographer, @photographer, :url => admin_photographer_password_reset_path, :method => :put do |f|
+= form_for @photographer, :as => :photographer, :url => admin_photographer_password_reset_path, :method => :put do |f|
   = f.error_messages
   %p
     = f.label :password
