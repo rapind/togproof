@@ -9,7 +9,7 @@
 
 = build_link_button("New Gallery &raquo;", new_resource_path)
 
-%p{ :class => 'clear' }
+%p.clear
 
 %ul{ :id => 'position_container', :class => 'image_list' }
   = render :partial => "row", :collection => @galleries

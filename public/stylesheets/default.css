@@ -440,6 +440,9 @@ a:hover { color: #ff9000; }
 }
 .slide_description {
   float: left;
+  position: absolute;
+  left: 0;
+  top: 540px;
   background-color: #000000;
   color: #ffffff;
   filter: alpha(opacity=70);
