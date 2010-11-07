@@ -477,7 +477,7 @@ div.faux-hr {
   padding: 40px 0 25px 0;
 }
 #intro h1 {
-  font-size: 3.2em;
+  font: normal 40px georgia;
   color: #222222;
 }
 #subnav {
@@ -502,6 +502,8 @@ div.faux-hr {
   border: 1px solid #aaaaaa;
   margin: 15px;
 }
+#main h2 { font: normal 30px georgia; }
+#main h3 { font: normal 22px georgia; }
 #sidebar {
   float: left;
   text-align: left;
