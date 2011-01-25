@@ -2,7 +2,7 @@ class CreateGalleries < ActiveRecord::Migration
   def self.up
     create_table :galleries do |t|
       t.references :photographer, :null => false
-      t.integer :position, :null => false, :default => 1
+      t.integer :position, :default => 1
       t.string :title, :null => false, :limit => 100
       t.string :keywords, :limit => 200
       t.text :description, :null => false

@@ -2,7 +2,7 @@ class CreatePages < ActiveRecord::Migration
   def self.up
     create_table :pages do |t|
       t.references :photographer, :null => false
-      t.integer :position, :null => false, :default => 1
+      t.integer :position, :default => 1
       t.string :title, :null => false, :length => 100
       t.string :intro, :length => 100
       t.string :keywords, :limit => 200

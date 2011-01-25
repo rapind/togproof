@@ -2,7 +2,7 @@ class CreateProducts < ActiveRecord::Migration
   def self.up
     create_table :products do |t|
       t.references :photographer, :null => false
-      t.integer :position, :null => false, :default => 1
+      t.integer :position, :default => 1
       t.string :title, :null => false, :limit => 128
       t.string :description, :limit => 2000
       t.boolean :active, :null => false, :default => true
