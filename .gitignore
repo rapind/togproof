@@ -10,3 +10,4 @@ config/initializers/grokphoto.rb
 db/*.sql
 db/*.bz2
 public/attachments
+public/uploads
