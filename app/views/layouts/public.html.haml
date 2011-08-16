@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{ :charset => 'utf-8' }
+    %title GrokPhoto
+    /[if lt IE 9]
+      = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
+    = stylesheet_link_tag 'public'
+    = csrf_meta_tags
+    -# Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/
+    %meta{ :name => 'viewport', :content => 'width=device-width, initial-scale=1' }
+  %body{ :lang => 'en' }
+    #container
+      #header
+      #main
+        .notice= notice
+        .alert= alert
+        #content= yield
+      #footer
+    = javascript_include_tag 'public'
+

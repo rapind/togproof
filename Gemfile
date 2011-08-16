@@ -32,6 +32,7 @@ gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
 
+
 # gems only used in dev and test envs.
 group :development, :test do
   # generators

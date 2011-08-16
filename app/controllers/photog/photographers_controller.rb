@@ -1,4 +1,5 @@
-class Photog::PhotographersController < ApplicationController
+class Photog::PhotographersController < Photog::HomeController
+
   # GET /photographers
   # GET /photographers.json
   def index
