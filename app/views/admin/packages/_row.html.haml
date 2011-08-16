@@ -1,8 +1,0 @@
-%tr{ :class => cycle("odd_row", "even_row"), :id => row.id }
-  %td.dragHandle &nbsp;
-  %td= h(row.title)
-  %td= number_to_currency(row.price)
-  %td= row.active ? 'Yes' : 'No'
-  %td= link_to('Edit', edit_resource_path(row))
-  %td= link_to('Delete', resource_path(row), :class => "delete")
-

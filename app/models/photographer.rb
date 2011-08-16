@@ -1,63 +1,33 @@
 class Photographer < ActiveRecord::Base
-  acts_as_authentic do |c|
-    c.require_password_confirmation = false
-  end
-  
-  has_many :clients, :dependent => :destroy, :order => 'name'
-  has_many :galleries, :dependent => :destroy, :order => 'position'
-  has_many :pages, :dependent => :destroy, :order => 'position'
-  has_many :quotes, :dependent => :destroy, :order => 'position'
-  has_many :packages, :dependent => :destroy, :order => 'position'
-  has_many :products, :dependent => :destroy, :order => 'position'
-  
-  validates_presence_of :email, :company_name, :site_url, :home_page_title
-  validates_length_of :site_url, :within => 10..255
-  validates_length_of :home_page_title, :within => 5..200
-  validates_length_of :company_name, :within => 3..64
-  validates_length_of :company_email, :within => 5..100, :allow_blank => true
-  validates_length_of :company_phone, :within => 7..20, :allow_blank => true
-  validates_length_of :blog_url, :within => 10..255, :allow_blank => true
-  validates_length_of :facebook_url, :within => 10..255, :allow_blank => true
-  validates_length_of :twitter_url, :within => 10..255, :allow_blank => true
-  
-  has_many :photo_comments, :dependent => :destroy, :order => 'created_at'
-  
-  has_attached_file :watermark,
-                    :styles => { :original => "640x480>", :thumb => "" },
-                    :path => ":rails_root/public/attachments/watermark/:style.:extension",
-                    :url => "/attachments/watermark/:style.:extension",
-                    :convert_options => {
-                      :thumb => "-gravity center -thumbnail 150x100^ -extent 150x100"
-                    }
-  
-  after_save :clear_cache
-  
-  def deliver_password_reset_instructions!  
-    reset_perishable_token!  
-    Notifier.deliver_photographer_password_reset_instructions(self)
-  end
-  
-  def deliver_welcome!(unencrypted_password)
-    Notifier.deliver_photographer_welcome(self, unencrypted_password)
-  end
-  
-  # returns the path to the theme if one has been set,
-  # else returns the default theme path
-  def theme_path
-    #logger.debug "Previewing theme #{preview}"
-    #use_theme = preview.blank? ? theme : preview
-    #logger.debug "Using theme: #{use_theme}"
-    # set the path to the theme
-    path = File.join(RAILS_ROOT, 'themes', theme) unless theme.blank?
-    # use the default theme if none has been specified, or if the specified theme doesn't exist
-    path = File.join(RAILS_ROOT, 'themes', 'default') if path.blank? or !File.exists?(path)
-    return path
-  end
-  
-  # retrieve the available themes
+
+  # ****
+  # Devise modules
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :lockable, :confirmable, :token_authenticatable
+
+  # ****
+  # Validation
+  validates :email, :presence => true, :uniqueness => { :case_sensitive => false }, :length => { :within => 5..100 }
+  validates :name, :presence => true, :length => { :within => 3..100 }
+  validates :theme, :presence => true, :length => { :within => 2..40 }
+  validates :phone, :length => { :within => 7..20, :allow_blank => true }
+  validates :blog_url, :length => { :within => 10..255, :allow_blank => true }
+  validates :facebook_url, :length => { :within => 10..255, :allow_blank => true }
+  validates :twitter_url, :length => { :within => 10..255, :allow_blank => true }
+
+  # ****
+  # Mass-assignment protection
+  attr_accessible :email, :password, :password_confirmation, :name, :phone, :blog_url, :facebook_url, :twitter_url, :theme, :use_watermark, :google_analytics_key, :watermark, :watermark_cache, :remove_watermark, :remember_me
+
+  # ****
+  # Attachments
+  mount_uploader :logo, LogoUploader
+  mount_uploader :watermark, WatermarkUploader
+
+  # ****
+  # Retrieve the available themes.
   def self.themes
     found_themes = []
-    themes_path = File.join(RAILS_ROOT, 'themes')
+    themes_path = File.join(Rails.root, 'themes')
 
     Dir.glob("#{themes_path}/*").each do |theme_dir|
       if File.directory?(theme_dir)
@@ -67,18 +37,19 @@ class Photographer < ActiveRecord::Base
 
     found_themes
   end
-  
-  
-  def clear_cache
-    # clear the home page
-    File.delete("#{Rails.root}/public/index.html") if File.exists?("#{Rails.root}/public/index.html")
-    # clear the galleries
-    system("rm -rf \"#{Rails.root}/public/galleries\"")
-    # clear the pages
-    system("rm -rf \"#{Rails.root}/public/pages\"")
-    # clear the sitemap
-    File.delete("#{Rails.root}/public/sitemap.xml") if File.exists?("#{Rails.root}/public/sitemap.xml")
-    File.delete("#{Rails.root}/public/sitemap.html") if File.exists?("#{Rails.root}/public/sitemap.html")
-  end
-  
+
+  # We reset the auth token to secure image uploads.
+  before_save :reset_authentication_token
+
+  # ****
+  # Expose the following methods to liquid templates.
+  # liquid_methods :email, :name, :phone, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :gallery_photos_count, :portfolio_photos_count
+
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 end

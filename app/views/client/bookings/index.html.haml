@@ -1,9 +1,0 @@
--content_for :sidebar do
-  %h2 Your Bookings
-  %p These are you bookings. Each booking contains the photos from your session. No one else has access to your booking photos.
-  %p You can review your photos for a booking by clicking the "Photos" link next to the booking.
-  %p You can view all comments for a booking by clicking the "Comments" link next to the booking.
-
-= "<h2>Your booking access has expired.</h2>" if @bookings.size == 0
-%ul{ :class => 'image_list' }
-  = render :partial => "row", :collection => @bookings

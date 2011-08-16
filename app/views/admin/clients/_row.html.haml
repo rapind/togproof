@@ -1,8 +1,0 @@
-%tr{ :class => cycle("even_row", "odd_row") }
-  %td= h row.name
-  %td= row.email
-  %td= row.last_login_at.blank? ? 'Never' : row.last_login_at.strftime("%B %d, %Y")
-  %td= link_to("Send Invite", invite_admin_client_path(row))
-  %td= link_to("Bookings (#{row.bookings.size})", admin_client_bookings_path(row))
-  %td= link_to('Edit', edit_resource_path(row))
-  %td= link_to('Delete', resource_path(row), :class => "delete")

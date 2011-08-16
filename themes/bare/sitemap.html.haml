@@ -1,9 +1,0 @@
-%h1
-  Sitemap
-%ul
-  %li
-    %h2= link_to 'Home', root_path, :title => 'Home'
-    %h3 Galleries
-    %ul
-      - for gallery in @galleries
-        %li= link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title))

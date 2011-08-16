@@ -1,5 +1,0 @@
-%li
-  %div
-    = truncate(row.title, :length => 22)
-  = "#{link_to(image_tag(row.image.url(:thumb), :size => '150x100'), row.image.url, :title => row.title, :rel => 'colorbox')}"
-  .actions= link_to('Comments', resource_path(row))

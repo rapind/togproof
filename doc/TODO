@@ -1,7 +1,0 @@
-1. Admin home page should give a status / activity overview. Recent unviewed comments etc.
-
-2. Recent comments (that haven't yet been viewed), are shown on the front page of the administration site. Once a comment has been viewed by the photographer, it is considered *opened* and is pulled off of the front page (no longer new).
-
-3. Recent comments (that haven't yet been viewed), are shown on the front page of the client site. Once a comment has been viewed by the client, it is considered *opened* and is pulled off of the front page (no longer new).
-
-4. Products and Packages.

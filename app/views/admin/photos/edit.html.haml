@@ -1,5 +1,0 @@
-#breadcrumb
-  = "#{link_to('Clients', admin_clients_path)} &raquo; #{link_to(@booking.client.name + ' Bookings', admin_client_bookings_path(@booking.client))} &raquo; #{link_to @booking.title + ' Photos', collection_path} &raquo; Editing #{@photo.title}"
-  
-- form_for(@photo, :url => resource_path, :html => { :multipart => true, :method => :put }) do |f|
-  = render :partial => "form", :locals => { :f => f }

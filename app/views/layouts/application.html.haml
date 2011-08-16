@@ -1,0 +1,15 @@
+!!!
+%html{ 'xml:lang' => 'en', :lang => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
+  %head
+    %title GrokPhoto
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    #container
+      #header
+      #main
+        .notice= notice
+        .alert= alert
+        #content= yield
+      #footer

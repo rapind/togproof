@@ -1,7 +1,0 @@
-%li{ :id => "row_#{row.id}" }
-  .draggable
-    = truncate(row.title, :length => 22)
-    = link_to(image_tag('cancel.png'), resource_path(row), :class => "delete-no-conf")
-  = "#{link_to(image_tag(row.image.url(:thumb), :size => '150x100'), row.image.url, :title => row.title, :rel => 'colorbox')}<br />"
-  .actions
-    = link_to('Edit', edit_resource_path(row))

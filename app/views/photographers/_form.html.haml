@@ -1,0 +1,31 @@
+= form_for @photographer do |f|
+  -if @photographer.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@photographer.errors.count, "error")} prohibited this photographer from being saved:"
+      %ul
+        - @photographer.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :blog_url
+    = f.text_field :blog_url
+  .field
+    = f.label :facebook_url
+    = f.text_field :facebook_url
+  .field
+    = f.label :twitter_url
+    = f.text_field :twitter_url
+  .field
+    = f.label :google_analytics_key
+    = f.text_field :google_analytics_key
+  .field
+    = f.label :use_watermark
+    = f.check_box :use_watermark
+  .actions
+    = f.submit 'Save'

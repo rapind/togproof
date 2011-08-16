@@ -1,9 +1,0 @@
-%h2 Forget your password?
-%p You're not the first person! Just submit the email address you registered with below and we'll send you instructions to reset your password.
-
-- form_tag client_client_password_resets_path do
-  %p
-    %label{ :for => 'Email' }
-      Email Address
-    = text_field_tag 'email', nil, :class => 'text validate[required,customer[email]]'
-  %p.buttons= build_submit_button('Reset Password &raquo;')

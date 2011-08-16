@@ -1,4 +1,0 @@
-%p.buttons
-  = build_submit_button((controller.action_name == 'new') ? 'Create' : 'Update')
-  - if !collection_path.blank?
-    = link_to("#{image_tag('icons/negative.png')} Cancel", (params[:page].blank? ? collection_path : "#{collection_path}?page=#{params[:page]}"), :class => 'button negative', :id => 'cancel')
