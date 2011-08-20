@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe GalleriesController do
+describe Photog::GalleriesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/galleries").should route_to("galleries#index")
+      get("/photog/galleries").should route_to("photog/galleries#index")
     end
 
     it "routes to #new" do
-      get("/galleries/new").should route_to("galleries#new")
+      get("/photog/galleries/new").should route_to("photog/galleries#new")
     end
 
     it "routes to #show" do
-      get("/galleries/1").should route_to("galleries#show", :id => "1")
+      get("/photog/galleries/1").should route_to("photog/galleries#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/galleries/1/edit").should route_to("galleries#edit", :id => "1")
+      get("/photog/galleries/1/edit").should route_to("photog/galleries#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/galleries").should route_to("galleries#create")
+      post("/photog/galleries").should route_to("photog/galleries#create")
     end
 
     it "routes to #update" do
-      put("/galleries/1").should route_to("galleries#update", :id => "1")
+      put("/photog/galleries/1").should route_to("photog/galleries#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/galleries/1").should route_to("galleries#destroy", :id => "1")
+      delete("/photog/galleries/1").should route_to("photog/galleries#destroy", :id => "1")
     end
 
   end

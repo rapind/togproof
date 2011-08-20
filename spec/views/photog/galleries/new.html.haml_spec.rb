@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe "galleries/edit.html.haml" do
+describe "photog/galleries/new.html.haml" do
   before(:each) do
-    @gallery = assign(:gallery, stub_model(Gallery,
+    assign(:gallery, stub_model(Gallery,
       :title => "MyString"
-    ))
+    ).as_new_record)
   end
 
-  it "renders the edit gallery form" do
+  it "renders new gallery form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form", :action => galleries_path(@gallery), :method => "post" do
+    assert_select "form", :action => galleries_path, :method => "post" do
       assert_select "input#gallery_title", :name => "gallery[title]"
     end
   end

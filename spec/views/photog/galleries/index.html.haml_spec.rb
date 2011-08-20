@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "galleries/index.html.haml" do
+describe "photog/galleries/index.html.haml" do
   before(:each) do
     assign(:galleries, [
       stub_model(Gallery,

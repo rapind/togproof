@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe PhotographersController do
+describe Photog::PhotographersController do
   describe "routing" do
 
     it "routes to #show" do

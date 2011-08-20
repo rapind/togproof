@@ -14,7 +14,7 @@
     .clearfix
       = f.label :email, 'Email Address'
       .input
-        = f.text_field :email, :class => 'xlarge'
+        = f.text_field :email
         %span.help-inline Please enter your email address.
     .clearfix
       = f.label :password
@@ -23,11 +23,11 @@
         %span.help-inline Please enter your password.
     - if devise_mapping.rememberable?
       .clearfix
+        = f.label :remember_me
         .input
           %ul.inputs-list
             %li
               %label
                 = f.check_box :remember_me
-                %span Remember me
       .actions
         %button{ :type => 'submit', :class => 'btn primary' } Sign in

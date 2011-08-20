@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "portfolio_photos/edit.html.haml" do
+describe "photog/portfolio_photos/edit.html.haml" do
   before(:each) do
     @portfolio_photo = assign(:portfolio_photo, stub_model(PortfolioPhoto,
       :title => "MyString"

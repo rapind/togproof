@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "galleries/show.html.haml" do
+describe "photog/portfolios/show.html.haml" do
   before(:each) do
-    @gallery = assign(:gallery, stub_model(Gallery,
+    @portfolio = assign(:portfolio, stub_model(Portfolio,
       :title => "Title"
     ))
   end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "pages/new.html.haml" do
+describe "photog/pages/new.html.haml" do
   before(:each) do
     assign(:page, stub_model(Page,
       :title => "MyString"
