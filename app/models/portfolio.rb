@@ -14,7 +14,7 @@ class Portfolio < ActiveRecord::Base
 
   # ****
   # Validations
-  validates :title, :presence => true, :uniqueness => { :case_sensitive => false }, :length => { :within => 2..64 }
+  validates :title, :presence => true, :uniqueness => { :case_sensitive => false }, :length => { :within => 2..100 }
   validates :keywords, :length => { :within => 3..200, :allow_blank => true }
   validates :description, :length => { :within => 5..2000, :allow_blank => true }
 

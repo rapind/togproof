@@ -20,7 +20,7 @@ class Gallery < ActiveRecord::Base
   # ****
   # Validations
   validates :title, :presence => true, :length => { :within => 2..100 }
-  validates :description, :length => { :within => 5..1000, :allow_blank => true }
+  validates :description, :length => { :within => 5..2000, :allow_blank => true }
 
   # ****
   # Mass-assignment protection
