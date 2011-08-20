@@ -16,7 +16,7 @@ class PortfolioPhoto < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :title, :photo, :photo_cache, :remove_photo
+  attr_accessible :portfolio_id, :title, :photo, :photo_cache, :remove_photo
 
   # Build the title from the file name if one wasn't provided.
   before_validation :set_title

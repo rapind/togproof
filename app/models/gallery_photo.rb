@@ -14,7 +14,7 @@ class GalleryPhoto < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :title, :photo, :photo_cache, :remove_photo, :created_at, :updated_at, :gallery_id
+  attr_accessible :gallery_id, :title, :photo, :photo_cache, :remove_photo
 
   # Photo attachment.
   mount_uploader :photo, PhotoUploader
