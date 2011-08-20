@@ -7,3 +7,4 @@ db/*.sql
 db/*.sqlite3
 log/*.*
 tmp/**/*
+public/uploads
