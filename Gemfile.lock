@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.6.1)
     actionmailer (3.1.0.rc5)
       actionpack (= 3.1.0.rc5)
       mail (~> 2.3.0)
@@ -33,6 +34,8 @@ GEM
     acts_as_list (0.1.4)
     addressable (2.2.6)
     arel (2.1.4)
+    autotest-rails (4.1.0)
+      ZenTest
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
     carrierwave (0.5.7)
@@ -157,6 +160,7 @@ GEM
       railties (~> 3.1.0.rc1)
       sass (>= 3.1.4)
       sprockets (>= 2.0.0.beta.9)
+    shoulda (2.11.3)
     simple_form (1.4.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -187,7 +191,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest (~> 4.6.1)
   acts_as_list (~> 0.1.2)
+  autotest-rails (~> 4.1.0)
   carrierwave (~> 0.5.7)
   coffee-rails (~> 3.1.0.rc)
   devise (~> 1.4.2)
@@ -206,6 +212,7 @@ DEPENDENCIES
   responders (~> 0.6.4)
   rspec-rails (~> 2.6.1)
   sass-rails (~> 3.1.0.rc)
+  shoulda (~> 2.11.3)
   simple_form (~> 1.4.2)
   sqlite3
   uglifier

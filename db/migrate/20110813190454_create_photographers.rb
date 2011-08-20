@@ -12,14 +12,12 @@ class CreatePhotographers < ActiveRecord::Migration
 
       t.string :name, :null => false, :limit => 100
       t.string :phone, :limit => 22
+      t.string :logo
 
       t.string :blog_url
       t.string :facebook_url
       t.string :twitter_url
       t.string :google_analytics_key, :limit => 16
-      t.string :theme, :default => 'default', :limit => 32
-      t.boolean :use_watermark, :default => false
-      t.string :watermark
 
       t.integer :gallery_photos_count, :null => false, :default => 0
       t.integer :portfolio_photos_count, :null => false, :default => 0

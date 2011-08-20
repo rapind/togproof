@@ -8,8 +8,7 @@ describe "photog/photographers/show.html.haml" do
       :blog_url => "Blog Url",
       :facebook_url => "Facebook Url",
       :twitter_url => "Twitter Url",
-      :google_analytics_key => "Google Analytics Key",
-      :use_watermark => false
+      :google_analytics_key => "Google Analytics Key"
     ))
   end
 
@@ -27,7 +26,5 @@ describe "photog/photographers/show.html.haml" do
     rendered.should match(/Twitter Url/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Google Analytics Key/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/false/)
   end
 end

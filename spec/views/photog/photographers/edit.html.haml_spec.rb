@@ -8,8 +8,7 @@ describe "photog/photographers/edit.html.haml" do
       :blog_url => "MyString",
       :facebook_url => "MyString",
       :twitter_url => "MyString",
-      :google_analytics_key => "MyString",
-      :use_watermark => false
+      :google_analytics_key => "MyString"
     ))
   end
 
@@ -24,7 +23,6 @@ describe "photog/photographers/edit.html.haml" do
       assert_select "input#photographer_facebook_url", :name => "photographer[facebook_url]"
       assert_select "input#photographer_twitter_url", :name => "photographer[twitter_url]"
       assert_select "input#photographer_google_analytics_key", :name => "photographer[google_analytics_key]"
-      assert_select "input#photographer_use_watermark", :name => "photographer[use_watermark]"
     end
   end
 end

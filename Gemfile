@@ -42,7 +42,11 @@ group :development, :test do
 
   # testing
   gem 'rspec-rails', '~> 2.6.1'
+  gem 'shoulda', '~> 2.11.3'
   gem 'webrat', '~> 0.7.3'
+
+  gem 'ZenTest', '~> 4.6.1'
+  gem 'autotest-rails', '~> 4.1.0'
 
   # heroku tasks
   gem 'heroku_san'
