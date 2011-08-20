@@ -2,7 +2,7 @@ class Photographer < ActiveRecord::Base
 
   # ****
   # Devise modules
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :lockable, :confirmable, :token_authenticatable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :lockable, :token_authenticatable
 
   # ****
   # Validation
@@ -23,33 +23,6 @@ class Photographer < ActiveRecord::Base
   mount_uploader :logo, LogoUploader
   mount_uploader :watermark, WatermarkUploader
 
-  # ****
-  # Retrieve the available themes.
-  def self.themes
-    found_themes = []
-    themes_path = File.join(Rails.root, 'themes')
-
-    Dir.glob("#{themes_path}/*").each do |theme_dir|
-      if File.directory?(theme_dir)
-        found_themes << File.basename(theme_dir)
-      end
-    end
-
-    found_themes
-  end
-
   # We reset the auth token to secure image uploads.
   before_save :reset_authentication_token
-
-  # ****
-  # Expose the following methods to liquid templates.
-  # liquid_methods :email, :name, :phone, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :gallery_photos_count, :portfolio_photos_count
-
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
 end

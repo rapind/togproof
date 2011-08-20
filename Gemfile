@@ -17,9 +17,9 @@ gem 'haml', '~> 3.1.2'
 gem 'devise', '~> 1.4.2'
 
 # thin controllers
-#gem 'responders', '~> 0.6.4'
-#gem 'has_scope', '~> 0.5.1'
-#gem 'inherited_resources', '~> 1.2.2'
+gem 'responders', '~> 0.6.4'
+gem 'has_scope', '~> 0.5.1'
+gem 'inherited_resources', '~> 1.2.2'
 
 # forms
 gem 'simple_form', '~> 1.4.2'
@@ -27,11 +27,13 @@ gem 'simple_form', '~> 1.4.2'
 # paging
 gem 'kaminari', '~> 0.12.4'
 
+# Sorting
+gem 'acts_as_list', '~> 0.1.2'
+
 # image uploads
 gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
-
 
 # gems only used in dev and test envs.
 group :development, :test do

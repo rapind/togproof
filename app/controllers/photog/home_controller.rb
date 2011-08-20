@@ -1,7 +1,5 @@
 class Photog::HomeController < ApplicationController
+  inherit_resources
   layout 'photog'
-
-  def index
-  end
-
+  before_filter :authenticate_photographer!
 end

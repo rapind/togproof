@@ -1,7 +1,12 @@
 Grokphoto::Application.routes.draw do
 
-  # theme support
-  #themes_for_rails
+  resources :gallery_photos
+
+  resources :portfolio_photos
+
+  resources :galleries
+
+  resources :portfolios
 
   root :to => "home#index"
   match 'timestamp' => 'home#timestamp' # used to keep passenger spooled up in prod
@@ -34,6 +39,5 @@ Grokphoto::Application.routes.draw do
       put :update_position, :on => :member
     end
   end
-
 
 end

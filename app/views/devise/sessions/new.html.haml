@@ -1,0 +1,33 @@
+- content_for :title do
+  %h1
+    Secure Sign In
+    %small This is a protected area.
+- content_for :sidebar do
+  %p
+    Please sign in.
+    If you came here by mistake, please head back to the
+    = link_to('public area.', root_path)
+  %p= render :partial => "devise/shared/links"
+
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  %fieldset
+    .clearfix
+      = f.label :email, 'Email Address'
+      .input
+        = f.text_field :email, :class => 'xlarge'
+        %span.help-inline Please enter your email address.
+    .clearfix
+      = f.label :password
+      .input
+        = f.password_field :password, :maxlength => 20
+        %span.help-inline Please enter your password.
+    - if devise_mapping.rememberable?
+      .clearfix
+        .input
+          %ul.inputs-list
+            %li
+              %label
+                = f.check_box :remember_me
+                %span Remember me
+      .actions
+        %button{ :type => 'submit', :class => 'btn primary' } Sign in

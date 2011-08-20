@@ -1,0 +1,19 @@
+%h1 Listing portfolios
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @portfolios.each do |portfolio|
+    %tr
+      %td= portfolio.title
+      %td= link_to 'Show', portfolio
+      %td= link_to 'Edit', edit_portfolio_path(portfolio)
+      %td= link_to 'Destroy', portfolio, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Portfolio', new_portfolio_path
