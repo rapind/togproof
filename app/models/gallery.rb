@@ -33,13 +33,16 @@ class Gallery < ActiveRecord::Base
 
   # Determine if the gallery has expired.
   def expired?
-    (self.expires_on and self.expires_on < Date.today)
+    (self.expires_on and self.expires_on < Date.today) || false
   end
 
   # Secures galleries by using an unguessable token.
   before_create :build_token
-  def build_token
-    self.token = Devise.friendly_token
-  end
+
+  private #----
+
+    def build_token
+      self.token = Devise.friendly_token
+    end
 
 end
