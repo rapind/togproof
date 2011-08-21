@@ -1,0 +1,5 @@
+%li{ :id => "obj_#{photo.to_param}"}
+  .draggable
+    = truncate(photo.title, :length => 22)
+    = link_to(image_tag('cancel.png'), resource_path(photo), :method => :delete, :remote => true, :class => 'delete')
+  = raw "#{link_to(image_tag(photo.photo.thumb.url, :size => '150x100'), photo.photo.url, :title => photo.title, :rel => 'lightbox')}"

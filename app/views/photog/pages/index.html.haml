@@ -1,0 +1,21 @@
+- content_for :title do
+  %h1
+    Public Pages
+    %small Select a page to edit it.
+-content_for :sidebar do
+  %p Pages are used to describe your work. Examples are: About Me, Rates, Availability, FAQ, Contact, etc.
+  %p You can change the order that pages appear in by clicking and dragging their title bars.
+  %p You can create a new page by clicking the "New Page" button.
+  %p You can edit a page by clicking it's "Edit" link.
+  %p You can delete a page by clicking the red X button.
+
+= link_to(raw("New Page &raquo;"), new_resource_path, :class => 'button')
+%p.clear
+
+%ul#position_container.image_list{ :collection_path => collection_path }
+  - for page in @pages
+    %li{ :id => "obj_#{page.id}" }
+      .draggable
+        = truncate(page.title, :length => 22)
+        = link_to(image_tag('cancel.png'), resource_path(page), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
+      = link_to(image_tag(page.image.thumb.url, :size => '150x100'), edit_resource_path(page))

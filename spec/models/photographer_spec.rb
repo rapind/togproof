@@ -2,15 +2,9 @@ require 'spec_helper'
 
 describe Photographer do
 
-  # This should return the minimal set of attributes required
-  # to create a valid object.
-  def valid_attributes
-    { :email => 'fake-user@fake-email.com', :password => 'fakepassword', :name => 'Fake Name' }
-  end
-
   before(:all) do
     # We need an existing object for uniqueness validation tests.
-    @photographer = Photographer.create( valid_attributes )
+    @photographer = FactoryGirl.create(:photographer)
   end
 
   # ****
@@ -28,9 +22,9 @@ describe Photographer do
 
   it "shoud be protected from mass attribute assignment" do
     time = 2.days.ago
-    photographer = Photographer.create( valid_attributes.merge( { :id => 4444, :created_at => time } ) )
-    photographer.id.should_not eql(444)
-    photographer.created_at.to_i.should_not eql(time.to_i)
+    # created_at should be assigned automatically and not be accessible
+    @photographer.update_attributes( :created_at => time )
+    @photographer.created_at.to_i.should_not eql(time.to_i)
   end
 
 end

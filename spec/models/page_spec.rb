@@ -2,15 +2,9 @@ require 'spec_helper'
 
 describe Page do
 
-  # This should return the minimal set of attributes required
-  # to create a valid object.
-  def valid_attributes
-    { :title => 'Fake Title', :body => 'Fake body is at least 10 characters long.' }
-  end
-
   before(:all) do
     # We need an existing object for uniqueness validation tests.
-    @page = Page.create( valid_attributes )
+    @page = FactoryGirl.create(:page)
   end
 
   # ****
@@ -25,9 +19,8 @@ describe Page do
 
   it "shoud be protected from mass attribute assignment" do
     time = 2.days.ago
-    page = Page.create( valid_attributes.merge( { :id => 4444, :created_at => time } ) )
-    page.id.should_not eql(444)
-    page.created_at.to_i.should_not eql(time.to_i)
+    @page.update_attributes( :created_at => time )
+    @page.created_at.to_i.should_not eql(time.to_i)
   end
 
   context "to_param" do

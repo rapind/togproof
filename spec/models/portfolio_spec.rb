@@ -2,15 +2,9 @@ require 'spec_helper'
 
 describe Portfolio do
 
-  # This should return the minimal set of attributes required
-  # to create a valid object.
-  def valid_attributes
-    { :title => 'Fake Title' }
-  end
-
   before(:all) do
     # We need an existing object for uniqueness validation tests.
-    @portfolio = Portfolio.create( valid_attributes )
+    @portfolio = FactoryGirl.create(:portfolio)
   end
 
   # ****
@@ -23,9 +17,8 @@ describe Portfolio do
 
   it "shoud be protected from mass attribute assignment" do
     time = 2.days.ago
-    portfolio = Portfolio.create( valid_attributes.merge( { :id => 4444, :created_at => time } ) )
-    portfolio.id.should_not eql(444)
-    portfolio.created_at.to_i.should_not eql(time.to_i)
+    @portfolio.update_attributes( :created_at => time )
+    @portfolio.created_at.to_i.should_not eql(time.to_i)
   end
 
   context "to_param" do

@@ -1,0 +1,20 @@
+-content_for :sidebar do
+  %h2 Manage Portfolios
+  %p Portfolios are used to showcase your photos. The galleries you enter here will appear in the home page covers and throughout the rest of the site.
+  %p You can change the order that galleries appear in by clicking and dragging their title bars.
+  %p You can create a new portfolio by clicking the "New Portfolio" button.
+  %p You can manage a portfolio's photos by clicking it's "Photos" link.
+  %p You can edit a portfolio by clicking it's "Edit" link.
+  %p You can delete a portfolio by clicking the red X button.
+
+= link_to(raw("New Portfolio &raquo;"), new_resource_path, :class => 'button')
+%p.clear
+
+%ul#position_container.image_list{ :collection_path => collection_path }
+  - for portfolio in @portfolios
+    - unless portfolio.cover.blank?
+      %li{ :id => "obj_#{portfolio.id}" }
+        .draggable
+          = truncate(portfolio.title, :length => 22)
+          = link_to(image_tag('cancel.png'), resource_path(portfolio), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
+        = link_to(image_tag(portfolio.cover.thumb.url, :size => '150x100'), edit_resource_path(portfolio))

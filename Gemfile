@@ -44,7 +44,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.6.1'
   gem 'shoulda', '~> 2.11.3'
   gem 'webrat', '~> 0.7.3'
-
+  gem 'factory_girl_rails', '~> 1.1.0'
   gem 'ZenTest', '~> 4.6.1'
   gem 'autotest-rails', '~> 4.1.0'
 
