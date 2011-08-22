@@ -1,7 +1,7 @@
 class Photog::PortfolioPhotosController < Photog::HomeController
   actions :destroy
-  respond_to :js
-  belongs_to :gallery
+  respond_to :json
+  belongs_to :portfolio
 
   # Update the position
   def update_position
@@ -15,9 +15,4 @@ class Photog::PortfolioPhotosController < Photog::HomeController
     end
   end
 
-  def destroy
-    destroy! do |success, failure|
-      success.js { render :js => "$('#obj_#{@gallery_photo.to_param}').remove();" }
-    end
-  end
 end

@@ -1,32 +1,42 @@
 FactoryGirl.define do
 
+  sequence :email do |n|
+    "person#{n}@example.com"
+  end
+  sequence :name do |n|
+    "Person #{n}"
+  end
+  sequence :title do |n|
+    "Title #{n}"
+  end
+
   factory :photographer do
-    email 'factory@email.com'
+    email
     password 'factory-pwd'
-    name 'Factory Photographer'
+    name
   end
 
   factory :page do
-    title 'Factory Title'
+    title
     body 'Factory body is at least 10 characters long.'
   end
 
   factory :portfolio do
-    title 'Factory Title'
+    title
   end
 
   factory :portfolio_photo do
-    portfolio_id 1
-    title 'Factory Title'
+    portfolio
+    title
   end
 
   factory :gallery do
-    title 'Factory Title'
+    title
   end
 
   factory :gallery_photo do
-    gallery_id 1
-    title 'Factory Title'
+    gallery
+    title
   end
 
 end

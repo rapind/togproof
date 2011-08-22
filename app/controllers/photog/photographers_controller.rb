@@ -1,6 +1,6 @@
 class Photog::PhotographersController < Photog::HomeController
   respond_to :html
-  actions :show, :edit, :update
+  actions :edit, :update
   before_filter :load_photographer
 
   # Redirect to the edit path on update instead of show

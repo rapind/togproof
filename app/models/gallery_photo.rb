@@ -1,10 +1,6 @@
 class GalleryPhoto < ActiveRecord::Base
 
   # ****
-  # Default ordering
-  default_scope order('created_at desc')
-
-  # ****
   # Associations
   belongs_to :gallery, :counter_cache => true
 

@@ -16,27 +16,27 @@
           %li= link_to "Settings", edit_photog_photographer_path, :class => "#{'active' if controller.controller_name == 'photographers'}"
         %ul.nav.secondary-nav
           %li= link_to "Logout", destroy_photographer_session_path
-      .container
-        .page-header
-          - if content_for?(:title)
-            = yield(:title)
+    .container
+      .page-header
+        - if content_for?(:title)
+          = yield(:title)
+        - else
+          %h1
+            Welcome
+            %small This is the administration area for your site.
+      .row
+        .span4.columns
+          - if content_for?(:sidebar)
+            = yield(:sidebar)
           - else
-            %h1
-              Welcome
-              %small This is the administration area for your site.
-        .row
-          .span4.columns
-            - if content_for?(:sidebar)
-              = yield(:sidebar)
-            - else
-              %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
-              %p This area is used to provide pertinent information about the tasks you're currently working on.
-          .span12.columns
-            - if alert
-              .alert-message.error= alert
-            - elsif notice
-              .alert-message.info= notice
-            = yield
-        .row
-          .span16.columns
-            Footer Goes Here
+            %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
+            %p This area is used to provide pertinent information about the tasks you're currently working on.
+        .span12.columns
+          - if alert
+            .alert-message.error= alert
+          - elsif notice
+            .alert-message.info= notice
+          = yield
+      .row
+        .span16.columns
+          Footer Goes Here

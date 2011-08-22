@@ -1,10 +1,6 @@
 class Gallery < ActiveRecord::Base
 
   # ****
-  # Default ordering
-  default_scope order('created_at desc')
-
-  # ****
   # Pagination
   paginates_per 16
 

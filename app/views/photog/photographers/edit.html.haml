@@ -6,7 +6,7 @@
   %p The information you enter here is available in some areas of the site and also within system generated email notifications to your clients.
   %p Click the "Update Settings" button when you're done.
 
-= simple_form_for(@photographer, :url => photog_photographer_path, :html => { :multipart => true, :method => :put }) do |form|
+= simple_form_for(@photographer, :url => photog_photographer_path, :method => :put) do |form|
   = render "photog/shared/error_messages", :target => @photographer
 
   %div{ :style => "width:50%; float:left;" }
