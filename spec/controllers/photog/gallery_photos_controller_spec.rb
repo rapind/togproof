@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Photog::GalleryPhotosController do
 
-  before (:each) do
+  before(:each) do
     @photographer = FactoryGirl.create(:photographer)
     sign_in @photographer
   end
