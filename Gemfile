@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capybara', '~> 1.0.1'
   gem 'factory_girl_rails', '~> 1.1.0'
   gem 'watchr', '~> 0.7'
+  gem 'spork', '~> 0.9.0.rc'
 
   # heroku tasks
   gem 'heroku_san'

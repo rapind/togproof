@@ -191,6 +191,7 @@ GEM
     simple_form (1.4.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    spork (0.9.0.rc9)
     sprockets (2.0.0.beta.14)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -240,6 +241,7 @@ DEPENDENCIES
   sass-rails!
   shoulda (~> 2.11.3)
   simple_form (~> 1.4.2)
+  spork (~> 0.9.0.rc)
   sqlite3
   uglifier
   watchr (~> 0.7)

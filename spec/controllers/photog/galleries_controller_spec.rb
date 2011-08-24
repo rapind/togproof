@@ -12,7 +12,7 @@ describe Photog::GalleriesController do
   describe "GET index" do
     it "assigns all galleries as @galleries" do
       get :index
-      assigns(:galleries).should eq([@gallery])
+      assigns(:galleries).should include(@gallery)
     end
   end
 

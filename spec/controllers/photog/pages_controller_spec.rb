@@ -12,7 +12,7 @@ describe Photog::PagesController do
   describe "GET index" do
     it "assigns all pages as @pages" do
       get :index
-      assigns(:pages).should eq([@page])
+      assigns(:pages).should include(@page)
     end
   end
 
