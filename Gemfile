@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem "rails", :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
 
 # database
 gem 'sqlite3'
@@ -41,15 +41,11 @@ group :development, :test do
   gem 'haml-rails', '~> 0.3.4'
 
   # testing
-  gem 'spork', '~> 0.9.0.rc'
   gem 'rspec-rails', '~> 2.6.1'
   gem 'shoulda', '~> 2.11.3'
   gem 'capybara', '~> 1.0.1'
   gem 'factory_girl_rails', '~> 1.1.0'
-  gem 'ZenTest', '~> 4.6.1'
-  gem 'autotest-rails', '~> 4.1.0'
-  gem 'test_notifier', '~> 0.4.0'
-  #gem 'autotest-fsevent'
+  gem 'watchr', '~> 0.7'
 
   # heroku tasks
   gem 'heroku_san'
@@ -58,7 +54,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0.rc"
+  gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git', :branch => '3-1-stable'
   gem 'coffee-rails', "~> 3.1.0.rc"
   gem 'uglifier'
 end

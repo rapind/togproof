@@ -19,12 +19,12 @@ describe "photog/galleries" do
   end
 
   context "new" do
-    it "renders the new gallery form" # do
-     #      visit new_photog_gallery_path
-     #
-     #      page.should have_css('form')
-     #      page.should have_css('input#gallery_title')
-     #    end
+    it "renders the new gallery form" do
+      visit new_photog_gallery_path
+
+      page.should have_css('form')
+      page.should have_css('input#gallery_title')
+    end
   end
 
   context "edit" do

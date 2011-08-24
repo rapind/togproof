@@ -2,17 +2,16 @@ require 'spec_helper'
 
 describe Photog::PortfoliosController do
 
-  before(:each) do
+  before do
     @photographer = FactoryGirl.create(:photographer)
     sign_in @photographer
-
     @portfolio = FactoryGirl.create(:portfolio)
   end
 
   describe "GET index" do
     it "assigns all portfolios as @portfolios" do
       get :index
-      assigns(:portfolios).should eq([@portfolio])
+      assigns(:portfolios).should include(@portfolio)
     end
   end
 
@@ -44,9 +43,9 @@ describe Photog::PortfoliosController do
         assigns(:portfolio).should be_persisted
       end
 
-      it "redirects to the created portfolio" do
+      it "redirects to the portfolio index" do
         post :create, :portfolio => FactoryGirl.attributes_for(:portfolio)
-        response.should redirect_to(photog_portfolio_url(Portfolio.last))
+        response.should redirect_to(photog_portfolios_path)
       end
     end
 
@@ -66,8 +65,9 @@ describe Photog::PortfoliosController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested portfolio" do
-        Portfolio.any_instance.should_receive(:update_attributes).with({ 'these' => 'params' })
-        put :update, :id => @portfolio.id, :portfolio => { 'these' => 'params' }
+        changed_keywords = 'Changed Keywords'
+        Portfolio.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+        put :update, :id => @portfolio.id, :portfolio => {'these' => 'params'}
       end
 
       it "assigns the requested portfolio as @portfolio" do
@@ -76,9 +76,9 @@ describe Photog::PortfoliosController do
         assigns(:portfolio).keywords.should eq(changed_keywords)
       end
 
-      it "redirects to the portfolio" do
+      it "redirects to the portfolio index" do
         put :update, :id => @portfolio.id, :portfolio => { :keywords => 'Changed Keywords' }
-        response.should redirect_to(photog_portfolio_url(@portfolio))
+        response.should redirect_to(photog_portfolios_path)
       end
     end
 
