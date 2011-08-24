@@ -3,16 +3,18 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  def layout_by_resource
-    if devise_controller?
-      'photog' # for authentication
-    else
-      'application' # default
-    end
-  end
+  protected #----
 
-  def not_found!
-    raise ActionController::RoutingError.new('Not Found')
-  end
+    def layout_by_resource
+      if devise_controller?
+        'photog' # for authentication
+      else
+        'public' # default
+      end
+    end
+
+    def not_found!
+      raise ActionController::RoutingError.new('Not Found')
+    end
 
 end

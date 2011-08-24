@@ -12,8 +12,8 @@
 = link_to(raw("New Page &raquo;"), new_resource_path, :class => 'button')
 %p.clear
 
-%ul#position_container.image_list{ :collection_path => collection_path }
-  - for page in @pages
+%ul#position_container.image_list
+  - @page.each do |page|
     %li{ :id => "obj_#{page.id}" }
       .draggable
         = truncate(page.title, :length => 22)

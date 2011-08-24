@@ -1,4 +1,5 @@
 class Photog::PortfoliosController < Photog::HomeController
+  actions :all, :except => :show
   respond_to :html, :json
 
   # Update the position

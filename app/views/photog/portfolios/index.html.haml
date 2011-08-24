@@ -14,8 +14,8 @@
 = link_to(raw("New Portfolio &raquo;"), new_resource_path, :class => 'button')
 %p.clear
 
-%ul#position_container.image_list{ :collection_path => collection_path }
-  - for portfolio in @portfolios
+%ul#position_container.image_list
+  - @portfolios.each do |portfolio|
     - unless portfolio.cover.blank?
       %li{ :id => "obj_#{portfolio.id}" }
         .draggable

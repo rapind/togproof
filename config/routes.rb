@@ -1,13 +1,5 @@
 Grokphoto::Application.routes.draw do
 
-  resources :gallery_photos
-
-  resources :portfolio_photos
-
-  resources :galleries
-
-  resources :portfolios
-
   root :to => "home#index"
   match 'timestamp' => 'home#timestamp' # used to keep passenger spooled up in prod
   resources :sitemap
@@ -15,9 +7,7 @@ Grokphoto::Application.routes.draw do
   resources :galleries do
     resources :gallery_photos
   end
-  resources :portfolios do
-    resources :portfolio_photos
-  end
+  resources :portfolios
   resources :pages
 
   devise_for :photographers

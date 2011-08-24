@@ -43,13 +43,18 @@ group :development, :test do
   # testing
   gem 'rspec-rails', '~> 2.6.1'
   gem 'shoulda', '~> 2.11.3'
-  gem 'webrat', '~> 0.7.3'
+  gem 'capybara', '~> 1.0.1'
   gem 'factory_girl_rails', '~> 1.1.0'
   gem 'ZenTest', '~> 4.6.1'
   gem 'autotest-rails', '~> 4.1.0'
+  gem 'spork', '~> 0.9.0.rc'
 
   # heroku tasks
   gem 'heroku_san'
+end
+
+group :test do
+
 end
 
 # Gems used only for assets and not required

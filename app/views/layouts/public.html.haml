@@ -1,21 +1,30 @@
 !!!
-%html
+%html{ 'xml:lang' => 'en', :lang => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
   %head
-    %meta{ :charset => 'utf-8' }
     %title GrokPhoto
-    /[if lt IE 9]
-      = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
-    = stylesheet_link_tag 'public'
+    = stylesheet_link_tag 'photog'
+    = javascript_include_tag 'photog'
     = csrf_meta_tags
-    -# Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/
-    %meta{ :name => 'viewport', :content => 'width=device-width, initial-scale=1' }
-  %body{ :lang => 'en' }
+  %body
+    .topbar
+      .container.fixed
+        %h3= link_to('GrokPhoto', photog_path, :class => 'logo')
+        %ul
+          %li= link_to "Portfolio", portfolios_path, :class => "#{'active' if controller.controller_name == 'portfolios'}"
     .container
-      #header
-      #main
-        .notice= notice
-        .alert= alert
-        #content= yield
-      #footer
-    = javascript_include_tag 'public'
-
+      .page-header
+        - if content_for?(:title)
+          = yield(:title)
+        - else
+          %h1
+            Welcome
+      .row
+        .span16.columns
+          - if alert
+            .alert-message.error= alert
+          - elsif notice
+            .alert-message.info= notice
+          = yield
+      .row
+        .span16.columns
+          Footer Goes Here
