@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'views/view_helper'
+require 'requests/request_helper'
 
 describe "photog/portfolios" do
 
-  before(:each) do
+  before do
     photog_sign_in
   end
 
@@ -14,8 +14,8 @@ describe "photog/portfolios" do
 
       visit photog_portfolios_path
       #page.html.should match /First Portfolio/i
-      page.should have_content('First Portfolio')
-      page.should have_content('Second Portfolio')
+      response.should have_content('First Portfolio')
+      response.should have_content('Second Portfolio')
     end
   end
 
@@ -23,8 +23,8 @@ describe "photog/portfolios" do
     it "renders the new portfolio form" do
       visit new_photog_portfolio_path
 
-      page.should have_css('form')
-      page.should have_css('input#portfolio_title')
+      response.should have_css('form')
+      response.should have_css('input#portfolio_title')
     end
   end
 
@@ -37,8 +37,8 @@ describe "photog/portfolios" do
     it "renders the edit portfolio form" do
       visit edit_photog_portfolio_path(@portfolio.to_param)
 
-      page.should have_css('form')
-      page.should have_css('input#portfolio_title')
+      response.should have_css('form')
+      response.should have_css('input#portfolio_title')
     end
 
   end

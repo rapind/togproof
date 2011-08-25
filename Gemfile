@@ -35,18 +35,22 @@ gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
 
-# gems only used in dev and test envs.
 group :development, :test do
   # generators
   gem 'haml-rails', '~> 0.3.4'
 
-  # testing
   gem 'rspec-rails', '~> 2.6.1'
   gem 'shoulda', '~> 2.11.3'
   gem 'capybara', '~> 1.0.1'
   gem 'factory_girl_rails', '~> 1.1.0'
-  gem 'watchr', '~> 0.7'
   gem 'spork', '~> 0.9.0.rc'
+  gem 'database_cleaner', '~> 0.6.7'
+
+  #gem 'watchr', '~> 0.7'
+  gem 'guard', '~> 0.6.2'
+  gem 'guard-rspec', '~> 0.4.2'
+  gem 'guard-spork', '~> 0.2.1'
+  gem 'growl_notify', '~> 0.0.1'
 
   # heroku tasks
   gem 'heroku_san'
