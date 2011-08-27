@@ -1,10 +1,10 @@
 require 'spec_helper'
+require 'controllers/helper'
 
 describe Photog::GalleriesController do
 
   before do
-    @photographer = FactoryGirl.create(:photographer)
-    sign_in @photographer
+    login_photographer
 
     @gallery = FactoryGirl.create(:gallery)
   end
@@ -13,6 +13,14 @@ describe Photog::GalleriesController do
     it "assigns all galleries as @galleries" do
       get :index
       assigns(:galleries).should include(@gallery)
+    end
+  end
+
+  describe "GET custom" do
+    it "does something cool" do
+      cool_shit = {}
+      get :custom
+      assigns(:cool_shit).should eq(cool_shit)
     end
   end
 

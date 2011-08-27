@@ -1,10 +1,10 @@
 require 'spec_helper'
+require 'controllers/helper'
 
 describe Photog::PagesController do
 
   before do
-    @photographer = FactoryGirl.create(:photographer)
-    sign_in @photographer
+    login_photographer
 
     @page = FactoryGirl.create(:page)
   end

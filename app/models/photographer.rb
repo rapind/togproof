@@ -20,4 +20,6 @@ class Photographer < ActiveRecord::Base
   # ****
   # Attachments
   mount_uploader :logo, LogoUploader
+
+  before_save :ensure_authentication_token
 end

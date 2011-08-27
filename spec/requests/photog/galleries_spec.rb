@@ -1,13 +1,18 @@
 require 'spec_helper'
-require 'requests/request_helper'
+require 'requests/helper'
 
-describe "photog/galleries" do
+describe "Photog::Galleries" do
 
-  before do
-    photog_sign_in
-  end
+  # before(:each) do
+  #   login_photographer
+  # end
 
-  context "index" do
+  describe "GET /photog/galleries" do
+    it "works!" do
+      get photog_galleries_path
+      response.status.should be(200)
+    end
+
     it "lists the galleries" do
       FactoryGirl.create(:gallery, :title => 'First Gallery')
       FactoryGirl.create(:gallery, :title => 'Second Gallery')
@@ -18,28 +23,33 @@ describe "photog/galleries" do
     end
   end
 
-  context "new" do
-    it "renders the new gallery form" do
-      visit new_photog_gallery_url
+  context "GET /photog/galleries/new" do
+    it "works!" do
+      get new_photog_gallery_path
+      response.status.should be(200)
+    end
 
-      page.should have_css('form')
+    it "renders the new gallery form" do
+      visit new_photog_gallery_path
+
       page.should have_css('input#gallery_title')
     end
   end
 
-  context "edit" do
-
+  context "GET /photog/galleries/:id/edit" do
     before do
       @gallery = FactoryGirl.create(:gallery)
     end
 
-    it "renders the edit gallery form" # do
-     #      visit edit_photog_gallery_url(@gallery.to_param)
-     #
-     #      page.should have_css('form')
-     #      page.should have_css('input#gallery_title')
-     #    end
+    it "works!" do
+      get edit_photog_gallery_path(@gallery)
+      response.status.should be(200)
+    end
 
+    it "renders the edit gallery form" do
+      visit edit_photog_gallery_path(@gallery)
+      page.should have_css('input#gallery_title')
+    end
   end
 
 end
