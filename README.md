@@ -22,7 +22,7 @@ Installation script coming soon! Follow these instructions for now:
 
     $ git clone git://github.com/rapind/grokphoto.git
     $ cd grokphoto
-    $ cp config/database.yml.sample config.database.yml
+    $ cp config/database.yml.sample config/database.yml
 
 Then edit these files with your own settings. Everything you need to change is marked with a "TODO":
 
