@@ -1,10 +1,11 @@
 require 'spec_helper'
-require 'controllers/helper'
 
 describe Admin::PortfoliosController do
 
   before do
-    login_photographer
+    @photographer = FactoryGirl.create(:photographer)
+    sign_in @photographer
+
     @portfolio = FactoryGirl.create(:portfolio)
   end
 

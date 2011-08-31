@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'controllers/helper'
 
 describe Admin::PortfolioPhotosController do
 
   before do
-    login_photographer
+    @photographer = FactoryGirl.create(:photographer)
+    sign_in @photographer
   end
 
   describe "DELETE destroy" do
