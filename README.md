@@ -18,15 +18,21 @@ Software Requirements
 Installation
 ------------
 
-Installation script coming soon! Follow these instructions for now:
-
     $ git clone git://github.com/rapind/grokphoto.git
     $ cd grokphoto
-    $ cp config/database.yml.sample config.database.yml
+    $ rake grokphoto:init
+    $ bundle
 
-Then edit these files with your own settings. Everything you need to change is marked with a "TODO":
+Then edit these files with your own settings. Everything you need to change is marked with "change_me" along with instructions if necessary:
 
-    $ bumdle install
+*  config/database.yml
+*  config/heroku.yml
+*  config/initializers/devise.rb
+*  config/initializers/secret_token.rb
+*  config/initializers/session_store.rb
+
+Then initialize the database and start the server:
+
     $ rake db:create
     $ rake db:migrate
     $ rake db:seed
