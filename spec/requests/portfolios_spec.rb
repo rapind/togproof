@@ -20,7 +20,6 @@ describe "portfolios" do
 
     it "renders the portfolio" do
       visit portfolio_path(@portfolio.to_param)
-
       page.should have_content(@portfolio.title)
     end
   end

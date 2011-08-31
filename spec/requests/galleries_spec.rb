@@ -2,10 +2,15 @@ require 'spec_helper'
 
 describe "galleries" do
 
-  # before(:each) do
-  #   login_photographer
-  # end
+  context "show" do
+    before do
+      @gallery = FactoryGirl.create(:gallery)
+    end
 
-  #should "show the gallery"
+    it "renders the page" do
+      visit gallery_path(@gallery.token)
+      page.should have_content(@gallery.title)
+    end
+  end
 
 end
