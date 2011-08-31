@@ -7,16 +7,16 @@
 #     - <Heroku config:var name>: <Heroku config:var value>
 #
 production:
-  app: grok-photo
+  app: change_me
   config:
     BUNDLE_WITHOUT: "development:test"
-    GOOGLE_ANALYTICS: "UA-2450369-23"
+    GOOGLE_ANALYTICS: "UA-change_me"
 
 #staging:
-#  app: grokphoto-staging
+#  app: change_me-staging
 #  config: &default
 #    BUNDLE_WITHOUT: "development:test"
 
 #demo:
-#  app: grokphoto-demo
+#  app: change_me-demo
 #  config: *default
