@@ -1,6 +1,6 @@
 Grokphoto::Application.routes.draw do
 
-  root :to => "home#index"
+  root :to => "portfolios#index"
   match 'timestamp' => 'home#timestamp' # used to keep passenger spooled up in prod
   resources :sitemap
 
@@ -12,8 +12,8 @@ Grokphoto::Application.routes.draw do
 
   devise_for :photographers
 
-  match 'photog' => 'photog/galleries#index'
-  namespace :photog do
+  match 'admin' => 'admin/galleries#index'
+  namespace :admin do
     resource :photographer
     resources :portfolios do
       put :update_position, :on => :member

@@ -1,0 +1,30 @@
+- content_for :title do
+  %h1 Public Portfolios
+
+- content_for :sidebar do
+  %p Your portfolios are where you showcase your work. The main image for a portfolio will show up in the covers on the front page of your site.
+  %p The cover image should be sized around 960 pixels wide and 540 pixels high (16:9 aspect ratio).
+  %p Keywords can help potential clients find your portfolio when searching.
+  %p
+    %label Multiple Photo Uploads
+    When adding photos you can select more than one at a time by holding down your SHIFT or CONTROL / COMMAND key.
+  %p Keep in mind that potential clients rarely take the time to browse through large collections of photos, so limit your portfolio to only include high impact photos.
+  %p
+    %label Re-ordering Photos
+    You can re-order the photos within a portfolio by clicking, dragging, then dropping them where you want them to appear.
+  %p= "Click the \"#{(controller.action_name == 'new') ? 'Create' : 'Update'}\" button when you're done."
+
+= render "admin/shared/error_messages", :target => @portfolio
+
+%div{ :style => "width:50%; float:left;" }
+  = form.input :title, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Name your portfolio. I.e. "Newborns"'
+  = form.input :cover, :input_html => { :class => 'string' }, :hint => 'Upload the main cover image. Should be 960x540 pixels.'
+
+%div{ :style => "width:50%; float:left;" }
+  = link_to(image_tag(@portfolio.cover.medium.url), @portfolio.cover.url, :rel => 'lightbox') if @portfolio.cover?
+
+%div{ :style => "width:100%; float:left;" }
+  = form.input :keywords, :input_html => { :class => 'long validate[optional,length[3,200]]' }, :hint => 'Add some keywords related to your portfolio.'
+  = form.input :description, :input_html => { :class => 'brief validate[optional,length[5,2000]]' }, :as => :text, :hint => 'Briefly describe your portfolio.'
+  = form.input 'portfolio_photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }
+  = form.button :submit

@@ -2,13 +2,13 @@
 %html{ 'xml:lang' => 'en', :lang => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
   %head
     %title GrokPhoto
-    = stylesheet_link_tag 'photog'
-    = javascript_include_tag 'photog'
+    = stylesheet_link_tag 'admin'
+    = javascript_include_tag 'admin'
     = csrf_meta_tags
   %body
     .topbar
       .container.fixed
-        %h3= link_to('GrokPhoto', photog_path, :class => 'logo')
+        %h3= link_to('GrokPhoto', admin_path, :class => 'logo')
         %ul
           %li= link_to "Portfolio", portfolios_path, :class => "#{'active' if controller.controller_name == 'portfolios'}"
     .container

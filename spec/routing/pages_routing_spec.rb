@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe Photog::PagesController do
+describe Admin::PagesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/photog/pages").should route_to("photog/pages#index")
+      get("/admin/pages").should route_to("admin/pages#index")
     end
 
     it "routes to #new" do
-      get("/photog/pages/new").should route_to("photog/pages#new")
+      get("/admin/pages/new").should route_to("admin/pages#new")
     end
 
     it "routes to #show" do
-      get("/photog/pages/1").should route_to("photog/pages#show", :id => "1")
+      get("/admin/pages/1").should route_to("admin/pages#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/photog/pages/1/edit").should route_to("photog/pages#edit", :id => "1")
+      get("/admin/pages/1/edit").should route_to("admin/pages#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/photog/pages").should route_to("photog/pages#create")
+      post("/admin/pages").should route_to("admin/pages#create")
     end
 
     it "routes to #update" do
-      put("/photog/pages/1").should route_to("photog/pages#update", :id => "1")
+      put("/admin/pages/1").should route_to("admin/pages#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/photog/pages/1").should route_to("photog/pages#destroy", :id => "1")
+      delete("/admin/pages/1").should route_to("admin/pages#destroy", :id => "1")
     end
 
   end

@@ -1,14 +1,14 @@
 require "spec_helper"
 
-describe Photog::PhotographersController do
+describe Admin::PhotographersController do
   describe "routing" do
 
     it "routes to #edit" do
-      get("/photog/photographer/edit").should route_to("photog/photographers#edit")
+      get("/admin/photographer/edit").should route_to("admin/photographers#edit")
     end
 
     it "routes to #update" do
-      put("/photog/photographer").should route_to("photog/photographers#update")
+      put("/admin/photographer").should route_to("admin/photographers#update")
     end
 
   end

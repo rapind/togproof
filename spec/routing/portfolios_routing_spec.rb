@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe Photog::PortfoliosController do
+describe Admin::PortfoliosController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/photog/portfolios").should route_to("photog/portfolios#index")
+      get("/admin/portfolios").should route_to("admin/portfolios#index")
     end
 
     it "routes to #new" do
-      get("/photog/portfolios/new").should route_to("photog/portfolios#new")
+      get("/admin/portfolios/new").should route_to("admin/portfolios#new")
     end
 
     it "routes to #show" do
-      get("/photog/portfolios/1").should route_to("photog/portfolios#show", :id => "1")
+      get("/admin/portfolios/1").should route_to("admin/portfolios#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/photog/portfolios/1/edit").should route_to("photog/portfolios#edit", :id => "1")
+      get("/admin/portfolios/1/edit").should route_to("admin/portfolios#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/photog/portfolios").should route_to("photog/portfolios#create")
+      post("/admin/portfolios").should route_to("admin/portfolios#create")
     end
 
     it "routes to #update" do
-      put("/photog/portfolios/1").should route_to("photog/portfolios#update", :id => "1")
+      put("/admin/portfolios/1").should route_to("admin/portfolios#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/photog/portfolios/1").should route_to("photog/portfolios#destroy", :id => "1")
+      delete("/admin/portfolios/1").should route_to("admin/portfolios#destroy", :id => "1")
     end
 
   end

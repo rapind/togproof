@@ -1,0 +1,7 @@
+= simple_form_for(@portfolio, :url => resource_path, :method => :put, :html => {:class => 'form-stacked'}) do |form|
+  = render form
+
+%div{ :style => "width:100%; float:left;" }
+  %br
+  %ul#position_container.image_list{ :collection_path => admin_portfolio_portfolio_photos_path(@portfolio) }
+    = render :partial => "photo", :collection => @portfolio.portfolio_photos

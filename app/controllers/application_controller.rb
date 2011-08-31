@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
     def layout_by_resource
       if devise_controller?
-        'photog' # for authentication
+        'admin' # for authentication
       else
         'public' # default
       end
