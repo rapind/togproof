@@ -13,9 +13,9 @@ describe GalleriesController do
       assigns(:gallery).should eq(@gallery)
     end
 
-    it "should not show the requested gallery when the ID is used" do
+    it "should alert the user that the gallery couldn't be found when the ID is used instead of a secure token" do
       get :show, :id => @gallery.id
-      assigns(:gallery).should eq(@gallery)
+      flash[:alert].should eq("Unable to find that gallery.")
     end
 
   end

@@ -3,7 +3,11 @@ class GalleriesController < InheritedResources::Base
 
   def show
     @gallery = Gallery.find_by_token(params[:id])
-    show!
+    if @gallery
+      show!
+    else
+      redirect_to(root_path, :alert => "Unable to find that gallery.")
+    end
   end
 
   # def show
