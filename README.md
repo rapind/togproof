@@ -67,6 +67,13 @@ Themes
 
 Themes will be supported somehow, possible using liquid markup. Still mulling this over.
 
+Tests
+-----
+
+To run the tests:
+
+    $ rspec test
+
 
 Credits
 -------
