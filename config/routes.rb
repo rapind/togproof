@@ -4,9 +4,7 @@ Grokphoto::Application.routes.draw do
   match 'timestamp' => 'home#timestamp' # used to keep passenger spooled up in prod
   resources :sitemap
 
-  resources :galleries do
-    resources :gallery_photos
-  end
+  resources :galleries
   resources :portfolios
   resources :pages
 

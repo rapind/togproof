@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "rails", :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
+gem 'rails', '~> 3.1.0.rc8'
 
 # database
 gem 'sqlite3'
@@ -34,6 +34,8 @@ gem 'acts_as_list', '~> 0.1.2'
 gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
+
+gem 'aquarium'
 
 group :development, :test do
   # generators

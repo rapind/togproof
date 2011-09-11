@@ -9,43 +9,29 @@
   %body{ :class => "admin #{yield(:body_class).presence}" }
     #container
       #header
-      #main
-        #sidebar
-        #content
-      #footer
-
-
-    .topbar
-      .container.fixed
-        %h3= link_to('GrokPhoto Administration', admin_path, :class => 'logo')
-        %ul
+        %h2#logo= link_to('GrokPhoto Administration', admin_path)
+        %ul#main_nav
           %li= link_to "Galleries", admin_galleries_path, :class => "#{'active' if controller.controller_name == 'galleries' or controller.controller_name == 'gallery_photos'}"
           %li= link_to "Portfolios", admin_portfolios_path, :class => "#{'active' if controller.controller_name == 'portfolios' or controller.controller_name == 'portfolio_photos'}"
           %li= link_to "Pages", admin_pages_path, :class => "#{'active' if controller.controller_name == 'pages'}"
           %li= link_to "Settings", edit_admin_photographer_path, :class => "#{'active' if controller.controller_name == 'photographers'}"
-        %ul.nav.secondary-nav
+        %ul#secondary_nav
           %li= link_to "Logout", destroy_photographer_session_path, :method => :delete
-    .container
-      .page-header
-        - if content_for?(:title)
-          = yield(:title)
-        - else
-          %h1
-            Welcome
-            %small This is the administration area for your site.
-      .row
-        .span4.columns
+      #main
+        #sidebar
           - if content_for?(:sidebar)
             = yield(:sidebar)
           - else
+            %h2 Welcome
+            %p This is the administration area for your site.
             %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
             %p This area is used to provide pertinent information about the tasks you're currently working on.
-        .span12.columns
+        #content
+          %h1= content_for?(:title) ? yield(:title) : 'Welcome'
           - if alert
             .alert-message.error= alert
           - elsif notice
             .alert-message.info= notice
           = yield
-      .row
-        .span16.columns
-          Footer Goes Here
+      #footer
+        Footer Goes Here
