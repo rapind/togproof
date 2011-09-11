@@ -39,4 +39,8 @@ FactoryGirl.define do
     title
   end
 
+  factory :app_config do
+    name
+  end
+
 end
