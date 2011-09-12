@@ -1,21 +1,35 @@
-div
-  float: left
+@import 'partials/grid'
+@import 'partials/form'
 
 #container
-  width: 970px
-  margin: 10px auto
+  +row
 
 #header
-  width: 960px
+  +column(12, true)
+
+  ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+
+  li
+    float: left
+    padding: 10px
+
+  #main_nav
+    +column(10, false)
+
+  #secondary_nav
+    +column(2, true)
 
 #main
-  width: 960px
+  +column(12, true)
 
   #sidebar
-    width: 360px
+    +column(3, false)
 
   #content
-    width: 600px
+    +column(9, true)
 
 #footer
-  width: 960px
+  +column(12, true)

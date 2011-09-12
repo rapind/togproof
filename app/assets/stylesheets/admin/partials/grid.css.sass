@@ -1,0 +1,25 @@
+$columns: 12
+$column_width: 60px
+$gutter_width: 20px
+
+@mixin column($number, $is_last)
+  float: left
+  overflow: hidden
+  display: inline
+  $included_gutters: ($number * $gutter_width) - $gutter_width
+  @if $is_last
+    margin: 0
+    $included_gutters: $included_gutters + $gutter_width
+  @else
+    margin: 0 $gutter_width 0 0
+  width: ($column_width * $number) + $included_gutters
+
+@mixin row
+  width: 960px
+  margin: 0 auto
+  overflow: hidden
+
+@mixin nested_row
+  margin: 0 -10px
+  width: auto
+  display: inline-block
