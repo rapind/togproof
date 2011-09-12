@@ -6,6 +6,6 @@
 = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
   = devise_error_messages!
   = f.hidden_field :reset_password_token
-  = f.input :password
-  = f.input :password_confirmation
+  = f.input :password, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please enter your password.'
+  = f.input :password_confirmation, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please confirm your password.'
   = f.button :submit, 'Change my password'

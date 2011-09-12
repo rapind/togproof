@@ -9,25 +9,9 @@
     = link_to('public area.', root_path)
   %p= render :partial => "devise/shared/links"
 
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %fieldset
-    .clearfix
-      = f.label :email, 'Email Address'
-      .input
-        = f.text_field :email
-        %span.help-inline Please enter your email address.
-    .clearfix
-      = f.label :password
-      .input
-        = f.password_field :password, :maxlength => 20
-        %span.help-inline Please enter your password.
-    - if devise_mapping.rememberable?
-      .clearfix
-        = f.label :remember_me
-        .input
-          %ul.inputs-list
-            %li
-              %label
-                = f.check_box :remember_me
-      .actions
-        %button{ :type => 'submit', :class => 'btn primary' } Sign in
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
+  = form.input :email, :input_html => { :class => 'validate[required,email]' }, :hint => 'Please enter your email address.'
+  = form.input :password, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please enter your password.'
+  - if devise_mapping.rememberable?
+    = form.input :remember_me, :as => :boolean
+  = form.submit 'Sign in'
