@@ -1,7 +1,6 @@
-- content_for :title do
-  %h1 Public Pages
--content_for :sidebar do
-  %h2= "#{controller.action_name.titleize} Page"
+- content_for :title, "#{controller.action_name.titleize} Page"
+- content_for :sidebar do
+  %h2 Public Pages
   %p Your pages are where you describe your work.
   %p Please enter a descriptive title for the page. This title will be shown to your potential clients and used for SEO purposes.
   %p You can upload an image for your page by clicking the "Choose File" or "Upload" button. The system will resize your image while keeping the aspect ratio so that it's less than 660px wide and 440 px high.

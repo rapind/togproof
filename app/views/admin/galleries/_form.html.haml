@@ -1,8 +1,6 @@
-- content_for :title do
-  %h1 Client Galleries
-
+- content_for :title, "#{controller.action_name.titleize} Gallery"
 - content_for :sidebar do
-  %h2= "#{controller.action_name.titleize} Gallery"
+  %h2 Client Galleries
   %p Enter a descriptive title for the gallery. This title will tell your client what the gallery contains. (I.e. Newborn Session)
   %p The expires on field limits how long the client can view this gallery and the photos within it. We have already assigned a default expiry, however you can change this to whatever date you like, or clear it completely if the gallery should never expire.
   %p

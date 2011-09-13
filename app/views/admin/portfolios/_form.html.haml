@@ -1,8 +1,6 @@
-- content_for :title do
-  %h1 Public Portfolios
-
+- content_for :title, "#{controller.action_name.titleize} Portfolio"
 - content_for :sidebar do
-  %h2= "#{controller.action_name.titleize} Portfolio"
+  %h2 Public Portfolios
   %p Your portfolios are where you showcase your work. The main image for a portfolio will show up in the covers on the front page of your site.
   %p The cover image should be sized around 960 pixels wide and 540 pixels high (16:9 aspect ratio).
   %p Keywords can help potential clients find your portfolio when searching.
