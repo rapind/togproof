@@ -19,13 +19,14 @@
           %li= link_to "Logout", destroy_photographer_session_path, :method => :delete
       #main
         #sidebar
-          - if content_for?(:sidebar)
-            = yield(:sidebar)
-          - else
-            %h2 Welcome
-            %p This is the administration area for your site.
-            %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
-            %p This area is used to provide pertinent information about the tasks you're currently working on.
+          .box
+            - if content_for?(:sidebar)
+              = yield(:sidebar)
+            - else
+              %h2 Welcome
+              %p This is the administration area for your site.
+              %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
+              %p This area is used to provide pertinent information about the tasks you're currently working on.
         #content
           %h1= content_for?(:title) ? yield(:title) : 'Welcome'
           - if alert

@@ -2,7 +2,7 @@
   %h1 Site Settings
 
 - content_for :sidebar do
-  %p Manage your site-wide settings here.
+  %h2 Edit settings
   %p The information you enter here is available in some areas of the site and also within system generated email notifications to your clients.
   %p Click the "Update Settings" button when you're done.
 
@@ -14,12 +14,13 @@
     = form.input :name, :input_html => { :class => 'validate[required,length[3,100]]' }, :hint => 'Enter your business name.'
     = form.input :phone, :input_html => { :class => 'validate[optional,length[7,20]]' }, :hint => 'Optionally enter your business phone number.'
     = form.input :blog_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your blog if you have one.'
-    = form.input :facebook_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Facebook page if you have one.'
-    = form.input :twitter_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Twitter profile if you have one.'
     = form.input :google_analytics_key, :input_html => { :class => 'validate[optional,length[10,20]]' }, :hint => 'Enter your google analytics key if you have one.'
   %div{ :style => "width:50%; float:left;" }
+    = form.input :facebook_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Facebook page if you have one.'
+    = form.input :twitter_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Twitter profile if you have one.'
     = form.input :logo, :input_html => { :class => 'string' }, :hint => 'Upload your logo.'
     = link_to(image_tag(@photographer.logo.thumb.url, :style => "border: 1px solid #aaa; margin-bottom: 10px;"), @photographer.logo.url, :rel => 'lightbox') if @photographer.logo?
 
   %div{ :style => "width:100%; float:left;" }
+    = form.input :conversion_code, :input_html => { :class => 'validate[optional,length[10,9000]]' }, :hint => 'Paste the conversion code to be called after a contact submission if you have any (I.e. Google Adwords).'
     = form.button :submit, 'Update Settings'

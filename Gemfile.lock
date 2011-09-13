@@ -248,7 +248,7 @@ DEPENDENCIES
   json
   kaminari (~> 0.12.4)
   mini_magick (~> 3.3)
-  rails (~> 3.1.0.rc8)
+  rails (~> 3.1.0)
   rdiscount (~> 1.6.8)
   responders (~> 0.6.4)
   rspec-rails (~> 2.6.1)

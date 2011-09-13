@@ -37,5 +37,5 @@ Grokphoto::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  config.action_mailer.default_url_options = { :host => 'grokphoto.local' } # TODO - change this to whatever you run test on. I.e. :host => 'localhost:3000'
+  config.action_mailer.default_url_options = { :host => 'grokphoto.dev' } # TODO - change this to whatever you run test on. I.e. :host => 'localhost:3000'
 end

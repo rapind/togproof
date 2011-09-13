@@ -1,11 +1,14 @@
-@import 'partials/grid'
-@import 'partials/form'
+@import '../plugins/typography'
+@import '../plugins/grid'
+@import '../plugins/form'
 
 #container
   +row
 
 #header
   +column(12, true)
+  margin: 0 0 20px 0
+  border-bottom: 1px solid #888
 
   ul
     padding: 0
@@ -16,20 +19,40 @@
     float: left
     padding: 10px
 
+  #logo
+    +column(6, false)
+
   #main_nav
-    +column(10, false)
+    +column(5, false)
 
   #secondary_nav
-    +column(2, true)
+    +column(1, true)
 
 #main
   +column(12, true)
 
   #sidebar
-    +column(3, false)
+    +column(4, false)
+
+    .box
+      background-color: #ddd
+      padding: 10px
 
   #content
-    +column(9, true)
+    +column(8, true)
 
 #footer
   +column(12, true)
+  margin: 20px 0 0 0
+  padding: 10px 0
+  border-top: 1px solid #888
+
+
+ul.image_list
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+  li
+    float: left
+    width: 160px
