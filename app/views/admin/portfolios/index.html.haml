@@ -8,8 +8,7 @@
   %p You can edit a portfolio by clicking it's "Edit" link.
   %p You can delete a portfolio by clicking the red X button.
 
-= link_to(raw("New Portfolio &raquo;"), new_resource_path, :class => 'button')
-%p.clear
+.buttons= link_to(raw("New Portfolio &raquo;"), new_resource_path, :class => 'button cta cta-blue')
 
 %ul#position_container.image_list
   - @portfolios.each do |portfolio|

@@ -1,6 +1,6 @@
 - content_for :title, 'Secure Sign In'
 - content_for :sidebar do
-  %h2 This is a protected area.
+  %h2 Protected area
   %p
     Please sign in.
     If you came here by mistake, please head back to the
@@ -12,4 +12,4 @@
   = form.input :password, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please enter your password.'
   - if devise_mapping.rememberable?
     = form.input :remember_me, :as => :boolean
-  = form.submit 'Sign in'
+  = form.button :submit, 'Sign in', :class => 'cta cta-blue'
