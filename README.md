@@ -43,7 +43,7 @@ At this point you should have a working site with some basic sample data that yo
 Initial Configuration
 ---------------------
 
-1. Login to the administration area (/photog) using photographer@grokphoto.org / password
+1. Login to the administration area (/admin) using photographer@grokphoto.org / password
 2. Click on the Settings tab.
 3. Enter your own information and update the settings.
 
