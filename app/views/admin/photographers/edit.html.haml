@@ -20,5 +20,5 @@
     = link_to(image_tag(@photographer.logo.thumb.url, :style => "border: 1px solid #aaa; margin-bottom: 10px;"), @photographer.logo.url, :rel => 'lightbox') if @photographer.logo?
 
   %div{ :style => "width:100%; float:left;" }
-    = form.input :conversion_code, :input_html => { :class => 'validate[optional,length[10,9000]]' }, :hint => 'Paste the conversion code to be called after a contact submission if you have any (I.e. Google Adwords).'
+    = form.input :conversion_code, :input_html => { :class => 'brief validate[optional,length[10,9000]]' }, :hint => 'Paste the conversion code to be called after a contact submission if you have any (I.e. Google Adwords).'
     = form.button :submit, 'Update Settings', :class => 'cta cta-blue'
