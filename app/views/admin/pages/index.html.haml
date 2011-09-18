@@ -13,7 +13,7 @@
 %ul#position_container.image_list
   - @pages.each do |page|
     %li{ :id => "obj_#{page.id}" }
-      .draggable
+      .title.draggable
         = truncate(page.title, :length => 22)
         = link_to(image_tag('cancel.png'), resource_path(page), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
       = link_to(image_tag(page.image.thumb.url, :size => '150x100'), edit_resource_path(page))

@@ -28,7 +28,6 @@
               %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
               %p This area is used to provide pertinent information about the tasks you're currently working on.
         #content
-          %h1= content_for?(:title) ? yield(:title) : 'Welcome'
           - if alert
             .alert-message.error= alert
           - elsif notice

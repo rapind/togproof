@@ -35,7 +35,7 @@ h1
   +column(12, true)
 
   #sidebar
-    +column(4, false)
+    +column(3, false)
 
     .box
       background-color: #ddd
@@ -45,7 +45,7 @@ h1
         font-size: 1.8em
 
   #content
-    +column(8, true)
+    +column(9, true)
 
 #footer
   +column(12, true)
@@ -61,4 +61,18 @@ ul.image_list
 
   li
     float: left
-    width: 160px
+    width: 150px
+    padding: 6px
+    margin: 0 15px 15px 0
+    border: 1px solid #aaa
+
+    div.title
+      padding: 5px
+      margin-bottom: 5px
+      background-color: #ddd
+
+    div.draggable
+      cursor: pointer
+
+    a.delete
+      float: right

@@ -12,7 +12,7 @@
 %ul.image_list
   - @galleries.each do |gallery|
     %li
-      %div
+      .title
         = truncate(gallery.title, :length => 22)
         = link_to(image_tag('cancel.png'), resource_path(gallery), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
       - unless gallery.gallery_photos.blank?
