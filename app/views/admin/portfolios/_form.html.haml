@@ -25,5 +25,7 @@
 %div{ :style => "width:100%; float:left;" }
   = form.input :keywords, :input_html => { :class => 'long validate[optional,length[3,200]]' }, :hint => 'Add some keywords related to your portfolio.'
   = form.input :description, :input_html => { :class => 'brief validate[optional,length[5,2000]]' }, :as => :text, :hint => 'Briefly describe your portfolio.'
+%div{ :style => "width:74%; float:left;" }
   = form.input 'portfolio_photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }
+%div{ :style => "width:26%; float:left;" }
   = form.button :submit, :class => 'cta cta-blue'
