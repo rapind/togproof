@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-# Replace the change_me below with the name of your application (no spaces or special characters though).
+# TODO: Replace the change_me below with the name of your application (no spaces or special characters though).
 Grokphoto::Application.config.session_store :cookie_store, :key => '_change_me'
 
 # Use the database for sessions instead of the cookie-based default,
