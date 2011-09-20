@@ -1,0 +1,3 @@
+[submodule "vendor/assets/stylesheets/sass-plugins"]
+	path = vendor/assets/stylesheets/sass-plugins
+	url = git://github.com/rapind/sass-plugins.git
