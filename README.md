@@ -23,14 +23,14 @@ Installation
     $ rake grokphoto:init
     $ bundle
 
-Then edit these files with your own settings. Everything you need to change is marked with "change_me" along with instructions if necessary:
+Then edit these files with your own settings. Everything you need to change is marked with TODO along with instructions if necessary:
 
 *  config/database.yml
 *  config/heroku.yml
 *  config/initializers/devise.rb
 *  config/initializers/secret_token.rb
 *  config/initializers/session_store.rb
-    
+
 Then initialize the database and start the server:
 
     $ rake db:create
@@ -65,7 +65,12 @@ Features
 Themes
 ------
 
-Themes will be supported somehow, possible using liquid markup. Still mulling this over.
+Themes will be supported somehow, possible using liquid markup or rails engines. Still mulling this over.
+
+Internationalization
+--------------------
+
+On the todo list.
 
 Tests
 -----
