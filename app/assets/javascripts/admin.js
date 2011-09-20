@@ -6,4 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_ui
+//= require fancybox
 //= require_tree ./admin/

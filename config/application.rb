@@ -39,5 +39,7 @@ module Grokphoto
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    #config.assets.paths << File.join(Rails.root, 'vendor', 'assets', 'images')
   end
 end

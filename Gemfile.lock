@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/sstephenson/sprockets.git
+  revision: 583140ae236a6bc945b57b8f8acab598aadba324
+  specs:
+    sprockets (2.0.0)
+      hike (~> 1.2)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+
+GIT
   remote: https://github.com/rails/sass-rails.git
   revision: cfb287a9ac646ead9dda3c499d13a84c362a9b75
   branch: 3-1-stable
@@ -200,10 +209,6 @@ GEM
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     spork (0.9.0.rc9)
-    sprockets (2.0.0)
-      hike (~> 1.2)
-      rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
     spruz (0.2.13)
     sqlite3 (1.3.4)
     subexec (0.1.0)
@@ -256,5 +261,6 @@ DEPENDENCIES
   shoulda (~> 2.11.3)
   simple_form (~> 1.4.2)
   spork (~> 0.9.0.rc)
+  sprockets!
   sqlite3
   uglifier
