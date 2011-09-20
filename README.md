@@ -30,12 +30,6 @@ Then edit these files with your own settings. Everything you need to change is m
 *  config/initializers/devise.rb
 *  config/initializers/secret_token.rb
 *  config/initializers/session_store.rb
-
-Then grab the sass framework CSS from github:
-
-    $ cd vendor/assets/stylesheets/
-    $ git clone git://github.com/rapind/sass-plugins.git
-    $ cd ../../../
     
 Then initialize the database and start the server:
 
