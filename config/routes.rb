@@ -1,6 +1,6 @@
 Grokphoto::Application.routes.draw do
 
-  root :to => "portfolios#index"
+  root :to => "home#index"
   match 'timestamp' => 'home#timestamp' # used to keep passenger spooled up in prod
   resources :sitemap
 

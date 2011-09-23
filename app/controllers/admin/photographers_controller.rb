@@ -1,4 +1,5 @@
 class Admin::PhotographersController < Admin::HomeController
+  inherit_resources
   respond_to :html
   actions :edit, :update
   before_filter :load_photographer

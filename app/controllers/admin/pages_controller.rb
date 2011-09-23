@@ -1,4 +1,5 @@
 class Admin::PagesController < Admin::HomeController
+  inherit_resources
   respond_to :html, :json
   actions :all, :except => :show
 

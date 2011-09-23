@@ -1,4 +1,5 @@
 class Admin::PortfolioPhotosController < Admin::HomeController
+  inherit_resources
   actions :destroy
   respond_to :json
   belongs_to :portfolio

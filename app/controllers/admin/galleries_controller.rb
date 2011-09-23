@@ -1,4 +1,5 @@
 class Admin::GalleriesController < Admin::HomeController
+  inherit_resources
   actions :all, :except => :show
   respond_to :html
   has_scope :page, :default => 1

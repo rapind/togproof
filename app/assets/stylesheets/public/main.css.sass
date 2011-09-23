@@ -1,12 +1,47 @@
-#container
-  float: left
-  width: 970px
+@import '../sass-plugins/reset'
+@import '../sass-plugins/typography'
+@import '../sass-plugins/grid'
+@import '../sass-plugins/form'
+@import '../sass-plugins/button'
 
-#sidebar
-  float: left
-  width: 25%
-  padding-left: 2%
+#header
+  +column(12, true)
+  margin: 0 0 20px 0
+  border-bottom: 1px solid #888
 
-#content
-  float: left
-  width: 73%
+  ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+
+  li
+    float: left
+    padding: 10px
+
+  #logo
+    +column(3, false)
+
+  #main_nav
+    +column(9, true)
+
+#main
+  +column(12, true)
+
+  #sidebar
+    +column(3, false)
+
+    .box
+      background-color: #ddd
+      padding: 10px
+      h2
+        margin-top: 0
+        font-size: 1.8em
+
+  #content
+    +column(9, true)
+
+#footer
+  +column(12, true)
+  margin: 20px 0 0 0
+  padding: 10px 0
+  border-top: 1px solid #888

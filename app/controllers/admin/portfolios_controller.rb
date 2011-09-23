@@ -1,4 +1,5 @@
 class Admin::PortfoliosController < Admin::HomeController
+  inherit_resources
   actions :all, :except => :show
   respond_to :html, :json
 

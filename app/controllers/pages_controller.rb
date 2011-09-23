@@ -1,5 +1,7 @@
-class PagesController < InheritedResources::Base
+class PagesController < HomeController
+  inherit_resources
   actions :show
+  respond_to :html
 
   # def show
   #   @page = Page.find(params[:id])

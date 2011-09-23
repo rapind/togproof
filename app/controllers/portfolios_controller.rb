@@ -1,5 +1,7 @@
-class PortfoliosController < InheritedResources::Base
-  actions :index, :show
+class PortfoliosController < HomeController
+  inherit_resources
+  actions :show
+  respond_to :html, :xml
 
   # def show
   #   @portfolio = Portfolio.find(params[:id])

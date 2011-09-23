@@ -2,29 +2,22 @@
 %html{ 'xml:lang' => 'en', :lang => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
   %head
     %title GrokPhoto
-    = stylesheet_link_tag 'admin'
-    = javascript_include_tag 'admin'
+    = stylesheet_link_tag 'public'
+    = javascript_include_tag 'public'
     = csrf_meta_tags
   %body
-    .topbar
-      .container.fixed
-        %h3= link_to('GrokPhoto', admin_path, :class => 'logo')
-        %ul
-          %li= link_to "Portfolio", portfolios_path, :class => "#{'active' if controller.controller_name == 'portfolios'}"
-    .container
-      .page-header
-        - if content_for?(:title)
-          = yield(:title)
-        - else
-          %h1
-            Welcome
-      .row
-        .span16.columns
-          - if alert
-            .alert-message.error= alert
-          - elsif notice
-            .alert-message.info= notice
+    #container
+      #header
+        %h2#logo= link_to(@photographer.name, root_path)
+        %ul#main_nav
+          - @portfolios.each do |portfolio|
+            %li= link_to portfolio.title, portfolio_path(portfolio), :class => "#{'active' if controller.controller_name == 'portfolios' and params[:id] == portfolio.to_param}"
+          - @pages.each do |page|
+            %li= link_to page.title, page_path(page), :class => "#{'active' if controller.controller_name == 'pages' and params[:id] == page.to_param}"
+      #main
+        #content
+          - if content_for?(:title)
+            %h1= yield(:title)
           = yield
-      .row
-        .span16.columns
-          Footer Goes Here
+      #footer
+        Copyright &copy; 2011, #{link_to('GrokPhoto', 'http://grokphoto.org', :target => '_blank')}, All Rights Reserved
