@@ -80,7 +80,7 @@ Tests
 
 To run the tests:
 
-    rspec test
+    rspec spec
 
 
 Credits
