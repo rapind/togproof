@@ -18,9 +18,9 @@ gem 'haml', '~> 3.1.2'
 gem 'devise', '~> 1.4.2'
 
 # thin controllers
+gem 'inherited_resources', '~> 1.2.2'
 gem 'responders', '~> 0.6.4'
 gem 'has_scope', '~> 0.5.1'
-gem 'inherited_resources', '~> 1.2.2'
 
 # forms
 gem 'simple_form', '~> 1.4.2'
@@ -36,7 +36,7 @@ gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
 
-gem 'aquarium'
+gem 'grokphoto-theme-default', :path => 'vendor/gems/grokphoto-theme-default'
 
 group :development, :test do
   # generators
@@ -49,7 +49,6 @@ group :development, :test do
   gem 'spork', '~> 0.9.0.rc'
   gem 'database_cleaner', '~> 0.6.7'
 
-  #gem 'watchr', '~> 0.7'
   gem 'guard', '~> 0.6.2'
   gem 'guard-rspec', '~> 0.4.2'
   gem 'guard-spork', '~> 0.2.1'

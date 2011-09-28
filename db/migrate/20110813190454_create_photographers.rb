@@ -18,6 +18,7 @@ class CreatePhotographers < ActiveRecord::Migration
       t.string :facebook_url
       t.string :twitter_url
       t.string :google_analytics_key, :limit => 16
+      t.string :disqus_short_name, :limit => 64
       t.text :conversion_code
 
       t.integer :gallery_photos_count, :null => false, :default => 0

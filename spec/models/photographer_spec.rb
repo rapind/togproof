@@ -19,6 +19,7 @@ describe Photographer do
   it { should ensure_length_of(:blog_url).is_at_least(10).is_at_most(255) }
   it { should ensure_length_of(:facebook_url).is_at_least(10).is_at_most(255) }
   it { should ensure_length_of(:twitter_url).is_at_least(10).is_at_most(255) }
+  it { should ensure_length_of(:disqus_short_name).is_at_least(2).is_at_most(64) }
 
   it "shoud be protected from mass attribute assignment" do
     time = 2.days.ago

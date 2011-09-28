@@ -8,6 +8,12 @@ GIT
       railties (~> 3.1.0)
       sass (>= 3.1.4)
 
+PATH
+  remote: vendor/gems/grokphoto-theme-default
+  specs:
+    grokphoto-theme-default (0.0.1)
+      rails (~> 3.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -42,7 +48,6 @@ GEM
       multi_json (~> 1.0)
     acts_as_list (0.1.4)
     addressable (2.2.6)
-    aquarium (0.4.4)
     arel (2.2.1)
     bcrypt-ruby (3.0.0)
     builder (3.0.0)
@@ -227,7 +232,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list (~> 0.1.2)
-  aquarium
   capybara (~> 1.0.1)
   carrierwave (~> 0.5.7)
   coffee-rails (~> 3.1.0.rc)
@@ -235,6 +239,7 @@ DEPENDENCIES
   devise (~> 1.4.2)
   factory_girl_rails (~> 1.1.0)
   fog (~> 0.10.0)
+  grokphoto-theme-default!
   growl_notify (~> 0.0.1)
   guard (~> 0.6.2)
   guard-rspec (~> 0.4.2)

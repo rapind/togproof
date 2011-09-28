@@ -1,9 +1,6 @@
 class HomeController < ApplicationController
-  layout 'public'
+  layout 'theme'
   before_filter :load_photographer, :load_portfolios, :load_pages
-
-  def index
-  end
 
   private #----
 

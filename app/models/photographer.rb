@@ -12,11 +12,12 @@ class Photographer < ActiveRecord::Base
   validates :blog_url, :length => { :within => 10..255, :allow_blank => true }
   validates :facebook_url, :length => { :within => 10..255, :allow_blank => true }
   validates :twitter_url, :length => { :within => 10..255, :allow_blank => true }
+  validates :disqus_short_name, :length => { :within => 2..64, :allow_blank => true }
   validates :conversion_code, :length => { :within => 10..9000, :allow_blank => true }
 
   # ****
   # Mass-assignment protection
-  attr_accessible :email, :password, :password_confirmation, :name, :phone, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :name, :phone, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :disqus_short_name, :conversion_code, :remember_me
 
   # ****
   # Attachments

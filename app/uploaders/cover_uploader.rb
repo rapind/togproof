@@ -15,7 +15,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
 
   # Resize the original
-  process :resize_to_limit => [960, 540]
+  process :resize_to_limit => [893, 491]
 
   version :medium do
     process :resize_to_limit => [300, 200]

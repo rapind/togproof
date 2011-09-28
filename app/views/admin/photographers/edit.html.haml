@@ -16,6 +16,7 @@
   %div{ :style => "width:50%; float:left;" }
     = form.input :facebook_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Facebook page if you have one.'
     = form.input :twitter_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Twitter profile if you have one.'
+    = form.input :disqus_short_name, :input_html => { :class => 'validate[optional,length[2,64]]' }, :hint => 'Enter you DISQUS short name in order to support comments.'
     = form.input :logo, :input_html => { :class => 'string' }, :hint => 'Upload your logo.'
     = link_to(image_tag(@photographer.logo.thumb.url, :style => "border: 1px solid #aaa; margin-bottom: 10px;"), @photographer.logo.url, :rel => 'lightbox') if @photographer.logo?
 

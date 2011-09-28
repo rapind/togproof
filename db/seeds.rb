@@ -6,7 +6,6 @@ p = Photographer.create(
   :password_confirmation => "password",
   :blog_url => 'http://rapin.com',
   :twitter_url => 'http://twitter.com/#!/rapind',
-  :theme => 'default',
   :google_analytics_key => 'UA-2450369-23'
 )
 
