@@ -10,6 +10,7 @@ db/*.sql
 db/*.sqlite3
 log/*.*
 tmp/**/*
+tmp/*
 public/uploads
 public/assets
 vendor/gems/**/*
