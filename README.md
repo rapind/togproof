@@ -18,10 +18,10 @@ Software Requirements
 Installation
 ------------
 
-    $ git clone git://github.com/rapind/grokphoto.git
-    $ cd grokphoto
-    $ rake grokphoto:init
-    $ bundle
+    git clone git://github.com/rapind/grokphoto.git
+    cd grokphoto
+    rake grokphoto:init
+    bundle
 
 Then edit these files with your own settings. Everything you need to change is marked with TODO along with instructions if necessary:
 
@@ -33,10 +33,10 @@ Then edit these files with your own settings. Everything you need to change is m
 
 Then initialize the database and start the server:
 
-    $ rake db:create
-    $ rake db:migrate
-    $ rake db:seed
-    $ rails s
+    rake db:create
+    rake db:migrate
+    rake db:seed
+    rails s
 
 At this point you should have a working site with some basic sample data that you can configure with your own data.
 
@@ -80,7 +80,7 @@ Tests
 
 To run the tests:
 
-    $ rspec test
+    rspec test
 
 
 Credits
