@@ -65,7 +65,10 @@ Features
 Themes
 ------
 
-Themes will be supported somehow, possible using liquid markup or rails engines. Still mulling this over.
+Themes are currently implemented using rails engines.
+
+* [Default Theme](https://github.com/rapind/grokphoto-theme-default)
+* More coming soon...
 
 Internationalization
 --------------------
