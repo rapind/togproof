@@ -13,7 +13,7 @@ Software Requirements
 ---------------------
 
 * ImageMagick
-* SQLite3
+* SQLite3 or MySQL or PostgreSQL
 
 Installation
 ------------
