@@ -36,7 +36,7 @@ gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
 
-gem 'grokphoto-theme-default', :path => 'vendor/gems/grokphoto-theme-default'
+gem 'grokphoto-theme-default', :path => 'vendor/gems/grokphoto-theme-default' #, :git => 'git://github.com/rapind/grokphoto-theme-default.git'
 
 group :development, :test do
   # generators

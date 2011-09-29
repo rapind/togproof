@@ -38,7 +38,7 @@ Then initialize the database and start the server:
     rake db:seed
     rails s
 
-At this point you should have a working site with some basic sample data that you can configure with your own data.
+At this point you should have a working site with some basic seed data that you can start to customize.
 
 Initial Configuration
 ---------------------
@@ -46,21 +46,6 @@ Initial Configuration
 1. Login to the administration area (/admin) using photographer@grokphoto.org / password
 2. Click on the Settings tab.
 3. Enter your own information and update the settings.
-
-Features
---------
-
-* Personalize your site via the configuration / settings page.
-* Manage your portfolios and showcase your work.
-* Manage your own pages with markdown.
-* Manage and share client galleries.
-* One-click photo uploads.
-* Automatically apply a watermark to all of your gallery photos.
-* Photo commenting system for both you and your clients.
-* SEO Friendly URLs.
-* Google compliant sitemap.
-* Google analytics integration.
-* Basic view statistics / history for your client galleries.
 
 Themes
 ------
@@ -70,10 +55,27 @@ Themes are currently implemented using rails engines.
 * [Default Theme](https://github.com/rapind/grokphoto-theme-default)
 * More coming soon...
 
-Internationalization
---------------------
+Features
+--------
 
-On the todo list.
+* Personalize your site via the configuration / settings page.
+* Manage your portfolios and showcase your work.
+* Manage your own pages with markdown.
+* Manage and share private galleries with clients easily via secure URL.
+* One-click photo uploads.
+* Automatically apply a watermark to all of your gallery photos.
+* Photo commenting system for both you and your clients.
+* SEO Friendly URLs.
+* Google compliant sitemap.
+* Google analytics integration.
+* Basic view statistics / history for your client galleries.
+
+TODO
+----
+
+* Finish the default theme.
+* Internationalization.
+* Client order assembly / package selection / shopping cart / payment, etc.
 
 Tests
 -----
