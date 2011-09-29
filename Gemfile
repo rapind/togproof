@@ -52,10 +52,18 @@ group :development, :test do
   gem 'guard', '~> 0.6.2'
   gem 'guard-rspec', '~> 0.4.2'
   gem 'guard-spork', '~> 0.2.1'
-  gem 'growl_notify', '~> 0.0.1'
+
+  if RUBY_PLATFORM =~ /darwin/
+    # OSX
+    gem 'rb-fsevent', '~> 0.4.3.1'
+    gem 'growl_notify', '~> 0.0.1'
+  elsif RUBY_PLATFORM =~ /linux/
+    # Linux
+    gem 'rb-inotify'
+  end
 
   # heroku tasks
-  gem 'heroku_san'
+  gem 'heroku_san', '~> 1.2.3'
 end
 
 # Gems used only for assets and not required
