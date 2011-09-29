@@ -2,6 +2,7 @@ class GalleriesController < HomeController
   inherit_resources
   actions :show
   respond_to :html
+  layout 'gallery'
 
   def show
     @gallery = Gallery.find_by_token(params[:id])

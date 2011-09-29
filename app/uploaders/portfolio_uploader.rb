@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class CoverUploader < CarrierWave::Uploader::Base
+class PortfolioUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Override the directory where uploaded files will be stored.
@@ -16,10 +16,6 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   # Resize the original
   process :resize_to_limit => [893, 491]
-
-  version :medium do
-    process :resize_to_limit => [300, 200]
-  end
 
   # Create a thumbnail
   version :thumb do

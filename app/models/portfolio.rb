@@ -24,7 +24,7 @@ class Portfolio < ActiveRecord::Base
 
   # ****
   # Cover attachment
-  mount_uploader :cover, CoverUploader
+  mount_uploader :cover, PortfolioUploader
 
   # Slug for SEO.
   def to_param

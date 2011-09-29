@@ -1,0 +1,28 @@
+!!!
+%html{ 'class' => 'no-js', :lang => 'en' }
+  %head
+    %title= "#{yield(:meta_title).presence || 'Gallery'} | #{@photographer.name}"
+    = stylesheet_link_tag 'admin'
+    = javascript_include_tag 'admin'
+    = csrf_meta_tags
+  %body{ :class => "gallery #{yield(:body_class).presence}" }
+    #container
+      #header
+        %h2#logo= "#{yield(:page_title).presence || 'Gallery'} | #{@photographer.name}"
+      #main
+        #sidebar
+          .box
+            - if content_for?(:sidebar)
+              = yield(:sidebar)
+            - else
+              %h2 Welcome
+              %p This is the administration area for your site.
+              %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
+              %p This area is used to provide pertinent information about the tasks you're currently working on.
+        #content
+          - if alert
+            .alert-message.error= alert
+          - elsif notice
+            .alert-message.info= notice
+          = yield
+      #footer= "Copyright &copy; 2011, #{@photographer.name}, All Rights Reserved"

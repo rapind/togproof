@@ -8,7 +8,7 @@ class PortfolioPhoto < ActiveRecord::Base
   acts_as_list :scope => :portfolio_id
 
   # Photo attachment.
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PortfolioUploader
 
   # ****
   # Validations
