@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe PortfolioPhoto do
 
-  # ****
-  # Validations
-  it { should validate_presence_of(:title) }
-  it { should ensure_length_of(:title).is_at_most(100) }
+  context "validations" do
+    it { should validate_presence_of(:title) }
+    it { should ensure_length_of(:title).is_at_most(100) }
+  end
 
   it "shoud be protected from mass attribute assignment" do
     portfolio_photo = FactoryGirl.create(:portfolio_photo)

@@ -6,11 +6,11 @@ describe Gallery do
     @gallery = FactoryGirl.create(:gallery)
   end
 
-  # ****
-  # Validations
-  it { should validate_presence_of(:title) }
-  it { should ensure_length_of(:title).is_at_least(2).is_at_most(100) }
-  it { should ensure_length_of(:description).is_at_least(5).is_at_most(2000) }
+  context "validations" do
+    it { should validate_presence_of(:title) }
+    it { should ensure_length_of(:title).is_at_least(2).is_at_most(100) }
+    it { should ensure_length_of(:description).is_at_least(5).is_at_most(2000) }
+  end
 
   it "shoud be protected from mass attribute assignment" do
     time = 2.days.ago
@@ -19,7 +19,6 @@ describe Gallery do
   end
 
   context "expired?" do
-
     it "should return true if the gallery has expired" do
       @gallery.expires_on = 2.weeks.ago
       @gallery.expired?.should eql(true)
@@ -34,11 +33,9 @@ describe Gallery do
       @gallery.expires_on = nil
       @gallery.expired?.should eql(false)
     end
-
   end
 
   context "scope" do
-
     before do
       2.times { FactoryGirl.create(:gallery, :expires_on => 2.weeks.ago) }
       @gallery.update_attribute(:expires_on, 2.weeks.from_now)
@@ -51,7 +48,6 @@ describe Gallery do
     it "expired should return all expired galleries" do
       Gallery.expired.size.should eql(2)
     end
-
   end
 
   context "unguessable token" do

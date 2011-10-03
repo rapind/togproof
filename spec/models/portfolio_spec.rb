@@ -7,13 +7,13 @@ describe Portfolio do
     @portfolio = FactoryGirl.create(:portfolio)
   end
 
-  # ****
-  # Validations
-  it { should validate_presence_of(:title) }
-  it { should validate_uniqueness_of(:title) }
-  it { should ensure_length_of(:title).is_at_least(2).is_at_most(100) }
-  it { should ensure_length_of(:keywords).is_at_least(3).is_at_most(200) }
-  it { should ensure_length_of(:description).is_at_least(5).is_at_most(2000) }
+  context "validations" do
+    it { should validate_presence_of(:title) }
+    it { should validate_uniqueness_of(:title) }
+    it { should ensure_length_of(:title).is_at_least(2).is_at_most(100) }
+    it { should ensure_length_of(:keywords).is_at_least(3).is_at_most(200) }
+    it { should ensure_length_of(:description).is_at_least(5).is_at_most(2000) }
+  end
 
   it "shoud be protected from mass attribute assignment" do
     time = 2.days.ago
