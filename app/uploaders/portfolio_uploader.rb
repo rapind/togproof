@@ -15,11 +15,11 @@ class PortfolioUploader < CarrierWave::Uploader::Base
   end
 
   # Resize the original
-  process :resize_to_limit => [893, 491]
+  process :resize_to_fill => [893, 491]
 
   # Create a thumbnail
   version :thumb do
-    process :resize_to_limit => [150, 100]
+    process :resize_to_fill => [150, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -11,6 +11,7 @@ class CreatePhotographers < ActiveRecord::Migration
       # t.confirmable
 
       t.string :name, :null => false, :limit => 100
+      t.text :description, :null => false
       t.string :phone, :limit => 22
       t.string :logo
 

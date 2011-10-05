@@ -15,11 +15,11 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   # Resize the original
-  process :resize_to_limit => [300, 100]
+  process :resize_to_limit => [300, 80]
 
   # Create a thumbnail
   version :thumb do
-    process :resize_to_limit => [150, 50]
+    process :resize_to_fill => [150, 50]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

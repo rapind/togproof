@@ -14,6 +14,7 @@ FactoryGirl.define do
     email
     password 'factory-pwd'
     name
+    description 'Factory description is at least 10 characters long'
   end
 
   factory :page do
