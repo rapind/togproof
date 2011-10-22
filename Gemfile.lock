@@ -6,8 +6,9 @@ GIT
       actionpack (~> 3.0)
       activemodel (~> 3.0)
 
-PATH
-  remote: vendor/gems/grokphoto-theme-default
+GIT
+  remote: git://github.com/rapind/grokphoto-theme-default.git
+  revision: d2ec2ee0d69ebf412cc003dc5b126c39c3658ce5
   specs:
     grokphoto-theme-default (0.0.1)
       rails (~> 3.1.0)
