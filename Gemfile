@@ -37,7 +37,7 @@ gem 'carrierwave', '~> 0.5.7'
 gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
 
-gem 'grokphoto-theme-default', :path => 'vendor/gems/grokphoto-theme-default' #, :git => 'git://github.com/rapind/grokphoto-theme-default.git'
+gem 'grokphoto-theme-default', :git => 'git://github.com/rapind/grokphoto-theme-default.git' # :path => 'vendor/gems/grokphoto-theme-default'
 
 # Gems used only for assets and not required
 # In production environments by default.
