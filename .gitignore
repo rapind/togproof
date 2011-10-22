@@ -1,9 +1,5 @@
 .DS_Store
 .rvmrc
-config/database.yml
-config/heroku.yml
-config/initializers/secret_token.rb
-config/initializers/session_store.rb
 db/schema.rb
 db/*.sql
 db/*.sqlite3

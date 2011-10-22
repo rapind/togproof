@@ -56,8 +56,13 @@ Themes are currently implemented using rails engines.
 
 ## Heroku Deployment
 
-    heroku config:add SENDER_EMAIL=youremail@address.com
+    heroku create
     
+Setup your own values in the next command, using your own email address, the name of your application for the session key and "rake secret" to generate a new secret key.
+    
+    heroku config:add SENDER_EMAIL=change_to_to_your_email@address.com SESSION_KEY=_change_me_to_your_app_name SECRET_KEY=result_of_rake_secret_goes_here
+    git push heroku master
+
 
 ## Features
 
