@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.1'
+gem 'rails', '3.1.1'
 # gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 
 # Temporarily include earlier rack to get rid of a ruby warning.

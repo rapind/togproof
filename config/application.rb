@@ -41,5 +41,12 @@ module Grokphoto
     config.assets.enabled = true
 
     #config.assets.paths << File.join(Rails.root, 'vendor', 'assets', 'images')
+
+    # Specify the layout for devise controllers.
+    config.to_prepare do
+      Devise::SessionsController.layout 'admin'
+      Devise::UnlocksController.layout 'admin'
+      Devise::PasswordsController.layout 'admin'
+    end
   end
 end
