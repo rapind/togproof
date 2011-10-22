@@ -9,7 +9,7 @@
     .topbar
       .topbar-inner
         .container
-          = link_to('GlobalTV Companion Content', admin_path, :class => 'brand')
+          = link_to('GrokPhoto Administration', admin_path, :class => 'brand')
           %ul.nav
             - if photographer_signed_in?
               %li= link_to "Galleries", admin_galleries_path, :class => ((controller.controller_name == 'galleries' or controller.controller_name == 'gallery_photos') ? 'active' : '')
