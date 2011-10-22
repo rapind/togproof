@@ -1,4 +1,4 @@
-= simple_form_for(@portfolio, :url => resource_path, :method => :put, :html => {:class => 'form-stacked'}) do |form|
+= simple_form_for(@portfolio, :url => resource_path, :method => :put, :wrapper => :inline) do |form|
   = render form
 
 %div{ :style => "width:100%; float:left;" }

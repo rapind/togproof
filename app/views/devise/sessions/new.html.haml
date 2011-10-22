@@ -1,15 +1,15 @@
 - content_for :title, 'Secure Sign In'
 - content_for :sidebar do
-  %h2 Protected area
-  %p
-    Please sign in.
-    If you came here by mistake, please head back to the
-    = link_to('public area.', root_path)
-  %p= render :partial => "devise/shared/links"
+  %p Please sign in using you email address and password.
+  %p Checking the "Remember me" box will tell your browser to log you in automatically in the future.
+  %p If you came here by mistake, please head back to the #{link_to('public area.', root_path)}
 
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
-  = form.input :email, :input_html => { :class => 'validate[required,email]' }, :hint => 'Please enter your email address.'
-  = form.input :password, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please enter your password.'
-  - if devise_mapping.rememberable?
-    = form.input :remember_me, :as => :boolean
-  = form.button :submit, 'Sign in', :class => 'cta cta-blue'
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :wrapper => :inline) do |f|
+  = f.input :email, :required => false, :autofocus => true, :hint => 'Enter your email address.', :input_html => { :class => 'validate[required,email]' }
+  = f.input :password, :required => false, :hint => 'Enter your password.', :input_html => { :class => 'validate[required,length[5,20]]]' }
+  = f.input :remember_me, :as => :boolean, :hint => 'Keeps you signed in.' if devise_mapping.rememberable?
+
+  .actions
+    = f.button :submit, 'Sign in', :class => 'primary'
+    %p
+    %p= render :partial => 'devise/shared/links'

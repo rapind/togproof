@@ -1,6 +1,5 @@
-- content_for :title, 'Select a Portfolio to Edit'
+- content_for :title, 'Portfolios'
 - content_for :sidebar do
-  %h2 Public Portfolios
   %p Portfolios are used to showcase your photos. The galleries you enter here will appear in the home page covers and throughout the rest of the site.
   %p You can change the order that galleries appear in by clicking and dragging their title bars.
   %p You can create a new portfolio by clicking the "New Portfolio" button.
@@ -8,7 +7,7 @@
   %p You can edit a portfolio by clicking it's "Edit" link.
   %p You can delete a portfolio by clicking the red X button.
 
-.buttons= link_to(raw("New Portfolio &raquo;"), new_resource_path, :class => 'button cta cta-blue')
+%p= link_to(raw("New Portfolio &raquo;"), new_resource_path, :class => 'btn primary')
 
 %ul#position_container.image_list
   - @portfolios.each do |portfolio|

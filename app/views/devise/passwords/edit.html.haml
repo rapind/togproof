@@ -1,11 +1,14 @@
-- content_for :title, 'Change Your Password'
+- content_for :title, 'Change your password'
 - content_for :sidebar do
-  %h2 Choose a new password.
-  %p= render :partial => "devise/shared/links"
+  %p You can change your password if you forgot it or simply would like a different one.
+  %p Simply enter your new password.
 
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |form|
-  = devise_error_messages!
-  = form.hidden_field :reset_password_token
-  = form.input :password, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please enter your password.'
-  = form.input :password_confirmation, :input_html => { :class => 'validate[required,length[5,20]]]' }, :hint => 'Please confirm your password.'
-  = form.button :submit, 'Change my password', :class => 'cta cta-blue'
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }, :wrapper => :inline) do |f|
+  = f.error_notification
+  = f.input :reset_password_token, :as => :hidden
+  = f.full_error :reset_password_token
+  .inputs
+    = f.input :password, :label => 'New password', :required => true
+  .actions= f.button :submit, 'Change my password', :class => 'primary'
+
+= render :partial => 'devise/shared/links'

@@ -1,12 +1,11 @@
-- content_for :title, 'Select a Gallery to Edit'
+- content_for :title, 'Galleries'
 - content_for :sidebar do
-  %h2 Client Galleries
   %p Galleries are used to share photos with your clients. The galleries you create here will only be shared with people you invite.
   %p You can manage a gallery's photos by clicking the "Photos" link next to the gallery.
   %p You can edit a gallery by clicking the "Edit" link next to the gallery you want to change.
   %p You can delete a gallery by clicking the red "X" button next to the gallery you want to remove.
 
-.buttons= link_to(raw("New Gallery &raquo;"), new_resource_path, :class => 'button cta cta-blue')
+%p= link_to(raw("New Gallery &raquo;"), new_resource_path, :class => 'btn primary')
 
 %ul.image_list
   - @galleries.each do |gallery|

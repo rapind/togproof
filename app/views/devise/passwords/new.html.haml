@@ -1,10 +1,11 @@
-- content_for :title, 'Change Your Password'
+- content_for :title, 'Forgot your password?'
 - content_for :sidebar do
-  %h2 Forgot your password?
-  %p Just enter your email address and we'll send you instructions to change your password.
-  %p= render :partial => "devise/shared/links"
+  %p You can reset your password if you forgot it or simply would like to change it.
+  %p Once you submit your email address we will send you instructions to change your password.
 
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |form|
-  = devise_error_messages!
-  = form.input :email, :input_html => { :class => 'validate[required,email]' }, :hint => 'Please enter your email address.'
-  = form.button :submit, 'Send me reset instructions', :class => 'cta cta-blue'
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :wrapper => :inline) do |f|
+  = f.error_notification
+  .inputs= f.input :email, :required => true
+  .actions= f.button :submit, 'Send me password reset instructions', :class => 'primary'
+
+= render :partial => 'devise/shared/links'

@@ -1,6 +1,5 @@
 - content_for :title, "#{controller.action_name.titleize} Page"
 - content_for :sidebar do
-  %h2 Public Pages
   %p Your pages are where you describe your work.
   %p Please enter a descriptive title for the page. This title will be shown to your potential clients and used for SEO purposes.
   %p You can upload an image for your page by clicking the "Choose File" or "Upload" button. The system will resize your image while keeping the aspect ratio so that it's less than 660px wide and 440 px high.
@@ -11,15 +10,15 @@
 
 = render 'admin/shared/error_messages', :target => @page
 
-%div{ :style => "width:50%; float:left;" }
-  = form.input :title, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Give your page a title. I.e. "About Me"'
-  = form.input :image, :input_html => { :class => 'string' }, :hint => 'Optionally upload an image. Should be about 660x440 pixels.'
+= form.input :title, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Give your page a title. I.e. "About Me"'
+= form.input :image, :input_html => { :class => 'string' }, :hint => 'Optionally upload an image. Should be about 660x440 pixels.'
+- if @page.image?
+  .input= link_to(image_tag(@page.image.thumb.url), @page.image.url, :rel => 'lightbox')
+= form.input :keywords, :input_html => { :class => 'long validate[optional,length[3,200]]' }, :hint => 'Add some keywords related to your page.'
+= form.input :summary, :as => :text, :input_html => { :class => 'brief validate[optional,length[3,250]]' }, :hint => 'Briefly describe your page.'
+= form.input :body, :input_html => { :class => 'long validate[required]' }, :as => :text, :hint => 'Enter the body content for your page.'
 
-%div{ :style => "width:50%; float:left;" }
-  = link_to(image_tag(@page.image.thumb.url), @page.image.url, :rel => 'lightbox') if @page.image?
-
-%div{ :style => "width:100%; float:left;" }
-  = form.input :keywords, :input_html => { :class => 'long validate[optional,length[3,200]]' }, :hint => 'Add some keywords related to your page.'
-  = form.input :summary, :as => :text, :input_html => { :class => 'brief validate[optional,length[3,250]]' }, :hint => 'Briefly describe your page.'
-  = form.input :body, :input_html => { :class => 'long validate[required]' }, :as => :text, :hint => 'Enter the body content for your page.'
-  = form.button :submit, :class => 'cta cta-blue'
+.actions
+  = form.button :submit, :class => 'primary'
+  &nbsp;
+  = link_to('Cancel', collection_path, :class => 'btn')

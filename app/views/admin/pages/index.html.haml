@@ -1,13 +1,12 @@
-- content_for :title, 'Select a Page to Edit'
+- content_for :title, 'Pages'
 - content_for :sidebar do
-  %h2 Public Pages
   %p Pages are used to describe your work. Examples are: About Me, Rates, Availability, FAQ, Contact, etc.
   %p You can change the order that pages appear in by clicking and dragging their title bars.
   %p You can create a new page by clicking the "New Page" button.
   %p You can edit a page by clicking it's "Edit" link.
   %p You can delete a page by clicking the red X button.
 
-.buttons= link_to(raw("New Page &raquo;"), new_resource_path, :class => 'button cta cta-blue')
+%p= link_to(raw("New Page &raquo;"), new_resource_path, :class => 'btn primary')
 
 %ul#position_container.image_list
   - @pages.each do |page|

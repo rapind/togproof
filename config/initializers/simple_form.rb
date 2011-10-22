@@ -1,20 +1,53 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
-  # Components used by the form builder to generate a complete input. You can remove
-  # any of them, change the order, or even add your own components to the stack.
-  # config.components = [ :placeholder, :label_input, :hint, :error ]
+  # Wrappers are used by the form builder to generate a complete input.
+  # You can remove any component from the wrapper, change the order or even
+  # add your own to the stack. The options given to the wrappers method
+  # are used to wrap the whole input (if any exists).
 
-  # Default tag used on hints.
-  # config.hint_tag = :span
+  config.wrappers :inline, :class => 'clearfix', :error_class => :error do |b|
+    b.use :placeholder
+    b.use :label
+    b.use :tag => 'div', :class => 'input' do |ba|
+      ba.use :input
+      ba.use :error, :tag => :span, :class => :'help-inline'
+      ba.use :hint,  :tag => :span, :class => :'help-block'
+    end
+  end
 
-  # CSS class to add to all hint tags.
-  # config.hint_class = :hint
+  config.wrappers :stacked, :class => "clearfix", :error_class => :error do |b|
+    b.use :placeholder
+    b.use :label
+    b.use :hint,  :tag => :span, :class => :'help-block'
+    b.use :tag => 'div', :class => 'input' do |input|
+      input.use :input
+      input.use :error, :tag => :span, :class => :'help-inline'
+    end
+  end
 
-  # CSS class used on errors.
-  # config.error_class = :error
+  config.wrappers :prepend, :class => "clearfix", :error_class => :error do |b|
+    b.use :placeholder
+    b.use :label
+    b.use :hint,  :tag => :span, :class => :'help-block'
+    b.use :tag => 'div', :class => 'input' do |input|
+      input.use :tag => 'div', :class => 'input-prepend' do |prepend|
+        prepend.use :input
+      end
+      input.use :error, :tag => :span, :class => :'help-inline'
+    end
+  end
 
-  # Default tag used on errors.
-  # config.error_tag = :span
+  config.wrappers :append, :class => "clearfix", :error_class => :error do |b|
+    b.use :placeholder
+    b.use :label
+    b.use :hint,  :tag => :span, :class => :'help-block'
+    b.use :tag => 'div', :class => 'input' do |input|
+      input.use :tag => 'div', :class => 'input-append' do |append|
+        append.use :input
+      end
+      input.use :error, :tag => :span, :class => :'help-inline'
+    end
+  end
 
   # Method used to tidy up errors.
   # config.error_method = :first
@@ -27,15 +60,6 @@ SimpleForm.setup do |config|
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
-
-  # You can wrap all inputs in a pre-defined tag.
-  # config.wrapper_tag = :div
-
-  # CSS class to add to all wrapper tags.
-  # config.wrapper_class = :input
-
-  # CSS class to add to the wrapper if the field has errors.
-  # config.wrapper_error_class = :field_with_errors
 
   # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
   # config.collection_wrapper_tag = nil
@@ -50,7 +74,7 @@ SimpleForm.setup do |config|
   # config.collection_value_methods = [ :id, :to_s ]
 
   # How the label text should be generated altogether with the required text.
-  # config.label_text = lambda { |label, required| "#{required} #{label}" }
+  config.label_text = lambda { |label, required| "#{label} #{required}" }
 
   # You can define the class to use on all labels. Default is nil.
   # config.label_class = nil
@@ -63,7 +87,7 @@ SimpleForm.setup do |config|
 
   # Tell browsers whether to use default HTML5 validations (novalidate option).
   # Default is enabled.
-  # config.browser_validations = true
+  config.browser_validations = false
 
   # Determines whether HTML5 types (:email, :url, :search, :tel) and attributes
   # (e.g. required) are used or not. True by default.
@@ -90,4 +114,7 @@ SimpleForm.setup do |config|
 
   # When false, do not use translations for labels, hints or placeholders.
   # config.translate = true
+
+  # Default class for buttons
+  config.button_class = 'btn'
 end

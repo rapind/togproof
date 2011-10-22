@@ -1,37 +1,42 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title GrokPhoto
-    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | GrokPhoto Admin"
+    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | Survivor Companion"
     = stylesheet_link_tag 'admin'
-    = javascript_include_tag 'admin'
     = csrf_meta_tags
-  %body{ :class => "admin #{yield(:body_class).presence}" }
-    #container
-      #header
-        %h2#logo= link_to('GrokPhoto Administration', admin_path)
-        %ul#main_nav
-          %li= link_to "Galleries", admin_galleries_path, :class => "#{'active' if controller.controller_name == 'galleries' or controller.controller_name == 'gallery_photos'}"
-          %li= link_to "Portfolios", admin_portfolios_path, :class => "#{'active' if controller.controller_name == 'portfolios' or controller.controller_name == 'portfolio_photos'}"
-          %li= link_to "Pages", admin_pages_path, :class => "#{'active' if controller.controller_name == 'pages'}"
-          %li= link_to "Settings", edit_admin_photographer_path, :class => "#{'active' if controller.controller_name == 'photographers'}"
-        %ul#secondary_nav
-          %li= link_to "Logout", destroy_photographer_session_path, :method => :delete
-      #main
-        #sidebar
-          .box
-            - if content_for?(:sidebar)
-              = yield(:sidebar)
-            - else
-              %h2 Welcome
-              %p This is the administration area for your site.
-              %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
-              %p This area is used to provide pertinent information about the tasks you're currently working on.
-        #content
-          - if alert
-            .alert-message.error= alert
-          - elsif notice
-            .alert-message.info= notice
-          = yield
-      #footer
-        Copyright &copy; 2011, #{link_to('GrokPhoto', 'http://grokphoto.org', :target => '_blank')}, All Rights Reserved
+  %body{ :class => "#{yield(:body_class).presence}" }
+  %header.master
+    .topbar
+      .topbar-inner
+        .container
+          = link_to('GlobalTV Companion Content', admin_path, :class => 'brand')
+          %ul.nav
+            - if photographer_signed_in?
+              %li= link_to "Galleries", admin_galleries_path, :class => ((controller.controller_name == 'galleries' or controller.controller_name == 'gallery_photos') ? 'active' : '')
+              %li= link_to "Portfolios", admin_portfolios_path, :class => ((controller.controller_name == 'portfolios' or controller.controller_name == 'portfolio_photos') ? 'active' : '')
+              %li= link_to "Pages", admin_pages_path, :class => (controller.controller_name == 'pages' ? 'active' : '')
+              %li= link_to "Settings", edit_admin_photographer_path, :class => (controller.controller_name == 'photographers' ? 'active' : '')
+              %li.logout= link_to 'Logout', destroy_photographer_session_path, :method => :delete
+  .container
+    - if notice
+      .alert-message.block-message.success.fade.in{ :'data-alert' => 'alert' }
+        %a.close{ :href => '#' } ×
+        %p= notice
+    .page-header
+      %h1= yield(:title).presence || 'Home'
+    .row
+      .span4
+        .well
+          %h2 Instructions
+          - if content_for?(:sidebar)
+            = yield(:sidebar)
+          - else
+            %p This is the administration area for your site.
+            %p This area is used to provide pertinent information about the tasks you're currently working on.
+          %p &nbsp;
+          %p &nbsp;
+      .span12= yield
+  = javascript_include_tag 'admin'
+
+  #footer.container
+    &copy; #{link_to('GrokPhoto', 'http://grokphoto.org', :target => '_blank')}, 2011. All Rights Reserved.
