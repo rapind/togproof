@@ -50,9 +50,6 @@ end
 group :development do
   # Generators
   gem 'haml-rails', '~> 0.3.4'
-
-  # Heroku tasks
-  gem 'heroku_san', '~> 1.2.3'
 end
 
 group :development, :test do
