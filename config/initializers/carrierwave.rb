@@ -1,7 +1,7 @@
 # If we run into problems getting upload caches to work on heroku, please review
 # https://github.com/jnicklas/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku
 CarrierWave.configure do |config|
-  config.root = Rails.root.join('tmp')
+  config.root = Rails.root.join('public')
   config.cache_dir = 'carrierwave'
 
   if Rails.env == 'production'
