@@ -1,10 +1,12 @@
 # If we run into problems getting upload caches to work on heroku, please review
 # https://github.com/jnicklas/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku
 CarrierWave.configure do |config|
-  config.root = Rails.root.join('tmp')
   config.cache_dir = 'carrierwave'
 
   if Rails.env == 'production'
+    # Only the tmp directory is writeable with heroku.
+    config.root = Rails.root.join('tmp')
+
     # Use s3 storage in production
     config.storage = :fog
     config.fog_credentials = {
@@ -15,6 +17,9 @@ CarrierWave.configure do |config|
     config.fog_directory = ENV['S3_BUCKET']
     config.fog_public = true
   else
+    # Use the standard public directory setup in dev.
+    config.root = Rails.root.join('public')
+
     # Use local file storage for development and test environments
     config.storage = :file
   end
