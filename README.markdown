@@ -28,6 +28,9 @@ Then edit these files with your own settings. Everything you need to change is m
 *  config/initializers/secret_token.rb
 *  config/initializers/session_store.rb
 
+NOTE: You won't need to change all of these if you're deploying to Heroku. See Heroku Deployment below for details.
+
+
 Then initialize the database and start the server:
 
     rake db:create
@@ -65,14 +68,25 @@ Before you seed the database you'll need to setup an amazon s3 account and bucke
 
 Use your S3 information to fill in the config vars for heroku, then seed the database.
 
-    heroku config:add S3_KEY=change_to_your_amazon_s3_key S3_SECRET=change_to_your_amazon_s3_secret S3_BUCKET=change_to_your_amazon_s3_bucket
-    heroku run rake db:seed
-    heroku open
-    
+    heroku config:add S3_KEY=change_to_your_amazon_s3_key S3_SECRET=change_to_your_amazon_s3_secret S3_BUCKET=change_to_your_amazon_s3_bucket    
+
+You still need to specify a secret roken and session store key:
+
+    rake secret
+    heroku config:add SESSION_KEY=_usually_you_app_name SECRET_TOKEN=token_from_rake_secret
+
+The specify the email address to use when the system sends emails:
+
+    heroku config:add SENDER_EMAIL=_your_email_address
+
 You can check to make sure all of your heroku environment variables have been properly set using:
 
     heroko config
-    
+  
+Once done, seed the database and launch the app.
+
+    heroku run rake db:seed
+    heroku open
 
 
 ## Features
