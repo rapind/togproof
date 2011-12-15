@@ -1,8 +1,8 @@
 # Grokphoto
 
-Grokphoto is a professional photographer's client and booking management solution, as well as a gallery / portfolio where they can showcase for their work.
+Grokphoto is a professional photographer's client gallery solution.
 
-This version is work in progress / port to rails 3.1.
+This version is work in progress / port to rails 3.1.3
 
 For the stable rails 2 version please see the version 2 branch:
 [Version 2](https://github.com/rapind/grokphoto/tree/v2.0)
@@ -18,7 +18,6 @@ For the stable rails 2 version please see the version 2 branch:
 
     git clone git://github.com/rapind/grokphoto.git
     cd grokphoto
-    rake grokphoto:init
     bundle
 
 Then edit these files with your own settings. Everything you need to change is marked with TODO along with instructions if necessary:
@@ -44,14 +43,6 @@ At this point you should have a working site with some basic seed data that you 
 1. Login to the administration area (/admin) using photographer@grokphoto.org / password
 2. Click on the Settings tab.
 3. Enter your own information and update the settings.
-
-
-## Themes
-
-Themes are currently implemented using rails engines.
-
-* [Default Theme](https://github.com/rapind/grokphoto-theme-default)
-* More coming soon...
 
 
 ## Heroku Deployment
@@ -87,23 +78,15 @@ You can check to make sure all of your heroku environment variables have been pr
 ## Features
 
 * Personalize your site via the configuration / settings page.
-* Manage your portfolios and showcase your work.
-* Manage your own pages with markdown.
 * Manage and share private galleries with clients easily via secure URL.
 * One-click photo uploads.
-* Automatically apply a watermark to all of your gallery photos.
-* Photo commenting system for both you and your clients.
-* SEO Friendly URLs.
-* Google compliant sitemap.
-* Google analytics integration.
-* Basic view statistics / history for your client galleries.
 
 
 ## TODO
 
-* Finish the default theme.
 * Internationalization.
-* Client order assembly / package selection / shopping cart / payment, etc.
+* Photo commenting system for both you and your clients.
+* Basic view statistics / history for your client galleries.
 
 
 ## Tests
