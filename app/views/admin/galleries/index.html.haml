@@ -13,8 +13,8 @@
       .title
         = truncate(gallery.title, :length => 22)
         = link_to(image_tag('cancel.png'), resource_path(gallery), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
-      - unless gallery.gallery_photos.blank?
-        = link_to(image_tag(gallery.gallery_photos.first.photo.thumb.url, :size => '150x100'), edit_resource_path(gallery))
+      - unless gallery.photos.blank?
+        = link_to(image_tag(gallery.photos.first.image.thumb.url, :size => '150x100'), edit_resource_path(gallery))
       - else
         = link_to(image_tag('misc/missing.png', :size => '150x100'), edit_resource_path(gallery))
 

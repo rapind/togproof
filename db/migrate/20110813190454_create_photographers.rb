@@ -22,7 +22,7 @@ class CreatePhotographers < ActiveRecord::Migration
       t.string :disqus_short_name, :limit => 64
       t.text :conversion_code
 
-      t.integer :gallery_photos_count, :null => false, :default => 0
+      t.integer :photos_count, :null => false, :default => 0
       t.integer :portfolio_photos_count, :null => false, :default => 0
 
       t.timestamps

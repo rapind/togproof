@@ -35,7 +35,7 @@ FactoryGirl.define do
     title
   end
 
-  factory :gallery_photo do
+  factory :photo do
     gallery
     title
   end

@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Resize the original
-  process :resize_to_limit => [660, 440]
+  process :resize_to_limit => [580, 640]
 
   # Create a thumbnail
   version :thumb do

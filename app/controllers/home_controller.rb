@@ -1,19 +1,12 @@
 class HomeController < ApplicationController
-  layout 'theme'
-  before_filter :load_photographer, :load_portfolios, :load_pages
+  layout nil
 
-  private #----
+  def index
+    render :file => 'public/404.html', :status => :not_found
+  end
 
-    def load_photographer
-      @photographer = Photographer.first
-    end
-
-    def load_pages
-      @pages = Page.order(:position)
-    end
-
-    def load_portfolios
-      @portfolios = Portfolio.order(:position)
-    end
+  def timestamp
+    render :text => Time.now
+  end
 
 end

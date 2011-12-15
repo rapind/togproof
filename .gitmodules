@@ -1,6 +1,0 @@
-[submodule "vendor/assets/stylesheets/sass-plugins"]
-	path = vendor/assets/stylesheets/sass-plugins
-	url = git://github.com/rapind/sass-plugins.git
-[submodule "vendor/gems/grokphoto-theme-default"]
-	path = vendor/gems/grokphoto-theme-default
-	url = git@github.com:rapind/grokphoto-theme-default.git

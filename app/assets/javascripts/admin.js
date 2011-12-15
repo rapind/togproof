@@ -12,4 +12,13 @@ $(document).ready(function() {
 	// date picker
 	$(".date_picker").datepicker({ dateFormat: 'MM dd, yy' });
 
+  // Remove the parent li on delete.
+	$('a[data-method="delete"]').live('ajax:success',
+    function(e, data, textStatus, jqXHR) {
+      if (data.message == 'Success') {
+        $(this).parents("li").remove();
+      }
+    }
+  );
+  
 });

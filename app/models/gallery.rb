@@ -6,11 +6,11 @@ class Gallery < ActiveRecord::Base
 
   # ****
   # Associations
-  has_many :gallery_photos, :dependent => :destroy
+  has_many :photos, :dependent => :destroy
 
   # Multi-file uploads
-  def gallery_photos_attrs=(attrs)
-    attrs.each { |attr| self.gallery_photos.build(:photo => attr) }
+  def photos_attrs=(attrs)
+    attrs.each { |attr| self.photos.build(:image => attr) }
   end
 
   # ****
@@ -20,7 +20,7 @@ class Gallery < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :title, :description, :expires_on, :gallery_photos_attrs
+  attr_accessible :title, :description, :expires_on, :photos_attrs
 
   # ****
   # Named scopes
@@ -32,11 +32,11 @@ class Gallery < ActiveRecord::Base
     (self.expires_on and self.expires_on < Date.today) || false
   end
 
-  # Secures galleries by using an unguessable token.
   before_create :build_token
 
   private #----
 
+    # Secures galleries by using an unguessable token.
     def build_token
       self.token = Devise.friendly_token
     end

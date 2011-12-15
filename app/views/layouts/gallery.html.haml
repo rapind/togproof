@@ -2,8 +2,8 @@
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
     %title= "#{yield(:meta_title).presence || 'Gallery'} | #{@photographer.name}"
-    = stylesheet_link_tag 'admin'
-    = javascript_include_tag 'admin'
+    = stylesheet_link_tag 'gallery'
+    = javascript_include_tag 'gallery'
     = csrf_meta_tags
   %body{ :class => "gallery #{yield(:body_class).presence}" }
     #container
@@ -16,9 +16,7 @@
               = yield(:sidebar)
             - else
               %h2 Welcome
-              %p This is the administration area for your site.
-              %p Once you've logged in you can manage all of your portfolios, galleries, and photos from here.
-              %p This area is used to provide pertinent information about the tasks you're currently working on.
+              %p This is your gallery.
         #content
           - if alert
             .alert-message.error= alert

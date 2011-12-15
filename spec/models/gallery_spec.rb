@@ -36,7 +36,7 @@ describe Gallery do
   end
 
   context "scope" do
-    before do
+    before(:all) do
       2.times { FactoryGirl.create(:gallery, :expires_on => 2.weeks.ago) }
       @gallery.update_attribute(:expires_on, 2.weeks.from_now)
     end

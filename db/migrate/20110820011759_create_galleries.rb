@@ -6,7 +6,7 @@ class CreateGalleries < ActiveRecord::Migration
       t.string :description
       t.datetime :expires_on
 
-      t.integer :gallery_photos_count, :null => false, :default => 0
+      t.integer :photos_count, :null => false, :default => 0
 
       t.timestamps
     end
