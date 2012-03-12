@@ -29,7 +29,7 @@ class Photographer < ActiveRecord::Base
   after_save :clear_cache
 
   def self.cached
-    Rails.cache.fetch(CACHED, :expires_in => 1.week) do
+    Rails.cache.fetch(CACHED, :expires_in => 1.day) do
       self.first
     end
   end

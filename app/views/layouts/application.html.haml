@@ -10,6 +10,7 @@
     .navbar-inner
       .container
         %ul.nav
+          %li{ :class => controller.controller_name == 'home' ? 'active' : '' }= link_to 'Home', root_path
           %li= link_to('Newborns', '#')
           %li= link_to('Kids', '#')
           %li= link_to('Family', '#')
