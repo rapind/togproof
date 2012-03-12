@@ -1,60 +1,65 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-# gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 
 # Temporarily include earlier rack to get rid of a ruby warning.
 # See: http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
 # gem 'rack', '1.3.3'
 
-# Javascript
-gem 'json', '~> 1.6.3'
-gem 'jquery-rails', '~> 1.0.19'
+# Needed by heroku
+gem 'thin'
 
-# Templates
+# Javascript
+gem 'json', '~> 1.6.4'
+gem 'jquery-rails', '~> 1.0.14'
+
+# Markup / templates
+gem 'rdiscount', '~> 1.6.8'
 gem 'haml', '~> 3.1.4'
 
 # Authentication
-gem 'devise', '~> 1.5.2'
+gem 'devise', '~> 1.5.3'
 
 # Thin controllers
 gem 'inherited_resources', '~> 1.3.0'
-gem 'has_scope', '~> 0.5.1'
 
-# Forms
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+# Ordering
+gem 'acts_as_list', '~> 0.1.4'
 
-# Paging
-gem 'kaminari', '~> 0.12.4'
-
-# Sorting
-gem 'acts_as_list', '~> 0.1.2'
+# Forms - TODO: Switch to a stable gem once the wrapper stuff is released.
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', :ref => "da92c45953"
 
 # Image uploads
 gem 'carrierwave', '~> 0.5.8'
-gem 'fog', '~> 1.1.1'
+gem 'fog', '~> 0.10.0'
 gem 'mini_magick', '~> 3.3'
 
+# Paging
+gem 'kaminari', '~> 0.13.0'
+
+# Caching
+gem 'dalli', '~> 1.1.4'
+
 # Monitoring
-gem 'newrelic_rpm', '~> 3.3.0'
+gem 'newrelic_rpm', '~> 3.3.1'
 
 # Scaling
+gem 'daemons', '~> 1.1.5'
+gem 'delayed_job', '~> 3.0.0'
+gem 'delayed_job_active_record', '~> 0.3.1'
 gem 'hirefireapp', '~> 0.0.5'
 
 # Factory
-gem 'factory_girl_rails', '~> 1.4.0'
+gem 'factory_girl_rails', '~> 1.1.0'
 
 # Gems used only for assets and not required
 # In production environments by default.
 group :assets do
-  gem 'sass-rails', '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '~> 1.2.0'
-end
-
-group :development do
-  # Generators
-  gem 'haml-rails', '~> 0.3.4'
+  gem 'sass-rails', '~> 3.1.0'
+  gem 'coffee-rails', '~> 3.1.0'
+  gem 'uglifier', '~> 1.2.1'
+  #gem 'haml_coffee_assets', '~> 0.7.0'
+  #gem 'execjs', '~> 1.3.0'
 end
 
 group :development, :test do
@@ -65,6 +70,18 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.7.0'
 end
 
+group :development do
+  # Heroku
+  gem 'heroku'
+  gem 'heroku_san', '~> 1.2.3'
+
+  # Generators
+  gem 'haml-rails', '~> 0.3.4'
+
+  # Model schema
+  gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
@@ -72,14 +89,11 @@ group :test do
   # Shoulda
   gem 'shoulda', '~> 2.11.3'
 
-  # Faster tests
-  gem 'spork', '~> 0.9.0.rc'
-
   # Cleanup
   gem 'database_cleaner', '~> 0.7.0'
 end
 
 group :production do
   # Database
-  gem 'pg', '~> 0.12.0'
+  gem 'pg'
 end

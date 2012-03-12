@@ -13,6 +13,6 @@
   - for page in @pages
     %li{ :id => "obj_#{page.id}" }
       .draggable
-        = truncate(page.title, :length => 22)
+        = truncate(page.name, :length => 22)
         = link_to(image_tag('cancel.png'), resource_path(page), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
       = link_to(image_tag(page.image.thumb.url, :size => '150x100'), edit_resource_path(page))

@@ -1,12 +1,11 @@
 class Photographer < ActiveRecord::Base
 
   # ****
-  # Devise modules
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :lockable, :token_authenticatable
-
+  # Devise modules. Others available are: :encryptable, :confirmable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :token_authenticatable, :recoverable, :rememberable, :trackable, :lockable, :validatable
+  
   # ****
   # Validation
-  validates :email, :presence => true, :uniqueness => { :case_sensitive => false }, :length => { :within => 5..100 }
   validates :name, :presence => true, :length => { :within => 3..100 }
   validates :description, :presence => true, :length => { :within => 10..8000 }
   validates :phone, :length => { :within => 7..20, :allow_blank => true }
@@ -18,11 +17,33 @@ class Photographer < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :email, :password, :password_confirmation, :logo, :name, :description, :phone, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :disqus_short_name, :conversion_code, :remember_me
+  attr_accessible :email, :password, :logo, :name, :description, :phone, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :disqus_short_name, :conversion_code, :remember_me
 
   # ****
   # Attachments
   mount_uploader :logo, LogoUploader
 
+  # Make sure we always have an auth token assigned.
   before_save :ensure_authentication_token
+  
+  # Caching
+  # -------
+  CACHED = 'photographer'
+  
+  after_save :clear_cache
+
+  def self.cached
+    Rails.cache.fetch(CACHED, :expires_in => 1.week) do
+      self.first
+    end
+  end
+
+  def clear_cache
+    Photographer.clear_cache
+  end
+
+  def self.clear_cache
+    Rails.cache.delete(CACHED)
+  end
+  
 end

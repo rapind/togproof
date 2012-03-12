@@ -29,7 +29,7 @@ describe Admin::PhotographersController do
 
       it "redirects to the photographer" do
         put :update, :photographer => { :name => 'Changed Name' }
-        response.should redirect_to(edit_admin_photographer_url)
+        response.should redirect_to(edit_admin_photographer_path)
       end
     end
 

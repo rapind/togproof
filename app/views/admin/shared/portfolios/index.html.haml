@@ -15,6 +15,6 @@
     - unless portfolio.cover.blank?
       %li{ :id => "obj_#{portfolio.id}" }
         .draggable
-          = truncate(portfolio.title, :length => 22)
+          = truncate(portfolio.name, :length => 22)
           = link_to(image_tag('cancel.png'), resource_path(portfolio), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
         = link_to(image_tag(portfolio.cover.thumb.url, :size => '150x100'), edit_resource_path(portfolio))

@@ -2,8 +2,7 @@ class CreateGalleries < ActiveRecord::Migration
   def change
     create_table :galleries do |t|
       t.string :token, :null => false, :limit => 32
-      t.string :title, :null => false, :limit => 100
-      t.string :description
+      t.string :name, :null => false, :limit => 100
       t.datetime :expires_on
 
       t.integer :photos_count, :null => false, :default => 0

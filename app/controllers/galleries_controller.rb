@@ -1,6 +1,5 @@
 class GalleriesController < ApplicationController
   respond_to :html
-  layout 'gallery'
 
   def show
     @photographer = Photographer.first

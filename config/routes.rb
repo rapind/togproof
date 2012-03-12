@@ -12,6 +12,7 @@ Grokphoto::Application.routes.draw do
     resource :photographer
     resources :galleries do
       get :invite, :on => :member
+      put :send_invite, :on => :member
       resources :photos
     end
   end

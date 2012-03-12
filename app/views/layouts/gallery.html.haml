@@ -1,26 +1,23 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{yield(:meta_title).presence || 'Gallery'} | #{@photographer.name}"
-    = stylesheet_link_tag 'gallery'
-    = javascript_include_tag 'gallery'
+    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Gallery'}  | #{photographer.name}"
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body{ :class => "gallery #{yield(:body_class).presence}" }
-    #container
-      #header
-        %h2#logo= "#{yield(:page_title).presence || 'Gallery'} | #{@photographer.name}"
-      #main
-        #sidebar
-          .box
-            - if content_for?(:sidebar)
-              = yield(:sidebar)
-            - else
-              %h2 Welcome
-              %p This is your gallery.
-        #content
-          - if alert
-            .alert-message.error= alert
-          - elsif notice
-            .alert-message.info= notice
-          = yield
-      #footer= "Copyright &copy; 2011, #{@photographer.name}, All Rights Reserved"
+  %body{ :class => "#{yield(:body_class).presence}" }
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        .pull-right= "#{yield(:page_title).presence || 'Gallery'} | #{photographer.name}"
+  .container
+    - if notice
+      .alert.alert-block{ :'data-dismiss' => 'alert' }
+        %a.close ×
+        %p= notice
+    .page-header
+      %h1= yield(:title).presence || 'Home'
+    .row
+      .span12= yield
+  #footer.container
+    = "&copy; 2011, #{photographer.name}, All Rights Reserved".html_safe
