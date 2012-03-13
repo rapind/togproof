@@ -4,7 +4,7 @@
     = form_for :search, :url => collection_path, :method => :get, :class => 'form-search' do |form|
       = form.text_field :q, :placeholder => 'Search', :class => 'input-medium search-query', :value => defined?(params[:search][:q]) ? params[:search][:q] : ''
   
-%p= link_to(raw("New Gallery &raquo;"), new_resource_path, :class => 'btn btn-primary')
+%p= link_to(raw("<i class='icon-plus icon-white'></i> New Gallery"), new_resource_path, :class => 'btn btn-success')
 
 %table.table.table-bordered.table-striped
   %thead

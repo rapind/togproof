@@ -13,7 +13,7 @@ class Admin::PhotographersController < Admin::HomeController
 
     # make sure everything is scoped to the current_photographer so we can't access / modify other user's content.
     def load_photographer
-      @photographer = current_photographer
+      @photographer = photographer
     end
 
 end

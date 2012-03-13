@@ -11,6 +11,4 @@
 = form.input :expires_on, :as => :string, :input_html => { :class => 'date_picker', :value => @gallery.expires_on.strftime('%B %d, %Y') }, :hint => 'Select the date when the gallery should expire.'
 
 .form-actions
-  = form.button :submit, :class => 'btn-primary'
-  &nbsp;
-  = link_to('Cancel', collection_path, :class => 'btn')
+  = form.button :submit, :class => 'btn btn-primary'

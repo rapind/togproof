@@ -18,6 +18,8 @@
           %li= link_to('Pricing', '#')
           %li= link_to('About Me', '#')
           %li= link_to('Contact', '#')
+          - if photographer.blog_url
+            %li= link_to('Blog', photographer.blog_url)
         .pull-right= link_to(photographer.name, root_path, :class => 'brand')
   .container
     - if notice
