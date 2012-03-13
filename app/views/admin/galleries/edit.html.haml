@@ -1,6 +1,6 @@
-= simple_form_for(@gallery, :url => resource_path, :method => :put, :wrapper => :inline) do |form|
+= simple_form_for(@gallery, :url => resource_path, :method => :put, :html => { :class => 'form-vertical' }) do |form|
   = render form
-
+  
 %div{ :style => "width:100%; float:left;" }
   %br
   %ul.image_list

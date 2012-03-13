@@ -1,7 +1,7 @@
 -content_for :sidebar do
   %h2 Page
   %p Your pages are where you describe your work.
-  %p Please enter a descriptive title for the page. This title will be shown to your potential clients and used for SEO purposes.
+  %p Please enter a descriptive name for the page. This name will be shown to your potential clients and used for SEO purposes.
   %p You can upload an image for your page by clicking the "Choose File" or "Upload" button. The system will resize your image while keeping the aspect ratio so that it's less than 660px wide and 440 px high.
   %p
     Please enter the body for your page. The body may contain
@@ -11,7 +11,7 @@
 = render 'admin/shared/error_messages', :target => @page
 
 %div{ :style => "width:50%; float:left;" }
-  = form.input :title, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Give your page a title. I.e. "About Me"'
+  = form.input :name, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Give your page a name. I.e. "About Me"'
   = form.input :image, :input_html => { :class => 'string' }, :hint => 'Optionally upload an image. Should be about 660x440 pixels.'
 
 %div{ :style => "width:50%; float:left;" }

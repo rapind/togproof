@@ -6,22 +6,22 @@ class Photo < ActiveRecord::Base
 
   # ****
   # Validations
-  validates :title, :presence => true, :length => { :maximum => 100 }
+  validates :name, :presence => true, :length => { :maximum => 100 }
 
   # ****
   # Mass-assignment protection
-  attr_accessible :gallery_id, :title, :image, :image_cache
+  attr_accessible :gallery_id, :name, :image, :image_cache
 
   # Photo attachment.
   mount_uploader :image, ImageUploader
 
-  before_validation :set_title
+  before_validation :set_name
 
   private #----
 
-    # If no title has been set, use the image's file name but spruce it up a little.
-    def set_title
-      self.title = self.image.filename[0, self.image.filename.rindex('.')].humanize.titleize if self.title.blank? and !self.image.filename.blank?
+    # If no name has been set, use the image's file name but spruce it up a little.
+    def set_name
+      self.name = self.image.filename[0, self.image.filename.rindex('.')].humanize.titleize if self.name.blank? and !self.image.filename.blank?
     end
 
 end

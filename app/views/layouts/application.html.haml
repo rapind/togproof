@@ -1,0 +1,34 @@
+!!!
+%html{ 'class' => 'no-js', :lang => 'en' }
+  %head
+    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | #{photographer.name} Administration"
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body{ :class => "#{yield(:body_class).presence}" }
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        %ul.nav
+          %li{ :class => controller.controller_name == 'home' ? 'active' : '' }= link_to 'Home', root_path
+          %li= link_to('Newborns', '#')
+          %li= link_to('Kids', '#')
+          %li= link_to('Family', '#')
+          %li.divider-vertical
+          %li= link_to('Pricing', '#')
+          %li= link_to('About Me', '#')
+          %li= link_to('Contact', '#')
+          - if photographer.blog_url
+            %li= link_to('Blog', photographer.blog_url)
+        .pull-right= link_to(photographer.name, root_path, :class => 'brand')
+  .container
+    - if notice
+      .alert.alert-block{ :'data-dismiss' => 'alert' }
+        %a.close ×
+        %p= notice
+    .page-header
+      %h1= yield(:title).presence || 'Home'
+    .row
+      .span12= yield
+  #footer.container
+    = "&copy; 2011, #{photographer.name}, All Rights Reserved".html_safe

@@ -1,21 +1,29 @@
-- content_for :title, 'Galleries'
-- content_for :sidebar do
-  %p Galleries are used to share photos with your clients. The galleries you create here will only be shared with people you invite.
-  %p You can manage a gallery's photos by clicking the "Photos" link next to the gallery.
-  %p You can edit a gallery by clicking the "Edit" link next to the gallery you want to change.
-  %p You can delete a gallery by clicking the red "X" button next to the gallery you want to remove.
+- content_for :title do
+  Client Galleries
+  .pull-right
+    = form_for :search, :url => collection_path, :method => :get, :class => 'form-search' do |form|
+      = form.text_field :q, :placeholder => 'Search', :class => 'input-medium search-query', :value => defined?(params[:search][:q]) ? params[:search][:q] : ''
+  
+%p= link_to(raw("<i class='icon-plus icon-white'></i> New Gallery"), new_resource_path, :class => 'btn btn-success')
 
-%p= link_to(raw("New Gallery &raquo;"), new_resource_path, :class => 'btn primary')
-
-%ul.image_list
-  - @galleries.each do |gallery|
-    %li
-      .title
-        = truncate(gallery.title, :length => 22)
-        = link_to(image_tag('cancel.png'), resource_path(gallery), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'delete')
-      - unless gallery.photos.blank?
-        = link_to(image_tag(gallery.photos.first.image.thumb.url, :size => '150x100'), edit_resource_path(gallery))
-      - else
-        = link_to(image_tag('misc/missing.png', :size => '150x100'), edit_resource_path(gallery))
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Created on
+      %th Expires on
+      %th Status
+      %th{ :colspan => 4, :width => '20%' } Actions
+  %tbody
+    - @galleries.each do |obj|
+      %tr
+        %td= obj.name
+        %td= obj.created_at.strftime("%b %d, %Y")
+        %td= obj.expires_on.strftime("%b %d, %Y")
+        %td= obj.status
+        %td= link_to('View', gallery_path(obj.token))
+        %td= link_to('Invite', invite_admin_gallery_path(obj))
+        %td= link_to('Edit', edit_resource_path(obj))
+        %td= link_to('Delete', resource_path(obj), :method => :delete, :confirm => 'Are you sure?', :remote => true, 'data-type' => 'json', :class => 'delete')
 
 = paginate @galleries

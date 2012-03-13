@@ -44,9 +44,9 @@ describe Admin::GalleriesController do
         assigns(:gallery).should be_persisted
       end
 
-      it "redirects to the created gallery's edit page" do
+      it "redirects to the list page" do
         post :create, :gallery => FactoryGirl.attributes_for(:gallery)
-        response.should redirect_to(edit_admin_gallery_url(Gallery.last))
+        response.should redirect_to(admin_galleries_path)
       end
     end
   end
@@ -63,9 +63,9 @@ describe Admin::GalleriesController do
         assigns(:gallery).should eq(@gallery)
       end
 
-      it "redirects to the updated gallery's edit page" do
+      it "redirects to the list page" do
         put :update, :id => @gallery.id, :gallery => FactoryGirl.attributes_for(:gallery)
-        response.should redirect_to(edit_admin_gallery_url(@gallery))
+        response.should redirect_to(admin_galleries_path)
       end
     end
 
@@ -88,7 +88,7 @@ describe Admin::GalleriesController do
 
     it "redirects to the galleries list" do
       delete :destroy, :id => @gallery.id
-      response.should redirect_to(admin_galleries_url)
+      response.should redirect_to(admin_galleries_path)
     end
   end
 

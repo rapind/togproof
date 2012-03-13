@@ -1,16 +1,14 @@
 - content_for :title, "#{controller.action_name.titleize} Gallery"
 - content_for :sidebar do
-  %p Enter a descriptive title for the gallery. I.e. Newborn Session
+  %p Enter a descriptive name for the gallery. I.e. Newborn Session
   %p The "Expires on" field limits how long the client can view this gallery and the photos within it.
   %p When adding photos you can select more than one at a time by holding down your SHIFT or CONTROL / COMMAND key.
 
 = render "admin/shared/error_messages", :target => @gallery
 
-= form.input :title, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Give your gallery a meaningful title. Like "Jim\'s Wedding"'
+= form.input :name, :hint => 'Give your gallery a meaningful name. Like "Jim\'s Wedding"'
 = form.input 'photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload many photos by using your shift and control keys.'
 = form.input :expires_on, :as => :string, :input_html => { :class => 'date_picker', :value => @gallery.expires_on.strftime('%B %d, %Y') }, :hint => 'Select the date when the gallery should expire.'
 
-.actions
-  = form.button :submit, :class => 'primary'
-  &nbsp;
-  = link_to('Cancel', collection_path, :class => 'btn')
+.form-actions
+  = form.button :submit, :class => 'btn btn-primary'

@@ -1,23 +1,21 @@
-- content_for :title, 'Site Settings'
+- content_for :title, 'Application Settings'
 - content_for :sidebar do
   %p The information you enter here is available in some areas of the site and also within system generated email notifications to your clients.
   %p Click the "Update Settings" button when you're done.
 
-= simple_form_for(@photographer, :url => admin_photographer_path, :method => :put, :wrapper => :inline) do |form|
+= simple_form_for(@photographer, :url => admin_photographer_path, :method => :put, :html => { :class => 'form-horizontal' }) do |form|
   = render "admin/shared/error_messages", :target => @photographer
 
-  = form.input :email, :input_html => { :class => 'validate[required,custom[email]]' }, :hint => 'Enter your email address.'
-  = form.input :name, :input_html => { :class => 'validate[required,length[3,100]]' }, :hint => 'Enter your business name.'
-  = form.input :phone, :input_html => { :class => 'validate[optional,length[7,20]]' }, :hint => 'Optionally enter your business phone number.'
-  = form.input :blog_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your blog if you have one.'
-  = form.input :google_analytics_key, :input_html => { :class => 'validate[optional,length[10,20]]' }, :hint => 'Enter your google analytics key if you have one.'
-  = form.input :facebook_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Facebook page if you have one.'
-  = form.input :twitter_url, :input_html => { :class => 'validate[optional,length[10,255]]' }, :hint => 'Enter the URL to your Twitter profile if you have one.'
-  = form.input :disqus_short_name, :input_html => { :class => 'validate[optional,length[2,64]]' }, :hint => 'Enter you DISQUS short name in order to support comments.'
-  = form.input :logo, :input_html => { :class => 'string' }, :hint => 'Upload your logo.'
-  - if @photographer.logo?
-    .input= link_to(image_tag(@photographer.logo.thumb.url, :style => "border: 1px solid #aaa; margin-bottom: 10px;"), @photographer.logo.url, :rel => 'lightbox')
-  = form.input :conversion_code, :input_html => { :class => 'brief validate[optional,length[10,9000]]' }, :hint => 'Paste the conversion code to be called after a contact submission if you have any (I.e. Google Adwords).'
+  = form.input :email, :required => true, :hint => 'Your business email address.'
+  = form.input :name, :hint => 'Your business name.'
+  = form.input :phone, :hint => 'Your business phone number if you want to show it.'
+  = form.input :description, :hint => 'A brief summary of the services you provide to be displayed on the home page below the slide show.'
+  = form.input :portfolio_url, :hint => 'The URL to the portfolio site to use instead of the GrokPhoto provided portfolio.'
+  = form.input :blog_url, :hint => 'The URL to your blog if you have one.'
+  = form.input :google_analytics_key, :hint => 'Your google analytics key if you have one.'
+  = form.input :facebook_url, :hint => 'The URL to your Facebook page if you have one.'
+  = form.input :twitter_url, :hint => 'The URL to your Twitter profile if you have one.'
+  = form.input :conversion_code, :hint => 'Paste the conversion code to be called after a contact submission if you have any (I.e. Google Adwords).'
 
-  .actions
-    = form.button :submit, :class => 'primary'
+  .form-actions
+    = form.button :submit, 'Update Settings', :class => 'btn-primary'

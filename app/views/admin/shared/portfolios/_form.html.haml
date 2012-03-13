@@ -15,7 +15,7 @@
 = render "admin/shared/error_messages", :target => @portfolio
 
 %div{ :style => "width:50%; float:left;" }
-  = form.input :title, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Name your portfolio. I.e. "Newborns"'
+  = form.input :name, :input_html => { :class => 'validate[required,length[2,64]]' }, :hint => 'Name your portfolio. I.e. "Newborns"'
   = form.input :cover, :input_html => { :class => 'string' }, :hint => 'Upload the main cover image. Should be 960x540 pixels.'
 
 %div{ :style => "width:50%; float:left;" }

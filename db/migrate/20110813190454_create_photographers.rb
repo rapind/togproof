@@ -11,19 +11,16 @@ class CreatePhotographers < ActiveRecord::Migration
       # t.confirmable
 
       t.string :name, :null => false, :limit => 100
-      t.text :description, :null => false
       t.string :phone, :limit => 22
-      t.string :logo
-
-      t.string :blog_url
-      t.string :facebook_url
-      t.string :twitter_url
+      t.text :description
+            
+      t.string :portfolio_url, :limit => 512
+      t.string :blog_url, :limit => 512
+      t.string :facebook_url, :limit => 255
+      t.string :twitter_url, :limit => 255
       t.string :google_analytics_key, :limit => 16
       t.string :disqus_short_name, :limit => 64
       t.text :conversion_code
-
-      t.integer :photos_count, :null => false, :default => 0
-      t.integer :portfolio_photos_count, :null => false, :default => 0
 
       t.timestamps
     end

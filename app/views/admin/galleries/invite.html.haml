@@ -1,0 +1,11 @@
+- content_for :title, "#{controller.action_name.titleize} to Gallery"
+- content_for :sidebar do
+  %p Enter the email address of your client and we'll send them instructions with a secure link for viewing their gallery.
+  
+= simple_form_for(@gallery, :url => send_invite_admin_gallery_path(@gallery), :method => :put, :html => { :class => 'form-vertical' }) do |form|
+  = form.input :email, :hint => 'Enter the email address of your client.'
+  
+  .form-actions
+    = form.button :submit, 'Send Gallery', :class => 'btn-primary'
+    &nbsp;
+    = link_to('Cancel', collection_path, :class => 'btn')

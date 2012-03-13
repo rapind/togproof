@@ -4,10 +4,7 @@ FactoryGirl.define do
     "person#{n}@example.com"
   end
   sequence :name do |n|
-    "Person #{n}"
-  end
-  sequence :title do |n|
-    "Title #{n}"
+    "Name #{n}"
   end
 
   factory :photographer do
@@ -18,26 +15,26 @@ FactoryGirl.define do
   end
 
   factory :page do
-    title
+    name
     body 'Factory body is at least 10 characters long.'
   end
 
   factory :portfolio do
-    title
+    name
   end
 
   factory :portfolio_photo do
     portfolio
-    title
+    name
   end
 
   factory :gallery do
-    title
+    name
   end
 
   factory :photo do
     gallery
-    title
+    name
   end
 
   factory :app_config do

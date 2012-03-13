@@ -1,40 +1,38 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | GrokPhoto Administration"
-    = stylesheet_link_tag 'admin'
+    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | #{photographer.name} Administration"
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body{ :class => "#{yield(:body_class).presence}" }
-  %header.master
-    .topbar
-      .topbar-inner
-        .container
-          = link_to('GrokPhoto Administration', admin_path, :class => 'brand')
-          %ul.nav
-            - if photographer_signed_in?
-              %li= link_to "Galleries", admin_galleries_path, :class => ((controller.controller_name == 'galleries' or controller.controller_name == 'photos') ? 'active' : '')
-              %li= link_to "Settings", edit_admin_photographer_path, :class => (controller.controller_name == 'photographers' ? 'active' : '')
-              %li.logout= link_to 'Logout', destroy_photographer_session_path, :method => :delete
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        %ul.nav
+          - if photographer_signed_in?
+            %li{ :class => controller.controller_name == 'galleries' ? 'active' : '' }= link_to 'Galleries', admin_galleries_path
+            %li{ :class => controller.controller_name == 'photographers' ? 'active' : '' }= link_to 'Settings', edit_admin_photographer_path
+            %li.divider-vertical
+            %li= link_to 'Logout', destroy_photographer_session_path, :method => :delete
+        .pull-right= link_to('GrokPhoto Administration', admin_path, :class => 'brand')
   .container
     - if notice
-      .alert-message.block-message.success.fade.in{ :'data-alert' => 'alert' }
-        %a.close{ :href => '#' } ×
+      .alert.alert-block{ :'data-dismiss' => 'alert' }
+        %a.close ×
         %p= notice
     .page-header
       %h1= yield(:title).presence || 'Home'
     .row
-      .span4
-        .well
-          %h2 Instructions
-          - if content_for?(:sidebar)
+      - if content_for?(:sidebar)
+        .span3
+          .well
+            %h2 Instructions
             = yield(:sidebar)
-          - else
-            %p This is the administration area for your site.
-            %p This area is used to provide pertinent information about the tasks you're currently working on.
-          %p &nbsp;
-          %p &nbsp;
-      .span12= yield
-  = javascript_include_tag 'admin'
-
+            %p &nbsp;
+            %p &nbsp;
+        .span9= yield
+      - else
+        .span12= yield
   #footer.container
     &copy; #{link_to('GrokPhoto', 'http://grokphoto.org', :target => '_blank')}, 2011. All Rights Reserved.
