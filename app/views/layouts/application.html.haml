@@ -15,9 +15,7 @@
           %li= link_to('Kids', '#')
           %li= link_to('Family', '#')
           %li.divider-vertical
-          %li= link_to('Pricing', '#')
-          %li= link_to('About Me', '#')
-          %li= link_to('Contact', '#')
+          %li{ :class => controller.controller_name == 'contact_requests' ? 'active' : '' }= link_to('Contact', new_contact_request_path)
           - if photographer.blog_url
             %li= link_to('Blog', photographer.blog_url)
         .pull-right= link_to(photographer.name, root_path, :class => 'brand')

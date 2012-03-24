@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Admin::GalleriesController do
-  describe "admin routing" do
+  describe "routing" do
 
     it "routes to #index" do
       get("/admin/galleries").should route_to("admin/galleries#index")

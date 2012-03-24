@@ -13,10 +13,9 @@ describe Photographer do
     it { should validate_presence_of(:password) }
     it { should validate_presence_of(:name) }
     it { should ensure_length_of(:name).is_at_least(3).is_at_most(100) }
-    it { should validate_presence_of(:description) }
     it { should ensure_length_of(:description).is_at_least(10).is_at_most(8000) }
     it { should ensure_length_of(:phone).is_at_least(7).is_at_most(20) }
-    it { should ensure_length_of(:blog_url).is_at_least(10).is_at_most(255) }
+    it { should ensure_length_of(:blog_url).is_at_least(10).is_at_most(512) }
     it { should ensure_length_of(:facebook_url).is_at_least(10).is_at_most(255) }
     it { should ensure_length_of(:twitter_url).is_at_least(10).is_at_most(255) }
     it { should ensure_length_of(:disqus_short_name).is_at_least(2).is_at_most(64) }

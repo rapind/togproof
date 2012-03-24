@@ -4,6 +4,9 @@ Grokphoto::Application.routes.draw do
   match 'timestamp' => 'home#timestamp' # used to keep passenger spooled up in prod
 
   resources :galleries
+  resources :contact_requests, :only => [:new, :create] do
+    get :thanks, :on => :collection
+  end
 
   devise_for :photographers
 
