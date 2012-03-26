@@ -7,8 +7,8 @@
 = render "shared/error_messages", :target => @private_gallery
 
 = form.input :name, :hint => 'Give your private gallery a meaningful name. Like "Jim\'s Wedding"'
-= form.input 'photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload multiple photos at once by using your shift or control / command keys.'
 = form.input :expires_on, :as => :string, :input_html => { :class => 'date_picker', :value => @private_gallery.expires_on.strftime('%B %d, %Y') }, :hint => 'Select the date when the gallery should expire.'
+= form.input 'photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload multiple photos at once by using your shift or control / command keys.'
 
 .form-actions
   = form.button :submit, :class => 'btn btn-primary'
