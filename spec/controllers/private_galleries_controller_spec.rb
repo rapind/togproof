@@ -15,7 +15,7 @@ describe PrivateGalleriesController do
 
     it "should alert the user that the private_gallery couldn't be found when the ID is used instead of a secure token" do
       get :show, :id => @private_gallery.id
-      flash[:alert].should eq("Unable to find that private_gallery.")
+      flash[:alert].should eq("Unable to find that private gallery.")
     end
 
   end

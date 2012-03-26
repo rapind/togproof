@@ -1,0 +1,15 @@
+- content_for :title, "#{controller.action_name.titleize} Page"
+- content_for :sidebar do
+  %p Enter a descriptive name for the page. I.e. About Me.
+  %p Upload an image that will accompany your body content.
+  %p It's advisable that you fill out keywords and body with relevant content in order to list higher for related terms in search engines.
+
+= render "shared/error_messages", :target => @page
+
+= form.input :name, :hint => 'Give your page a meaningful name. Like "Pricing" or "About me"'
+= form.input :keywords, :hint => 'Enter some keywords that pertain to this page. I.e. pricing, availability, booking, etc.'
+= form.input :image, :hint => 'You may upload an image to accompany the body text.'
+= form.input :body, :hint => 'The contents of the page. You may use markdown.'
+
+.form-actions
+  = form.button :submit, :class => 'btn btn-primary'

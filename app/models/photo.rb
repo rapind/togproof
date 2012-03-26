@@ -3,6 +3,7 @@ class Photo < ActiveRecord::Base
   # ****
   # Associations
   belongs_to :private_gallery, :counter_cache => true
+  belongs_to :gallery, :counter_cache => true
 
   # ****
   # Validations
@@ -10,9 +11,9 @@ class Photo < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :private_gallery_id, :name, :image, :image_cache
+  attr_accessible :private_gallery_id, :gallery_id, :name, :photo, :photo_cache
 
-  # Photo attachment.
+  # Photo attachment
   mount_uploader :photo, PhotoUploader
 
   before_validation :set_name

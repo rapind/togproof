@@ -3,7 +3,7 @@
   %p The information you enter here is available in some areas of the site and also within system generated email notifications to your clients.
   %p Click the "Update Settings" button when you're done.
 
-= simple_form_for(@photographer, :url => admin_photographer_path, :method => :put, :html => { :class => 'form-horizontal' }) do |form|
+= simple_form_for(@photographer, :url => admin_photographer_path, :method => :put, :html => { :class => 'form-vertical' }) do |form|
   = render "shared/error_messages", :target => @photographer
 
   = form.input :email, :required => true, :hint => 'Your business email address.'

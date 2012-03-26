@@ -28,12 +28,15 @@ FactoryGirl.define do
     name
   end
 
+  factory :gallery do
+    name
+  end
+  
   factory :private_gallery do
     name
   end
 
   factory :photo do
-    private_gallery
     name
   end
 

@@ -3,13 +3,13 @@ class Page < ActiveRecord::Base
   # ****
   # Validations
   validates :name, :presence => true, :length => { :within => 2..32 }
-  validates :body, :presence => true
+  validates :body, :presence => true, :length => { :minimum => 10 }
 
   # ****
   # Mass-assignment protection
   attr_accessible :name, :body, :image, :image_cache, :remove_image
 
-  # Image attachment.
+  # Image attachment
   mount_uploader :image, ImageUploader
   
   # ****
@@ -28,7 +28,7 @@ class Page < ActiveRecord::Base
 
   def self.cached
     Rails.cache.fetch(CACHED, :expires_in => 1.day) do
-      Page.order(:name).all
+      self.order(:name).all
     end
   end
 

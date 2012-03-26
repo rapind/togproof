@@ -2,7 +2,7 @@ class Admin::PhotosController < Admin::HomeController
   inherit_resources
   actions :destroy
   respond_to :json
-  belongs_to :private_gallery
+  belongs_to :gallery, :private_gallery, :optional => true
 
   def destroy
     destroy! do

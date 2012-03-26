@@ -29,7 +29,7 @@ class PrivateGallery < ActiveRecord::Base
   
   # Multi-file uploads
   def photos_attrs=(attrs)
-    attrs.each { |attr| self.photos.build(:image => attr) }
+    attrs.each { |attr| self.photos.build(:photo => attr) }
   end
   
   # Determine if the private gallery has expired.

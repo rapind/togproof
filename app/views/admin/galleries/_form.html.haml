@@ -1,0 +1,17 @@
+- content_for :title, "#{controller.action_name.titleize} Gallery"
+- content_for :sidebar do
+  %p Enter a descriptive name for the gallery. I.e. Newborn
+  %p Upload a cover image that will show up as a home page slides.
+  %p When adding photos you can select more than one at a time by holding down your shift or control / command key and selecting photos.
+  %p It's advisable that you fill out keywords and description with relevant content in order to list higher for related terms in search engines.
+
+= render "shared/error_messages", :target => @gallery
+
+= form.input :name, :hint => 'Give your private gallery a meaningful name. Like "Jim\'s Wedding"'
+= form.input :cover, :hint => 'Upload a cover image.'
+= form.input 'photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload many photos by using your shift and control keys.'
+= form.input :keywords, :hint => 'Enter some keywords that pertain to this gallery. I.e. portrait, family, kids, lifestyle, etc.'
+= form.input :description, :hint => 'Describe the gallery.'
+
+.form-actions
+  = form.button :submit, :class => 'btn btn-primary'
