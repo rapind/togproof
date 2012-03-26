@@ -1,7 +1,7 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Gallery'}  | #{photographer.name}"
+    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Private Gallery'}  | #{photographer.name}"
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -9,7 +9,7 @@
   .navbar.navbar-fixed-top
     .navbar-inner
       .container
-        .pull-right= "#{yield(:page_title).presence || 'Gallery'} | #{photographer.name}"
+        .pull-right= "#{yield(:page_title).presence || 'Private Gallery'} | #{photographer.name}"
   .container
     - if notice
       .alert.alert-block{ :'data-dismiss' => 'alert' }

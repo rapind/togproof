@@ -1,0 +1,29 @@
+- content_for :title do
+  Private Galleries
+  .pull-right
+    = form_for :search, :url => collection_path, :method => :get, :class => 'form-search' do |form|
+      = form.text_field :q, :placeholder => 'Search', :class => 'input-medium search-query', :value => defined?(params[:search][:q]) ? params[:search][:q] : ''
+  
+%p= link_to(raw("<i class='icon-plus icon-white'></i> New Private Gallery"), new_resource_path, :class => 'btn btn-success')
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Created on
+      %th Expires on
+      %th Status
+      %th{ :colspan => 4, :width => '20%' } Actions
+  %tbody
+    - @private_galleries.each do |obj|
+      %tr
+        %td= obj.name
+        %td= obj.created_at.strftime("%b %d, %Y")
+        %td= obj.expires_on.strftime("%b %d, %Y")
+        %td= obj.status
+        %td= link_to('View', private_gallery_path(obj.token))
+        %td= link_to('Invite', invite_admin_private_gallery_path(obj))
+        %td= link_to('Edit', edit_resource_path(obj))
+        %td= link_to('Delete', resource_path(obj), :method => :delete, :confirm => 'Are you sure?', :remote => true, 'data-type' => 'json', :class => 'delete')
+
+= paginate @private_galleries

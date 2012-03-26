@@ -11,7 +11,7 @@ describe Admin::PhotosController do
     it "destroys the requested photo" do
       photo = FactoryGirl.create(:photo)
       expect {
-        delete :destroy, :gallery_id => photo.gallery_id, :id => photo.id
+        delete :destroy, :private_gallery_id => photo.private_gallery_id, :id => photo.id
       }.to change(Photo, :count).by(-1)
     end
   end

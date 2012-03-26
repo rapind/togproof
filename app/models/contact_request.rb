@@ -4,11 +4,11 @@ class ContactRequest < ActiveRecord::Base
   # Validations
   validates :email, :presence => true, :length => { :within => 5..100 }
   validates :name, :length => { :within => 2..64, :allow_blank => true }
-  validates :subject, :presence => true, :length => { :within => 5..128 }
+  validates :message, :presence => true, :length => { :minimum => 10 }
 
   # ****
   # Mass-assignment protection
-  attr_accessible :email, :name, :subject, :body
+  attr_accessible :email, :name, :message
 
   # ****
   # Named scopes

@@ -9,19 +9,23 @@ p = Photographer.create(
   :google_analytics_key => 'UA-2450369-23'
 )
 
-puts "Creating galleries"
-Gallery.create!(:name => 'Family Session', :expires_on => 1.week.from_now)
-gallery = Gallery.create!(:name => 'Newborn Session', :expires_on => 4.weeks.from_now)
+puts "Creating private galleries"
+PrivateGallery.create!(:name => 'Family Session', :expires_on => 1.week.from_now)
+private_gallery = PrivateGallery.create!(:name => 'Newborn Session', :expires_on => 4.weeks.from_now)
 
-puts "Uploading gallery images"
+puts "Uploading private gallery images"
 base_dir = Rails.root.join('creatives', 'galleries')
 file_names = Dir.glob("#{base_dir}/*.jpg")
-gallery = Gallery.first
+private_gallery = PrivateGallery.first
 file_names.each_with_index do |file_name, idx|
-  puts "Uploading gallery photo: #{file_name}"
+  puts "Uploading private gallery photo: #{file_name}"
   begin
-    gallery.photos.create!(:image => File.new(file_name))
+    private_gallery.photos.create!(:photo => File.new(file_name))
   rescue Exception => e
     puts e.message
   end
 end
+
+puts "Creating pages"
+Page.create(:name => "About", :image => File.new(Rails.root.join('creatives', 'pages', 'about.png')), :body => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+Page.create(:name => "Pricing", :image => File.new(Rails.root.join('creatives', 'pages', 'about.png')), :body => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")

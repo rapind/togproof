@@ -1,5 +1,0 @@
-%li{ :id => "obj_#{photo.to_param}"}
-  %div
-    = truncate(photo.name, :length => 22)
-    = link_to(image_tag('cancel.png'), admin_gallery_photo_path(@gallery, photo), :method => :delete, :remote => true, :class => 'delete')
-  = raw "#{link_to(image_tag(photo.image.thumb.url, :size => '150x100'), photo.image.url, :title => photo.name, :rel => 'lightbox')}"
