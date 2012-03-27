@@ -25,7 +25,7 @@ class Photo < ActiveRecord::Base
 
     # If no name has been set, use the image's file name but spruce it up a little.
     def set_name
-      self.name = self.photo.name[0, self.photo.name.rindex('.')].humanize.titleize if self.name.blank? and !self.photo.name.blank?
+      self.name = self.photo.name[0, self.photo.name.rindex('.')].humanize.titleize if self.name.blank? and self.photo_uid and !self.photo.name.blank?
     end
 
 end

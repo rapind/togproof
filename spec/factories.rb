@@ -30,6 +30,7 @@ FactoryGirl.define do
 
   factory :gallery do
     name
+    cover File.new(Rails.root.join('creatives', 'galleries', 'family.jpg'))
   end
   
   factory :private_gallery do
@@ -38,6 +39,7 @@ FactoryGirl.define do
 
   factory :photo do
     name
+    photo File.new(Rails.root.join('creatives', 'galleries', 'family', 'family-01.jpg'))
   end
 
   factory :app_config do
