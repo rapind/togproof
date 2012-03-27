@@ -11,6 +11,7 @@
       .container
         %ul.nav
           - if photographer_signed_in?
+            %li{ :class => controller.controller_name == 'events' ? 'active' : '' }= link_to 'Dashboard', admin_path
             %li{ :class => controller.controller_name == 'private_galleries' ? 'active' : '' }= link_to 'Private Galleries', admin_private_galleries_path
             %li{ :class => controller.controller_name == 'galleries' ? 'active' : '' }= link_to 'Galleries', admin_galleries_path
             %li{ :class => controller.controller_name == 'pages' ? 'active' : '' }= link_to 'Pages', admin_pages_path
