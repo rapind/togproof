@@ -6,7 +6,8 @@ p = Photographer.create(
   :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   :blog_url => 'http://rapin.com',
   :twitter_url => 'http://twitter.com/#!/rapind',
-  :google_analytics_key => 'UA-2450369-23'
+  :google_analytics_key => 'UA-2450369-23',
+  :time_zone => 'Eastern Time (US & Canada)'
 )
 
 puts "Creating galleries"

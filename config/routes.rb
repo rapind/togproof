@@ -12,9 +12,10 @@ Grokphoto::Application.routes.draw do
 
   devise_for :photographers
 
-  match 'admin' => 'admin/private_galleries#index'
+  match 'admin' => 'admin/events#index'
   namespace :admin do
-    resource :photographer
+    resource :events, :only => :index
+    resource :photographer, :only => [:edit, :update]
     resources :pages
     resources :galleries do
       resources :photos

@@ -2,18 +2,19 @@
 - content_for :sidebar do
   %p Enter a descriptive name for the gallery. I.e. Newborn
   %p Upload a cover image that will show up as a home page slides.
-  %p When adding photos you can select more than one at a time by holding down your shift or control / command key and selecting photos.
   %p It's advisable that you fill out keywords and description with relevant content in order to list higher for related terms in search engines.
+  %p Finally, upload the photos that best showcase your work. We recommend limiting the number of photos in a gallery to around 12 or less, otherwise you risk overwhelming potential customers.
+  %p When adding photos you can select more than one at a time by holding down your shift or control / command key and selecting photos.
 
 = render "shared/error_messages", :target => @gallery
 
 = form.input :name, :hint => 'Give your private gallery a meaningful name. Like "Jim\'s Wedding"'
-= form.input :cover, :label => 'Cover photo', :hint => 'Upload a cover image.'
+= form.input :cover, :as => :file, :label => 'Cover photo', :hint => 'Upload a cover image.'
 = form.hidden_field :retained_cover
-= link_to( image_tag(@gallery.cover.thumb('100x150#').url), @gallery.cover.url, :rel => 'lightbox' ) if @gallery.cover_uid
-= form.input 'photos_attrs', :label => 'Upload photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload many photos by using your shift and control keys.'
+= link_to( image_tag(@gallery.cover.thumb('180x100').url), @gallery.cover.url, :rel => 'lightbox' ) if @gallery.cover_uid
 = form.input :keywords, :hint => 'Enter some keywords that pertain to this gallery. I.e. portrait, family, kids, lifestyle, etc.'
 = form.input :description, :hint => 'Describe the gallery.'
+= form.input 'photos_attrs', :label => 'Upload photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload many photos by using your shift and control keys.'
 
 .form-actions
   = form.button :submit, :class => 'btn btn-primary'

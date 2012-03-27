@@ -40,4 +40,19 @@ class Page < ActiveRecord::Base
     Rails.cache.delete(CACHED)
   end
   
+  # ****
+  # Logging
+  after_create :log_create_event
+  after_update :log_update_event
+  
+  private #----
+    
+    def log_create_event
+      Event.create(:description => "Created page: #{name}")
+    end
+    
+    def log_update_event
+      Event.create(:description => "Changed page: #{name}")
+    end
+    
 end

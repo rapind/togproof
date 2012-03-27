@@ -17,11 +17,30 @@ class Gallery < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :name, :keywords, :description, :cover
+  attr_accessible :name, :keywords, :description, :cover, :photos_attrs
   
   # Multi-file uploads
   def photos_attrs=(attrs)
     attrs.each { |attr| self.photos.build(:photo => attr) }
   end
   
+  # ****
+  # Default ordering
+  default_scope :order => 'position'
+  
+  # ****
+  # Logging
+  after_create :log_create_event
+  after_update :log_update_event
+  
+  private #----
+    
+    def log_create_event
+      Event.create(:description => "Created gallery: #{name}")
+    end
+    
+    def log_update_event
+      Event.create(:description => "Changed gallery: #{name}")
+    end
+    
 end

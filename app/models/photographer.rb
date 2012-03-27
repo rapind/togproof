@@ -7,8 +7,9 @@ class Photographer < ActiveRecord::Base
   # ****
   # Validation
   validates :name, :presence => true, :length => { :within => 3..100 }
-  validates :description, :length => { :within => 10..8000, :allow_blank => true }
   validates :phone, :length => { :within => 7..20, :allow_blank => true }
+  validates :description, :length => { :within => 10..8000, :allow_blank => true }
+  validates :time_zone, :presence => true, :inclusion => { :in => ActiveSupport::TimeZone.zones_map.keys }
   validates :portfolio_url, :length => { :within => 10..512, :allow_blank => true }
   validates :blog_url, :length => { :within => 10..512, :allow_blank => true }
   validates :facebook_url, :length => { :within => 10..255, :allow_blank => true }
@@ -18,13 +19,13 @@ class Photographer < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :email, :password, :name, :description, :phone, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :conversion_code, :remember_me
+  attr_accessible :email, :password, :name, :time_zone, :description, :phone, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :conversion_code, :remember_me
 
   # Make sure we always have an auth token assigned.
   before_save :ensure_authentication_token
   
+  # ****
   # Caching
-  # -------
   CACHED = 'photographer'
   
   after_save :clear_cache
@@ -43,4 +44,14 @@ class Photographer < ActiveRecord::Base
     Rails.cache.delete(CACHED)
   end
   
+  # ****
+  # Logging
+  after_update :log_update_event
+  
+  private #----
+    
+    def log_update_event
+      Event.create(:description => "Changed site settings.")
+    end
+    
 end

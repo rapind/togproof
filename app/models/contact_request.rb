@@ -19,4 +19,14 @@ class ContactRequest < ActiveRecord::Base
   # Pagination
   paginates_per 16
   
+  # ****
+  # Logging
+  after_create :log_create_event
+  
+  private #----
+    
+    def log_create_event
+      Event.create(:description => "Contact request from: #{email}")
+    end
+    
 end

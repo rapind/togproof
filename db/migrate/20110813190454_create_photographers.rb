@@ -12,8 +12,9 @@ class CreatePhotographers < ActiveRecord::Migration
 
       t.string :name, :null => false, :limit => 100
       t.string :phone, :limit => 22
+      t.string :time_zone, :limit => 40
       t.text :description
-            
+      
       t.string :portfolio_url, :limit => 512
       t.string :blog_url, :limit => 512
       t.string :facebook_url, :limit => 255

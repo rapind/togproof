@@ -3,7 +3,6 @@ class PrivateGallery < ActiveRecord::Base
   # ****
   # Associations
   has_many :photos, :dependent => :destroy
-  has_many :private_gallery_events, :dependent => :destroy
 
   # ****
   # Virtual attribute for sending email invitations.
@@ -37,10 +36,6 @@ class PrivateGallery < ActiveRecord::Base
     (self.expires_on and self.expires_on < Date.today) || false
   end
 
-  def status
-    private_gallery_events.order('created_at desc').limit(1).first.description rescue nil
-  end
-
   # ****
   # Callbacks
   before_create :build_token
@@ -55,11 +50,11 @@ class PrivateGallery < ActiveRecord::Base
     end
     
     def log_create_event
-      private_gallery_events.create(:description => 'Created')
+      Event.create(:description => "Created private gallery: #{name}")
     end
     
     def log_update_event
-      private_gallery_events.create(:description => 'Updated')
+      Event.create(:description => "Changed private gallery: #{name}")
     end
 
 end

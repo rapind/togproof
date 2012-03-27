@@ -10,17 +10,17 @@
   %thead
     %tr
       %th Name
+      %th Photos
       %th Created on
       %th Expires on
-      %th Status
       %th{ :colspan => 4, :width => '20%' } Actions
   %tbody
     - @private_galleries.each do |obj|
       %tr
         %td= obj.name
+        %td= obj.photos.size
         %td= obj.created_at.strftime("%b %d, %Y")
-        %td= obj.expires_on.strftime("%b %d, %Y")
-        %td= obj.status
+        %td= obj.expires_on > Time.zone.now ? obj.expires_on.strftime("%b %d, %Y") : 'Expired'
         %td= link_to('View', private_gallery_path(obj.token))
         %td= link_to('Invite', invite_admin_private_gallery_path(obj))
         %td= link_to('Edit', edit_resource_path(obj))
