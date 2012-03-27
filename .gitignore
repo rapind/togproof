@@ -7,5 +7,6 @@ log/*.*
 tmp/*.txt
 tmp/**/*
 public/assets
+public/system/dragonfly
 vendor/gems/**/*
 *.swp
