@@ -7,10 +7,10 @@ class Page < ActiveRecord::Base
 
   # ****
   # Mass-assignment protection
-  attr_accessible :name, :body, :image, :image_cache, :remove_image
+  attr_accessible :name, :keywords, :body, :image, :retained_image
 
   # Image attachment
-  mount_uploader :image, ImageUploader
+  image_accessor :image
   
   # ****
   # Pagination

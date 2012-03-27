@@ -9,6 +9,8 @@
 
 = form.input :name, :hint => 'Give your private gallery a meaningful name. Like "Jim\'s Wedding"'
 = form.input :cover, :label => 'Cover photo', :hint => 'Upload a cover image.'
+= form.hidden_field :retained_cover
+= link_to( image_tag(@gallery.cover.thumb('100x150#').url), @gallery.cover.url, :rel => 'lightbox' ) if @gallery.cover_uid
 = form.input 'photos_attrs', :label => 'Upload photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload many photos by using your shift and control keys.'
 = form.input :keywords, :hint => 'Enter some keywords that pertain to this gallery. I.e. portrait, family, kids, lifestyle, etc.'
 = form.input :description, :hint => 'Describe the gallery.'

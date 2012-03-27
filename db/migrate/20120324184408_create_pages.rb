@@ -4,7 +4,8 @@ class CreatePages < ActiveRecord::Migration
       t.string :name, :null => false, :limit => 32
       t.string :keywords, :limit => 255
       t.text :body, :null => false
-      t.string :image
+      t.string :image_uid
+      t.string :image_name
 
       t.timestamps
     end

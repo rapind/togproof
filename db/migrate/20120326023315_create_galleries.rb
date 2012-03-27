@@ -4,7 +4,8 @@ class CreateGalleries < ActiveRecord::Migration
       t.string :name, :null => false, :limit => 100
       t.string :keywords, :limit => 255
       t.text :description
-      t.string :cover
+      t.string :cover_uid
+      t.string :cover_name
       
       t.integer :photos_count, :null => false, :default => 0
 

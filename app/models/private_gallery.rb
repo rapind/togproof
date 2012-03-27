@@ -41,6 +41,8 @@ class PrivateGallery < ActiveRecord::Base
     private_gallery_events.order('created_at desc').limit(1).first.description rescue nil
   end
 
+  # ****
+  # Callbacks
   before_create :build_token
   after_create :log_create_event
   after_update :log_update_event

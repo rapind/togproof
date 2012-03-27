@@ -4,7 +4,8 @@ class CreatePhotos < ActiveRecord::Migration
       t.references :private_gallery
       t.references :gallery
       t.string :name, :null => false, :limit => 100
-      t.string :photo
+      t.string :photo_uid
+      t.string :photo_name
       t.integer :view_count, :null => false, :default => 0
 
       t.timestamps

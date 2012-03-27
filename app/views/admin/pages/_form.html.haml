@@ -8,7 +8,9 @@
 
 = form.input :name, :hint => 'Give your page a meaningful name. Like "Pricing" or "About me"'
 = form.input :keywords, :hint => 'Enter some keywords that pertain to this page. I.e. pricing, availability, booking, etc.'
-= form.input :image, :hint => 'You may upload an image to accompany the body text.'
+= form.input :image, :as => :file, :hint => 'You may upload an image to accompany the body text.'
+= form.hidden_field :retained_image
+= link_to( image_tag(@page.image.thumb('100x150#').url), @page.image.url, :rel => 'lightbox' ) if @page.image_uid
 = form.input :body, :hint => 'The contents of the page. You may use markdown.'
 
 .form-actions
