@@ -1,4 +1,5 @@
 class Gallery < ActiveRecord::Base
+  acts_as_list
   
   # ****
   # Associations
