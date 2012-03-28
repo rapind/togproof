@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 describe Admin::GalleriesController do
-
-  before do
+  
+  before(:all) do
     @photographer = FactoryGirl.create(:photographer)
-    sign_in @photographer
+  end
 
+  before(:each) do
+    sign_in @photographer
     @gallery = FactoryGirl.create(:gallery)
   end
 
@@ -32,7 +34,7 @@ describe Admin::GalleriesController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Gallery" do
+      it "creates a new  Gallery" do
         expect {
           post :create, :gallery => FactoryGirl.attributes_for(:gallery)
         }.to change(Gallery, :count).by(1)

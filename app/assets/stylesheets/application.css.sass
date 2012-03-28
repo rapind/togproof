@@ -61,12 +61,12 @@ abbr[title='required']
     width: 100px
   select[name*='(3i)'], select[name*='(4i)'], select[name*='(5i)']
     width: 60px
-  input[name*='[name]'], input[name*='url]'], input[name*='[email]']
-    width: 530px
+  input[name*='[name]'], input[name*='[keywords]'], input[name*='url]']
+    width: 690px
   input.boolean
     margin: 7px 10px 0 0
   textarea
-    width: 530px
+    width: 690px
     height: 450px
   textarea[name*='[description]'], textarea[name*='[summary]'], textarea[name*='[conversion_code]']
     height: 80px
@@ -99,21 +99,20 @@ ul.image_list
 
   li
     float: left
-    width: 150px
-    padding: 6px
+    width: 162px
     margin: 0 11px 11px 0
     border: 1px solid #aaa
-
     div.title
       padding: 5px
       margin-bottom: 5px
       background-color: #ddd
-
     div.draggable
       cursor: pointer
-
     a.delete
       float: right
+    a[rel='lightbox'] img
+      margin: 6px
+    
       
 #footer
   margin-top: 30px

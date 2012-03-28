@@ -1,0 +1,14 @@
+- content_for :title, "#{controller.action_name.titleize} Private Gallery"
+- content_for :sidebar do
+  %p Enter a descriptive name for the private gallery. I.e. Newborn Session
+  %p The "Expires on" field limits how long the client can view this private gallery and the photos within it.
+  %p When adding photos you can select more than one at a time by holding down your shift or control / command key and selecting photos.
+
+= render "shared/error_messages", :target => @private_gallery
+
+= form.input :name, :hint => 'Give your private gallery a meaningful name. Like "Jim\'s Wedding"'
+= form.input :expires_on, :as => :string, :input_html => { :class => 'date_picker', :value => @private_gallery.expires_on.strftime('%B %d, %Y') }, :hint => 'Select the date when the gallery should expire.'
+= form.input 'photos_attrs', :label => 'Upload Photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload multiple photos at once by using your shift or control / command keys.'
+
+.form-actions
+  = form.button :submit, :class => 'btn btn-primary'

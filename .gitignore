@@ -6,7 +6,7 @@ db/*.sqlite3
 log/*.*
 tmp/*.txt
 tmp/**/*
-public/uploads
 public/assets
+public/system/dragonfly
 vendor/gems/**/*
 *.swp

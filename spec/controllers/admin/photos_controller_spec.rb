@@ -7,11 +7,20 @@ describe Admin::PhotosController do
     sign_in @photographer
   end
 
-  describe "DELETE destroy" do
+  describe "DELETE destroy for a gallery" do
     it "destroys the requested photo" do
-      photo = FactoryGirl.create(:photo)
+      photo = FactoryGirl.create(:photo, :gallery => FactoryGirl.create(:gallery))
       expect {
-        delete :destroy, :gallery_id => photo.gallery_id, :id => photo.id
+        delete :destroy, :id => photo.id, :gallery_id => photo.gallery_id
+      }.to change(Photo, :count).by(-1)
+    end
+  end
+  
+  describe "DELETE destroy for a private gallery" do
+    it "destroys the requested photo" do
+      photo = FactoryGirl.create(:photo, :private_gallery => FactoryGirl.create(:private_gallery))
+      expect {
+        delete :destroy, :id => photo.id, :private_gallery_id => photo.private_gallery_id
       }.to change(Photo, :count).by(-1)
     end
   end

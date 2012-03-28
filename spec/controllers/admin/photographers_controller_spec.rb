@@ -2,8 +2,11 @@ require 'spec_helper'
 
 describe Admin::PhotographersController do
 
-  before do
+  before(:all) do
     @photographer = FactoryGirl.create(:photographer)
+  end
+  
+  before(:each) do
     sign_in @photographer
   end
 
@@ -21,7 +24,7 @@ describe Admin::PhotographersController do
         put :update, :photographer => {'these' => 'params'}
       end
 
-      it "assigns the requested photographer as @photographer" do
+      it "assigns the photographer as @photographer" do
         changed_name = 'Changed Name'
         put :update, :photographer => { :name => changed_name }
         assigns(:photographer).should eq(@photographer)

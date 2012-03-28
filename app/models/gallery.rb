@@ -1,63 +1,46 @@
 class Gallery < ActiveRecord::Base
+  acts_as_list
   
   # ****
   # Associations
   has_many :photos, :dependent => :destroy
-  has_many :gallery_events, :dependent => :destroy
-
-  # ****
-  # Virtual attribute for sending email invitations.
-  attr_accessor :email
+  
+  # Cover image attachment
+  image_accessor :cover
   
   # ****
   # Validations
-  validates :name, :presence => true, :length => { :within => 2..100 }
-  validates :email, :length => { :within => 5..128, :allow_blank => true }
+  validates :name, :presence => true, :length => { :within => 2..100 }, :uniqueness => { :case_sensitive => false }
+  validates :keywords, :length => { :within => 2..255, :allow_blank => true }
+  validates :description, :length => { :within => 10..8000, :allow_blank => true }
+  validates :cover, :presence => true
 
   # ****
   # Mass-assignment protection
-  attr_accessible :name, :email, :expires_on, :photos_attrs
-
-  # ****
-  # Named scopes
-  scope :active, where("expires_on >= ?", Time.now)
-  scope :expired, where("expires_on < ?", Time.now)
-
-  # ****
-  # Pagination
-  paginates_per 16
+  attr_accessible :name, :keywords, :description, :cover, :photos_attrs
   
   # Multi-file uploads
   def photos_attrs=(attrs)
-    attrs.each { |attr| self.photos.build(:image => attr) }
+    attrs.each { |attr| self.photos.build(:photo => attr) }
   end
   
-  # Determine if the gallery has expired.
-  def expired?
-    (self.expires_on and self.expires_on < Date.today) || false
-  end
-
-  def status
-    gallery_events.order('created_at desc').limit(1).first.description rescue nil
-  end
-
-  before_create :build_token
+  # ****
+  # Default ordering
+  default_scope :order => 'position'
+  
+  # ****
+  # Logging
   after_create :log_create_event
   after_update :log_update_event
   
   private #----
-
-    # Secures galleries by using an unguessable token.
-    def build_token
-      self.token = Devise.friendly_token
-    end
     
     def log_create_event
-      gallery_events.create(:description => 'Created')
+      Event.create(:description => "Created gallery: #{name}")
     end
     
     def log_update_event
-      gallery_events.create(:description => 'Updated')
+      Event.create(:description => "Changed gallery: #{name}")
     end
-
+    
 end

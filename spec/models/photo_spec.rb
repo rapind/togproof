@@ -3,11 +3,10 @@ require 'spec_helper'
 describe Photo do
 
   context "validations" do
-    it { should validate_presence_of(:name) }
     it { should ensure_length_of(:name).is_at_most(100) }
   end
   
-  it "shoud be protected from mass attribute assignment" do
+  it "should be protected from mass attribute assignment" do
     photo = FactoryGirl.create(:photo)
     time = 2.days.ago
     photo.update_attributes( :created_at => time )

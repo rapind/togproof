@@ -30,9 +30,9 @@ gem 'acts_as_list', '~> 0.1.4'
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', :ref => "da92c45953"
 
 # Image uploads
-gem 'carrierwave', '~> 0.5.8'
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~> 0.9.11'
 gem 'fog', '~> 0.10.0'
-gem 'mini_magick', '~> 3.3'
 
 # Paging
 gem 'kaminari', '~> 0.13.0'

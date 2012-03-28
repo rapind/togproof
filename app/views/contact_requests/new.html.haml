@@ -1,0 +1,13 @@
+- content_for :title, 'Contact Me'
+- content_for :sidebar do
+  %h2 Get in touch
+  %p Please leave me your name, email, and a brief message and I'll get back to you as soon as possible.
+
+= simple_form_for(@contact_request, :url => collection_path, :html => { :class => 'form-vertical' }) do |form|
+  = render "shared/error_messages", :target => @contact_request
+  = form.input :name, :hint => 'Your name'
+  = form.input :email, :hint => 'Your email address so I can get back to you.'
+  = form.input :message, :hint => 'Your message.', :input_html => { :class => 'medium' }
+
+  .form-actions
+    = form.button :submit, 'Send Request', :class => 'btn btn-primary'

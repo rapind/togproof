@@ -1,14 +1,5 @@
 class GalleriesController < ApplicationController
+  inherit_resources
   respond_to :html
-
-  def show
-    @photographer = Photographer.first
-    @gallery = Gallery.find_by_token(params[:id])
-    if @gallery
-      render
-    else
-      redirect_to(root_path, :alert => "Unable to find that gallery.")
-    end
-  end
-
+  actions :show
 end
