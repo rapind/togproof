@@ -1,14 +1,14 @@
-class Page < ActiveRecord::Base
+class Post < ActiveRecord::Base
   
   # ****
   # Validations
-  validates :name, :presence => true, :length => { :within => 2..32 }
+  validates :title, :presence => true, :length => { :within => 2..128 }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :body, :presence => true, :length => { :minimum => 10 }
 
   # ****
   # Mass-assignment protection
-  attr_accessible :name, :keywords, :body, :image, :retained_image
+  attr_accessible :title, :keywords, :body, :image, :retained_image
 
   # Image attachment
   image_accessor :image
@@ -18,23 +18,23 @@ class Page < ActiveRecord::Base
   paginates_per 16
   
   def to_param
-    "#{id}-#{name}".parameterize
+    "#{id}-#{title}".parameterize
   end
   
   # Caching
   # -------
-  CACHED = 'pages'
+  CACHED = 'recent_posts'
   
   after_save :clear_cache
 
-  def self.cached
+  def self.recents
     Rails.cache.fetch(CACHED, :expires_in => 1.day) do
-      self.order(:name).all
+      self.order(:created_at).limit(4).all
     end
   end
 
   def clear_cache
-    Page.clear_cache
+    Post.clear_cache
   end
 
   def self.clear_cache
@@ -49,11 +49,11 @@ class Page < ActiveRecord::Base
   private #----
     
     def log_create_event
-      Event.create(:description => "Created page: #{name}")
+      Event.create(:description => "Created post: #{title}")
     end
     
     def log_update_event
-      Event.create(:description => "Changed page: #{name}")
+      Event.create(:description => "Changed post: #{title}")
     end
     
 end

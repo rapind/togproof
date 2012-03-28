@@ -9,7 +9,7 @@
   = form.input :email, :required => true, :hint => 'Your business email address.'
   = form.input :name, :hint => 'Your business name.'
   = form.input :phone, :hint => 'Your business phone number if you want to show it.'
-  = form.input :description, :hint => 'A brief summary of the services you provide to be displayed on the home page below the slide show.'
+  = form.input :description, :as => :text, :hint => 'A brief summary of the services you provide to be displayed on the home page below the slide show.'
   = form.input :time_zone, :collection => ActiveSupport::TimeZone.zones_map.keys, :hint => 'Please select your local time zone.'
   = form.input :portfolio_url, :hint => 'The URL to the portfolio site to use instead of the GrokPhoto provided portfolio.'
   = form.input :blog_url, :hint => 'The URL to your blog if you have one.'

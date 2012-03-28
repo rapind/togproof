@@ -3,19 +3,26 @@
     .row
       .span12
         .row
-          .span3
+          .span2
             %h4 Photo Galleries
             %ul.unstyled
               - galleries.each do |gallery|
                 %li= link_to(gallery.name, gallery_path(gallery))
-          .span3
-            %h4 Company Information
+          .span2
+            %h4 Company
             %ul.unstyled
               - pages.each do |page|
                 %li= link_to(page.name, page_path(page))
               %li= link_to('Contact', new_contact_request_path)
               %li= link_to('Blog', new_contact_request_path)
-          .span6
+          .span3
+            %h4 Recent Posts
+            %ul.unstyled
+              - pages.each do |page|
+                %li= link_to(page.name, page_path(page))
+              %li= link_to('Contact', new_contact_request_path)
+              %li= link_to('Blog', new_contact_request_path)
+          .span5
             %p= photographer.description
   #footer-floor
     .container

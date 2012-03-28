@@ -8,7 +8,7 @@ class Photographer < ActiveRecord::Base
   # Validation
   validates :name, :presence => true, :length => { :within => 3..100 }
   validates :phone, :length => { :within => 7..20, :allow_blank => true }
-  validates :description, :length => { :within => 10..8000, :allow_blank => true }
+  validates :description, :length => { :within => 10..255, :allow_blank => true }
   validates :time_zone, :presence => true, :inclusion => { :in => ActiveSupport::TimeZone.zones_map.keys }
   validates :portfolio_url, :length => { :within => 10..512, :allow_blank => true }
   validates :blog_url, :length => { :within => 10..512, :allow_blank => true }

@@ -6,11 +6,15 @@ FactoryGirl.define do
   sequence :name do |n|
     "Name #{n}"
   end
+  sequence :title do |n|
+    "Title #{n}"
+  end
 
   factory :photographer do
     email
     password 'factory-pwd'
     name
+    time_zone 'Eastern Time (US & Canada)'
     description 'Factory description is at least 10 characters long'
   end
 
@@ -18,14 +22,10 @@ FactoryGirl.define do
     name
     body 'Factory body is at least 10 characters long.'
   end
-
-  factory :portfolio do
-    name
-  end
-
-  factory :portfolio_photo do
-    portfolio
-    name
+  
+  factory :post do
+    title
+    body 'Factory body is at least 10 characters long.'
   end
 
   factory :gallery do
@@ -40,10 +40,6 @@ FactoryGirl.define do
   factory :photo do
     name
     photo File.new(Rails.root.join('creatives', 'galleries', 'families', 'family-01.jpg'))
-  end
-
-  factory :app_config do
-    name
   end
 
 end
