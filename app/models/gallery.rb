@@ -28,10 +28,34 @@ class Gallery < ActiveRecord::Base
   # Default ordering
   default_scope :order => 'position'
   
+  # Caching
+  # -------
+  CACHED = 'galleries'
+  
+  after_save :clear_cache
+
+  def self.cached
+    Rails.cache.fetch(CACHED, :expires_in => 1.day) do
+      self.all
+    end
+  end
+
+  def clear_cache
+    Gallery.clear_cache
+  end
+
+  def self.clear_cache
+    Rails.cache.delete(CACHED)
+  end
+  
   # ****
   # Logging
   after_create :log_create_event
   after_update :log_update_event
+  
+  def to_param
+    "#{id}-#{name}".parameterize
+  end
   
   private #----
     
