@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :photographer, :page_links
+  helper_method :photographer, :galleries, :pages
   before_filter :set_timezone
   
   protected #----
@@ -11,7 +11,12 @@ class ApplicationController < ActionController::Base
       @photographer = Photographer.cached
     end
     
-    def page_links
+    def galleries
+      return @galleries if defined?(@galleries)
+      @galleries = Gallery.cached
+    end
+    
+    def pages
       return @pages if defined?(@pages)
       @pages = Page.cached
     end

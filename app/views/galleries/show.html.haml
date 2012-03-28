@@ -1,0 +1,6 @@
+- content_for :title, @gallery.name
+
+%ul.thumbnails
+  - @gallery.photos.each do |photo|
+    %li.span3
+      = link_to(image_tag(photo.photo.thumb('260x180!').url, :size => '260x180'), photo.photo.url, :class => "thumbnail", :rel => 'lightbox')
