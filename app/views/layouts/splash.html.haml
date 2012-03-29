@@ -7,6 +7,5 @@
     = csrf_meta_tags
   %body
     .container
-      .row
-        .span12= yield
+      = yield
     = render :partial => 'shared/footer'
