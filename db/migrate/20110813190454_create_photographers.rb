@@ -10,7 +10,8 @@ class CreatePhotographers < ActiveRecord::Migration
       # t.encryptable
       # t.confirmable
 
-      t.string :name, :null => false, :limit => 100
+      t.string :name, :null => false, :limit => 80
+      t.string :tagline, :null => false, :limit => 128
       t.string :phone, :limit => 22
       t.string :time_zone, :limit => 40
       t.string :description, :limit => 255

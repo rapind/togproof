@@ -26,7 +26,7 @@ class Gallery < ActiveRecord::Base
   
   # ****
   # Default ordering
-  default_scope :order => 'position'
+  default_scope :order => 'position, id'
   
   # Caching
   # -------
@@ -36,7 +36,7 @@ class Gallery < ActiveRecord::Base
 
   def self.cached
     Rails.cache.fetch(CACHED, :expires_in => 1.day) do
-      self.all
+      self.order(:position).all
     end
   end
 

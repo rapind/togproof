@@ -27,7 +27,7 @@
       - if content_for?(:title)
         .page-header
           %h1= yield(:title)
-      .row
+      .row.content
         - if content_for?(:sidebar)
           .span3
             .well

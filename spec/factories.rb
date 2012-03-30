@@ -14,6 +14,7 @@ FactoryGirl.define do
     email
     password 'factory-pwd'
     name
+    tagline 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     time_zone 'Eastern Time (US & Canada)'
     description 'Factory description is at least 10 characters long'
   end

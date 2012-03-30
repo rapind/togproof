@@ -1,7 +1,7 @@
 .jumbotron.masthead
   .inner
     %h1= photographer.name
-    %p Maternity, newborn, and family lifestyle photography for the Toronto area.
+    %p= photographer.tagline
 .row
   .span12
     #carousel.carousel
@@ -9,12 +9,11 @@
         - @galleries.each_with_index do |gallery, idx|
           %div{ :class => "item#{' active' if idx == 0}" }
             = link_to( image_tag(gallery.cover.thumb('940x500!').url), gallery_path(gallery) )
-      %a.carousel-control.left{ :href => "#carousel", :'data-slide' => "prev" } &lsaquo;
-      %a.carousel-control.right{ :href => "#carousel", :'data-slide' => "next" } &rsaquo;
 
 .marketing
   .row
     - @galleries.each_with_index do |gallery, idx|
-      .span3
-        %h3= gallery.name
+      .span4
+        %h2= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
         %p= gallery.description
+        %p= link_to('View this gallery &raquo;'.html_safe, gallery_path(gallery), :class => 'btn')

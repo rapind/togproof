@@ -1,6 +1,7 @@
 # Creating photographer
 Photographer.create(
-  :name => 'Grok Photography',
+  :name => 'Jaime Coyle Photography',
+  :tagline => 'Maternity, newborn, and baby lifestyle photography for the Toronto area.',
   :email => 'grok@grokphoto.org',
   :password => 'password',
   :phone => '416.123.1234',
@@ -13,10 +14,9 @@ Photographer.create(
 
 # Creating galleries
 base_dir = Rails.root.join('creatives', 'galleries')
-Gallery.create!(:name => 'Maternity', :cover => File.new(File.join(base_dir, 'maternity.jpg')))
-Gallery.create!(:name => 'Newborn', :cover => File.new(File.join(base_dir, 'newborn.jpg')))
-Gallery.create!(:name => 'Babies', :cover => File.new(File.join(base_dir, 'babies.jpg')))
-Gallery.create!(:name => 'Families', :cover => File.new(File.join(base_dir, 'families.jpg')))
+Gallery.create!(:position => 1, :name => 'Maternity', :cover => File.new(File.join(base_dir, 'maternity.jpg')), :description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+Gallery.create!(:position => 2, :name => 'Newborn', :cover => File.new(File.join(base_dir, 'newborn.jpg')), :description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+Gallery.create!(:position => 3, :name => 'Babies', :cover => File.new(File.join(base_dir, 'babies.jpg')), :description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 
 # Uploading gallery images
 Gallery.all.each do |gallery|
