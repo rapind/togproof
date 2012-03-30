@@ -32,17 +32,17 @@ class Post < ActiveRecord::Base
   after_save :clear_cache
 
   def self.recent
-    Rails.cache.fetch(CACHED, :expires_in => 1.day) do
+    #Rails.cache.fetch(CACHED, :expires_in => 1.day) do
       self.order(:created_at).limit(3).all
-    end
+    #end
   end
 
   def clear_cache
-    Post.clear_cache
+    #Rails.cache.delete(CACHED)
   end
 
   def self.clear_cache
-    Rails.cache.delete(CACHED)
+    #Rails.cache.delete(CACHED)
   end
   
   # ****

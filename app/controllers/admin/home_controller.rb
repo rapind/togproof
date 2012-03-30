@@ -3,7 +3,7 @@ class Admin::HomeController < ApplicationController
   before_filter :authenticate_photographer!
   
   def index
-    @events = Event.limit()
+    @events = Event.limit(10)
   end
   
 end

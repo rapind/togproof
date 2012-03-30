@@ -1,0 +1,11 @@
+- content_for :title, 'Blog'
+
+%ul.unstyled
+  - @posts.each do |post|
+    %li
+      %h2= link_to(post.title, post_path(post))
+      %p= keywords_to_labels(post.keywords)
+      = truncate(post.body, :length => 500).to_html.html_safe
+
+%br
+%p= paginate @posts

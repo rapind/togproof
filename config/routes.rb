@@ -18,6 +18,7 @@ Grokphoto::Application.routes.draw do
     resource :events, :only => :index
     resource :photographer, :only => [:edit, :update]
     resources :pages
+    resources :posts
     resources :galleries do
       resources :photos
     end
