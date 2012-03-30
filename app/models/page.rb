@@ -2,7 +2,7 @@ class Page < ActiveRecord::Base
   
   # ****
   # Validations
-  validates :name, :presence => true, :length => { :within => 2..32 }
+  validates :name, :presence => true, :length => { :within => 2..20 }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :body, :presence => true, :length => { :minimum => 10 }
 
@@ -20,6 +20,10 @@ class Page < ActiveRecord::Base
   def to_param
     "#{id}-#{name}".parameterize
   end
+  
+  # ****
+  # Default ordering
+  default_scope :order => 'name'
   
   # Caching
   # -------

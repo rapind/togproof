@@ -10,7 +10,7 @@ class Gallery < ActiveRecord::Base
   
   # ****
   # Validations
-  validates :name, :presence => true, :length => { :within => 2..100 }, :uniqueness => { :case_sensitive => false }
+  validates :name, :presence => true, :length => { :within => 2..20 }, :uniqueness => { :case_sensitive => false }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :description, :length => { :within => 10..8000, :allow_blank => true }
   validates :cover, :presence => true

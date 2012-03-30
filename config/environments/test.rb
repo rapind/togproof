@@ -7,6 +7,8 @@ Grokphoto::Application.configure do
   # and recreated between test runs.  Don't rely on the data there!
   config.cache_classes = false
 
+  config.cache_store = :memory_store
+  
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"

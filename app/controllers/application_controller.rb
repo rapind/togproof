@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :photographer, :galleries, :pages
+  helper_method :photographer, :galleries, :pages, :recent_posts
   before_filter :set_timezone
   
   protected #----
@@ -19,6 +19,11 @@ class ApplicationController < ActionController::Base
     def pages
       return @pages if defined?(@pages)
       @pages = Page.cached
+    end
+    
+    def recent_posts
+      return @recent_posts if defined?(@recent_posts)
+      @recent_posts = Post.recent
     end
     
     def set_timezone

@@ -6,6 +6,7 @@ Grokphoto::Application.routes.draw do
   resources :private_galleries, :only => :show
   resources :galleries, :only => :show
   resources :pages, :only => :show
+  resources :posts, :only => [:index, :show]
   resources :contact_requests, :only => [:new, :create] do
     get :thanks, :on => :collection
   end

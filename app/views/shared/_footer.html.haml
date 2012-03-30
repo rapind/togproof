@@ -7,16 +7,18 @@
             %h4 Photo Galleries
             %ul.unstyled
               - galleries.each do |gallery|
-                %li= link_to(gallery.name, gallery_path(gallery))
+                %li= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
           .span2
             %h4 Company Info
             %ul.unstyled
               - pages.each do |page|
-                %li= link_to(page.name, page_path(page))
+                %li= link_to(truncate(page.name, :length => 32), page_path(page))
               %li= link_to('Contact', new_contact_request_path)
           .span3
             %h4 Recent Posts
             %ul.unstyled
+              - recent_posts.each do |post|
+                %li= link_to(truncate(post.title, :length => 32), post_path(post))
               
           .span5
             %p= photographer.description

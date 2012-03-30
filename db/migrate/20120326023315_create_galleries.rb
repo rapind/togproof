@@ -2,7 +2,7 @@ class CreateGalleries < ActiveRecord::Migration
   def change
     create_table :galleries do |t|
       t.integer :position
-      t.string :name, :null => false, :limit => 100
+      t.string :name, :null => false, :limit => 20
       t.string :keywords, :limit => 255
       t.text :description
       t.string :cover_uid

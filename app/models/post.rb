@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   
   # ****
   # Validations
-  validates :title, :presence => true, :length => { :within => 2..128 }
+  validates :title, :presence => true, :length => { :within => 2..64 }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :body, :presence => true, :length => { :minimum => 10 }
 
@@ -21,15 +21,19 @@ class Post < ActiveRecord::Base
     "#{id}-#{title}".parameterize
   end
   
+  # ****
+  # Default ordering
+  default_scope :order => 'created_at DESC'
+  
   # Caching
   # -------
   CACHED = 'recent_posts'
   
   after_save :clear_cache
 
-  def self.recents
+  def self.recent
     Rails.cache.fetch(CACHED, :expires_in => 1.day) do
-      self.order(:created_at).limit(4).all
+      self.order(:created_at).limit(3).all
     end
   end
 

@@ -13,7 +13,7 @@ describe Photographer do
     it { should validate_presence_of(:password) }
     it { should validate_presence_of(:name) }
     it { should ensure_length_of(:name).is_at_least(3).is_at_most(80) }
-    it { should ensure_length_of(:tagline).is_at_least(3).is_at_most(100) }
+    it { should ensure_length_of(:tagline).is_at_least(3).is_at_most(128) }
     it { should ensure_length_of(:description).is_at_least(10).is_at_most(255) }
     it { should ensure_length_of(:phone).is_at_least(7).is_at_most(20) }
     it { should ensure_length_of(:blog_url).is_at_least(10).is_at_most(512) }
