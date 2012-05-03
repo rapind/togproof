@@ -1,10 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.3'
 
-# Temporarily include earlier rack to get rid of a ruby warning.
-# See: http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
-# gem 'rack', '1.3.3'
 
 # Needed by heroku
 gem 'thin'
@@ -27,7 +24,7 @@ gem 'inherited_resources', '~> 1.3.0'
 gem 'acts_as_list', '~> 0.1.4'
 
 # Forms - TODO: Switch to a stable gem once the wrapper stuff is released.
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', :ref => "da92c45953"
+gem 'simple_form', '~> 2.0.2'
 
 # Image uploads
 gem 'rack-cache', :require => 'rack/cache'
@@ -58,11 +55,9 @@ gem "enkoder_rails", git: "git://github.com/supapuerco/hivelogic-enkoder-rails.g
 # Gems used only for assets and not required
 # In production environments by default.
 group :assets do
-  gem 'sass-rails', '~> 3.1.0'
-  gem 'coffee-rails', '~> 3.1.0'
-  gem 'uglifier', '~> 1.2.1'
-  #gem 'haml_coffee_assets', '~> 0.7.0'
-  #gem 'execjs', '~> 1.3.0'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 group :development, :test do
