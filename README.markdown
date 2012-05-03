@@ -43,7 +43,7 @@ At this point you should have a working site with some basic seed data that you 
 
 ## Initial Configuration
 
-1. Login to the administration area (/admin) using photographer@grokphoto.org / password
+1. Login to the administration area (/admin) using grok@grokphoto.org / password
 2. Click on the Settings tab.
 3. Enter your own information and update the settings.
 
