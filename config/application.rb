@@ -39,7 +39,7 @@ module Grokphoto
 
     # Enable the asset pipeline
     config.assets.enabled = true
-
+    config.assets.initialize_on_precompile = false  # Herku compatibility. 
     #config.assets.paths << File.join(Rails.root, 'vendor', 'assets', 'images')
 
     # Specify the layout for devise controllers.
