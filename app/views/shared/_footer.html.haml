@@ -15,12 +15,13 @@
                 %li= link_to(truncate(page.name, :length => 32), page_path(page))
               %li= link_to('Contact', new_contact_request_path)
           .span3
-            %h4 Recent Posts
-            %ul.unstyled
-              - recent_posts.each do |post|
-                %li= link_to(truncate(post.title, :length => 32), post_path(post))
+            -unless photographer.blog_url
+              %h4 Recent Posts
+              %ul.unstyled
+                - recent_posts.each do |post|
+                  %li= link_to(truncate(post.title, :length => 32), post_path(post))
               
-          .span5
+          .span5.pull-right
             %p= photographer.description
   #footer-floor
     .container
