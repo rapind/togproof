@@ -31,4 +31,4 @@
               = enkode(photographer.phone)
               \/
             = enkode_mail(photographer.email, photographer.email)
-          %p= "&copy; 2011, #{photographer.name}, All Rights Reserved".html_safe
+          %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
