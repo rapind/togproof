@@ -2,7 +2,7 @@
 
 Grokphoto is a professional photographer's client gallery solution.
 
-This version is work in progress / port to rails 3.1.3
+This version is work in progress / port to rails 3.2.3
 
 For the stable rails 2 version please see the version 2 branch:
 [Version 2](https://github.com/rapind/grokphoto/tree/v2.0)
@@ -43,7 +43,7 @@ At this point you should have a working site with some basic seed data that you 
 
 ## Initial Configuration
 
-1. Login to the administration area (/admin) using photographer@grokphoto.org / password
+1. Login to the administration area (/admin) using grok@grokphoto.org / password
 2. Click on the Settings tab.
 3. Enter your own information and update the settings.
 
@@ -51,13 +51,8 @@ At this point you should have a working site with some basic seed data that you 
 ## Heroku Deployment
 
     heroku create --stack cedar
-    
-Setup your own values in the next command, using your own email address, the name of your application for the session key and "rake secret" to generate a new secret key.
-    
-    heroku config:add SENDER_EMAIL=change_to_to_your_email@address.com SESSION_KEY=_change_me_to_your_app_name SECRET_KEY=result_of_rake_secret_goes_here
     git push heroku master
-    heroku run rake db:migrate
-    
+
 Before you seed the database you'll need to setup an amazon s3 account and bucket to have somewhere to store the files. Heroku has a temporary filesystem which is not an appropriate place to store images.
 
 * Go to: https://console.aws.amazon.com/s3/home
@@ -83,12 +78,21 @@ You can check to make sure all of your heroku environment variables have been pr
 
     heroko config
   
-Once done, seed the database and launch the app.
-
+Once done, migrate and seed the database and launch the app.
+	    
+    heroku run rake db:migrate
     heroku run rake db:seed
+    
+Make sure you also enable Memchacd on heroku with the below command.
+
+	heroku addons:add memcache:5mb   
+   
+Open up your shiny new grokphoto instance!
+
     heroku open
 
 
+	 
 ## Features
 
 * Personalize your site via the configuration / settings page.
