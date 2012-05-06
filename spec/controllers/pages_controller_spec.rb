@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe PagesController do
 
-  before do
+  before(:all) do
+    FactoryGirl.create(:photographer)
+  end
+  
+  before(:each) do
     @page = FactoryGirl.create(:page)
   end
 

@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+ActiveSupport::Deprecation.silenced = true
 
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation

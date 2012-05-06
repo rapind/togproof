@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe PrivateGalleriesController do
 
-  before do
+  before(:all) do
+    FactoryGirl.create(:photographer)
+  end
+
+  before(:each) do
     @private_gallery = FactoryGirl.create(:private_gallery)
   end
 

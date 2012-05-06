@@ -16,7 +16,23 @@ $(document).ready(function() {
   );
   
 	$('.carousel').carousel({
-	  interval: 9000
-	})
+	  interval: 8000
+	});
+	
+	$('#sortable').sortable({
+		handle: 'div.title',
+		revert: true,
+		update: function(){
+			$.ajax({
+				type: 'post',
+				data: $('#sortable').sortable('serialize'),
+				dataType: 'script',
+				complete: function(request){
+					$('#sortable').effect('highlight');
+				},
+				url: $('meta[name=sortable_path]').attr("content")
+			});
+		}
+	});
 	
 });

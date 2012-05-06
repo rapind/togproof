@@ -20,7 +20,9 @@ Grokphoto::Application.routes.draw do
     resources :pages
     resources :posts
     resources :galleries do
-      resources :photos
+      resources :photos do
+        post :sort, :on => :collection
+      end
     end
     resources :private_galleries do
       get :invite, :on => :member
