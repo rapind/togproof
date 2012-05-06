@@ -20,20 +20,12 @@ For the stable rails 2 version please see the version 2 branch:
     cd grokphoto
     bundle
 
-Then edit these files with your own settings. Everything you need to change is marked with TODO along with instructions if necessary:
-
-*  config/database.yml
-*  config/initializers/devise.rb
-
-NOTE: You won't need to change all of these if you're deploying to Heroku. See Heroku Deployment below for details.
-
-
 Then initialize the database and start the server:
 
     rake db:create
     rake db:migrate
     rake db:seed
-    rails s
+    rails server
 
 At this point you should have a working site with some basic seed data that you can start to customize.
 
@@ -93,6 +85,7 @@ Open up your shiny new GrokPhoto instance!
 
     heroku open
 
+Don't forget to change your admin password using the "Forgot my password" feature.
 
 	 
 ## Features
