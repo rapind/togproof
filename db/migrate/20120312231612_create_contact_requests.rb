@@ -9,8 +9,8 @@ class CreateContactRequests < ActiveRecord::Migration
       t.timestamps
     end
     
-    # We don't want to start at 0.
-    execute "SELECT setval('contact_requests_id_seq', #{(rand(999) + 1000)});"
+    # We don't want to start at 0. TODO - change this to also work with MySQL.
+    execute("SELECT setval('contact_requests_id_seq', #{(rand(999) + 1000)});") rescue nil
     
     add_index :contact_requests, :read
     add_index :contact_requests, :email
