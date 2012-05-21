@@ -50,7 +50,7 @@ gem 'hirefireapp', '~> 0.0.5'
 gem 'factory_girl_rails', '~> 1.1.0'
 
 # Used to obsfucate email addresses and phone numbers.
-gem "enkoder_rails", git: "git://github.com/supapuerco/hivelogic-enkoder-rails.git"
+gem "enkoder_rails", :git => "git://github.com/supapuerco/hivelogic-enkoder-rails.git"
 
 # Gems used only for assets and not required
 # In production environments by default.
