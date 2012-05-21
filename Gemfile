@@ -51,14 +51,14 @@ gem 'factory_girl_rails', '~> 1.1.0'
 
 # Used to obsfucate email addresses and phone numbers.
 gem "enkoder_rails", git: "git://github.com/supapuerco/hivelogic-enkoder-rails.git"
- 
+
 # Gems used only for assets and not required
 # In production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'execjs', '1.3.0' # Remove once execjs v1.3.2 or 1.3.1.1  
+  gem 'execjs', '1.3.0' # Remove once execjs v1.3.2 or 1.3.1.1
 end
 
 group :development, :test do
