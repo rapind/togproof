@@ -15,7 +15,7 @@
                 %li= link_to(truncate(page.name, :length => 32), page_path(page))
               %li= link_to('Contact', new_contact_request_path)
           .span3
-            -unless photographer.blog_url
+            - if photographer.blog_url.blank?
               %h4 Recent Posts
               %ul.unstyled
                 - recent_posts.each do |post|
