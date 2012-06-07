@@ -28,8 +28,8 @@
       .row
         .span12
           %h4
-            - if photographer.phone
+            - unless photographer.phone.empty?
               = enkode(photographer.phone)
               \/
             = enkode_mail(photographer.email, photographer.email)
-          %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
+            %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
