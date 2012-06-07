@@ -20,7 +20,7 @@
               %ul.unstyled
                 - recent_posts.each do |post|
                   %li= link_to(truncate(post.title, :length => 32), post_path(post))
-              
+
           .span5.pull-right
             %p= photographer.description
   #footer-floor
@@ -28,7 +28,7 @@
       .row
         .span12
           %h4
-            - if photographer.phone
+            - unless photographer.phone.empty?
               = enkode(photographer.phone)
               \/
             = enkode_mail(photographer.email, photographer.email)
