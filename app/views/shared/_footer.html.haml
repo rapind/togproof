@@ -20,7 +20,7 @@
               %ul.unstyled
                 - recent_posts.each do |post|
                   %li= link_to(truncate(post.title, :length => 32), post_path(post))
-              
+
           .span5.pull-right
             %p= photographer.description
   #footer-floor
@@ -32,4 +32,4 @@
               = enkode(photographer.phone)
               \/
             = enkode_mail(photographer.email, photographer.email)
-            %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
+          %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
