@@ -3,7 +3,7 @@
   %p You can change your password if you forgot it or simply would like a different one.
   %p Simply enter your new password.
 
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }, :wrapper => :inline) do |f|
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
   = f.error_notification
   = f.input :reset_password_token, :as => :hidden
   = f.full_error :reset_password_token
