@@ -39,15 +39,16 @@ class Admin::PrivateGalleriesController < Admin::HomeController
 
   def send_invite
     @private_gallery = PrivateGallery.find(params[:id])
-    
+
     # Send the email
     begin
-      logger.debug("Send email invitation to: #{params[:email]}")
-      PrivateGalleryMailer.invite(photographer.email, params[:email], @private_gallery).deliver
+      @private_gallery.update_attributes!(params[:private_gallery])
+      logger.debug("Send email invitation to: #{@private_gallery.email}")
+      PrivateGalleryMailer.invite(photographer.email, @private_gallery.email, @private_gallery).deliver
     
       redirect_to collection_path, :notice => 'Private gallery sent.'
     rescue Exception => e
-      render :invite, :error => 'The was a problem sending an email to the address you provided.'
+      render :invite, :error => 'There was a problem sending an email to the address you provided.'
     end
   end
 
