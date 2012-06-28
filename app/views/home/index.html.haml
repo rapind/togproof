@@ -11,9 +11,10 @@
             = link_to( image_tag(gallery.cover.thumb('940x500!').url), gallery_path(gallery) )
 
 .marketing
-  .row
-    - @galleries.each_with_index do |gallery, idx|
-      .span4
-        %h2= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
-        %p= gallery.description
-        %p= link_to('View this gallery &raquo;'.html_safe, gallery_path(gallery), :class => 'btn')
+  - @galleries.each_slice(3) do |galleries|
+    .row
+      - galleries.each do |gallery|
+        .span4
+          %h2= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
+          %p= gallery.description
+          %p= link_to('View this gallery &raquo;'.html_safe, gallery_path(gallery), :class => 'btn')
