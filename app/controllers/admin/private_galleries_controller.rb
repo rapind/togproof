@@ -17,7 +17,7 @@ class Admin::PrivateGalleriesController < Admin::HomeController
       format.json { @private_galleries = @private_galleries.limit(25) } # limit json view
     end
   end
-  
+
   # Set a default expire date
   def new
     new! { @private_gallery.expires_on = 4.weeks.from_now }
@@ -39,12 +39,11 @@ class Admin::PrivateGalleriesController < Admin::HomeController
 
   def send_invite
     @private_gallery = PrivateGallery.find(params[:id])
-    
+
     # Send the email
     begin
-      logger.debug("Send email invitation to: #{params[:email]}")
-      PrivateGalleryMailer.invite(photographer.email, params[:email], @private_gallery).deliver
-    
+      PrivateGalleryMailer.invite(photographer.email, params[:private_gallery][:email], @private_gallery).deliver
+
       redirect_to collection_path, :notice => 'Private gallery sent.'
     rescue Exception => e
       render :invite, :error => 'The was a problem sending an email to the address you provided.'
