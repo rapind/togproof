@@ -241,7 +241,7 @@ DEPENDENCIES
   rack-cache
   rails (= 3.2.3)
   rdiscount (~> 1.6.8)
-  responders
+  responders (~> 0.9.1)
   rspec-rails (~> 2.7.0)
   sass-rails (~> 3.2.3)
   shoulda (~> 2.11.3)
