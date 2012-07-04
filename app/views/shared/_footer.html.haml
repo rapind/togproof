@@ -33,3 +33,6 @@
               \/
             = enkode_mail(photographer.email, photographer.email)
           %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
+
+- unless photographer.google_analytics_key.blank?
+  = render :partial => 'shared/google_analytics', :locals => {:key => photographer.google_analytics_key}
