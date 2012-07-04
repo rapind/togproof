@@ -21,13 +21,22 @@ class Gallery < ActiveRecord::Base
     attrs.each { |attr| self.photos.build(:photo => attr) }
   end
 
+  # Slug generation
+  def to_param
+    "#{id}-#{name}".parameterize
+  end
+
   # Default ordering
   default_scope :order => 'position, id'
 
+  # Callbacks
+  after_save :clear_cache
+  after_create :log_create_event
+  after_update :log_update_event
+  after_destroy :clear_cache, :log_destroy_event
+
   # Caching
   CACHED = 'galleries'
-
-  after_save :clear_cache
 
   def self.cached
     Rails.cache.fetch(CACHED, :expires_in => 1.day) do
@@ -43,22 +52,19 @@ class Gallery < ActiveRecord::Base
     Rails.cache.delete(CACHED)
   end
 
-  # Logging
-  after_create :log_create_event
-  after_update :log_update_event
-
-  def to_param
-    "#{id}-#{name}".parameterize
-  end
-
   private #----
 
+    # Logging
     def log_create_event
       Event.create(:description => "Created gallery: #{name}")
     end
 
     def log_update_event
       Event.create(:description => "Changed gallery: #{name}")
+    end
+
+    def log_destroy_event
+      Event.create(:description => "Deleted gallery: #{name}")
     end
 
 end

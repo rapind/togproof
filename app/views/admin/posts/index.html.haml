@@ -1,10 +1,10 @@
 - content_for :title do
   Posts
   .pull-right
-    = form_for :search, :url => collection_path, :method => :get, :class => 'form-search' do |form|
+    = form_for :search, :url => admin_posts_path, :method => :get, :class => 'form-search' do |form|
       = form.text_field :q, :placeholder => 'Search', :class => 'input-medium search-query', :value => defined?(params[:search][:q]) ? params[:search][:q] : ''
 
-%p= link_to(raw("<i class='icon-plus icon-white'></i> New Post"), new_resource_path, :class => 'btn btn-success')
+%p= link_to(raw("<i class='icon-plus icon-white'></i> New Post"), new_admin_post_path, :class => 'btn btn-success')
 
 %table.table.table-bordered.table-striped
   %thead
@@ -18,5 +18,5 @@
         %td= obj.title
         %td= obj.created_at.strftime("%b %d, %Y")
         %td= link_to('View', post_path(obj))
-        %td= link_to('Edit', edit_resource_path(obj))
-        %td= link_to('Delete', resource_path(obj), :method => :delete, :confirm => 'Are you sure?', :remote => true, 'data-type' => 'json', :class => 'delete')
+        %td= link_to('Edit', edit_admin_post_path(obj))
+        %td= link_to('Delete', admin_post_path(obj), :method => :delete, :confirm => 'Are you sure?', :remote => true, 'data-type' => 'json')

@@ -1,15 +1,47 @@
 class Admin::GalleriesController < Admin::HomeController
-  inherit_resources
-  actions :all, :except => :show
+  respond_to :json, :html
+  before_filter :load_resource, :only => [:edit, :update, :destroy]
 
-  # Redirect to the collection path on create.
+  def index
+    @galleries = Gallery.order(:name).page(params[:page])
+    respond_with :admin, @galleries
+  end
+
+  def new
+    respond_with( :admin, @gallery = Gallery.new )
+  end
+
   def create
-    create!{ collection_path }
+    @gallery = Gallery.create(params[:gallery])
+    if @gallery.valid?
+      respond_with(@gallery, :location => edit_admin_gallery_path(@gallery))
+    else
+      respond_with :admin, @gallery
+    end
   end
 
-  # Redirect to the collection path on update.
-  def update
-    update!{ collection_path }
+  def edit
+    respond_with :admin, @gallery
   end
+
+  def update
+    @gallery.update_attributes params[:gallery]
+    if @gallery.valid?
+      respond_with(@gallery, :location => edit_admin_gallery_path(@gallery))
+    else
+      respond_with :admin, @gallery
+    end
+  end
+
+  def destroy
+    @gallery.destroy
+    respond_with :admin, @gallery
+  end
+
+  private #----
+
+    def load_resource
+      @gallery = Gallery.find params[:id]
+    end
 
 end

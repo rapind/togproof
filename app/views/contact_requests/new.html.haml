@@ -3,7 +3,7 @@
   %h2 Get in touch
   %p Please leave me your name, email, and a brief message and I'll get back to you as soon as possible.
 
-= simple_form_for(@contact_request, :url => collection_path, :html => { :class => 'form-vertical' }) do |form|
+= simple_form_for(@contact_request, :url => contact_requests_path, :html => { :class => 'form-vertical' }) do |form|
   = render "shared/error_messages", :target => @contact_request
   = form.input :name, :hint => 'Your name'
   = form.input :email, :hint => 'Your email address so I can get back to you.'

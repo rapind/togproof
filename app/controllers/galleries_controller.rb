@@ -1,5 +1,9 @@
 class GalleriesController < ApplicationController
-  inherit_resources
   respond_to :html
-  actions :show
+
+  def show
+    @gallery = Gallery.find params[:id]
+    respond_with @gallery
+  end
+
 end

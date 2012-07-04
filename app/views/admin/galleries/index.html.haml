@@ -1,7 +1,7 @@
 - content_for :title do
   Galleries
 
-%p= link_to(raw("<i class='icon-plus icon-white'></i> New Gallery"), new_resource_path, :class => 'btn btn-success')
+%p= link_to(raw("<i class='icon-plus icon-white'></i> New Gallery"), new_admin_gallery_path, :class => 'btn btn-success')
 
 %table.table.table-bordered.table-striped
   %thead
@@ -17,5 +17,5 @@
         %td= obj.photos.size
         %td= obj.created_at.strftime("%b %d, %Y")
         %td= link_to('View', gallery_path(obj))
-        %td= link_to('Edit', edit_resource_path(obj))
-        %td= link_to('Delete', resource_path(obj), :method => :delete, :confirm => 'Are you sure?', :remote => true, 'data-type' => 'json')
+        %td= link_to('Edit', edit_admin_gallery_path(obj))
+        %td= link_to('Delete', admin_gallery_path(obj), :method => :delete, :confirm => 'Are you sure?', :remote => true, 'data-type' => 'json')

@@ -1,11 +1,9 @@
 class Admin::EventsController < Admin::HomeController
-  inherit_resources
-  actions :index
+  respond_to :json, :html
 
-  private #----
-  
-    def collection
-      @events ||= end_of_association_chain.page(params[:page])
-    end
-    
+  def index
+    @events = Event.order('created_at desc').page(params[:page])
+    respond_with :admin, @events
+  end
+
 end

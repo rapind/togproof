@@ -1,15 +1,39 @@
 class Admin::PagesController < Admin::HomeController
-  inherit_resources
-  actions :all, :except => :show
+  respond_to :json, :html
+  before_filter :load_resource, :only => [:edit, :update, :destroy]
 
-  # Redirect to the collection path on create.
+  def index
+    @pages = Page.order(:name).page(params[:page])
+    respond_with :admin, @pages
+  end
+
+  def new
+    respond_with( :admin, @page = Page.new )
+  end
+
   def create
-    create!{ collection_path }
+    @page = Page.create(params[:page])
+    respond_with :admin, @page
   end
 
-  # Redirect to the collection path on update.
-  def update
-    update!{ collection_path }
+  def edit
+    respond_with :admin, @page
   end
+
+  def update
+    @page.update_attributes params[:page]
+    respond_with :admin, @page
+  end
+
+  def destroy
+    @page.destroy
+    respond_with :admin, @page
+  end
+
+  private #----
+
+    def load_resource
+      @page = Page.find params[:id]
+    end
 
 end
