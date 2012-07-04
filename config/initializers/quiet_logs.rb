@@ -1,5 +1,7 @@
-# Turn off sprocket's noise#
-# Updated to rails 3.2.3 compatibility.
+# Turn off deprecation warning spam.
+ActiveSupport::Deprecation.silenced = true
+
+# Turn off sprocket's noise
 if Rails.env.development?
   Rails.application.assets.logger = Logger.new('/dev/null')
   Rails::Rack::Logger.class_eval do

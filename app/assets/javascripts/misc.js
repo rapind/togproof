@@ -27,10 +27,10 @@ $(document).ready(function() {
 				type: 'post',
 				data: $('#sortable').sortable('serialize'),
 				dataType: 'script',
+				url: $('meta[name=sortable_path]').attr("content"),
 				complete: function(request){
 					$('#sortable').effect('highlight');
-				},
-				url: $('meta[name=sortable_path]').attr("content")
+				}
 			});
 		}
 	});
