@@ -1,0 +1,14 @@
+*.psd
+*.pdf
+*.dump
+*.md
+creatives
+doc
+log
+tmp
+Guardfile
+spec/javascripts
+spec/models
+spec/routing
+spec/data
+spec/controllers
