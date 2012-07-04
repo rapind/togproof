@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::HomeController
-  inherit_resources
-  actions :all, :except => :show
+  respond_to :json, :html
+  before_filter :load_resource, :only => [:edit, :update, :destroy]
 
   def index
     params[:order] = 'title' unless params[:order]
@@ -11,20 +11,37 @@ class Admin::PostsController < Admin::HomeController
       @posts = @posts.where(["title ~* ? OR keywords ~* ?", term, term])
     end
 
-    respond_to do |format|
-      format.html { @posts = @posts.page(params[:page]) } # page html view
-      format.json { @posts = @posts.limit(25) } # limit json view
-    end
-  end
-  
-  # Redirect to the collection path on create.
-  def create
-    create!{ collection_path }
+    @posts = @posts.page(params[:page])
+    respond_with :admin, @posts
   end
 
-  # Redirect to the collection path on update.
-  def update
-    update!{ collection_path }
+  def new
+    respond_with( :admin, @post = Post.new )
   end
+
+  def create
+    @post = Post.create(params[:post])
+    respond_with :admin, @post
+  end
+
+  def edit
+    respond_with :admin, @post
+  end
+
+  def update
+    @post.update_attributes params[:post]
+    respond_with :admin, @post
+  end
+
+  def destroy
+    @post.destroy
+    respond_with :admin, @post
+  end
+
+  private #----
+
+    def load_resource
+      @post = Post.find params[:id]
+    end
 
 end

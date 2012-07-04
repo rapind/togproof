@@ -1,2 +1,2 @@
-= simple_form_for(@post, :url => resource_path, :method => :put, :html => { :class => 'form-vertical' }) do |form|
+= simple_form_for(@post, :url => admin_post_path(@post), :method => :put, :html => { :class => 'form-vertical' }) do |form|
   = render form

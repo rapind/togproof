@@ -1,18 +1,24 @@
 class Admin::PhotographersController < Admin::HomeController
-  inherit_resources
   respond_to :html
-  actions :edit, :update
-  before_filter :load_photographer
+  before_filter :load_resource
 
-  # Redirect to the edit path on update instead of show
+  def edit
+    respond_with :admin, @photographer
+  end
+
   def update
-    update!{ edit_admin_photographer_path }
+    @photographer.update_attributes params[:photographer]
+    if @photographer.valid?
+      respond_with(@photographer, :location => edit_admin_photographer_path)
+    else
+      respond_with :admin, @photographer
+    end
   end
 
   private #----
 
     # make sure everything is scoped to the current_photographer so we can't access / modify other user's content.
-    def load_photographer
+    def load_resource
       @photographer = Photographer.first
     end
 

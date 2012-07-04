@@ -21,10 +21,14 @@ class Page < ActiveRecord::Base
   # Default ordering
   default_scope :order => 'name'
 
+  # Callbacks
+  after_save :clear_cache
+  after_create :log_create_event
+  after_update :log_update_event
+  after_destroy :clear_cache, :log_destroy_event
+
   # Caching
   CACHED = 'pages'
-
-  after_save :clear_cache
 
   def self.cached
     #Rails.cache.fetch(CACHED, :expires_in => 1.day) do
@@ -40,10 +44,6 @@ class Page < ActiveRecord::Base
     #Rails.cache.delete(CACHED)
   end
 
-  # Logging
-  after_create :log_create_event
-  after_update :log_update_event
-
   private #----
 
     def log_create_event
@@ -52,6 +52,10 @@ class Page < ActiveRecord::Base
 
     def log_update_event
       Event.create(:description => "Changed page: #{name}")
+    end
+
+    def log_destroy_event
+      Event.create(:description => "Deleted page: #{name}")
     end
 
 end

@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
-  inherit_resources
   respond_to :html
-  actions :show
+
+  def show
+    @page = Page.find params[:id]
+    respond_with @page
+  end
+
 end

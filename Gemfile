@@ -17,8 +17,8 @@ gem 'haml', '~> 3.1.4'
 # Authentication
 gem 'devise', '~> 1.5.3'
 
-# Thin controllers
-gem 'inherited_resources', '~> 1.3.0'
+# Responders
+gem 'responders', '~> 0.9.1'
 
 # Ordering
 gem 'acts_as_list', '~> 0.1.4'

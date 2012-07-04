@@ -19,7 +19,7 @@ class Admin::PhotosController < Admin::HomeController
     end
 
     render :text => 'Success'
-    #respond_with @photos
+    #respond_with :admin, @photos
   end
 
   def edit

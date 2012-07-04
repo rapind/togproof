@@ -21,10 +21,14 @@ class Post < ActiveRecord::Base
   # Default ordering
   default_scope :order => 'created_at DESC'
 
+  # Callbacks
+  after_save :clear_cache
+  after_create :log_create_event
+  after_update :log_update_event
+  after_destroy :clear_cache, :log_destroy_event
+
   # Caching
   CACHED = 'recent_posts'
-
-  after_save :clear_cache
 
   def self.recent
     #Rails.cache.fetch(CACHED, :expires_in => 1.day) do
@@ -40,18 +44,19 @@ class Post < ActiveRecord::Base
     #Rails.cache.delete(CACHED)
   end
 
-  # Logging
-  after_create :log_create_event
-  after_update :log_update_event
-
   private #----
 
+    # Logging
     def log_create_event
       Event.create(:description => "Created post: #{title}")
     end
 
     def log_update_event
       Event.create(:description => "Changed post: #{title}")
+    end
+
+    def log_destroy_event
+      Event.create(:description => "Deleted post: #{name}")
     end
 
 end

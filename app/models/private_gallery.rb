@@ -34,6 +34,7 @@ class PrivateGallery < ActiveRecord::Base
   before_create :build_token
   after_create :log_create_event
   after_update :log_update_event
+  after_destroy :log_destroy_event
 
   private #----
 
@@ -48,6 +49,10 @@ class PrivateGallery < ActiveRecord::Base
 
     def log_update_event
       Event.create(:description => "Changed private gallery: #{name}")
+    end
+
+    def log_destroy_event
+      Event.create(:description => "Deleted private gallery: #{name}")
     end
 
 end

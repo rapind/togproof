@@ -1,11 +1,11 @@
 - content_for :title, "#{controller.action_name.titleize} to Private Gallery"
 - content_for :sidebar do
   %p Enter the email address of your client and we'll send them instructions with a secure link for viewing their private gallery.
-  
+
 = simple_form_for(@private_gallery, :url => send_invite_admin_private_gallery_path(@private_gallery), :method => :put, :html => { :class => 'form-vertical' }) do |form|
   = form.input :email, :hint => 'Enter the email address of your client.'
-  
+
   .form-actions
     = form.button :submit, 'Send Private Gallery', :class => 'btn-primary'
     &nbsp;
-    = link_to('Cancel', collection_path, :class => 'btn')
+    = link_to('Cancel', admin_private_galleries_path, :class => 'btn')
