@@ -1,21 +1,20 @@
 class Photo < ActiveRecord::Base
 
-  # ****
   # Associations
-  belongs_to :private_gallery, :counter_cache => true
-  belongs_to :gallery, :counter_cache => true
+  belongs_to :photoable, :polymorphic => true, :counter_cache => true
+
+  # Positioning
+  acts_as_list :scope => [:photoable_id, :photoable_type]
 
   # Photo attachment
   image_accessor :photo
-  
-  # ****
+
   # Validations
   validates :name, :presence => true, :length => { :maximum => 100 }
   validates :photo, :presence => true
-  
-  # ****
+
   # Mass-assignment protection
-  attr_accessible :private_gallery_id, :gallery_id, :name, :photo, :photo_cache
+  attr_accessible :position, :photo, :photo_cache, :name
 
   # ****
   # Callbacks

@@ -19,15 +19,13 @@ Grokphoto::Application.routes.draw do
     resource :photographer, :only => [:edit, :update]
     resources :pages
     resources :posts
-    resources :galleries do
-      resources :photos do
-        post :sort, :on => :collection
-      end
-    end
+    resources :galleries
     resources :private_galleries do
       get :invite, :on => :member
       put :send_invite, :on => :member
-      resources :photos
+    end
+    resources :photos, :only => [:edit, :update, :destroy] do
+      put 'sort', :on => :collection
     end
   end
 

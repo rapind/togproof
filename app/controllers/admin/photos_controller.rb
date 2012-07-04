@@ -1,23 +1,45 @@
 class Admin::PhotosController < Admin::HomeController
-  inherit_resources
-  actions :destroy
+  layout false
   respond_to :json
-  belongs_to :gallery, :private_gallery, :optional => true
+  before_filter :load_resource, :only => [:edit, :update, :destroy]
 
-  def destroy
-    destroy! do
-      render :json => { :message => 'Success' }
+  def sort
+    @photos = []
+    if params[:gallery_id]
+      @photos = Gallery.find(params[:gallery_id]).photos
+    elsif params[:private_gallery_id]
+      @photos = PrivateGallery.find(params[:private_gallery_id]).photos
+    else
       return
     end
-  end
-  
-  def sort
-    # We're only ever sorting gallery photos at the moment which simplifies things a bit.
-    gallery = Gallery.find(params[:gallery_id])
-    gallery.photos.each do |photo|
+
+    @photos.each do |photo|
       photo.position = params['photo'].index(photo.id.to_s) + 1
       photo.save
     end
+
+    render :text => 'Success'
+    #respond_with @photos
   end
-  
+
+  def edit
+    respond_with :admin, @photo
+  end
+
+  def update
+    @photo.update_attributes(params[:photo])
+    respond_with :admin, @photo
+  end
+
+  def destroy
+    @photo.destroy
+    respond_with :admin, @photo
+  end
+
+  private #----
+
+    def load_resource
+      @photo = Photo.find params[:id]
+    end
+
 end
