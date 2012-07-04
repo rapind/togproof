@@ -84,13 +84,8 @@ describe Admin::PagesController do
   describe "DELETE destroy" do
     it "destroys the requested page" do
       expect {
-        delete :destroy, :id => @page.id
+        delete :destroy, :format => :json, :id => @page.id
       }.to change(Page, :count).by(-1)
-    end
-
-    it "redirects to the pages list" do
-      delete :destroy, :id => @page.id
-      response.should redirect_to(admin_pages_path)
     end
   end
 

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Admin::GalleriesController do
-  
+
   before(:all) do
     @photographer = FactoryGirl.create(:photographer)
   end
@@ -46,9 +46,10 @@ describe Admin::GalleriesController do
         assigns(:gallery).should be_persisted
       end
 
-      it "redirects to the list page" do
+      it "redirects to the edit page" do
         post :create, :gallery => FactoryGirl.attributes_for(:gallery)
-        response.should redirect_to(admin_galleries_path)
+        gallery = assigns(:gallery)
+        response.should redirect_to(edit_admin_gallery_path(gallery))
       end
     end
   end
@@ -61,13 +62,13 @@ describe Admin::GalleriesController do
       end
 
       it "assigns the requested gallery as @gallery" do
-        put :update, :id => @gallery.id, :gallery => FactoryGirl.attributes_for(:gallery)
+        put :update, :id => @gallery.id
         assigns(:gallery).should eq(@gallery)
       end
 
-      it "redirects to the list page" do
-        put :update, :id => @gallery.id, :gallery => FactoryGirl.attributes_for(:gallery)
-        response.should redirect_to(admin_galleries_path)
+      it "redirects to the edit page" do
+        put :update, :id => @gallery.id, :gallery => { :description => 'Updated Description Content' }
+        response.should redirect_to(edit_admin_gallery_path(@gallery))
       end
     end
 
@@ -84,13 +85,8 @@ describe Admin::GalleriesController do
   describe "DELETE destroy" do
     it "destroys the requested gallery" do
       expect {
-        delete :destroy, :id => @gallery.id
+        delete :destroy, :format => :json, :id => @gallery.id
       }.to change(Gallery, :count).by(-1)
-    end
-
-    it "redirects to the galleries list" do
-      delete :destroy, :id => @gallery.id
-      response.should redirect_to(admin_galleries_path)
     end
   end
 

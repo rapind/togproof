@@ -2,7 +2,6 @@
 *.pdf
 *.dump
 *.md
-creatives
 doc
 log
 tmp

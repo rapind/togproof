@@ -44,9 +44,10 @@ describe Admin::PrivateGalleriesController do
         assigns(:private_gallery).should be_persisted
       end
 
-      it "redirects to the list page" do
+      it "redirects to the edit page" do
         post :create, :private_gallery => FactoryGirl.attributes_for(:private_gallery)
-        response.should redirect_to(admin_private_galleries_path)
+        private_gallery = assigns(:private_gallery)
+        response.should redirect_to(edit_admin_private_gallery_path(private_gallery))
       end
     end
   end
@@ -58,14 +59,9 @@ describe Admin::PrivateGalleriesController do
         put :update, :id => @private_gallery.id, :private_gallery => {'these' => 'params'}
       end
 
-      it "assigns the requested private_gallery as @private_gallery" do
-        put :update, :id => @private_gallery.id, :private_gallery => FactoryGirl.attributes_for(:private_gallery)
-        assigns(:private_gallery).should eq(@private_gallery)
-      end
-
-      it "redirects to the list page" do
-        put :update, :id => @private_gallery.id, :private_gallery => FactoryGirl.attributes_for(:private_gallery)
-        response.should redirect_to(admin_private_galleries_path)
+      it "redirects to the edit page" do
+        put :update, :id => @private_gallery.id, :private_gallery => { :expires_on => 2.days.from_now }
+        response.should redirect_to(edit_admin_private_gallery_path(@private_gallery))
       end
     end
 
@@ -82,13 +78,8 @@ describe Admin::PrivateGalleriesController do
   describe "DELETE destroy" do
     it "destroys the requested private_gallery" do
       expect {
-        delete :destroy, :id => @private_gallery.id
+        delete :destroy, :format => :json, :id => @private_gallery.id
       }.to change(PrivateGallery, :count).by(-1)
-    end
-
-    it "redirects to the private_galleries list" do
-      delete :destroy, :id => @private_gallery.id
-      response.should redirect_to(admin_private_galleries_path)
     end
   end
 
