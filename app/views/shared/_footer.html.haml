@@ -29,9 +29,9 @@
         .span12
           %h4
             - unless photographer.phone.blank?
-              = enkode(photographer.phone)
+              = photographer.phone
               \/
-            = enkode_mail(photographer.email, photographer.email)
+            = mail_to(photographer.email)
           %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
 
 - unless photographer.google_analytics_key.blank?
