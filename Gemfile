@@ -69,6 +69,9 @@ end
 group :development do
   # Generators
   gem 'haml-rails', '~> 0.3'
+
+  # Deploy (for environments other than heroku)
+  gem 'capistrano'
 end
 
 group :test do
