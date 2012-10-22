@@ -63,6 +63,10 @@ To specify the email address to use when the system sends emails:
 
     heroku config:add SENDER_EMAIL=_your_email_address
 
+To specify the email host to use when the system sends emails:
+
+    heroku config:add EMAIL_HOST=yourdomain.com
+
 To specify an environment specific pepper to use when encrypting passwords:
 
     rake secret
