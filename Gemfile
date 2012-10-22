@@ -31,7 +31,8 @@ gem 'dragonfly', '~> 0.9'
 gem 'fog', '~> 0.1'
 
 # Paging
-gem 'kaminari', '~> 0.13'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 # Caching
 gem 'dalli', '~> 1.1'

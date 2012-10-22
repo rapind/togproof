@@ -9,9 +9,6 @@ class Event < ActiveRecord::Base
   # Default ordering
   default_scope :order => 'created_at DESC'
 
-  # Default page size
-  paginates_per 15
-
   # Callbacks
   after_save :prune
 

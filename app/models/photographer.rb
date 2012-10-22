@@ -1,7 +1,7 @@
 class Photographer < ActiveRecord::Base
 
-  # Devise modules. Others available are: :encryptable, :confirmable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :token_authenticatable, :recoverable, :rememberable, :trackable, :lockable, :validatable
+  # Devise modules. Others available are: :encryptable, :confirmable, :timeoutable and :omniauthable, :trackable
+  devise :database_authenticatable, :token_authenticatable, :recoverable, :rememberable, :lockable, :validatable
 
   # Validations
   validates :name, :presence => true, :length => { :within => 3..80 }

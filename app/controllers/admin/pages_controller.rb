@@ -3,7 +3,7 @@ class Admin::PagesController < Admin::HomeController
   before_filter :load_resource, :only => [:edit, :update, :destroy]
 
   def index
-    @pages = Page.order(:name).page(params[:page])
+    @pages = Page.order(:name)
     respond_with :admin, @pages
   end
 

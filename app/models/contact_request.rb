@@ -12,9 +12,6 @@ class ContactRequest < ActiveRecord::Base
   scope :unread, where(:read => false)
   scope :read, where(:read => true)
 
-  # Pagination
-  paginates_per 16
-
   # Logging
   after_create :log_create_event
 
