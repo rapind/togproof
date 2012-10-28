@@ -17,9 +17,6 @@ class PrivateGallery < ActiveRecord::Base
   scope :active, where("expires_on >= ?", Time.now)
   scope :expired, where("expires_on < ?", Time.now)
 
-  # Pagination
-  paginates_per 16
-
   # Multi-file uploads
   def photos_attrs=(attrs)
     attrs.each { |attr| self.photos.build(:photo => attr) }

@@ -11,9 +11,6 @@ class Post < ActiveRecord::Base
   # Image attachment
   image_accessor :image
 
-  # Pagination
-  paginates_per 16
-
   def to_param
     "#{id}-#{title}".parameterize
   end

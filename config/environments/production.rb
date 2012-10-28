@@ -50,9 +50,8 @@ Grokphoto::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'grokphoto.org' } # TODO - change this to whatever you run production on. I.e. :host => 'yourdomain.com'
+  config.action_mailer.default_url_options = { :host => (ENV['EMAIL_HOST'] || 'grokphoto.com') }
 
-  config.action_mailer.default_url_options = { :host => 'your.websitedomain.com' }
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :port           => "25",

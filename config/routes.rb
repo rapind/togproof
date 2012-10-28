@@ -15,7 +15,7 @@ Grokphoto::Application.routes.draw do
 
   match 'admin' => 'admin/events#index'
   namespace :admin do
-    resource :events, :only => :index
+    resources :events, :only => :index
     resource :photographer, :only => [:edit, :update]
     resources :pages
     resources :posts

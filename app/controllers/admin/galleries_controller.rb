@@ -3,7 +3,7 @@ class Admin::GalleriesController < Admin::HomeController
   before_filter :load_resource, :only => [:edit, :update, :destroy]
 
   def index
-    @galleries = Gallery.order(:name).page(params[:page])
+    @galleries = Gallery.order(:name)
     respond_with :admin, @galleries
   end
 
