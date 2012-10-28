@@ -10,7 +10,7 @@
     .navbar-inner
       .container
         .pull-right= "#{yield(:page_title).presence || 'Private Gallery'} | #{photographer.name}"
-  .container
+  .container#content
     - if notice
       .alert.alert-block{ :'data-dismiss' => 'alert' }
         %a.close ×

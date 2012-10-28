@@ -29,3 +29,10 @@ jQuery ->
         url: $("meta[name=sortable_path]").attr("content")
         complete: (request) ->
           $("#sorted-image-list").effect "highlight"
+
+sizeContent = ->
+  newHeight = $("html").height() - 90 - $("footer").height() + "px"
+  if (newHeight > $("#content").height)
+    $("#content").css "height", newHeight
+$(document).ready sizeContent
+$(window).resize sizeContent
