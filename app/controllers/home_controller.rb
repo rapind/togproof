@@ -9,4 +9,7 @@ class HomeController < ApplicationController
     @galleries = Gallery.all
   end
 
+  # def test
+  # end
+  
 end
