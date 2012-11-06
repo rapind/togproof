@@ -24,7 +24,7 @@ class ContactRequest < ActiveRecord::Base
     def email
       # Send the email
       begin
-        ContactRequestMailer.contact(photographer.email, email, name, message).deliver
+        ContactRequestMailer.contact(self).deliver
 
         redirect_to admin_private_galleries_path, :notice => 'Private gallery sent.'
       rescue Exception => e
