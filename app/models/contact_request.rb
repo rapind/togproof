@@ -13,7 +13,7 @@ class ContactRequest < ActiveRecord::Base
   scope :read, where(:read => true)
 
   # Logging
-  after_create :log_create_event, :email
+  after_create :log_create_event, :send_email
 
   private #----
 
@@ -21,10 +21,10 @@ class ContactRequest < ActiveRecord::Base
       Event.create(:description => "Contact request from: #{email}")
     end
 
-    def email
+    def send_email
       # Send the email
       begin
-        ContactRequestMailer.contact(photographer.email, email, name, message).deliver
+        ContactRequestMailer.contact(self).deliver
 
         redirect_to admin_private_galleries_path, :notice => 'Private gallery sent.'
       rescue Exception => e
