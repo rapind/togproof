@@ -26,9 +26,9 @@ class ContactRequest < ActiveRecord::Base
       begin
         ContactRequestMailer.contact(self).deliver
 
-        redirect_to admin_private_galleries_path, :notice => 'Private gallery sent.'
+        redirect_to root_path, :notice => 'Contact request sent.'
       rescue Exception => e
-        render :invite, :error => 'The was a problem sending an email to the address you provided.'
+        render :invite, :error => "The was a problem submitting a contact request. Please contact me directly at: #{Photographer.cached.email}"
       end
     end
 
