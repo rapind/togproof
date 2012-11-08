@@ -25,11 +25,13 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
     end
   end
 
-  # Posts
-  posts.each do |post|
-    xml.url do # create the url entry, with the specified location and date
-      xml.loc post_url(post)
-      xml.lastmod post.updated_at.strftime('%Y-%m-%d')
+  if photographer.blog_url.blank?
+    # Posts
+    posts.each do |post|
+      xml.url do # create the url entry, with the specified location and date
+        xml.loc post_url(post)
+        xml.lastmod post.updated_at.strftime('%Y-%m-%d')
+      end
     end
   end
 
