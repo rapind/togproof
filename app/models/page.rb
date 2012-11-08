@@ -28,17 +28,17 @@ class Page < ActiveRecord::Base
   CACHED = 'pages'
 
   def self.cached
-    #Rails.cache.fetch(CACHED, :expires_in => 1.day) do
+    Rails.cache.fetch(CACHED, :expires_in => 1.day) do
       self.order(:name).all
-    #end
+    end
   end
 
   def clear_cache
-    #Rails.cache.delete(CACHED)
+    Page.clear_cache
   end
 
   def self.clear_cache
-    #Rails.cache.delete(CACHED)
+    Rails.cache.delete(CACHED)
   end
 
   private #----

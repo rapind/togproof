@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   protect_from_forgery
 
-  helper_method :photographer, :galleries, :pages, :recent_posts
+  helper_method :photographer, :galleries, :pages, :posts, :recent_posts
   before_filter :set_timezone
 
   protected #----
@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
     def pages
       return @pages if defined?(@pages)
       @pages = Page.cached
+    end
+
+    def posts
+      return @posts if defined?(@posts)
+      @posts = Post.cached
     end
 
     def recent_posts

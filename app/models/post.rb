@@ -25,20 +25,28 @@ class Post < ActiveRecord::Base
   after_destroy :clear_cache, :log_destroy_event
 
   # Caching
-  CACHED = 'recent_posts'
+  CACHED = 'posts'
+  CACHED_RECENT = 'recent_posts'
+
+  def self.cached
+    Rails.cache.fetch(CACHED, :expires_in => 1.day) do
+      self.order(:created_at).all
+    end
+  end
 
   def self.recent
-    #Rails.cache.fetch(CACHED, :expires_in => 1.day) do
+    Rails.cache.fetch(CACHED_RECENT, :expires_in => 1.day) do
       self.order(:created_at).limit(3).all
-    #end
+    end
   end
 
   def clear_cache
-    #Rails.cache.delete(CACHED)
+    Post.clear_cache
   end
 
   def self.clear_cache
-    #Rails.cache.delete(CACHED)
+    Rails.cache.delete(CACHED)
+    Rails.cache.delete(CACHED_RECENT)
   end
 
   private #----

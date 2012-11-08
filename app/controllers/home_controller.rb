@@ -6,10 +6,10 @@ class HomeController < ApplicationController
   end
   
   def index
-    @galleries = Gallery.all
   end
 
-  # def test
-  # end
+  def sitemap
+    render :layout => nil
+  end
   
 end
