@@ -2,7 +2,7 @@
 
 GrokPhoto is a professional photographer's client gallery solution.
 
-This version is work in progress / port to rails 3.2.3
+This version is work in progress / port to rails 3.2
 
 For the stable rails 2 version please see the version 2 branch:
 [Version 2](https://github.com/rapind/grokphoto/tree/v2.0)
