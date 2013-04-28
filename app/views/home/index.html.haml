@@ -1,3 +1,7 @@
+- content_for :title, "#{photographer.name} | #{photographer.tagline}"
+- content_for :keywords, photographer.keywords
+- content_for :description, truncate(photographer.description, :length => 255)
+
 .jumbotron.masthead
   .inner
     %h1= photographer.name
