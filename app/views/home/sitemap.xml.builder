@@ -24,6 +24,12 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
       xml.lastmod page.updated_at.strftime('%Y-%m-%d')
     end
   end
+  
+  # Contact
+  xml.url do # create the url entry, with the specified location and date
+    xml.loc new_contact_request_url
+    xml.lastmod photographer.updated_at.strftime('%Y-%m-%d')
+  end
 
   if photographer.blog_url.blank?
     # Posts
