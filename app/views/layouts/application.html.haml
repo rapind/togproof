@@ -1,7 +1,9 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | #{photographer.name} Administration"
+    %title= "#{yield(:meta_title).presence || yield(:title).presence || 'Home'} | #{photographer.name}"
+    %meta{ :name => "keywords", :content => "#{yield(:keywords).presence || 'photographer, professional'}" }
+    %meta{ :name => "description", :content => "#{yield(:description).presence || 'Professional photographer.'}" }
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags

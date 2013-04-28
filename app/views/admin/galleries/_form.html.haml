@@ -13,7 +13,8 @@
 = form.hidden_field :retained_cover
 = link_to( image_tag(@gallery.cover.thumb('180x100').url), @gallery.cover.url, :rel => 'lightbox' ) if @gallery.cover_uid
 = form.input :keywords, :hint => 'Enter some keywords that pertain to this gallery. I.e. portrait, family, kids, lifestyle, etc.'
-= form.input :description, :hint => 'Describe the gallery.'
+= form.input :description, :hint => 'Brief description of the gallery for the splash page.'
+= form.input :body, :hint => 'Full description of the gallery to appear beneath the photos (SEO). You may use markdown.'
 = form.input 'photos_attrs', :label => 'Upload photos', :as => :file, :input_html => { :multiple => true }, :hint => 'Upload many photos by using your shift and control keys.'
 
 .form-actions
