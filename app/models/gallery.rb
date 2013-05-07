@@ -8,7 +8,7 @@ class Gallery < ActiveRecord::Base
   image_accessor :cover
 
   # Validations
-  validates :name, :presence => true, :length => { :within => 2..20 }, :uniqueness => { :case_sensitive => false }
+  validates :name, :presence => true, :length => { :within => 2..30 }, :uniqueness => { :case_sensitive => false }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :description, :length => { :minimum => 10, :allow_blank => true }
   validates :body, :length => { :minimum => 10, :allow_blank => true }
