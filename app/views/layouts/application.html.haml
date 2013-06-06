@@ -1,6 +1,7 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
+    %link{ :rel => "canonical", :href => "http://kitchenerphotography.com#{request.fullpath}" }
     %title= "#{yield(:title).presence || 'Home'} | #{photographer.name}"
     %meta{ :name => "keywords", :content => "#{yield(:keywords).presence || 'photographer, professional'}" }
     %meta{ :name => "description", :content => "#{yield(:description).presence || 'Professional photographer.'}" }
