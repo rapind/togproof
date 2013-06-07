@@ -7,6 +7,7 @@
 = render "shared/error_messages", :target => @page
 
 = form.input :name, :hint => 'Give your page a meaningful name. Like "Pricing" or "About me"'
+= form.input :meta_title, :hint => "The title that shows up in the browser's toolbar and potentially search results"
 = form.input :keywords, :hint => 'Enter some keywords that pertain to this page. I.e. pricing, availability, booking, etc.'
 = form.input :image, :as => :file, :hint => 'You may upload an image to accompany the body text.'
 = form.hidden_field :retained_image

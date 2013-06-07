@@ -8,6 +8,7 @@
 = render "shared/error_messages", :target => @post
 
 = form.input :title, :hint => 'Give your post a meaningful title. Like "Newborn Sessions October 2012"'
+= form.input :meta_title, :hint => "The title that shows up in the browser's toolbar and potentially search results"
 = form.input :keywords, :hint => 'Enter some keywords that pertain to this post. I.e. newborns, family, portrait, lifestyle, etc.'
 = form.input :image, :as => :file, :hint => 'You may upload an image to accompany the post.'
 = form.hidden_field :retained_image

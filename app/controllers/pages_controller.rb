@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.find params[:id]
+    @meta_title = @page.meta_title || @page.name
+    @keywords = @page.keywords
     respond_with @page
   end
 

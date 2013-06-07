@@ -1,13 +1,13 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{yield(:title).presence || 'Home'} | #{photographer.name}"
-    %meta{ :name => "keywords", :content => "#{yield(:keywords).presence || 'photographer, professional'}" }
-    %meta{ :name => "description", :content => "#{yield(:description).presence || 'Professional photographer.'}" }
+    %title= "#{@meta_title} | #{photographer.name}".html_safe
+    %meta{ :name => "keywords", :content => "#{@keywords || 'photographer, professional'}".html_safe }
+    %meta{ :name => "description", :content => "#{@meta_description || 'Professional photographer.'}".html_safe }
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body{ :class => "#{yield(:body_class).presence}" }
+  %body
     .navbar.navbar-fixed-top
       .navbar-inner
         .container

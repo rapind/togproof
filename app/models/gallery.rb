@@ -9,13 +9,14 @@ class Gallery < ActiveRecord::Base
 
   # Validations
   validates :name, :presence => true, :length => { :within => 2..30 }, :uniqueness => { :case_sensitive => false }
+  validates :meta_title, :length => { :within => 2..128, :allow_blank => true }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :description, :length => { :minimum => 10, :allow_blank => true }
   validates :body, :length => { :minimum => 10, :allow_blank => true }
   validates :cover, :presence => true
 
   # Mass-assignment protection
-  attr_accessible :name, :keywords, :description, :body, :cover, :photos_attrs
+  attr_accessible :name, :meta_title, :keywords, :description, :body, :cover, :photos_attrs
 
   # Multi-file uploads
   def photos_attrs=(attrs)

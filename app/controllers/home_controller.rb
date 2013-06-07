@@ -6,6 +6,9 @@ class HomeController < ApplicationController
   end
   
   def index
+    @meta_title = photographer.meta_title || photographer.name
+    @keywords = photographer.keywords
+    @meta_description = photographer.description
   end
 
   def sitemap

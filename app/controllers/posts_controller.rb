@@ -8,6 +8,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @meta_title = @post.meta_title || @post.title
+    @keywords = @post.keywords
+    @meta_description = @post.description
     respond_with @post
   end
 

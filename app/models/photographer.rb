@@ -5,6 +5,7 @@ class Photographer < ActiveRecord::Base
 
   # Validations
   validates :name, :presence => true, :length => { :within => 3..80 }
+  validates :meta_title, :length => { :within => 2..128, :allow_blank => true }
   validates :tagline, :presence => true, :length => { :within => 3..128 }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
   validates :phone, :length => { :within => 7..20, :allow_blank => true }
@@ -18,7 +19,7 @@ class Photographer < ActiveRecord::Base
   validates :conversion_code, :length => { :within => 10..9000, :allow_blank => true }
 
   # Mass-assignment protection
-  attr_accessible :email, :password, :name, :tagline, :keywords, :time_zone, :description, :phone, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :google_verification, :conversion_code, :remember_me
+  attr_accessible :email, :password, :name, :meta_title, :tagline, :keywords, :time_zone, :description, :phone, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :google_analytics_key, :google_verification, :conversion_code, :remember_me
 
   # Make sure we always have an auth token assigned.
   before_save :ensure_authentication_token

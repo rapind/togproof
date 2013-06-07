@@ -2,6 +2,7 @@ class ContactRequestsController < ApplicationController
   respond_to :html
 
   def new
+    @meta_title = "Contact Me"
     respond_with( @contact_request = ContactRequest.new )
   end
 
