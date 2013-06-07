@@ -8,7 +8,7 @@
       .carousel-inner
         - galleries.each_with_index do |gallery, idx|
           %div{ :class => "item#{' active' if idx == 0}" }
-            = link_to( image_tag(gallery.cover.thumb('940x500!').url), gallery_path(gallery) )
+            = link_to( image_tag(gallery.cover.thumb('940x500!').url), gallery_url(gallery) )
 
 .marketing
   - galleries.each_slice(3) do |galleries|
@@ -17,4 +17,4 @@
         .span4
           %h2= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
           %p= gallery.description
-          %p= link_to('View this gallery &raquo;'.html_safe, gallery_path(gallery), :class => 'btn')
+          %p= link_to('View this gallery &raquo;'.html_safe, gallery_url(gallery), :class => 'btn')
