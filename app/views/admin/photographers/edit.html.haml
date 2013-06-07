@@ -14,6 +14,7 @@
   = form.input :keywords, :hint => 'Enter some keywords relevant to your site. I.e. photography, city, newborn, etc.'
   = form.input :description, :as => :text, :hint => 'A brief summary of the services you provide to be displayed on the home page below the slide show.'
   = form.input :time_zone, :collection => ActiveSupport::TimeZone.zones_map.keys, :hint => 'Please select your local time zone.'
+  = form.input :preferred_domain, :hint => 'Use this to switch domains using 301 redirects. I.e. If you are changing yourname.com to newyorkphotog.com, you can enter newyorkphotog.com here. Otherwise leave this blank.'
   = form.input :portfolio_url, :hint => 'The URL to the portfolio site to use instead of the GrokPhoto provided portfolio.'
   = form.input :blog_url, :hint => 'The URL to your blog if you have one.'
   = form.input :google_analytics_key, :hint => 'Your google analytics key if you have one.'
