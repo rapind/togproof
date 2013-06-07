@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find params[:id]
-    @meta_title = @gallery.meta_title || @gallery.name
+    @meta_title = @gallery.meta_title || "#{@gallery.name} | photographer.name"
     @keywords = @gallery.keywords
     @meta_description = @gallery.description
     respond_with @gallery

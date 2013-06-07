@@ -1,7 +1,7 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{@meta_title} | #{photographer.name}".html_safe
+    %title= @meta_title.html_safe
     %meta{ :name => "keywords", :content => "#{@keywords || 'photographer, professional'}".html_safe }
     %meta{ :name => "description", :content => "#{@meta_description || 'Professional photographer.'}".html_safe }
     = stylesheet_link_tag 'application'

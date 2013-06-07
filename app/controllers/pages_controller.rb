@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.find params[:id]
-    @meta_title = @page.meta_title || @page.name
+    @meta_title = @page.meta_title || "#{@page.name} | photographer.name"
     @keywords = @page.keywords
     respond_with @page
   end
