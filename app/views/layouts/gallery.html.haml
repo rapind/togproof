@@ -12,14 +12,15 @@
     .navbar-inner
       .container
         .pull-right= "#{yield(:page_title).presence || 'Private Gallery'} | #{photographer.name}"
-  .container#content
-    - if notice
-      .alert.alert-block{ :'data-dismiss' => 'alert' }
-        %a.close ×
-        %p= notice
-    .page-header
-      %h1= yield(:title).presence || 'Home'
-    .row
-      .span12= yield
+  .outer
+    .container#content
+      - if notice
+        .alert.alert-block{ :'data-dismiss' => 'alert' }
+          %a.close ×
+          %p= notice
+      .page-header
+        %h1= yield(:title).presence || 'Home'
+      .row
+        .span12= yield
   #footer.container
     = "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe

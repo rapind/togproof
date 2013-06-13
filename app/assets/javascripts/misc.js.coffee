@@ -30,9 +30,4 @@ jQuery ->
         complete: (request) ->
           $("#sorted-image-list").effect "highlight"
 
-sizeContent = ->
-  newHeight = $("html").height() - 90 - $("footer").height()
-  if newHeight > $("#content").height()
-    $("#content").css "height", (newHeight + "px")
-$(document).ready sizeContent
-$(window).resize sizeContent
+

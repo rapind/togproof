@@ -10,11 +10,8 @@
     display: table
     clear: both
 
-html
-  height: 100%
-
 body
-  padding-top: 50px
+  background-color: #252525 !important
   
 h1
   color: #333
@@ -64,8 +61,13 @@ h1
   margin: 0 0 20px 20px
   float: right
 
+.outer
+  padding-top: 40px
+  background-color: #fff
+  
 #content
   +clearfix
+  min-height: 350px
   
 .content
   color: #555
@@ -180,8 +182,7 @@ ul.image_list
 
 footer
   background: #252525
-  border-top: 0
-  margin-top: 20px
+  border-top: 20px
   padding-top: 20px
   h4
     line-height: 24px
@@ -193,7 +194,7 @@ footer
     margin-top: 10px
     padding-top: 10px
     text-align: right
-    background: #1B1B1B
+    border-top: 1px solid #1B1B1B
 
 #footer
   margin-top: 30px
