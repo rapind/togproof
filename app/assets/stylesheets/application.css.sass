@@ -4,6 +4,12 @@
 //= require jquery.fancybox-1.3.4
 //= require chosen
 
+@mixin clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
 html
   height: 100%
 
@@ -58,9 +64,12 @@ h1
   margin: 0 0 20px 20px
   float: right
 
+#content
+  +clearfix
+  
 .content
-  min-height: 530px
   color: #555
+  +clearfix
   
 .well
   h2
