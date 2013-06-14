@@ -6,7 +6,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
     = yield(:meta)
-  %body{ :class => "#{yield(:body_class).presence}" }
+  %body.admin
   .navbar.navbar-fixed-top
     .navbar-inner
       .container
