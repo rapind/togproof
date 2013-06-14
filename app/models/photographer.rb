@@ -17,10 +17,11 @@ class Photographer < ActiveRecord::Base
   validates :facebook_url, :length => { :within => 10..255, :allow_blank => true }
   validates :twitter_url, :length => { :within => 10..255, :allow_blank => true }
   validates :disqus_short_name, :length => { :within => 2..64, :allow_blank => true }
+  validates :instagram_id, :length => { :within => 2..128, :allow_blank => true }
   validates :conversion_code, :length => { :within => 10..9000, :allow_blank => true }
 
   # Mass-assignment protection
-  attr_accessible :email, :password, :name, :meta_title, :tagline, :keywords, :time_zone, :description, :phone, :preferred_domain, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :disqus_short_name, :google_analytics_key, :google_verification, :conversion_code, :remember_me
+  attr_accessible :email, :password, :name, :meta_title, :tagline, :keywords, :time_zone, :description, :phone, :preferred_domain, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :disqus_short_name, :instagram_id, :google_analytics_key, :google_verification, :conversion_code, :remember_me
 
   # Make sure we always have an auth token assigned.
   before_save :ensure_authentication_token
