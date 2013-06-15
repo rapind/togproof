@@ -15,4 +15,12 @@ class HomeController < ApplicationController
     render :layout => nil
   end
   
+  def blog
+    unless photographer.blog_url.blank?
+      redirect_to photographer.blog_url, :status => 301
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
+  end
+  
 end
