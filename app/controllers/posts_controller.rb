@@ -9,8 +9,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @meta_title = @post.meta_title || "#{@post.title} | photographer.name"
+    @meta_title = @post.meta_title.blank? ? "#{@post.title} | #{photographer.name}" : @post.meta_title
     @keywords = @post.keywords
+    @meta_description = @post.meta_description
     respond_with @post
   end
 

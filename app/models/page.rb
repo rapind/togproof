@@ -1,13 +1,14 @@
 class Page < ActiveRecord::Base
 
   # Validations
-  validates :name, :presence => true, :length => { :within => 2..20 }
   validates :meta_title, :length => { :within => 2..128, :allow_blank => true }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
+  validates :meta_description, :length => { :within => 5..255, :allow_blank => true }
+  validates :name, :presence => true, :length => { :within => 2..20 }
   validates :body, :presence => true, :length => { :minimum => 10 }
 
   # Mass-assignment protection
-  attr_accessible :name, :meta_title, :keywords, :body, :image, :retained_image
+  attr_accessible :name, :meta_title, :keywords, :meta_description, :body, :image, :retained_image
 
   # Image attachment
   image_accessor :image

@@ -8,10 +8,8 @@
 
   = form.input :email, :required => true, :hint => 'Your business email address.'
   = form.input :name, :hint => 'Your business name.'
-  = form.input :meta_title, :hint => "The title that shows up in the browser's toolbar and potentially search results for the home page."
   = form.input :phone, :hint => 'Your business phone number if you want to show it.'
   = form.input :tagline, :hint => 'A brief phrase to be displayed on the homepage.'
-  = form.input :keywords, :hint => 'Enter some keywords relevant to your site. I.e. photography, city, newborn, etc.'
   = form.input :description, :as => :text, :hint => 'A brief summary of the services you provide to be displayed on the home page below the slide show.'
   = form.input :time_zone, :collection => ActiveSupport::TimeZone.zones_map.keys, :hint => 'Please select your local time zone.'
   = form.input :preferred_domain, :hint => 'Use this to switch domains using 301 redirects. I.e. If you are changing yourname.com to newyorkphotog.com, you can enter newyorkphotog.com here. Otherwise leave this blank.'
@@ -24,6 +22,7 @@
   = form.input :disqus_short_name, :hint => 'The shortname for your disqus comments site.'
   = form.input :instagram_id, :hint => 'Your Instagram identifier.'
   = form.input :conversion_code, :hint => 'Paste the conversion code to be called after a contact submission if you have any (I.e. Google Adwords).'
-
+  = render :partial => "admin/shared/seo_fields", :locals => { :form => form }
+  
   .form-actions
     = form.button :submit, 'Update Settings', :class => 'btn-primary'

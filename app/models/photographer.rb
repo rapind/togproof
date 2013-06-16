@@ -4,10 +4,11 @@ class Photographer < ActiveRecord::Base
   devise :database_authenticatable, :token_authenticatable, :recoverable, :rememberable, :lockable, :validatable
 
   # Validations
-  validates :name, :presence => true, :length => { :within => 3..80 }
   validates :meta_title, :length => { :within => 2..128, :allow_blank => true }
-  validates :tagline, :presence => true, :length => { :within => 3..128 }
   validates :keywords, :length => { :within => 2..255, :allow_blank => true }
+  validates :meta_description, :length => { :within => 5..255, :allow_blank => true }
+  validates :name, :presence => true, :length => { :within => 3..80 }
+  validates :tagline, :presence => true, :length => { :within => 3..128 }
   validates :phone, :length => { :within => 7..20, :allow_blank => true }
   validates :description, :length => { :within => 10..255, :allow_blank => true }
   validates :time_zone, :presence => true, :inclusion => { :in => ActiveSupport::TimeZone.zones_map.keys }
@@ -21,7 +22,7 @@ class Photographer < ActiveRecord::Base
   validates :conversion_code, :length => { :within => 10..9000, :allow_blank => true }
 
   # Mass-assignment protection
-  attr_accessible :email, :password, :name, :meta_title, :tagline, :keywords, :time_zone, :description, :phone, :preferred_domain, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :disqus_short_name, :instagram_id, :google_analytics_key, :google_verification, :conversion_code, :remember_me
+  attr_accessible :email, :password, :meta_title, :keywords, :meta_description, :name, :tagline, :time_zone, :description, :phone, :preferred_domain, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :disqus_short_name, :instagram_id, :google_analytics_key, :google_verification, :conversion_code, :remember_me
 
   # Make sure we always have an auth token assigned.
   before_save :ensure_authentication_token
