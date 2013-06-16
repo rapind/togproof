@@ -11,6 +11,7 @@ class Photographer < ActiveRecord::Base
   validates :tagline, :presence => true, :length => { :within => 3..128 }
   validates :phone, :length => { :within => 7..20, :allow_blank => true }
   validates :description, :length => { :within => 10..255, :allow_blank => true }
+  validates :contact_instructions, :length => { :within => 10..512, :allow_blank => true }
   validates :time_zone, :presence => true, :inclusion => { :in => ActiveSupport::TimeZone.zones_map.keys }
   validates :preferred_domain, :length => { :within => 4..255, :allow_blank => true }
   validates :portfolio_url, :length => { :within => 10..512, :allow_blank => true }
@@ -22,7 +23,7 @@ class Photographer < ActiveRecord::Base
   validates :conversion_code, :length => { :within => 10..9000, :allow_blank => true }
 
   # Mass-assignment protection
-  attr_accessible :email, :password, :meta_title, :keywords, :meta_description, :name, :tagline, :time_zone, :description, :phone, :preferred_domain, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :disqus_short_name, :instagram_id, :google_analytics_key, :google_verification, :conversion_code, :remember_me
+  attr_accessible :email, :password, :meta_title, :keywords, :meta_description, :name, :tagline, :time_zone, :description, :contact_instructions, :phone, :preferred_domain, :portfolio_url, :blog_url, :facebook_url, :twitter_url, :disqus_short_name, :instagram_id, :google_analytics_key, :google_verification, :conversion_code, :remember_me
 
   # Make sure we always have an auth token assigned.
   before_save :ensure_authentication_token
