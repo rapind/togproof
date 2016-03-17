@@ -1,4 +1,4 @@
-# TogProof
+# togProof
 
 I'm taking advantage of recent technologies like React and Firebase to completely rewrite the previous Ruby on Rails based Grokphoto application.
 
