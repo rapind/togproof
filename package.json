@@ -5,8 +5,8 @@
   "main": "./src/index.js",
   "repository": "git@github.com:rapind/togproof.git",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.hmr.js --port 3000",
-    "prod": "webpack --config config/webpack.static.js"
+    "start": "webpack-dev-server --port 3000",
+    "prod": "webpack --config config/webpack.prod.js"
   },
   "author": "Dave Rapin",
   "license": "ISC",

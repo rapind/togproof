@@ -1,16 +1,14 @@
-Webpack = require('webpack')
 path = require('path')
-ROOT = path.join(__dirname, '..')
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
 
   entry: [
-    path.join(ROOT, 'src', 'index.js')
+    path.join(__dirname, 'src', 'index.js')
   ],
 
   output: {
-    path: path.join(ROOT, 'public'),
+    path: path.join(__dirname, 'public'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -19,7 +17,7 @@ module.exports = {
     preLoaders: [{
       // set up standard-loader as a preloader
       test: /\.jsx?$/,
-      include: path.join(ROOT, 'src', 'scripts'),
+      include: path.join(__dirname, 'src', 'scripts'),
       loader: 'standard'
     }],
 
@@ -41,20 +39,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.styl'],
     root: [
-      path.join(ROOT, 'src')
+      path.join(__dirname, 'src')
     ]
-  },
-
-  plugins: [
-    new Webpack.HotModuleReplacementPlugin(),
-    new Webpack.NoErrorsPlugin()
-  ],
-
-  devServer: {
-    contentBase: path.join(ROOT, 'public'),
-    hot: true,
-    inline: true,
-    progress: true,
-    publicPath: '/'
   }
 };
