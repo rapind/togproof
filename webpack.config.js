@@ -14,11 +14,17 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  stats: {
+    colors: true,
+    reasons: true, // verbose errors
+    chunks: false  // clean summary output
+  },
+
   module: {
     preLoaders: [{
       // set up standard-loader as a preloader
       test: /\.jsx?$/,
-      include: path.join(__dirname, 'src', 'scripts'),
+      include: path.join(__dirname, 'src'),
       loader: 'standard'
     }],
 
@@ -37,6 +43,10 @@ module.exports = {
     ]
   },
 
+  standard: {
+    parser: 'babel-eslint'
+  },
+
   resolve: {
     extensions: ['', '.js', '.jsx', '.styl'],
     root: [
@@ -50,6 +60,7 @@ module.exports = {
   ],
 
   devServer: {
+    historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
     hot: true,
     inline: true,
