@@ -9,10 +9,10 @@ export default React.createClass({
   render () {
     return (
       <div>
-        <h2>Repos</h2>
+        <h2>Galleries</h2>
         <ul>
-          <li><NavLink to='/repo/rackt/react-router'>React Router</NavLink></li>
-          <li><NavLink to='/repo/facebook/react'>React</NavLink></li>
+          <li><NavLink to='/galleries/1'>One</NavLink></li>
+          <li><NavLink to='/galleries/2'>Two</NavLink></li>
         </ul>
         {this.props.children}
       </div>

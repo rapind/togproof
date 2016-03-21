@@ -8,7 +8,7 @@ export default React.createClass({
   render () {
     return (
       <div>
-        <h2>{this.props.params.repoName}</h2>
+        <h2>Gallery {this.props.params.id}</h2>
       </div>
     )
   }

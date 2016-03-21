@@ -9,11 +9,11 @@ const App = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>Hey Now</h1>
+        <h1>togPhoto</h1>
         <ul role='nav'>
           <li><NavLink to='/' onlyActiveOnIndex>Home</NavLink></li>
           <li><NavLink to='/about'>About</NavLink></li>
-          <li><NavLink to='/repos'>Repos</NavLink></li>
+          <li><NavLink to='/galleries'>Galleries</NavLink></li>
         </ul>
 
         {this.props.children}

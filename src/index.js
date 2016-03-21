@@ -10,15 +10,15 @@ injectTapEventPlugin()
 import App from './App'
 import Home from './components/Home'
 import About from './components/About'
-import Repos from './components/Repos'
-import Repo from './components/Repo'
+import Galleries from './components/Galleries'
+import Gallery from './components/Gallery'
 
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
-      <Route path='/repos' component={Repos}>
-        <Route path='/repo/:userName/:repoName' component={Repo}/>
+      <Route path='/galleries' component={Galleries}>
+        <Route path='/galleries/:id' component={Gallery}/>
       </Route>
       <Route path='/about' component={About}/>
     </Route>
