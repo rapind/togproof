@@ -1,7 +1,7 @@
 import React from 'react'
-import NavLink from 'components/NavLink'
+import MainNav from 'components/MainNav'
 
-const App = React.createClass({
+export default React.createClass({
   propTypes: {
     children: React.PropTypes.object
   },
@@ -10,16 +10,9 @@ const App = React.createClass({
     return (
       <div>
         <h1>togPhoto</h1>
-        <ul role='nav'>
-          <li><NavLink to='/' onlyActiveOnIndex>Home</NavLink></li>
-          <li><NavLink to='/about'>About</NavLink></li>
-          <li><NavLink to='/galleries'>Galleries</NavLink></li>
-        </ul>
-
+        <MainNav />
         {this.props.children}
       </div>
     )
   }
 })
-
-export default App
