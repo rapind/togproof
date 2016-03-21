@@ -9,7 +9,6 @@ export default React.createClass({
   render: function () {
     return (
       <div>
-        <h1>togPhoto</h1>
         <MainNav />
         {this.props.children}
       </div>
