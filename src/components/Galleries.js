@@ -10,19 +10,18 @@ export default React.createClass({
     children: React.PropTypes.object
   },
 
-  getInitialState: function () {
+  getInitialState () {
     return {
       galleries: []
     }
   },
 
-  componentWillMount: function () {
+  componentWillMount () {
     const ref = new Firebase('https://togproof.firebaseio.com/galleries')
     this.bindAsArray(ref, 'galleries')
   },
 
   render () {
-    // console.log(this.state.galleries)
     return (
       <div>
         <h2>Galleries</h2>

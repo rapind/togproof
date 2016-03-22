@@ -6,25 +6,25 @@ import AppBar from 'material-ui/lib/app-bar'
 
 export default React.createClass({
 
-  getInitialState: function () {
+  getInitialState () {
     return {
       open: false
     }
   },
 
-  handleToggle: function () {
+  handleToggle () {
     this.setState({
       open: !this.state.open
     })
   },
 
-  handleClose: function () {
+  handleClose () {
     this.setState({
       open: false
     })
   },
 
-  render: function () {
+  render () {
     const menuItems = [
       {
         title: 'Home',

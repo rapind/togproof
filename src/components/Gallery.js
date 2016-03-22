@@ -9,19 +9,38 @@ export default React.createClass({
     params: React.PropTypes.object
   },
 
-  getInitialState: function () {
+  getInitialState () {
     return {
-      gallery: {}
+      gallery: null
     }
   },
 
-  componentWillMount: function () {
-    const ref = new Firebase(`https://togproof.firebaseio.com/galleries/${this.props.params.id}`)
+  bindGalleryById (id) {
+    const ref = new Firebase(
+      `https://togproof.firebaseio.com/galleries/${id}`
+    )
+
+    if (this.state.gallery) this.unbind('gallery')
     this.bindAsObject(ref, 'gallery')
+  },
+
+  componentWillMount () {
+    this.bindGalleryById(this.props.params.id)
+  },
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.bindGalleryById(nextProps.params.id)
+    }
   },
 
   render () {
     const { gallery } = this.state
+
+    if (gallery === null) {
+      return <div>Loading...</div>
+    }
+
     return (
       <div>
         <h2>Gallery: {gallery.title}</h2>
