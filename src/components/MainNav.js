@@ -13,7 +13,6 @@ export default React.createClass({
   },
 
   handleToggle: function () {
-    console.log('toggle nav')
     this.setState({
       open: !this.state.open
     })
@@ -51,7 +50,7 @@ export default React.createClass({
         >
           {menuItems.map((item) => {
             return (
-              <MenuItem className='MenuItem' onTouchTap={this.handleClose}>
+              <MenuItem key={item.path} className='MenuItem' onTouchTap={this.handleClose}>
                 <NavLink to={item.path} onlyActiveOnIndex={item.default}>
                 {item.title}
                 </NavLink>
@@ -60,7 +59,7 @@ export default React.createClass({
           })}
         </LeftNav>
         <AppBar
-          title='togPhoto'
+          title='togProof'
           onLeftIconButtonTouchTap={this.handleToggle}
         />
       </div>
