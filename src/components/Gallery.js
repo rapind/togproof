@@ -15,23 +15,23 @@ export default React.createClass({
     }
   },
 
-  bindGalleryById (id) {
+  componentWillMount () {
+    this.bindGallery(this.props.params.id)
+  },
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.bindGallery(nextProps.params.id)
+    }
+  },
+
+  bindGallery (id) {
     const ref = new Firebase(
       `https://togproof.firebaseio.com/galleries/${id}`
     )
 
     if (this.state.gallery) this.unbind('gallery')
     this.bindAsObject(ref, 'gallery')
-  },
-
-  componentWillMount () {
-    this.bindGalleryById(this.props.params.id)
-  },
-
-  componentWillReceiveProps (nextProps) {
-    if (this.props.params.id !== nextProps.params.id) {
-      this.bindGalleryById(nextProps.params.id)
-    }
   },
 
   render () {

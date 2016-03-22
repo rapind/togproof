@@ -17,9 +17,8 @@ ReactDOM.render((
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
-      <Route path='/galleries' component={Galleries}>
-        <Route path='/galleries/:id' component={Gallery}/>
-      </Route>
+      <Route path='/galleries' component={Galleries} />
+      <Route path='/galleries/:id' component={Gallery}/>
       <Route path='/about' component={About}/>
     </Route>
   </Router>
