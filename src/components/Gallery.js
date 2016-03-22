@@ -38,7 +38,7 @@ export default React.createClass({
     const { gallery } = this.state
 
     if (gallery === null) {
-      return <div>Loading...</div>
+      return <div></div>
     }
 
     return (

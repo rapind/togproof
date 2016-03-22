@@ -36,13 +36,13 @@ export default React.createClass({
   },
 
   getCols () {
-    return Math.floor(window.innerWidth / 250)
+    return Math.floor(window.innerWidth / 200)
   },
 
   handleWindowResize (e) {
     this.setState({
       cols: this.getCols()
-    });
+    })
   },
 
   componentDidMount () {
