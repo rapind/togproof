@@ -37,30 +37,22 @@ export default React.createClass({
     return (
       <div>
         <h2>Galleries</h2>
-        <Masonry>
+        <Masonry
+          options={{
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            gutter: 15
+          }}
+        >
           {galleries.map((gallery) => {
             return (
-              <Card
-                key={gallery['.key']}
-                style={{
-                  width: '290px',
-                  margin: '5px'
-                }}
-              >
+              <Card key={gallery['.key']} className='grid-item'>
                 <Link to={`/galleries/${gallery['.key']}`}>
-                  <CardMedia
-                    overlay={<CardTitle title={gallery.title} />}
-                    style={{
-                      height: '170px',
-                      overflow: 'hidden'
-                    }}
-                  >
-                    <img
-                      src={gallery.cover_image_url}
-                    />
+                  <CardMedia>
+                    <img src={gallery.cover_image_url} />
                   </CardMedia>
                 </Link>
-                <CardTitle subtitle='Card subtitle' />
+                <CardTitle title={gallery.title} subtitle='Card subtitle' />
                 <CardActions>
                   <Link to={`/galleries/${gallery['.key']}`}>
                     <FlatButton label='View' />
