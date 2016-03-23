@@ -1,6 +1,7 @@
 import React from 'react'
 import Firebase from 'firebase'
 import ReactFireMixin from 'reactfire'
+import { Link } from 'react-router'
 
 export default React.createClass({
   mixins: [ReactFireMixin],
@@ -43,7 +44,9 @@ export default React.createClass({
 
     return (
       <div>
+        <Link to='/galleries'>Back</Link>
         <h2>Gallery: {gallery.title}</h2>
+        <img src={gallery.cover_image_url} />
       </div>
     )
   }

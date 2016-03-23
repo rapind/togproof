@@ -1,16 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router'
 import Firebase from 'firebase'
 import ReactFireMixin from 'reactfire'
-import GridList from 'material-ui/lib/grid-list/grid-list'
-import GridTile from 'material-ui/lib/grid-list/grid-tile'
-import NavLink from './NavLink'
-
-const styles = {
-  gridList: {
-  },
-  gridTile: {
-  }
-}
+import Masonry from 'react-masonry-component'
+import Card from 'material-ui/lib/card/card'
+import CardActions from 'material-ui/lib/card/card-actions'
+import CardMedia from 'material-ui/lib/card/card-media'
+import CardTitle from 'material-ui/lib/card/card-title'
+import FlatButton from 'material-ui/lib/flat-button'
 
 export default React.createClass({
   mixins: [ReactFireMixin],
@@ -21,8 +18,7 @@ export default React.createClass({
 
   getInitialState () {
     return {
-      galleries: [],
-      cols: this.getCols()
+      galleries: []
     }
   },
 
@@ -35,48 +31,48 @@ export default React.createClass({
     this.bindAsArray(ref, 'galleries')
   },
 
-  getCols () {
-    return Math.floor(window.innerWidth / 200)
-  },
-
-  handleWindowResize (e) {
-    this.setState({
-      cols: this.getCols()
-    })
-  },
-
-  componentDidMount () {
-    window.addEventListener('resize', this.handleWindowResize)
-  },
-
   render () {
-    const { galleries, cols } = this.state
+    const { galleries } = this.state
 
     return (
       <div>
         <h2>Galleries</h2>
-        <GridList
-          cellHeight={200}
-          cols={cols}
-          style={styles.gridList}
-        >
+        <Masonry>
           {galleries.map((gallery) => {
             return (
-              <NavLink
+              <Card
                 key={gallery['.key']}
-                to={`/galleries/${gallery['.key']}`}
+                style={{
+                  width: '290px',
+                  margin: '5px'
+                }}
               >
-                <GridTile
-                  title={gallery.title}
-                  subtitle='Subtitle goes here'
-                  style={styles.gridTile}
-                >
-                  <img src={gallery.cover_image_url} />
-                </GridTile>
-              </NavLink>
+                <Link to={`/galleries/${gallery['.key']}`}>
+                  <CardMedia
+                    overlay={<CardTitle title={gallery.title} />}
+                    style={{
+                      height: '170px',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <img
+                      src={gallery.cover_image_url}
+                    />
+                  </CardMedia>
+                </Link>
+                <CardTitle subtitle='Card subtitle' />
+                <CardActions>
+                  <Link to={`/galleries/${gallery['.key']}`}>
+                    <FlatButton label='View' />
+                  </Link>
+                  <Link to={`/galleries/${gallery['.key']}`}>
+                    <FlatButton label='Edit' />
+                  </Link>
+                </CardActions>
+              </Card>
             )
           })}
-        </GridList>
+        </Masonry>
         {this.props.children}
       </div>
     )
