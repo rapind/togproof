@@ -39,14 +39,14 @@ export default React.createClass({
         <h2>Galleries</h2>
         <Masonry
           options={{
-            itemSelector: '.grid-item',
+            itemSelector: '.GalleriesGridItem',
             percentPosition: true,
             gutter: 15
           }}
         >
           {galleries.map((gallery) => {
             return (
-              <Card key={gallery['.key']} className='grid-item'>
+              <Card key={gallery['.key']} className='GalleriesGridItem'>
                 <Link to={`/galleries/${gallery['.key']}`}>
                   <CardMedia>
                     <img src={gallery.cover_image_url} />
