@@ -26,6 +26,8 @@ npm run prod
 
 ## Deploying
 
-```
-firebase deploy
-```
+1. Sign up for an account at https://www.firebase.com/ and create a new application.
+
+2. Edit the firebase.json to point at this Firebase application.
+
+3. ``` firebase deploy ```
