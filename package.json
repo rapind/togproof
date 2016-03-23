@@ -6,7 +6,7 @@
   "repository": "git@github.com:rapind/togproof.git",
   "scripts": {
     "start": "webpack-dev-server --port 3000",
-    "prod": "webpack --config config/webpack.prod.js"
+    "prod": "NODE_ENV=production webpack --config webpack.prod.js"
   },
   "author": "Dave Rapin",
   "license": "ISC",
